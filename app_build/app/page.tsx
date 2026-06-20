@@ -8,7 +8,7 @@ export default async function Home() {
   const lessonData = JSON.parse(fileContents);
 
   return (
-    <main className="h-[100dvh] w-full overflow-y-scroll snap-y snap-mandatory bg-blue-50">
+    <main className="w-full bg-blue-50">
       {/* Intro Reel */}
       <section className="snap-start h-[100dvh] w-full flex flex-col justify-center items-center relative overflow-hidden bg-gradient-to-br from-blue-500 to-cyan-400 text-white shadow-inner">
         <div className="absolute w-96 h-96 bg-white/10 rounded-full blur-3xl -top-10 -right-20"></div>

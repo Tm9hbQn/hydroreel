@@ -15,14 +15,14 @@ interface BiteProps {
 export default function ReelCard({ title, text, visual_trigger_id, layout = 'top_text' }: BiteProps) {
   
   return (
-    <section className="snap-start h-[100dvh] w-full flex flex-col relative overflow-hidden bg-[#fafcff]">
+    <section className="snap-start h-[100dvh] w-full flex flex-col relative overflow-hidden bg-[#fafcff] pb-16">
       
       {/* Content Area - Designed to flow at the top naturally */}
       <motion.div 
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="w-full z-10 px-6 pt-8 pb-2 flex flex-col"
+        className="w-full z-10 px-6 pt-8 pb-2 flex flex-col shrink-0"
       >
         <div className="relative inline-block mb-3 self-start">
           <h2 className="text-5xl md:text-6xl font-extrabold text-slate-900 tracking-tight font-sans relative z-10" dir="rtl">
@@ -43,8 +43,18 @@ export default function ReelCard({ title, text, visual_trigger_id, layout = 'top
       </motion.div>
 
       {/* Visual / Simulation Area - Takes the remaining space */}
-      <div className="flex-1 w-full flex justify-center items-start pt-2 pb-12 relative z-0">
+      <div className="flex-1 w-full flex justify-center items-start pt-2 relative z-0 overflow-visible min-h-0">
         <AnimationRenderer triggerId={visual_trigger_id} />
+      </div>
+
+      {/* Dead space at the bottom & Swipe Up Indicator */}
+      <div className="absolute bottom-0 w-full h-16 flex flex-col justify-end items-center pb-4 z-20 pointer-events-none">
+        <div className="animate-bounce flex flex-col items-center opacity-50">
+          <span className="text-[10px] font-bold tracking-widest uppercase text-slate-400">החלק למעלה</span>
+          <div className="mt-1 w-5 h-8 border-2 border-slate-300 rounded-full flex justify-center pt-1">
+            <div className="w-1 h-2 bg-slate-300 rounded-full animate-ping"></div>
+          </div>
+        </div>
       </div>
       
     </section>

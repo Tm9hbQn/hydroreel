@@ -18,10 +18,10 @@ export default function InteractivePressureSimulator() {
   };
 
   return (
-    <div className="w-full h-full flex flex-col items-center justify-center relative p-4" dir="rtl">
+    <div className="w-full h-full flex flex-col items-center justify-start relative p-2" dir="rtl">
       
       {/* Simulation Area - removed overflow-hidden so tooltips can render outside */}
-      <div className="relative w-full max-w-[280px] h-[45vh] min-h-[250px] max-h-[350px] bg-white/60 rounded-3xl shadow-xl border border-white/50 flex items-end justify-center mb-4 backdrop-blur-md">
+      <div className="relative w-full max-w-[280px] flex-1 min-h-[180px] max-h-[300px] bg-white/60 rounded-3xl shadow-xl border border-white/50 flex items-end justify-center mb-3 backdrop-blur-md">
         
         {/* Background Grid */}
         <div className="absolute inset-0 opacity-[0.03] rounded-3xl overflow-hidden" style={{ backgroundImage: 'radial-gradient(#000 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
@@ -89,7 +89,7 @@ export default function InteractivePressureSimulator() {
       </div>
 
       {/* Slider Control */}
-      <div className="w-full max-w-xs bg-white p-5 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100">
+      <div className="w-full max-w-xs bg-white p-5 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 shrink-0">
         <label className="flex justify-between items-center mb-3">
           <span className="text-sm font-bold text-slate-800">גובה פני המים</span>
           <span className="text-blue-600 font-mono font-bold bg-blue-50 px-2 py-1 rounded-md text-sm">{waterHeight.toFixed(1)}m</span>

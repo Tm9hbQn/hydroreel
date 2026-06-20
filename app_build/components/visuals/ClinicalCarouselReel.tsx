@@ -38,22 +38,22 @@ export default function ClinicalCarouselReel() {
       {/* Scrollable Container */}
       <div 
         ref={containerRef}
-        className="w-full h-full flex-1 overflow-x-auto flex snap-x snap-mandatory hide-scrollbar pt-6 pb-6 px-6 gap-6 items-stretch"
+        className="w-full h-full flex-1 overflow-x-auto flex snap-x snap-mandatory hide-scrollbar pt-2 pb-4 px-6 gap-6 items-stretch"
       >
         {cases.map((c, i) => (
           <motion.div 
             key={c.id} 
             animate={{ 
-              boxShadow: ["0px 0px 0px 0px rgba(16, 185, 129, 0)", "0px 0px 0px 6px rgba(16, 185, 129, 0.4)", "0px 0px 0px 0px rgba(16, 185, 129, 0)"]
+              boxShadow: ["0px 0px 0px 0px rgba(16, 185, 129, 0)", "0px 0px 0px 4px rgba(16, 185, 129, 0.3)", "0px 0px 0px 0px rgba(16, 185, 129, 0)"]
             }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            className="shrink-0 w-[88%] max-w-[340px] snap-center rounded-[2.5rem] relative overflow-hidden transition-transform duration-300 border-[3px] border-emerald-400/50"
+            className="shrink-0 w-[88%] max-w-[340px] h-full max-h-[500px] snap-center rounded-[2.5rem] relative overflow-hidden transition-transform duration-300 border-2 border-emerald-400/40"
           >
             {/* Background Gradient */}
             <div className={`absolute inset-0 bg-gradient-to-br ${c.color} opacity-90`} />
             
             {/* Clinical Badge */}
-            <div className="absolute top-5 left-5 z-20 bg-emerald-500 text-white text-[0.75rem] font-bold px-3 py-1.5 rounded-full flex items-center gap-2 shadow-lg">
+            <div className="absolute top-5 right-5 z-20 bg-emerald-500 text-white text-[0.75rem] font-bold px-3 py-1.5 rounded-full flex items-center gap-2 shadow-lg">
               <span className="w-2 h-2 bg-white rounded-full animate-ping"></span>
               דוגמה קלינית
             </div>
@@ -72,14 +72,8 @@ export default function ClinicalCarouselReel() {
           </motion.div>
         ))}
         
-        {/* Padding end */}
+      {/* Padding end */}
         <div className="shrink-0 w-4 h-full" />
-      </div>
-
-      {/* Helper text */}
-      <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex items-center gap-2 text-slate-400 text-xs font-bold uppercase tracking-widest">
-        <span>החלק ימינה</span>
-        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
       </div>
 
       <style dangerouslySetInnerHTML={{__html: `

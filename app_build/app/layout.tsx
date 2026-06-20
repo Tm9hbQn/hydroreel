@@ -19,11 +19,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="he" dir="rtl">
+    <html lang="he" dir="rtl" className="snap-y snap-mandatory scroll-smooth">
       <body className={`${rubik.className} antialiased bg-slate-50 text-slate-900 selection:bg-blue-200`}>
-        <main className="w-full h-[100dvh] overflow-hidden">
-          {children}
-        </main>
+        {children}
       </body>
     </html>
   );
