@@ -6,7 +6,6 @@ const cases = [
   {
     id: 1,
     title: "תסמונת POTS",
-    subtitle: "חליפת G-Suit טבעית",
     description: "תסמונת POTS (Postural Orthostatic Tachycardia Syndrome) מתאפיינת בעלייה חריגה בדופק בעת מעבר לעמידה, בגלל הצטברות דם ברגליים. המים משמשים כחליפת לחץ טבעית: הלחץ ההידרוסטטי סוחט את הדם חזרה ללב, מונע את הצטברותו (Venous Pooling) ומאפשר אימון בעמידה ללא טכיקרדיה קיצונית.",
     color: "from-purple-500 to-indigo-600",
     icon: "🫀"
@@ -14,7 +13,6 @@ const cases = [
   {
     id: 2,
     title: "הפחתת בצקות",
-    subtitle: "חוק סטארלינג",
     description: "בצקת נוצרת מהצטברות נוזלים בחלל הבין-תאי. הלחץ ההידרוסטטי של המים פועל מבחוץ פנימה, מנגד את יציאת הנוזלים מהנימים, ודוחק את הנוזל העודף חזרה לדרכי הלימפה והוורידים (על פי חוק סטארלינג).",
     color: "from-blue-400 to-cyan-500",
     icon: "💧"
@@ -22,7 +20,6 @@ const cases = [
   {
     id: 3,
     title: "החזר ורידי משופר",
-    subtitle: "אי-ספיקה ורידית",
     description: "באי-ספיקה ורידית, מסתמי הוורידים מתקשים למנוע דליפת דם אחורה (Reflux). הלחץ בסביבת המים מקטין פיזית את קוטר הוורידים. הקטנת הקוטר מגבירה את מהירות הזרימה ומסייעת למסתמים להיסגר ולמנוע דליפה.",
     color: "from-emerald-400 to-teal-500",
     icon: "🩸"
@@ -58,14 +55,11 @@ export default function ClinicalCarouselReel() {
               דוגמה קלינית
             </div>
 
-            {/* Glass Content */}
-            <div className="absolute inset-2 mt-12 bg-white/10 backdrop-blur-xl rounded-[1.8rem] border border-white/20 p-5 flex flex-col text-white overflow-y-auto hide-scrollbar">
-              <div className="text-4xl mb-3 drop-shadow-md shrink-0">{c.icon}</div>
-              <h3 className="text-xl font-black mb-1 shrink-0">{c.title}</h3>
-              <div className="text-white/80 font-medium text-xs mb-3 inline-block bg-black/20 px-3 py-1 rounded-full self-start shrink-0">
-                {c.subtitle}
-              </div>
-              <p className="text-white/95 leading-relaxed font-medium text-[0.95rem] pb-2 shrink-0">
+            {/* Content directly on card, no inner glass layer, with custom scrollbar */}
+            <div className="relative z-10 w-full h-full px-6 pt-16 pb-2 flex flex-col text-white overflow-y-auto custom-scrollbar">
+              <div className="text-5xl mb-2 drop-shadow-md shrink-0">{c.icon}</div>
+              <h3 className="text-2xl font-black mb-3 shrink-0 drop-shadow-md">{c.title}</h3>
+              <p className="text-white/95 leading-relaxed font-medium text-[1.05rem] pb-4 shrink-0 drop-shadow-sm">
                 {c.description}
               </p>
             </div>
@@ -79,6 +73,11 @@ export default function ClinicalCarouselReel() {
       <style dangerouslySetInnerHTML={{__html: `
         .hide-scrollbar::-webkit-scrollbar { display: none; }
         .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        .custom-scrollbar::-webkit-scrollbar { width: 5px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.4); border-radius: 10px; }
+        .custom-scrollbar { scrollbar-width: thin; scrollbar-color: rgba(255, 255, 255, 0.4) transparent; }
       `}} />
     </div>
   );
