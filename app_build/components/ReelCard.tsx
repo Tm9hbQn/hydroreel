@@ -22,10 +22,10 @@ export default function ReelCard({ title, text, visual_trigger_id, layout = 'top
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="w-full z-10 px-6 pt-16 pb-4 flex flex-col"
+        className="w-full z-10 px-6 pt-8 pb-2 flex flex-col"
       >
-        <div className="relative inline-block mb-4 self-start">
-          <h2 className="text-4xl font-extrabold text-slate-900 tracking-tight font-sans relative z-10" dir="rtl">
+        <div className="relative inline-block mb-3 self-start">
+          <h2 className="text-5xl md:text-6xl font-extrabold text-slate-900 tracking-tight font-sans relative z-10" dir="rtl">
             {title}
           </h2>
           {/* Animated Highlight Underline */}
@@ -33,7 +33,7 @@ export default function ReelCard({ title, text, visual_trigger_id, layout = 'top
             initial={{ width: 0 }}
             whileInView={{ width: "100%" }}
             transition={{ duration: 0.7, delay: 0.3, ease: "circOut" }}
-            className="absolute bottom-1 left-0 h-3 bg-blue-300/60 -z-0 rounded-full"
+            className="absolute bottom-1 left-0 h-4 bg-blue-300/60 -z-0 rounded-full"
           />
         </div>
         
@@ -43,7 +43,7 @@ export default function ReelCard({ title, text, visual_trigger_id, layout = 'top
       </motion.div>
 
       {/* Visual / Simulation Area - Takes the remaining space */}
-      <div className="flex-1 w-full flex justify-center items-center relative z-0">
+      <div className="flex-1 w-full flex justify-center items-start pt-2 pb-12 relative z-0">
         <AnimationRenderer triggerId={visual_trigger_id} />
       </div>
       

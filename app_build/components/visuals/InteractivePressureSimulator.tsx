@@ -21,7 +21,7 @@ export default function InteractivePressureSimulator() {
     <div className="w-full h-full flex flex-col items-center justify-center relative p-4" dir="rtl">
       
       {/* Simulation Area - removed overflow-hidden so tooltips can render outside */}
-      <div className="relative w-full max-w-[280px] h-96 bg-white/60 rounded-3xl shadow-xl border border-white/50 flex items-end justify-center mb-8 backdrop-blur-md">
+      <div className="relative w-full max-w-[280px] h-[45vh] min-h-[250px] max-h-[350px] bg-white/60 rounded-3xl shadow-xl border border-white/50 flex items-end justify-center mb-4 backdrop-blur-md">
         
         {/* Background Grid */}
         <div className="absolute inset-0 opacity-[0.03] rounded-3xl overflow-hidden" style={{ backgroundImage: 'radial-gradient(#000 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>

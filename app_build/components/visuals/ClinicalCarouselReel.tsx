@@ -7,23 +7,23 @@ const cases = [
     id: 1,
     title: "תסמונת POTS",
     subtitle: "חליפת G-Suit טבעית",
-    description: "תרפיה אקוואטית משמשת כלי שיקומי מוביל ל-POTS. הלחץ ההידרוסטטי לוחץ על הגפיים ומונע הצטברות דם ורידי (Venous Pooling), ומאפשר אימון בעמידה ללא טכיקרדיה קיצונית.",
+    description: "תסמונת POTS (Postural Orthostatic Tachycardia Syndrome) מתאפיינת בעלייה חריגה בדופק בעת מעבר לעמידה, בגלל הצטברות דם ברגליים. המים משמשים כחליפת לחץ טבעית: הלחץ ההידרוסטטי סוחט את הדם חזרה ללב, מונע את הצטברותו (Venous Pooling) ומאפשר אימון בעמידה ללא טכיקרדיה קיצונית.",
     color: "from-purple-500 to-indigo-600",
     icon: "🫀"
   },
   {
     id: 2,
     title: "הפחתת בצקות",
-    subtitle: "משוואת סטארלינג",
-    description: "הלחץ דוחק את הנוזל האינטרסטיציאלי חזרה לנימי הלימפה והוורידים. העלייה בלחץ ההידרוסטטי החיצוני מנגדת יציאת נוזלים מהנימים ומעודדת ספיגה מחדש לפי חוק סטארלינג.",
+    subtitle: "חוק סטארלינג",
+    description: "בצקת נוצרת מהצטברות נוזלים בחלל הבין-תאי. הלחץ ההידרוסטטי של המים פועל מבחוץ פנימה, מנגד את יציאת הנוזלים מהנימים, ודוחק את הנוזל העודף חזרה לדרכי הלימפה והוורידים (על פי חוק סטארלינג).",
     color: "from-blue-400 to-cyan-500",
     icon: "💧"
   },
   {
     id: 3,
     title: "החזר ורידי משופר",
-    subtitle: "עקרון הרציפות",
-    description: "מפל הלחצים מקטין את קוטר הוורידים. הקטנת הקוטר מגבירה את מהירות הזרימה ומסייעת למסתמים במניעת דליפה אחורה (Reflux) בסובלים מאי-ספיקה ורידית.",
+    subtitle: "אי-ספיקה ורידית",
+    description: "באי-ספיקה ורידית, מסתמי הוורידים מתקשים למנוע דליפת דם אחורה (Reflux). הלחץ בסביבת המים מקטין פיזית את קוטר הוורידים. הקטנת הקוטר מגבירה את מהירות הזרימה ומסייעת למסתמים להיסגר ולמנוע דליפה.",
     color: "from-emerald-400 to-teal-500",
     icon: "🩸"
   }
@@ -33,33 +33,43 @@ export default function ClinicalCarouselReel() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div className="w-full h-[500px] flex items-center relative" dir="rtl">
+    <div className="w-full h-full flex items-center justify-center relative" dir="rtl">
       
       {/* Scrollable Container */}
       <div 
         ref={containerRef}
-        className="w-full h-full overflow-x-auto flex snap-x snap-mandatory hide-scrollbar pt-10 pb-10 px-6 gap-6 items-center"
+        className="w-full h-full flex-1 overflow-x-auto flex snap-x snap-mandatory hide-scrollbar pt-6 pb-6 px-6 gap-6 items-stretch"
       >
         {cases.map((c, i) => (
-          <div 
+          <motion.div 
             key={c.id} 
-            className="shrink-0 w-[85%] max-w-[320px] h-[380px] snap-center rounded-[2rem] relative overflow-hidden shadow-2xl transition-transform duration-300"
+            animate={{ 
+              boxShadow: ["0px 0px 0px 0px rgba(16, 185, 129, 0)", "0px 0px 0px 6px rgba(16, 185, 129, 0.4)", "0px 0px 0px 0px rgba(16, 185, 129, 0)"]
+            }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            className="shrink-0 w-[88%] max-w-[340px] snap-center rounded-[2.5rem] relative overflow-hidden transition-transform duration-300 border-[3px] border-emerald-400/50"
           >
             {/* Background Gradient */}
             <div className={`absolute inset-0 bg-gradient-to-br ${c.color} opacity-90`} />
             
+            {/* Clinical Badge */}
+            <div className="absolute top-5 left-5 z-20 bg-emerald-500 text-white text-[0.75rem] font-bold px-3 py-1.5 rounded-full flex items-center gap-2 shadow-lg">
+              <span className="w-2 h-2 bg-white rounded-full animate-ping"></span>
+              דוגמה קלינית
+            </div>
+
             {/* Glass Content */}
-            <div className="absolute inset-1 bg-white/10 backdrop-blur-xl rounded-[1.8rem] border border-white/20 p-6 flex flex-col text-white">
+            <div className="absolute inset-2 mt-14 bg-white/10 backdrop-blur-xl rounded-[2rem] border border-white/20 p-6 flex flex-col text-white">
               <div className="text-5xl mb-4 drop-shadow-md">{c.icon}</div>
               <h3 className="text-2xl font-black mb-1">{c.title}</h3>
               <div className="text-white/80 font-medium text-sm mb-4 inline-block bg-black/20 px-3 py-1 rounded-full self-start">
                 {c.subtitle}
               </div>
-              <p className="text-white/95 leading-relaxed font-medium text-[0.95rem] mt-auto">
+              <p className="text-white/95 leading-relaxed font-medium text-[1.05rem] mt-auto">
                 {c.description}
               </p>
             </div>
-          </div>
+          </motion.div>
         ))}
         
         {/* Padding end */}
