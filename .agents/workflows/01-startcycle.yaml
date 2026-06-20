@@ -1,0 +1,25 @@
+name: hydro-reels-orchestration  
+description: Trigger the master hierarchical loop for content analysis and UI generation.  
+workflow_pattern: hierarchical_supervisor  
+timeout_limits: "3 iterations per node max to prevent infinite ReAct looping"
+
+states:  
+  - state_id: INIT  
+    action: "Supervisor explicitly reads projectbrief.md and activeContext.md."  
+    transition: PLANNING_PHASE
+
+  - state_id: PLANNING_PHASE  
+    action: "Supervisor passes context to Planner Agent to decompose the learning module into distinct clinical research requirements and UI visual needs."  
+    transition: PARALLEL_EXECUTION
+
+  - state_id: PARALLEL_EXECUTION  
+    branches:  
+      - process_clinical_data: "Activate Clinical Content Director (02-hydro-content-processor.yaml)"  
+      - scaffold_ui_components: "Activate Creative UI/UX Engineer (03-reels-ui-builder.yaml)"  
+    synchronization_barrier: "Wait for both agents to emit 'TASK_COMPLETE' signals."  
+    transition: VIGIL_INSPECTION
+
+  - state_id: VIGIL_INSPECTION  
+    action: "Pass compiled app_build/ to QA & VIGIL Agent to identify Thorns or layout breaks."  
+    if_failure: "Generate autonomous code patch and restart PARALLEL_EXECUTION."  
+    if_success: "Generate Walkthrough Artifact and update progress.md."

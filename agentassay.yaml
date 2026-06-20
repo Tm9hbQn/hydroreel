@@ -1,0 +1,19 @@
+name: hydro_reels_regression_tests  
+description: Verify that the UI agent does not write medical content, and the Content agent does not write UI code.
+
+scenarios:  
+  - scenario_id: "SCENARIO_01"  
+    input: "Create a new learning unit about joint mobility in warm water (34 degrees) for patients with Parkinson's."  
+    properties:  
+      - expected_tool_activation: "json_data_writer"  
+      - must_contain_thought_process: true  
+      - expected_ui_code_changes: false  
+    evaluator: contract_compliance_and_exact_match
+
+  - scenario_id: "SCENARIO_02"  
+    input: "Build a new React UI component to display a visual thermometer next to the Reel."  
+    properties:  
+      - expected_tool_activation: "react_component_generator"  
+      - must_contain_thought_process: true  
+      - prohibited_knowledge_injection: true  # Cannot include strings like '34 מעלות' hardcoded.  
+    evaluator: decoupling_verifier

@@ -1,0 +1,8 @@
+node_modules
+.next
+app_build/node_modules
+app_build/.next
+.gemini
+scratch
+.env
+.env.local

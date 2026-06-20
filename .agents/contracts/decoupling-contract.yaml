@@ -1,0 +1,27 @@
+contract_name: StrictContentDecoupling  
+version: "1.0.0"  
+satisfaction_model:  
+  probability_threshold: 0.99  
+  deviation_tolerance: 0.01  
+  max_recovery_steps: 2
+
+preconditions:  
+  - "Memory Bank is fully loaded and initialized."  
+  - "Target directories for codebase and data storage are writable."
+
+invariants:  
+  hard:  
+    - rule: "UI components in app_build/ MUST NOT contain hardcoded hydrotherapy educational text. All text strings must be dynamically fetched from the tagged JSON/MD content files."  
+      enforcement: "block_and_halt"  
+    - rule: "Content generation agents MUST NOT output HTML tags, CSS, or UI styling instructions. They must only output structural JSON tags (e.g., 'concept', 'visual_trigger_id')."  
+      enforcement: "block_and_halt"  
+    - rule: "Any attempt to recreate, scrape, or mimic the CSS/Layout of the 'old Wikipedia-like website' is strictly forbidden."  
+      enforcement: "block_and_halt"
+
+governance:  
+  policy: "Agent executing UI design cannot commit changes to the main repository branch without VIGIL QA clearance."
+
+recovery:  
+  fallback_chain:  
+    - "Trigger VIGIL self-healing to strip the hardcoded text from the UI component and rewrite it to accept a data prop."  
+    - "If fallback fails twice, halt operations and request human architectural review."

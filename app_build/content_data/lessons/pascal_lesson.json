@@ -1,0 +1,26 @@
+{
+  "lesson_id": "hydrodynamics_pascal",
+  "topic": "מפל הלחצים ההידרוסטטי",
+  "metadata": {
+    "target_audience": "Hydrotherapy Students",
+    "clinical_focus": "Physics & Physiology"
+  },
+  "bites": [
+    {
+      "bite_id": "hydro_grad_1",
+      "type": "interactive_simulation",
+      "title": "הגרדיאנט ההידרוסטטי",
+      "text": "הלחץ ההידרוסטטי אינו אחיד, הוא עולה עם העומק ויוצר מפל לחצים. לחץ זה (P=ρgh) סוחט נוזלים ודם מהפריפריה למרכז, תופעה המכונה 'הסטת דם מרכזית' (Central Blood Shift).",
+      "visual_trigger_id": "InteractivePressureSimulator",
+      "layout": "top_text"
+    },
+    {
+      "bite_id": "hydro_grad_clinical",
+      "type": "clinical_application",
+      "title": "יישומים קליניים של הלחץ",
+      "text": "הבנת משוואת הלחץ מאפשרת ניצול קליני אדיר. החלק ימינה כדי לראות כיצד מפל הלחצים מיושם בטיפול בסוגים שונים של פתולוגיות.",
+      "visual_trigger_id": "ClinicalCarouselReel",
+      "layout": "top_text"
+    }
+  ]
+}

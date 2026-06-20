@@ -1,0 +1,18 @@
+{  
+  "lesson_id": "hydrodynamics_pascal",  
+  "topic": "Pascal's Principle",  
+  "metadata": {  
+    "target_audience": "Hydrotherapy Students",  
+    "clinical_focus": "Orthopedic Rehabilitation"  
+  },  
+  "bites": [  
+    {  
+      "bite_id": "b1",  
+      "type": "physics_principle",  
+      "title": "מפל הלחצים של פסקל",  
+      "text": "לחץ המים במצב סטטי גדל באופן יחסי ככל שמעמיקים. הלחץ מופעל מכל הכיוונים על הגוף באופן שווה.",  
+      "visual_trigger_id": "animation_pascal_arrows_3d",  
+      "clinical_application": "יצירת לחץ הידרוסטטי המסייע בהורדת בצקות בגפיים התחתונות לאחר ניתוחים אורתופדיים."  
+    }  
+  ]  
+}
