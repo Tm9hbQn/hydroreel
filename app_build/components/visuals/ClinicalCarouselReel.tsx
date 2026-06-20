@@ -59,13 +59,13 @@ export default function ClinicalCarouselReel() {
             </div>
 
             {/* Glass Content */}
-            <div className="absolute inset-2 mt-14 bg-white/10 backdrop-blur-xl rounded-[2rem] border border-white/20 p-6 flex flex-col text-white">
-              <div className="text-5xl mb-4 drop-shadow-md">{c.icon}</div>
-              <h3 className="text-2xl font-black mb-1">{c.title}</h3>
-              <div className="text-white/80 font-medium text-sm mb-4 inline-block bg-black/20 px-3 py-1 rounded-full self-start">
+            <div className="absolute inset-2 mt-12 bg-white/10 backdrop-blur-xl rounded-[1.8rem] border border-white/20 p-5 flex flex-col text-white overflow-y-auto hide-scrollbar">
+              <div className="text-4xl mb-3 drop-shadow-md shrink-0">{c.icon}</div>
+              <h3 className="text-xl font-black mb-1 shrink-0">{c.title}</h3>
+              <div className="text-white/80 font-medium text-xs mb-3 inline-block bg-black/20 px-3 py-1 rounded-full self-start shrink-0">
                 {c.subtitle}
               </div>
-              <p className="text-white/95 leading-relaxed font-medium text-[1.05rem] mt-auto">
+              <p className="text-white/95 leading-relaxed font-medium text-[0.95rem] pb-2 shrink-0">
                 {c.description}
               </p>
             </div>

@@ -43,7 +43,7 @@ export default function ReelCard({ title, text, visual_trigger_id, layout = 'top
       </motion.div>
 
       {/* Visual / Simulation Area - Takes the remaining space */}
-      <div className="flex-1 w-full flex justify-center items-start pt-2 relative z-0 overflow-visible min-h-0">
+      <div className="flex-1 w-full flex justify-center items-stretch pt-2 relative z-0 overflow-visible min-h-0">
         <AnimationRenderer triggerId={visual_trigger_id} />
       </div>
 
