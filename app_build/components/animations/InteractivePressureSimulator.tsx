@@ -40,25 +40,25 @@ export default function InteractivePressureSimulator() {
             
             return (
               <div key={i} className="absolute w-full flex justify-between items-center" style={{ bottom: `${(p.height / 1.8) * 100}%` }}>
-                {/* Left Arrow */}
+                {/* Left Arrow (pointing right, into the person) */}
                 {isActive && (
                   <motion.div 
                     layout="position"
-                    className="absolute right-full mr-2 h-1.5 bg-blue-600 flex items-center justify-end rounded-l-full"
-                    style={{ width: arrowWidth }}
-                  >
-                    <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-r-[10px] border-blue-600 -ml-1" />
-                  </motion.div>
-                )}
-                
-                {/* Right Arrow */}
-                {isActive && (
-                  <motion.div 
-                    layout="position"
-                    className="absolute left-full ml-2 h-1.5 bg-blue-600 flex items-center justify-start rounded-r-full"
+                    className="absolute right-full mr-2 h-1.5 bg-blue-600 flex items-center justify-start rounded-l-full"
                     style={{ width: arrowWidth }}
                   >
                     <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-l-[10px] border-blue-600 -mr-1" />
+                  </motion.div>
+                )}
+                
+                {/* Right Arrow (pointing left, into the person) */}
+                {isActive && (
+                  <motion.div 
+                    layout="position"
+                    className="absolute left-full ml-2 h-1.5 bg-blue-600 flex items-center justify-end rounded-r-full"
+                    style={{ width: arrowWidth }}
+                  >
+                    <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-r-[10px] border-blue-600 -ml-1" />
                   </motion.div>
                 )}
 
@@ -89,21 +89,24 @@ export default function InteractivePressureSimulator() {
       </div>
 
       {/* Slider Control */}
-      <div className="w-full max-w-xs bg-white p-5 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 shrink-0">
-        <label className="flex justify-between items-center mb-3">
-          <span className="text-sm font-bold text-slate-800">גובה פני המים</span>
-          <span className="text-blue-600 font-mono font-bold bg-blue-50 px-2 py-1 rounded-md text-sm">{waterHeight.toFixed(1)}m</span>
+      <div className="w-full max-w-xs bg-white p-6 rounded-3xl shadow-xl border-2 border-blue-100 shrink-0 relative overflow-hidden group">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-transparent opacity-50"></div>
+        <label className="flex justify-between items-center mb-4 relative z-10">
+          <span className="text-base font-extrabold text-slate-800 tracking-tight">שלוט בגובה המים</span>
+          <span className="text-blue-700 font-black bg-white px-3 py-1.5 rounded-lg shadow-sm border border-blue-100 text-sm">{waterHeight.toFixed(1)}m</span>
         </label>
-        <input 
-          type="range" 
-          min="0" 
-          max="1.8" 
-          step="0.1" 
-          value={waterHeight} 
-          onChange={(e) => setWaterHeight(parseFloat(e.target.value))}
-          className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600"
-          dir="ltr"
-        />
+        <div className="relative z-10 pt-2 pb-1">
+          <input 
+            type="range" 
+            min="0" 
+            max="1.8" 
+            step="0.1" 
+            value={waterHeight} 
+            onChange={(e) => setWaterHeight(parseFloat(e.target.value))}
+            className="w-full h-3 bg-slate-200 rounded-full appearance-none cursor-pointer accent-blue-600 hover:accent-blue-500 transition-all focus:outline-none focus:ring-4 focus:ring-blue-500/30 shadow-inner"
+            dir="ltr"
+          />
+        </div>
       </div>
 
     </div>

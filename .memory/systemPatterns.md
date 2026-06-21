@@ -49,6 +49,10 @@
 * **Scroll Snapping Pattern:** בניית מעטפת התומכת באפקט החלקה. רכיב האב יוגדר עם מחלקות `overflow-y-scroll snap-y snap-mandatory h-screen`. כל רכיב ילד (Reel Card) יוגדר כ-`snap-start h-screen w-full flex flex-col`.  
 * **Dumb Components:** קומפוננטות ה-UI לא יכילו מידע קשה (Hardcoded). הן יוגדרו כמקבלות `Props` של אובייקט ה-`bite`.   
 * **Dynamic Animation Binding (Registry Pattern):** ה-UI יעשה שימוש ברכיב מתווך (`AnimationFactory`) אשר יקרא את המחרוזת מהשדה `visual_trigger` (למשל `animation_archimedes_vectors`). ה-Factory פועל כ-Registry ויטען באופן דינמי קומפוננטות SVG/Framer Motion ייעודיות מתיקיית `animations/`. במידה והאנימציה טרם פותחה, הוא ירנדר `FallbackAnimation` גנרי.
+* **UI Micro-Aesthetics & Collision Avoidance (מניעת התנגשויות ויזואליות):** בכל הוספת אלמנט UI (לדוגמה: Sticky Header, תגית, כפתור או סליידר) על הסוכן לנתח ולחשב את מרחב המחיה של האלמנט. 
+  - חובה לוודא שאין חפיפה או הסתרה של טקסטים או תגיות.
+  - יש להגדיר שכבות ברורות (`z-index`) וריווח מונע התנגשויות (כמו `pt-24` להרחקה מכותרות קפואות).
+  - כל סליידר, כפתור או אלמנט אינטראקטיבי חייב להיות נגיש, בולט ("מגניב"), ולספק פידבק ויזואלי ברור ברמת המיקרו.
 
 ## 4. מעקב מלאי אנימציות (Animation Triggers Backlog)
 קיימים בסך הכל 22 טריגרים ויזואליים שנוצרו במהלך המרת יחידות 1 ו-2 (11 לכל יחידה).
