@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "app_build/AGENTS.md",
+                "file": ".agents/design_and_pedagogy_principles.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "AGENTS"
+              "title": "design_and_pedagogy_principles"
             }
           }
         ]
@@ -183,23 +183,25 @@
       "bases:צור בסיס חדש": false
     }
   },
-  "active": "2979d1cf9f1581c8",
+  "active": "181b8a83260b0e73",
   "lastOpenFiles": [
-    "app_build/.next/dev/cache/turbopack/f37fad94/00000946.sst",
-    "app_build/.next/dev/logs/next-development.log",
-    "app_build/.next/dev/server/app/_not-found/page/react-loadable-manifest.json",
-    "app_build/.next/dev/server/app/_not-found/page/next-font-manifest.json",
-    "app_build/.next/dev/server/app/_not-found/page/build-manifest.json",
-    "app_build/.next/dev/server/app/_not-found/page/server-reference-manifest.json",
-    "app_build/.next/dev/server/app/_not-found/page/app-paths-manifest.json",
-    "app_build/.next/dev/server/app/page/server-reference-manifest.json",
-    "app_build/.next/dev/server/app/page/react-loadable-manifest.json",
-    "app_build/.next/dev/server/app/page/build-manifest.json",
-    "app_build/.next/dev/server/app/page/next-font-manifest.json",
+    ".git/objects/f7/f0f155580e07df4b0252dc1cbf6d532cd45da9",
+    ".git/objects/f7",
+    ".git/objects/28/e5a61a10f8151b0801586400f2ebd7910108f2",
+    ".git/objects/4f/872902daaac0e8f02bd947f99e3c32780f629c",
+    ".git/objects/4f/b5da87f995d5c74f8eaf544a54d1a48fd0fd44",
+    ".git/objects/4f",
+    ".git/objects/b6/fdbd9924747815116157abc93e714006e6837f",
+    ".git/objects/89/0a189daa0cc29fb0b76bcfccfa34cafe67ee41",
+    ".git/objects/73/ca6202c143838f0ca11d3fb2daf9f254b8a7ef",
+    ".git/objects/92/fc0359e283cb4fa9fc12dd59632516bd72306a",
+    ".git/objects/5f/2a67440e1da6cd83894f3791931f2a73834d16",
+    ".agents/personas/03_creative_ui_ux_engineer.md",
+    ".agents/personas/02_clinical_content_director.md",
+    ".agents/design_and_pedagogy_principles.md",
+    "app_build/AGENTS.md",
     "app_build/public/cg_cb_balance.png",
     ".agents/personas/04_vigil_qa_governance.md",
-    ".agents/personas/02_clinical_content_director.md",
-    ".agents/personas/03_creative_ui_ux_engineer.md",
     ".agents/personas/00_conversation_supervisor.md",
     ".agents/personas/01_task_planner.md",
     ".memory/walkthrough.md",
@@ -210,11 +212,9 @@
     ".memory/activeContext.md",
     ".memory/productContext.md",
     ".memory/changelog.md",
-    ".agents/design_and_pedagogy_principles.md",
     ".agents/AGENTS.md",
     "app_build/node_modules/eslint-plugin-jsx-a11y/README.md",
     "בניית תשתית מלאה לסוכני AI.md",
-    "app_build/AGENTS.md",
     "app_build/CLAUDE.md",
     "app_build/node_modules/eslint-plugin-jsx-a11y/docs/rules/scope.md",
     "app_build/node_modules/eslint-plugin-jsx-a11y/docs/rules/tabindex-no-positive.md",
