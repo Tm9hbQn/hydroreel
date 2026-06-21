@@ -1,5 +1,6 @@
 "use client";
 import React from 'react';
+import { motion } from 'framer-motion';
 import AnimationFactory from '../AnimationFactory';
 
 export interface ClinicalCaseBite {
@@ -17,35 +18,60 @@ interface Props {
 
 export default function ClinicalCaseCard({ bite }: Props) {
   return (
-    <div className="snap-start h-screen w-full flex flex-col items-center justify-center bg-gradient-to-b from-blue-950 to-slate-900 text-white p-6 font-sans">
-      <div className="w-full max-w-sm rounded-3xl bg-blue-900/30 backdrop-blur-xl border border-blue-400/20 shadow-[0_0_40px_rgba(30,58,138,0.3)] overflow-hidden flex flex-col h-[85vh]">
-        
-        {/* Hero Image/Animation Area */}
-        <div className="h-48 bg-slate-800/50 flex flex-col items-center justify-center relative overflow-hidden">
-          <AnimationFactory triggerId={bite.visual_trigger} />
-          <div className="absolute top-4 right-4 bg-red-500/20 text-red-200 text-xs px-3 py-1 rounded-full border border-red-500/30 backdrop-blur-md z-10 shadow-lg">
-            Clinical Case
-          </div>
+    <section className="snap-start h-[100dvh] w-full flex flex-col relative overflow-hidden bg-[#fafcff] pb-16">
+      
+      {/* Badge */}
+      <div className="absolute top-6 left-6 z-20 bg-emerald-500 text-white text-[0.8rem] font-bold px-3 py-1.5 rounded-full flex items-center gap-2 shadow-lg">
+        <span className="w-2 h-2 bg-white rounded-full animate-ping"></span>
+        דוגמה קלינית
+      </div>
+
+      {/* Content Area */}
+      <motion.div 
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="w-full z-10 px-6 pt-16 pb-2 flex flex-col shrink-0"
+      >
+        <div className="relative inline-block mb-3 self-start">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight font-sans relative z-10" dir="rtl">
+            {bite.title}
+          </h2>
+          <motion.div 
+            initial={{ width: 0 }}
+            whileInView={{ width: "100%" }}
+            transition={{ duration: 0.7, delay: 0.3, ease: "circOut" }}
+            className="absolute bottom-1 left-0 h-4 bg-emerald-300/60 -z-0 rounded-full"
+          />
         </div>
         
-        {/* Content Body */}
-        <div className="p-6 flex flex-col flex-1">
-          <h2 className="text-3xl font-semibold text-white mb-6 leading-tight">{bite.title}</h2>
-          <div className="bg-white/5 rounded-2xl p-5 mb-4 border border-white/10 flex-1">
-            <p className="text-lg text-blue-50 leading-relaxed font-light">{bite.content}</p>
+        <p className="text-slate-700 text-[1.15rem] leading-relaxed font-medium" dir="rtl">
+          {bite.content}
+        </p>
+        
+        {bite.clinical_highlight && (
+          <div className="mt-4 p-4 rounded-xl bg-emerald-50 border border-emerald-100 text-sm text-slate-800 font-medium shadow-sm" dir="rtl">
+            <span className="block text-xs uppercase tracking-wider text-emerald-600 mb-1">הערת טיפול</span>
+            {bite.clinical_highlight}
           </div>
-          
-          {bite.clinical_highlight && (
-            <div className="p-4 rounded-xl bg-gradient-to-r from-blue-600/20 to-teal-500/20 border border-blue-400/30 shadow-inner">
-              <div className="flex items-center gap-2 mb-2">
-                <div className="w-2 h-2 rounded-full bg-teal-400 animate-pulse"></div>
-                <span className="text-xs uppercase tracking-wider text-teal-200 font-semibold">Treatment Note</span>
-              </div>
-              <p className="text-sm text-teal-50 leading-normal">{bite.clinical_highlight}</p>
-            </div>
-          )}
+        )}
+      </motion.div>
+
+      {/* Visual / Simulation Area */}
+      <div className="flex-1 w-full flex justify-center items-stretch pt-2 relative z-0 overflow-visible min-h-0">
+        <AnimationFactory triggerId={bite.visual_trigger} />
+      </div>
+
+      {/* Dead space at the bottom */}
+      <div className="absolute bottom-0 w-full h-16 flex flex-col justify-end items-center pb-4 z-20 pointer-events-none">
+        <div className="animate-bounce flex flex-col items-center opacity-50">
+          <span className="text-[10px] font-bold tracking-widest uppercase text-slate-400">החלק למעלה</span>
+          <div className="mt-1 w-5 h-8 border-2 border-slate-300 rounded-full flex justify-center pt-1">
+            <div className="w-1 h-2 bg-slate-300 rounded-full animate-ping"></div>
+          </div>
         </div>
       </div>
-    </div>
+      
+    </section>
   );
 }

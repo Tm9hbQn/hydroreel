@@ -2,7 +2,7 @@
 import React from 'react';
 
 import ArchimedesVectors from './animations/ArchimedesVectors';
-import PascalLaw from './animations/PascalLaw';
+import InteractivePressureSimulator from './animations/InteractivePressureSimulator';
 import DragEquation from './animations/DragEquation';
 import MetacentricTorque from './animations/MetacentricTorque';
 import FallbackAnimation from './animations/FallbackAnimation';
@@ -13,7 +13,7 @@ interface Props {
 
 const animationRegistry: Record<string, React.ComponentType<any>> = {
   'animation_archimedes_vectors': ArchimedesVectors,
-  'animation_pascal_law': PascalLaw,
+  'animation_pascal_law': InteractivePressureSimulator,
   'animation_drag_equation': DragEquation,
   'animation_metacentric_torque': MetacentricTorque,
 };

@@ -43,15 +43,21 @@ export default function ArchimedesVectors() {
       </motion.div>
 
       {/* Bubbles */}
-      {[...Array(5)].map((_, i) => (
-        <motion.div
-          key={i}
-          className="absolute w-3 h-3 bg-white/50 rounded-full"
-          initial={{ y: 200, x: Math.random() * 100 - 50, opacity: 0 }}
-          animate={{ y: -200, opacity: [0, 1, 0] }}
-          transition={{ duration: 2 + Math.random() * 2, repeat: Infinity, delay: Math.random() * 2 }}
-        />
-      ))}
+      {[...Array(5)].map((_, i) => {
+        // Deterministic values based on index to prevent SSR hydration mismatch
+        const xPos = (i * 25) - 50; 
+        const dur = 2 + (i % 3);
+        const del = i * 0.4;
+        return (
+          <motion.div
+            key={i}
+            className="absolute w-3 h-3 bg-white/50 rounded-full"
+            initial={{ y: 200, x: xPos, opacity: 0 }}
+            animate={{ y: -200, opacity: [0, 1, 0] }}
+            transition={{ duration: dur, repeat: Infinity, delay: del }}
+          />
+        );
+      })}
     </div>
   );
 }

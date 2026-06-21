@@ -55,3 +55,9 @@ At the end of every session or meaningful step, you MUST include the following t
 * Ensure all imports are correct, no case-sensitivity issues, no missing dependencies.
 * Run `npm run build` locally before concluding any major features to catch build errors early.
 * Strict TS and ESLint rules must not block deployment; provide clean code.
+
+## **8. GitHub Synchronization**
+
+* At the end of every session, after all code changes are verified, you MUST automatically push the changes to GitHub.
+* Execute `git add .`, `git commit -m "..."`, and `git push` directly.
+* In your final message to the user, you MUST explicitly declare that the environment has been synchronized to GitHub and that the push was successful.
