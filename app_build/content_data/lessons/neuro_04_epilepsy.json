@@ -1,0 +1,24 @@
+{  
+  "lesson_id": "neuro_04_epilepsy",  
+  "lesson_title": "אפילפסיה ובטיחות במים",  
+  "bites": [  
+    {  
+      "bite_id": "b001",  
+      "type": "principle_card",  
+      "sequence_title": "אפילפסיה בסביבת מים",
+      "visual_trigger": "animation_epilepsy_risk_management",  
+      "title": "מגישת התווית נגד לניהול סיכונים",  
+      "content": "בעבר, אפילפסיה נחשבה להתווית נגד מוחלטת. כיום, גישת ה-ILAE מאפשרת השתתפות עם השגחה צמודה (1:1), אמצעי ציפה והימנעות מעייפות קיצונית.",  
+      "clinical_highlight": "יש להקפיד על זהירות יתרה בתקופות של שינוי והחלפת טיפול תרופתי."  
+    },  
+    {  
+      "bite_id": "b002",  
+      "type": "clinical_case_card",  
+      "sequence_title": "אפילפסיה בסביבת מים",
+      "visual_trigger": "animation_flicker_vertigo",  
+      "title": "סיכון ייחודי: ורטיגו הבהוב",  
+      "content": "השתקפות אור על אדוות המים (בתדר סביב 15 הרץ) עלולה לעורר התקף במטופלים עם אפילפסיה פוטוסנסיטיבית (Photosensitive).",  
+      "clinical_highlight": "הפתרון המומלץ למניעת ההבהוב המסוכן הוא שימוש במשקפי שמש מקטבים (Polarized)."  
+    }  
+  ]  
+}

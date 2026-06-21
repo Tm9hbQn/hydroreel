@@ -1,0 +1,33 @@
+{  
+  "lesson_id": "neuro_02_sci",  
+  "lesson_title": "פגיעות חוט שדרה ודיסרפלקסיה אוטונומית",  
+  "bites": [  
+    {  
+      "bite_id": "b001",  
+      "type": "principle_card",  
+      "sequence_title": "דיסרפלקסיה אוטונומית",
+      "visual_trigger": "animation_autonomic_dysreflexia",  
+      "title": "מהי דיסרפלקסיה אוטונומית?",  
+      "content": "מצב חירום רפואי בנפגעי חוט שדרה T6 ומעלה. תגובה סימפתטית רפלקסיבית מסיבית הגורמת לכיווץ כלי דם ועליית לחץ דם מסכנת חיים.",  
+      "clinical_highlight": "מופיע בעקבות גירוי נוציצפטיבי מתחת לאזור הפגיעה."  
+    },
+    {  
+      "bite_id": "b002",  
+      "type": "clinical_case_card",  
+      "sequence_title": "דיסרפלקסיה אוטונומית",
+      "visual_trigger": "animation_ad_triggers",  
+      "title": "גורמי סיכון בבריכה",  
+      "content": "גירויים שכיחים במים כוללים שלפוחית מלאה כתוצאה מ'השתנת הטבילה', טמפרטורה קיצונית או לחץ נקודתי מבגד ים וקתטר.",  
+      "clinical_highlight": "יש לזהות סימנים מקדימים ולהסיר את הגורם המגרה באופן מיידי."  
+    },
+    {  
+      "bite_id": "b003",  
+      "type": "principle_card",  
+      "sequence_title": "שיקום אקוואטי ב-SCI",
+      "visual_trigger": "animation_sci_rehab",  
+      "title": "יתרונות האימון האקוואטי",  
+      "content": "אימון במים משפר משמעותית את התפקוד הקרדיו-רספירטורי ואת התיאום העצבי-שרירי בנפגעי חוט שדרה (SCI).",  
+      "clinical_highlight": "מומלץ למטופלים אלו להתחסן כנגד שפעת ודלקת ריאות לשמירה על בריאותם."  
+    }
+  ]  
+}

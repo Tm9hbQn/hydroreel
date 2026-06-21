@@ -1,0 +1,47 @@
+{
+  "lesson_id": "orthopedics_02_spine",
+  "lesson_title": "פתולוגיות עמוד שדרה וליקויי יציבה",
+  "bites": [
+    {
+      "bite_id": "b001",
+      "type": "clinical_case_card",
+      "sequence_title": "פתולוגיות עמוד שדרה וליקויי יציבה",
+      "visual_trigger": "animation_herniated_disc_decompression",
+      "title": "פריצת דיסק (Herniated Disc)",
+      "content": "בשלב אקוטי דיסק לוחץ על העצב. הטיפול: מתיחה אנכית במים עמוקים. כבידה וציפה יוצרות מתיחה להפחתת לחץ תוך-דיסקלי. יעיל להפחתת פחד מתנועה. חובה להימנע מישיבה (Slump) במים.",
+      "clinical_highlight": "מתיחה ספינלית להפחתת לחץ תוך-דיסקלי ומניעת קינזיופוביה."
+    },
+    {
+      "bite_id": "b002",
+      "type": "clinical_case_card",
+      "visual_trigger": "animation_spondylolisthesis_core",
+      "title": "ספונדילוליסטזיס (Spondylolisthesis)",
+      "content": "גלישת חוליה (L5-S1). פשיטת יתר מחמירה את המצב. איסור מוחלט על שחיית חזה קלאסית וסנפירים. הטיפול מתמקד בייצוב ליבה במנח ניטרלי או כפיפה. תרגילים: Water Lunges והליכה עם סיבוב אגן לאחור.",
+      "clinical_highlight": "איסור פשיטת יתר, התמקדות בייצוב ליבה (Core Stabilization)."
+    },
+    {
+      "bite_id": "b003",
+      "type": "clinical_case_card",
+      "visual_trigger": "animation_scoliosis_derotation",
+      "title": "עקמת (Scoliosis)",
+      "content": "עקמת יוצרת רוטציית חוליות והפרש נפחי ריאות, הגורם לאסימטריית ציפה ומומנט גלגול. הטיפול רותם נטייה זו לתרגילי דה-רוטציה ונשימה א-סימטרית.",
+      "clinical_highlight": "ניצול אסימטריית הציפה לתרגול דה-רוטציה ונשימה מותאמת."
+    },
+    {
+      "bite_id": "b004",
+      "type": "clinical_case_card",
+      "visual_trigger": "animation_kyphosis_extension",
+      "title": "קיפוזיס (Kyphosis)",
+      "content": "כיפוף יתר חזי. חיזוק שרירים זוקפים ומקרבי שכמות כנגד התנגדות המים. שחיית גב ושחיית חזה הפוכה מעודדים את פתיחת בית החזה ויישור הגב העליון.",
+      "clinical_highlight": "פתיחת בית חזה וחיזוק זוקפים נגד התנגדות."
+    },
+    {
+      "bite_id": "b005",
+      "type": "clinical_case_card",
+      "visual_trigger": "animation_lordosis_wall_sit",
+      "title": "לורדוזה (Lordosis)",
+      "content": "הקשתת יתר מותנית. הטיפול כולל מתיחת מכופפי ירך וחיזוק שרירי בטן במנח המנטרל כבידה, כגון תרגילי ישיבת קיר (Wall Sits) במים.",
+      "clinical_highlight": "מתיחת מכופפי ירך וחיזוק בטן נטול כבידה."
+    }
+  ]
+}

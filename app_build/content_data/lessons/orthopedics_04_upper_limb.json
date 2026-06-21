@@ -1,0 +1,33 @@
+{
+  "lesson_id": "orthopedics_04_upper_limb",
+  "lesson_title": "שיקום גף עליון",
+  "bites": [
+    {
+      "bite_id": "b001",
+      "type": "principle_card",
+      "sequence_title": "שיקום גף עליון",
+      "visual_trigger": "animation_shoulder_buoyancy_support",
+      "title": "פריקת כתף: שלב אקוטי",
+      "content": "במים, הציפה תומכת במשקל הזרוע ומפחיתה משמעותית משיכה (Traction) על הקפסולה המפרקית. מומלץ לבצע רוטציות איזומטריות בלבד, בעדינות מול התנגדות המים.",
+      "clinical_highlight": "יתרון ביומכני: מניעת תת-פריקה חוזרת והגנה על הרצועות."
+    },
+    {
+      "bite_id": "b002",
+      "type": "clinical_case_card",
+      "sequence_title": "שיקום גף עליון",
+      "visual_trigger": "animation_shoulder_high_five_warning",
+      "title": "מה אסור לעשות?",
+      "content": "בשלב האקוטי חל איסור מוחלט על תנועת 'High Five' (הרחקה ורוטציה חיצונית), מחשש לפריקה חוזרת. במקום זאת, מומלץ לבצע תרגילי Scaption – הרמה במישור השכמה.",
+      "clinical_highlight": "Scaption מפעיל את השרירים בצורה בטוחה ויציבה."
+    },
+    {
+      "bite_id": "b003",
+      "type": "principle_card",
+      "sequence_title": "שיקום גף עליון",
+      "visual_trigger": "animation_rotator_cuff_aarom",
+      "title": "קרע בשרוול המסובב",
+      "content": "המים מספקים סביבה אידיאלית לתרגילי AAROM. כוח הציפה מסייע אקטיבית בהרמת הזרוע, ומאפשר הפעלה מוקדמת של שרירי הכתף ללא עומס כבידה.",
+      "clinical_highlight": "הפעלה מוקדמת מונעת הידבקויות וקיפאון בכתף (Frozen Shoulder)."
+    }
+  ]
+}
