@@ -61,3 +61,8 @@ At the end of every session or meaningful step, you MUST include the following t
 * At the end of every session, after all code changes are verified, you MUST automatically push the changes to GitHub.
 * Execute `git add .`, `git commit -m "..."`, and `git push` directly.
 * In your final message to the user, you MUST explicitly declare that the environment has been synchronized to GitHub and that the push was successful.
+
+## **9. Documentation Standards & Memory Logging**
+
+* **activeContext.md (Detailed Logging):** When updating the active context, you MUST provide a detailed, informative, and exhaustive description of the tasks performed, decisions made, and technical changes implemented. DO NOT write short, uninformative single-line updates.
+* **changelog.md (Compression):** Compression and summarization of history MUST ONLY be performed when archiving events from `activeContext.md` to `changelog.md` (upon reaching the 10-event limit). The active context itself must remain detailed and uncompressed.
