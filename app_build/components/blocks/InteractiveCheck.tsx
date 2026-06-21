@@ -29,6 +29,7 @@ export default function InteractiveCheck({ bite }: Props) {
       <motion.div 
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="w-full z-10 px-6 pt-24 pb-2 flex flex-col shrink-0"
       >
@@ -39,6 +40,7 @@ export default function InteractiveCheck({ bite }: Props) {
           <motion.div 
             initial={{ width: 0 }}
             whileInView={{ width: "100%" }}
+            viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.3, ease: "circOut" }}
             className="absolute bottom-1 left-0 h-4 bg-indigo-300/60 -z-0 rounded-full"
           />
@@ -46,7 +48,13 @@ export default function InteractiveCheck({ bite }: Props) {
       </motion.div>
 
       {/* Quiz Area */}
-      <div className="flex-1 w-full flex flex-col items-center justify-center relative min-h-0 px-6" dir="rtl">
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+        className="flex-1 w-full flex flex-col items-center justify-center relative min-h-0 px-6" dir="rtl"
+      >
         <div className="w-full max-w-sm rounded-[2.5rem] bg-white shadow-xl border border-slate-200 p-6 flex flex-col h-auto">
           
           <div className="mb-6">
@@ -96,7 +104,7 @@ export default function InteractiveCheck({ bite }: Props) {
           )}
 
         </div>
-      </div>
+      </motion.div>
 
       {/* Dead space at the bottom */}
       <div className="absolute bottom-0 w-full h-16 flex flex-col justify-end items-center pb-4 z-20 pointer-events-none">
