@@ -18,7 +18,7 @@
       "visual_trigger": "animation_edema_reduction",
       "title": "איך מטפלים בבצקות במים?",
       "content": "מפל הלחצים פועל כ\"גרב לחץ\" הפוכה: מן הכפות אל האגן. הלחץ ההידרוסטטי סוחט נוזלים עודפים ומעודד חזרתם למערכת הלימפה.",
-      "clinical_highlight": "זהו כלי מושלם להפחתת בצקות ולשיפור החזר ורידי בחולים."
+      "clinical_highlight": "זהו כלי להפחתת בצקות ולשיפור החזר ורידי בחולים."
     },
     {
       "bite_id": "b003",
@@ -64,7 +64,7 @@
       "bite_id": "b006",
       "type": "principle_card",
       "sequence_title": "חוק ארכימדס וכוח הציפה",
-      "visual_trigger": "animation_metacentric_torque",
+      "visual_trigger": "image_cg_cb_balance",
       "title": "יציבות במים: העיקרון המטא-סנטרי",
       "content": "שיווי משקל מצריך שמרכז הכובד (באגן) ומרכז הציפה (בחזה) יהיו בקו אנכי. כל תזוזה ביניהם יוצרת מומנט סיבוב לא רצוי.",
       "clinical_highlight": "שינוי גופני קטן עשוי לגרום למטופל להתהפך ללא שליטה במים."
@@ -73,7 +73,7 @@
       "bite_id": "b007",
       "type": "clinical_case_card",
       "sequence_title": "חוק ארכימדס וכוח הציפה",
-      "visual_trigger": "animation_hemiplegia_roll",
+      "visual_trigger": "animation_metacentric_torque",
       "title": "מומנט גלגול בהמיפלגיה וקטיעות",
       "content": "בצד פלגי מנוון יש שומן שצף, ובצד הבריא שריר ששוקע. בקטיעה חסר משקל לייצוב. התוצאה: המטופל מסתחרר ונוטה הצידה.",
       "clinical_highlight": "על המטפל לאתגר את הליבה (Core) לשיפור ייצוב רוטציוני ולהציע פיצוי בעזרת מצופים."
@@ -110,9 +110,9 @@
       "type": "clinical_case_card",
       "sequence_title": "חוק הגרר והתנגדות תנועתית",
       "visual_trigger": "animation_turbulent_gliding",
-      "title": "מערבולות בטיפול בשיטת הלוויק",
+      "title": "מערבולות בטיפול",
       "content": "תנועה מהירה במים יוצרת שובל של מערבולות (זרימה טורבולנטית). המערבולות יוצרות אזור תת-לחץ שמושך את המטופל פנימה.",
-      "clinical_highlight": "מטפלי הלוויק מנצלים מערבולות אלה (Turbulent Gliding) כדי לגרור ולייצב מטופלים במים באופן טבעי."
+      "clinical_highlight": "מטפלים מנצלים מערבולות אלה (Turbulent Gliding) כדי לגרור ולייצב מטופלים במים באופן טבעי."
     },
     {
       "bite_id": "b011",

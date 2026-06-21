@@ -6,6 +6,7 @@ import InteractivePressureSimulator from './animations/InteractivePressureSimula
 import DragEquation from './animations/DragEquation';
 import MetacentricTorque from './animations/MetacentricTorque';
 import FallbackAnimation from './animations/FallbackAnimation';
+import CGCBBalanceImage from './animations/CGCBBalanceImage';
 
 interface Props {
   triggerId?: string;
@@ -16,6 +17,7 @@ const animationRegistry: Record<string, React.ComponentType<any>> = {
   'animation_pascal_law': InteractivePressureSimulator,
   'animation_drag_equation': DragEquation,
   'animation_metacentric_torque': MetacentricTorque,
+  'image_cg_cb_balance': CGCBBalanceImage,
 };
 
 export default function AnimationFactory({ triggerId }: Props) {

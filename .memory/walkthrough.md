@@ -1,32 +1,21 @@
-# Walkthrough: Sticky Sequence Titles & UI Improvements
+# Walkthrough: Content Edits and Animation Splitting
 
 ## What was done
-1. **Clinical Case Badge Enhancement**: 
-   - Moved the "דוגמה קלינית" badge in `ClinicalCaseCard.tsx` from the top-left to the top-right.
-   - Increased its size, font-weight, and added an outer glow (`ring-2`) to clearly link the clinical case with the previously established principle.
-   - **Update:** Pushed the badge down (`top-20`) to completely eliminate any overlap with the sticky sequence headers.
-2. **JSON Schema Evolution**:
-   - Added the `sequence_title` field to the `unit1_physics.json` data structure.
-   - Updated `systemPatterns.md` to document that future content generation must include `sequence_title` for grouping related bites.
-3. **Sticky Sequence Headers**:
-   - Refactored `page.tsx` to group the flat array of reels into distinct topics based on their `sequence_title`.
-   - Wrapped each sequence group in a relative `<section>` and injected a sticky `<header>`.
-   - The sticky header remains "frozen" at the top of the screen as the user scrolls through the related sequence of reels, providing seamless context without obstructing the content.
-4. **UI Fixes & Simulation Repair**:
-   - Fixed the sticky header overlap by increasing the top padding (`pt-24`) of all dynamic content blocks (`PrincipleCard`, `ClinicalCaseCard`, `InteractiveCheck`, etc.), ensuring the header and title don't collide.
-   - Fixed a CSS positioning bug in `MetacentricTorque.tsx` where absolute elements were floating haphazardly by explicitly anchoring them to `top-0 left-0`.
-   - Fixed a CSS Transform conflict where inline inline style `transform: translate` was overriding Tailwind's `rotate-*` classes. The rotation and translation are now combined, ensuring the arms and legs bend properly.
-5. **Interactive Pressure Simulator Improvements**:
-   - **Arrows:** Reversed the direction of the pressure arrows so they accurately point inwards toward the person to reflect hydrostatic pressure acting on the body.
-   - **Slider Control UI:** Completely redesigned the slider to be larger, cooler, and more accessible. It now sits in a stylized card with gradients, clearer readouts, and a prominent interactive track.
-6. **Architectural UI Rules**: Added a new standard in `systemPatterns.md` outlining the requirements for UI Collision Avoidance and Micro-Aesthetics.
+1. **Content Text Updates**:
+   - Removed the word "מושלם" from the clinical highlight in the edema reduction bite.
+   - Removed "בשיטת הליוויק" from the title of the turbulence clinical case to match the user's request.
+2. **Amputee/Metacentric Torque Simulation UI**:
+   - Removed the blur effect (`backdrop-blur-sm`) from the water element, allowing the patient submerged in water to be clearly visible without blurring.
+   - Changed the main background gradient above the water from blue to a light gray/sky (`from-gray-100 to-sky-100`) so it vividly contrasts with the water line (`bg-blue-500/50`), making the water surface completely distinct.
+3. **Simulation Reel Migration & Image Generation**:
+   - Moved the `animation_metacentric_torque` simulation to the next reel (`b007`, the clinical case for hemiplegia and amputations) as requested.
+   - Generated a sleek vector illustration showing the balance between the Center of Gravity (CG) and Center of Buoyancy (CB) using lines and dots.
+   - Created a new component `CGCBBalanceImage.tsx` to render this image, bound it to the `image_cg_cb_balance` trigger, and assigned this trigger to the `b006` reel (the principle card) to replace the simulation there.
 
 ## Why it was done
-The user requested better visual context linking clinical cases to physics principles, and a way to understand the overarching "topic" while scrolling through consecutive reels. Additionally, the user accurately caught that pressure arrows in the simulation were pointing outward instead of inward, and requested that UI elements be checked strategically for visual overlaps to avoid things like sticky headers hiding clinical badges.
+The user asked for specific textual cleanups in the clinical data, as well as a more refined visual experience for the amputee simulation. Most importantly, the user wanted to decouple the physics principle (now explained via a generated structural image of CG/CB balance) from the clinical application (which now correctly houses the interactive simulation of the amputations).
 
 ## What needs to be checked
-1. **Scrolling Behavior**: Scroll down through the reels and verify that the topic title stays fixed at the top, then cleanly slides away when the next topic begins.
-2. **Badge Visibility**: Verify the new position (top-right, `top-20`) and size of the "דוגמה קלינית" badge on clinical case cards.
-3. **No Overlaps**: Ensure the sticky header does not block or overlap important text on the reels.
-4. **Body Simulation**: Check the "Metacentric Torque" simulation. The body parts should now be perfectly assembled.
-5. **Pascal's Law Simulation**: Test the newly upgraded slider and verify the pressure arrows point inwards.
+1. **Text Revisions**: Verify the clinical highlight in reel `b002` and the title in reel `b010` are updated.
+2. **New CG/CB Image**: Verify reel `b006` displays the newly generated image showing the balance of CG and CB.
+3. **Amputee Simulation Location and UI**: Check reel `b007` to ensure the interactive simulation is there. Look closely at the water – the blur should be gone, and the line between the air (light gray) and water (blue) should be crisp and obvious.

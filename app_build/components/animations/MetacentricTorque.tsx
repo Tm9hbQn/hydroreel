@@ -56,7 +56,7 @@ export default function MetacentricTorque() {
   };
 
   return (
-    <div className="w-full h-full relative overflow-hidden bg-gradient-to-b from-sky-300 to-blue-600 flex items-center justify-center font-sans">
+    <div className="w-full h-full relative overflow-hidden bg-gradient-to-b from-gray-100 to-sky-100 flex items-center justify-center font-sans">
       
       {/* Controls */}
       <div className="absolute top-4 left-4 z-50 bg-white/90 p-3 rounded-xl shadow-lg backdrop-blur-md text-sm rtl" dir="rtl">
@@ -82,7 +82,7 @@ export default function MetacentricTorque() {
       </div>
 
       {/* Water Level */}
-      <div className="absolute bottom-0 w-full h-[55%] bg-blue-800/40 backdrop-blur-sm border-t border-cyan-200/50 z-20 pointer-events-none"></div>
+      <div className="absolute bottom-0 w-full h-[55%] bg-blue-500/50 border-t border-cyan-300 z-20 pointer-events-none"></div>
 
       {/* The Body Container */}
       <motion.div 
