@@ -1,35 +1,18 @@
-# Walkthrough: Agent Architecture Refactoring
+# סקירת סשן (Walkthrough) - הטמעת תוכן ה-Shift ההמודינמי
 
-## What was done
+## מה נעשה?
+- **המרת תוכן**: חולץ התוכן אודות "המערכת הקרדיו-ווסקולרית: ה-Shift ההמודינמי" מהקובץ הישן של הקורס (`hydrotherapy-course.json`).
+- **עריכה קלינית ממוקדת**: התוכן נערך ודוחס כדי לעמוד בכללי ה-Bite-Sized Learning:
+  - לא יותר מ-40 מילים לכל חלונית.
+  - שימוש בבלוקים מבניים מורשים בלבד (`principle_card` ו-`clinical_case_card`).
+  - הקפדה על חוק ההפרדה המוחלטת (Decoupling) בין נתונים להצגה - אין שורות קוד בתוך נתוני ה-JSON.
+- **השמת אנימציות**: הוגדרו `visual_trigger` מתאימים לכל כרטיסיה כדי לאפשר לסוכן ה-UI לרנדר את האנימציות הרלוונטיות (כמו `animation_blood_shift`, `animation_frank_starling`, ועוד).
+- **תחזוקת זיכרון**: התווסף תיעוד סשן מסודר ל-`activeContext.md` והתבצע ארכוב של רשומות ישנות לתוך `changelog.md` כנדרש בנהלי התיעוד החדשים.
 
-### Phase 1: Content Pedagogy Refactoring
-1. **Extracted Pedagogy Principles**:
-   - Removed Section 1 ("עקרונות כתיבת התוכן (Deep Pedagogy)") from the global `design_and_pedagogy_principles.md` document.
-   - Renumbered the remaining sections in the global document to reflect the change.
-2. **Integrated Principles into Persona**:
-   - Injected the extracted pedagogy principles directly into the `02_clinical_content_director.md` persona under the "Pedagogical Guidelines" section.
+## למה?
+מטרת השינויים הללו היא בניית בסיס הנתונים עבור יחידת הלמידה החדשה של Hydro-Reels בנושא פיזיולוגיה וקרדיו, על בסיס ארכיטקטורה חדשנית המותאמת ל-Mobile ודורשת מקסימום מעורבות ממשתמש הקצה (Engagement) ומינימום עומס קוגניטיבי.
 
-### Phase 2: Deduplication and Deep State Maintenance
-1. **Deleted Redundant Directories**:
-   - Entirely removed `.agents/workflows/` (duplicate of personas) and `.agents/contracts/` (duplicate invariants).
-2. **Centralized Data Schema**:
-   - Removed the copy-pasted "Learning Blocks" definitions from the Content and UI personas.
-   - Inserted strict pointers instructing both personas to read `.memory/systemPatterns.md` as the single source of truth for data schemas.
-3. **Formalized Hard Invariants**:
-   - Moved the "Absolute Decoupling" and "No Wikipedia" rules to the very top of `systemPatterns.md` as "Hard Invariants".
-4. **Enhanced AGENTS.md (System Constitution)**:
-   - Added a **Global Rule Updates** directive enforcing that all user requests for global changes must be traced to their originating `.md` files and updated there.
-   - Added a **Strict Compression Execution** directive enforcing that the agent automatically invokes `/archive` when `activeContext.md` exceeds 10 events.
-
-### GitHub Sync
-- Pushed all structural changes to the repository.
-
-## Why it was done
-The user identified significant architectural duplication and requested a deep analysis of state maintenance. The system suffered from having the same rules defined across YAML contracts, YAML workflows, Markdown personas, and Memory bank files. This bloated the context window and created high risk of architectural drift. Furthermore, the system lacked explicit self-maintenance rules forcing the agent to compress its memory logs or trace global instruction updates to their source files. 
-
-By aggressively pruning redundant files and writing explicit "Global Update" and "Strict Compression" directives into the master `AGENTS.md` file, the AI is now forced to self-govern its memory and maintain a clean single source of truth for all rules.
-
-## What needs to be checked
-1. Check `AGENTS.md` (Section 9) to see the new strict state maintenance rules.
-2. Check `systemPatterns.md` to see the new centralized Hard Invariants.
-3. Verify that the `.agents/workflows` and `.agents/contracts` directories are completely gone.
+## מה צריך לבדוק?
+- לוודא שהשדות ב-`app_build/content_data/lessons/physiology_01_cardio.json` מופיעים כראוי וללא שגיאות סכמה (JSON Validation).
+- לוודא שה-Visual Triggers החדשים (כגון `animation_chf_risk`) יוכרו ויטופלו ב-`AnimationFactory` שבצד הפיתוח על מנת לא להציג רק Fallback לאורך זמן.
+- הופעל סנכרון מלא מול ענף ה-main ב-GitHub כנדרש.
