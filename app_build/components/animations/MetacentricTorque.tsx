@@ -101,13 +101,13 @@ export default function MetacentricTorque() {
         >
           {/* Head */}
           <div 
-            className="absolute w-[48px] h-[56px] bg-orange-200 rounded-full border-2 border-orange-300" 
+            className="absolute top-0 left-0 w-[48px] h-[56px] bg-orange-200 rounded-full border-2 border-orange-300" 
             style={{ transform: `translate(calc(-50% + ${parts[0].x}px), calc(-50% + ${parts[0].y}px))` }}
           />
           
           {/* Torso */}
           <div 
-            className="absolute w-[80px] h-[112px] bg-orange-300 rounded-3xl border-2 border-orange-400 overflow-hidden" 
+            className="absolute top-0 left-0 w-[80px] h-[112px] bg-orange-300 rounded-3xl border-2 border-orange-400 overflow-hidden" 
             style={{ transform: `translate(calc(-50% + ${parts[1].x}px), calc(-50% + ${parts[1].y}px))` }}
           >
             {/* Lungs visual indication */}
@@ -117,32 +117,32 @@ export default function MetacentricTorque() {
           {/* Left Arm */}
           {!amputations.leftArm && (
             <div 
-              className="absolute w-[32px] h-[90px] bg-orange-200 rounded-full border-2 border-orange-300 origin-top rotate-[15deg]" 
-              style={{ transform: `translate(calc(-50% + ${parts[2].x}px), calc(-50% + ${parts[2].y}px))` }}
+              className="absolute top-0 left-0 w-[32px] h-[90px] bg-orange-200 rounded-full border-2 border-orange-300 origin-top" 
+              style={{ transform: `translate(calc(-50% + ${parts[2].x}px), calc(-50% + ${parts[2].y}px)) rotate(15deg)` }}
             />
           )}
           
           {/* Right Arm */}
           {!amputations.rightArm && (
             <div 
-              className="absolute w-[32px] h-[90px] bg-orange-200 rounded-full border-2 border-orange-300 origin-top -rotate-[15deg]" 
-              style={{ transform: `translate(calc(-50% + ${parts[3].x}px), calc(-50% + ${parts[3].y}px))` }}
+              className="absolute top-0 left-0 w-[32px] h-[90px] bg-orange-200 rounded-full border-2 border-orange-300 origin-top" 
+              style={{ transform: `translate(calc(-50% + ${parts[3].x}px), calc(-50% + ${parts[3].y}px)) rotate(-15deg)` }}
             />
           )}
           
           {/* Left Leg */}
           {!amputations.leftLeg && (
             <div 
-              className="absolute w-[40px] h-[110px] bg-orange-200 rounded-full border-2 border-orange-300 origin-top rotate-[5deg]" 
-              style={{ transform: `translate(calc(-50% + ${parts[4].x}px), calc(-50% + ${parts[4].y}px))` }}
+              className="absolute top-0 left-0 w-[40px] h-[110px] bg-orange-200 rounded-full border-2 border-orange-300 origin-top" 
+              style={{ transform: `translate(calc(-50% + ${parts[4].x}px), calc(-50% + ${parts[4].y}px)) rotate(5deg)` }}
             />
           )}
           
           {/* Right Leg */}
           {!amputations.rightLeg && (
             <div 
-              className="absolute w-[40px] h-[110px] bg-orange-200 rounded-full border-2 border-orange-300 origin-top -rotate-[5deg]" 
-              style={{ transform: `translate(calc(-50% + ${parts[5].x}px), calc(-50% + ${parts[5].y}px))` }}
+              className="absolute top-0 left-0 w-[40px] h-[110px] bg-orange-200 rounded-full border-2 border-orange-300 origin-top" 
+              style={{ transform: `translate(calc(-50% + ${parts[5].x}px), calc(-50% + ${parts[5].y}px)) rotate(-5deg)` }}
             />
           )}
 

@@ -23,7 +23,7 @@ export default function CompareCard({ bite }: Props) {
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="w-full z-10 px-6 pt-10 pb-2 flex flex-col shrink-0"
+        className="w-full z-10 px-6 pt-24 pb-2 flex flex-col shrink-0"
       >
         <div className="relative inline-block mb-6 self-start">
           <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight font-sans relative z-10" dir="rtl">
