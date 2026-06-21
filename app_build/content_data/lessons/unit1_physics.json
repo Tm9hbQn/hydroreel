@@ -5,6 +5,7 @@
     {
       "bite_id": "b001",
       "type": "principle_card",
+      "sequence_title": "חוק פסקל ולחץ הידרוסטטי",
       "visual_trigger": "animation_pascal_law",
       "title": "חוק פסקל ולחץ הידרוסטטי",
       "content": "לחץ המופעל על נוזל פועל באופן שווה בכל הכיוונים, אך עולה ביחס לינארי לעומק. במים עמוקים, הלחץ עלינו גדל.",
@@ -13,6 +14,7 @@
     {
       "bite_id": "b002",
       "type": "clinical_case_card",
+      "sequence_title": "חוק פסקל ולחץ הידרוסטטי",
       "visual_trigger": "animation_edema_reduction",
       "title": "איך מטפלים בבצקות במים?",
       "content": "מפל הלחצים פועל כ\"גרב לחץ\" הפוכה: מן הכפות אל האגן. הלחץ ההידרוסטטי סוחט נוזלים עודפים ומעודד חזרתם למערכת הלימפה.",
@@ -21,6 +23,7 @@
     {
       "bite_id": "b003",
       "type": "principle_card",
+      "sequence_title": "חוק פסקל ולחץ הידרוסטטי",
       "visual_trigger": "animation_respiratory_effort",
       "title": "מחוך נשימתי הידרוסטטי",
       "content": "הלחץ המקיף את דופן החזה והבטן מקשה על התרחבות הריאות בשאיפה. המטופל מתמודד עם התנגדות הגבוהה בכ-60% מאשר ביבשה.",
@@ -29,6 +32,7 @@
     {
       "bite_id": "b004",
       "type": "principle_card",
+      "sequence_title": "חוק ארכימדס וכוח הציפה",
       "visual_trigger": "animation_archimedes_vectors",
       "title": "חוק ארכימדס וכוח הציפה",
       "content": "על כל גוף הטבול בנוזל פועל כוח עילוי אנכי השווה למשקל הנוזל הנדחה. כוח זה מנטרל חלקית את כוח הכבידה.",
@@ -37,6 +41,7 @@
     {
       "bite_id": "b005",
       "type": "flashcard_carousel",
+      "sequence_title": "חוק ארכימדס וכוח הציפה",
       "visual_trigger": "animation_density_comparison",
       "title": "משקל סגולי: מי צף ומי שוקע?",
       "content": "יכולת הציפה נקבעת על ידי צפיפות הרקמות ביחס למים.",
@@ -58,6 +63,7 @@
     {
       "bite_id": "b006",
       "type": "principle_card",
+      "sequence_title": "חוק ארכימדס וכוח הציפה",
       "visual_trigger": "animation_metacentric_torque",
       "title": "יציבות במים: העיקרון המטא-סנטרי",
       "content": "שיווי משקל מצריך שמרכז הכובד (באגן) ומרכז הציפה (בחזה) יהיו בקו אנכי. כל תזוזה ביניהם יוצרת מומנט סיבוב לא רצוי.",
@@ -66,6 +72,7 @@
     {
       "bite_id": "b007",
       "type": "clinical_case_card",
+      "sequence_title": "חוק ארכימדס וכוח הציפה",
       "visual_trigger": "animation_hemiplegia_roll",
       "title": "מומנט גלגול בהמיפלגיה וקטיעות",
       "content": "בצד פלגי מנוון יש שומן שצף, ובצד הבריא שריר ששוקע. בקטיעה חסר משקל לייצוב. התוצאה: המטופל מסתחרר ונוטה הצידה.",
@@ -74,6 +81,7 @@
     {
       "bite_id": "b008",
       "type": "compare_card",
+      "sequence_title": "חוק הגרר והתנגדות תנועתית",
       "visual_trigger": "animation_water_vs_land",
       "title": "התנגדות תנועתית: מים לעומת יבשה",
       "content": "המים צמיגים פי 800 מאוויר ולכן הופכים כל תנועה לאימון כוח דינמי.",
@@ -91,6 +99,7 @@
     {
       "bite_id": "b009",
       "type": "principle_card",
+      "sequence_title": "חוק הגרר והתנגדות תנועתית",
       "visual_trigger": "animation_drag_equation",
       "title": "איך מעלים עומס? חוק הגרר",
       "content": "כוח הגרר (התנגדות המים) גדל בריבוע המהירות! אם נבקש ממטופל להניע יד פי 2 מהר יותר, ההתנגדות תגדל פי 4.",
@@ -99,6 +108,7 @@
     {
       "bite_id": "b010",
       "type": "clinical_case_card",
+      "sequence_title": "חוק הגרר והתנגדות תנועתית",
       "visual_trigger": "animation_turbulent_gliding",
       "title": "מערבולות בטיפול בשיטת הלוויק",
       "content": "תנועה מהירה במים יוצרת שובל של מערבולות (זרימה טורבולנטית). המערבולות יוצרות אזור תת-לחץ שמושך את המטופל פנימה.",
@@ -107,6 +117,7 @@
     {
       "bite_id": "b011",
       "type": "interactive_check",
+      "sequence_title": "חוק הגרר והתנגדות תנועתית",
       "visual_trigger": "animation_quiz_time",
       "title": "בחן את עצמך!",
       "content": "אנו מבקשים מהמטופל להוריד ידיים במהירות כפולה במים. בכמה תגדל רמת הקושי?",

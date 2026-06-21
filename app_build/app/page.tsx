@@ -7,6 +7,21 @@ export default async function Home() {
   const fileContents = fs.readFileSync(filePath, 'utf8');
   const lessonData = JSON.parse(fileContents);
 
+  // Group bites by sequence_title
+  const sequences: { title: string; bites: any[] }[] = [];
+  let currentSequence: { title: string; bites: any[] } | null = null;
+
+  lessonData.bites.forEach((bite: any) => {
+    const title = bite.sequence_title || "כללי";
+    if (!currentSequence || currentSequence.title !== title) {
+      if (currentSequence) sequences.push(currentSequence);
+      currentSequence = { title, bites: [bite] };
+    } else {
+      currentSequence.bites.push(bite);
+    }
+  });
+  if (currentSequence) sequences.push(currentSequence);
+
   return (
     <main className="w-full bg-[#fafcff]">
       {/* Intro Reel */}
@@ -30,9 +45,22 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* Content Reels */}
-      {lessonData.bites.map((bite: any) => (
-        <ReelRenderer key={bite.bite_id} bite={bite} />
+      {/* Content Reels Grouped by Sequence */}
+      {sequences.map((seq, seqIndex) => (
+        <section key={seqIndex} className="relative w-full">
+          {/* Sticky Sequence Title */}
+          <header className="sticky top-0 pt-4 z-50 w-full flex justify-center pointer-events-none">
+            <div className="bg-white/80 backdrop-blur-md px-5 py-2 rounded-full shadow-sm border border-slate-200/50">
+              <h3 className="text-slate-800 font-bold text-sm md:text-base tracking-tight" dir="rtl">
+                {seq.title}
+              </h3>
+            </div>
+          </header>
+          
+          {seq.bites.map((bite: any) => (
+            <ReelRenderer key={bite.bite_id} bite={bite} />
+          ))}
+        </section>
       ))}
     </main>
   );
