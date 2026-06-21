@@ -46,7 +46,7 @@ Before initiating any file write or command execution, you must open a <thought_
 
 At the end of every session or meaningful step, you MUST include the following two links in your final message:
 1. Walkthrough Link: Link to the `walkthrough.md` artifact detailing what was done, why, and what needs to be checked.
-2. Active Server Port Link: If any UI changes were made and a dev server is running, provide the local server link (e.g., http://localhost:3000).
+2. Active Server Port Link: If any UI changes were made and a dev server is running, provide the local server link (e.g., http://localhost:3000/hydroreel).
 
 
 ## **7. GitHub Actions & CI/CD Robustness**
@@ -62,7 +62,8 @@ At the end of every session or meaningful step, you MUST include the following t
 * Execute `git add .`, `git commit -m "..."`, and `git push` directly.
 * In your final message to the user, you MUST explicitly declare that the environment has been synchronized to GitHub and that the push was successful.
 
-## **9. Documentation Standards & Memory Logging**
+## **9. Documentation Standards, Memory Logging & State Maintenance**
 
+* **Global Rule Updates (Knowledge Management):** If the user requests a global change (e.g., "Make all animations interactive", "Change the text limit to 60 words", "All UI must use component X"), you MUST NOT just apply it to the current file. You MUST trace this rule to its origin in the Memory Bank (e.g., `systemPatterns.md`, `projectbrief.md`) or the specific Persona (`.agents/personas/*.md`) and permanently update the rule there. Failure to do so causes architectural drift.
 * **activeContext.md (Detailed Logging):** When updating the active context, you MUST provide a detailed, informative, and exhaustive description of the tasks performed, decisions made, and technical changes implemented. DO NOT write short, uninformative single-line updates.
-* **changelog.md (Compression):** Compression and summarization of history MUST ONLY be performed when archiving events from `activeContext.md` to `changelog.md` (upon reaching the 10-event limit). The active context itself must remain detailed and uncompressed.
+* **Strict Compression Execution:** At the end of EVERY session, you MUST explicitly count the items in `activeContext.md`. If there are more than 10 events, you MUST autonomously invoke the `/archive` action to compress and move the oldest events into `changelog.md`. The active context itself must remain detailed and uncompressed, serving as a strict sliding window.

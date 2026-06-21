@@ -1,12 +1,13 @@
 "use client";
 import React, { useRef } from 'react';
 import { motion } from 'framer-motion';
+import AnimationFactory from '../AnimationFactory';
 
 export interface FlashcardCarouselBite {
   bite_id: string;
   type: string;
   title: string;
-  items: Array<{ title: string; text: string; icon?: string }>;
+  items: Array<{ title: string; content: string; icon?: string }>;
 }
 
 interface Props {
@@ -72,15 +73,20 @@ export default function FlashcardCarousel({ bite }: Props) {
               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
               className="shrink-0 w-[88%] max-w-[340px] h-full max-h-[500px] snap-center rounded-[2.5rem] relative overflow-hidden transition-transform duration-300 border-2 border-slate-200"
             >
-              {/* Background Gradient */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${fallbackColors[i % fallbackColors.length]} opacity-90`} />
+              {/* Background Animation (if present) */}
+              <div className="absolute inset-0 z-0">
+                <AnimationFactory triggerId={bite.visual_trigger} />
+              </div>
+              
+              {/* Background Gradient Overlay */}
+              <div className={`absolute inset-0 bg-gradient-to-br ${fallbackColors[i % fallbackColors.length]} opacity-80 z-0`} />
               
               {/* Content */}
               <div className="relative z-10 w-full h-full px-6 pt-10 pb-2 flex flex-col text-white overflow-y-auto custom-scrollbar">
                 {item.icon && <div className="text-5xl mb-4 drop-shadow-md shrink-0">{item.icon}</div>}
                 <h3 className="text-2xl font-black mb-3 shrink-0 drop-shadow-md">{item.title}</h3>
                 <p className="text-white/95 leading-relaxed font-medium text-[1.05rem] pb-4 shrink-0 drop-shadow-sm">
-                  {item.text}
+                  {item.content}
                 </p>
               </div>
             </motion.div>

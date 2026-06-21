@@ -11,12 +11,12 @@ export default function MetacentricTorque() {
   });
 
   const parts = [
-    { id: 'head', mass: 8, buoy: 8, x: 0, y: -80, present: true },
-    { id: 'torso', mass: 48, buoy: 68, x: 0, y: 0, present: true },
-    { id: 'leftArm', mass: 6, buoy: 4, x: -50, y: -10, present: !amputations.leftArm },
-    { id: 'rightArm', mass: 6, buoy: 4, x: 50, y: -10, present: !amputations.rightArm },
-    { id: 'leftLeg', mass: 16, buoy: 8, x: -22, y: 80, present: !amputations.leftLeg },
-    { id: 'rightLeg', mass: 16, buoy: 8, x: 22, y: 80, present: !amputations.rightLeg },
+    { id: 'head', mass: 8, buoy: 8, x: 0, y: -80, massY: -80, buoyY: -80, present: true },
+    { id: 'torso', mass: 48, buoy: 68, x: 0, y: 0, massY: 30, buoyY: -30, present: true },
+    { id: 'leftArm', mass: 6, buoy: 4, x: -50, y: -10, massY: -10, buoyY: -10, present: !amputations.leftArm },
+    { id: 'rightArm', mass: 6, buoy: 4, x: 50, y: -10, massY: -10, buoyY: -10, present: !amputations.rightArm },
+    { id: 'leftLeg', mass: 16, buoy: 8, x: -22, y: 80, massY: 80, buoyY: 80, present: !amputations.leftLeg },
+    { id: 'rightLeg', mass: 16, buoy: 8, x: 22, y: 80, massY: 80, buoyY: 80, present: !amputations.rightLeg },
   ];
 
   let totalMass = 0;
@@ -31,9 +31,9 @@ export default function MetacentricTorque() {
       totalMass += p.mass;
       totalBuoy += p.buoy;
       cgX += p.mass * p.x;
-      cgY += p.mass * p.y;
+      cgY += p.mass * p.massY;
       cbX += p.buoy * p.x;
-      cbY += p.buoy * p.y;
+      cbY += p.buoy * p.buoyY;
     }
   });
 
