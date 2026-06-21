@@ -1,0 +1,51 @@
+{
+  "lesson_id": "physiology_01_cardio",
+  "lesson_title": "המערכת הקרדיו-ווסקולרית: ה-Shift ההמודינמי",
+  "bites": [
+    {
+      "bite_id": "b001",
+      "type": "principle_card",
+      "sequence_title": "המערכת הקרדיו-ווסקולרית",
+      "visual_trigger": "animation_blood_shift",
+      "title": "עירוי דם עצמי",
+      "content": "הלחץ ההידרוסטטי על הגפיים והבטן דוחק כ-500-700 מ\"ל דם מהפריפריה למרכז. הלב מתמודד עם עלייה פתאומית בעומס קדם (Preload), המדמה קבלת עירוי דם מהיר.",
+      "clinical_highlight": "הבנת העומס הלבבי היא הבסיס לטיפול הידרותרפי בטוח."
+    },
+    {
+      "bite_id": "b002",
+      "type": "principle_card",
+      "sequence_title": "המערכת הקרדיו-ווסקולרית",
+      "visual_trigger": "animation_frank_starling",
+      "title": "מנגנון פרנק-סטרלינג",
+      "content": "הלב מסתגל לעומס הנפח: מתיחת סיבי שריר הלב מגבירה את עוצמת הכיווץ. כך מתאפשרת הזרמת הדם המוגברת ללא עלייה משמעותית בקצב הדופק.",
+      "clinical_highlight": "הסתגלות פיזיולוגית תקינה למים."
+    },
+    {
+      "bite_id": "b003",
+      "type": "principle_card",
+      "sequence_title": "המערכת הקרדיו-ווסקולרית",
+      "visual_trigger": "animation_hemodynamic_changes",
+      "title": "שינויים המודינמיים במנוחה",
+      "content": "מעצם השהייה במים (34 מעלות): תפוקת הלב עולה ב-30-50%, נפח הפעימה גדל, והלחץ הוורידי המרכזי מזנק. הדופק דווקא יורד ב-10-15 פעימות לדקה בשל גירוי וגאלי.",
+      "clinical_highlight": "הגוף מתאמץ יותר, גם ללא תנועה."
+    },
+    {
+      "bite_id": "b004",
+      "type": "clinical_case_card",
+      "sequence_title": "המערכת הקרדיו-ווסקולרית",
+      "visual_trigger": "animation_chf_risk",
+      "title": "סכנה: אי-ספיקת לב קשה",
+      "content": "שריר לב חלש אינו מסוגל להתמודד עם ה-Preload המוגבר. הלחץ עלול לחזור אל ורידי הריאה, מה שמגביר סיכון לגודש ריאתי חריף ולקריסה לבבית.",
+      "clinical_highlight": "אי-ספיקת לב לא מאוזנת היא התווית נגד מוחלטת (Absolute Contraindication)."
+    },
+    {
+      "bite_id": "b005",
+      "type": "clinical_case_card",
+      "sequence_title": "המערכת הקרדיו-ווסקולרית",
+      "visual_trigger": "animation_chf_stable",
+      "title": "טיפול בחולי לב יציבים",
+      "content": "לעומת חולים לא מאוזנים, מטופלים עם אי-ספיקת לב יציבה עשויים להרוויח. טבילה במים חמים משפרת את תפקוד האנדותל, מפחיתה עומס הורמונלי ועשויה לשפר את מקטע הפליטה.",
+      "clinical_highlight": "דרוש מעקב קפדני ואישור רפואי מראש."
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "lesson_id": "physics_02_sg_flow",
+  "lesson_title": "משקל סגולי במים וסוגי זרימה",
+  "bites": [
+    {
+      "bite_id": "b001",
+      "type": "principle_card",
+      "sequence_title": "משקל סגולי (Specific Gravity)",
+      "visual_trigger": "animation_archimedes_vectors",
+      "title": "מה קובע מי יצוף?",
+      "content": "המשקל הסגולי (SG) הוא היחס בין צפיפות הגוף לצפיפות המים. גופים בעלי SG נמוך מ-1.0 יצופו, וגופים מעל 1.0 ישקעו. המדד קריטי לתכנון תמיכה.",
+      "clinical_highlight": "הערכת ה-SG חיונית לפני בחירת ציוד טיפולי כמו מצופים או משקולות."
+    },
+    {
+      "bite_id": "b002",
+      "type": "compare_card",
+      "sequence_title": "משקל סגולי (Specific Gravity)",
+      "visual_trigger": "animation_metacentric_torque",
+      "title": "שומן מול שריר",
+      "content": "לרקמת שומן ציפה חיובית (SG 0.8-0.9), ולכן בעלי עודף משקל יצופו בקלות. רקמת שריר דחוסה יותר (SG 1.05-1.1), ולכן ספורטאים ייטו לשקוע במים.",
+      "clinical_highlight": "השתמשו במצופים לאנשים שריריים לטיפול פסיבי, ובמשקולות רגליים לאנשים כבדי משקל."
+    },
+    {
+      "bite_id": "b003",
+      "type": "clinical_case_card",
+      "sequence_title": "משקל סגולי (Specific Gravity)",
+      "visual_trigger": "animation_cp_spasticity_relief",
+      "title": "מחלת דושן (DMD)",
+      "content": "בדושן הניוון השרירי גורם להחלפת רקמת שריר בשומן, ויוצר ציפה חיובית פתולוגית. המטופל יצוף בקלות, מה שיקל על שחייה אך יקשה מאוד על עמידה יציבה.",
+      "clinical_highlight": "שילוב משקולות קרסול יאפשר יציבות בתרגול הליכה בבריכה הטיפולית."
+    },
+    {
+      "bite_id": "b004",
+      "type": "principle_card",
+      "sequence_title": "הידרודינמיקה (סוגי זרימה)",
+      "visual_trigger": "animation_drag_equation",
+      "title": "משוואת הגרר (Drag)",
+      "content": "התנגדות המים אקומודטיבית. מהירות התנועה היא המשתנה הקריטי: הכפלת מהירות תגדיל את ההתנגדות פי 4. גם הגדלת שטח הפנים (למשל פישוק אצבעות) תעלה את הגרר.",
+      "clinical_highlight": "תנועה איטית מותאמת לכאב אקוטי; תנועה מתפרצת מותאמת לשיקום אורתופדי."
+    },
+    {
+      "bite_id": "b005",
+      "type": "compare_card",
+      "sequence_title": "הידרודינמיקה (סוגי זרימה)",
+      "visual_trigger": "animation_turbulent_gliding",
+      "title": "זרימה למינרית מול טורבולנטית",
+      "content": "זרימה למינרית היא איטית ובעלת גרר נמוך. זרימה טורבולנטית, הנוצרת בתנועה מהירה, גורמת להיפרדות שכבת הגבול ויצירת 'שובל' של לחץ נמוך, המגביר משמעותית את ההתנגדות.",
+      "clinical_highlight": "שיטת הליוויק משתמשת בזרימה טורבולנטית ככלי ליצירת התנגדות אקטיבית על המטופל."
+    },
+    {
+      "bite_id": "b006",
+      "type": "clinical_case_card",
+      "sequence_title": "הידרודינמיקה (סוגי זרימה)",
+      "visual_trigger": "animation_turbulent_gliding",
+      "title": "ניצול גרר גל לאימון יציבות",
+      "content": "גרר גל (Wave Drag) נוצר בממשק מים-אוויר. יצירת גלים יזומים סביב המטופל דורשת ממנו להפעיל מערכות ייצוב פנימיות כנגד ההפרעה החיצונית (Perturbations).",
+      "clinical_highlight": "תרגול מצוין לשיפור יציבות דינמית בחולי פרקינסון וטרשת נפוצה."
+    }
+  ]
+}

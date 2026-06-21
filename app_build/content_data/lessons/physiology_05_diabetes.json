@@ -1,0 +1,33 @@
+{  
+  "lesson_id": "physiology_05_diabetes",  
+  "lesson_title": "סוכרת במים: אתגר פרמקוקינטי",  
+  "bites": [  
+    {  
+      "bite_id": "b001",  
+      "type": "principle_card",  
+      "sequence_title": "סוכרת במים: אתגר פרמקוקינטי",
+      "visual_trigger": "animation_vasodilation_insulin",  
+      "title": "האתגר הפרמקוקינטי",  
+      "content": "טבילה במים חמים גורמת להרחבת כלי דם (Vasodilation). אם הוזרק אינסולין לגף פעיל לפני הטיפול, הזרימה המוגברת מאיצה את ספיגתו (Rapid Absorption).",  
+      "clinical_highlight": "שיא פעולת האינסולין יגיע מהר וחזק מהצפוי ביבשה."  
+    },  
+    {  
+      "bite_id": "b002",  
+      "type": "clinical_case_card",  
+      "sequence_title": "סוכרת במים: אתגר פרמקוקינטי",
+      "visual_trigger": "animation_hypoglycemia_risk",  
+      "title": "סכנת היפוגליקמיה ממוסכת",  
+      "content": "שילוב של אינסולין גבוה וצריכת גלוקוז מוגברת עקב פעילות שרירית עלול להוביל לנפילת סוכר פתאומית.",  
+      "clinical_highlight": "המים ממסכים סימני אזהרה קלאסיים כמו הזעה, מה שמקשה על זיהוי מוקדם של היפוגליקמיה."  
+    },
+    {  
+      "bite_id": "b003",  
+      "type": "principle_card",  
+      "sequence_title": "סוכרת במים: אתגר פרמקוקינטי",
+      "visual_trigger": "animation_diabetes_protocol",  
+      "title": "פרוטוקול עבודה מותאם",  
+      "content": "יש להימנע מהזרקה בגפיים פעילות טרם הטיפול (הזרקה בבטן עדיפה). חובה לנטר סוכר רציף (CGM) או לבצע בדיקה לפני ואחרי הכניסה.",  
+      "clinical_highlight": "תמיד יש לוודא זמינות של מקור גלוקוז מהיר (מיץ או ג'ל) על שפת הבריכה."  
+    }
+  ]  
+}
