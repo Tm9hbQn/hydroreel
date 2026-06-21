@@ -3,6 +3,15 @@ import path from 'path';
 import ReelRenderer from '@/components/ReelRenderer';
 import { notFound } from 'next/navigation';
 
+export async function generateStaticParams() {
+  const lessonsDir = path.join(process.cwd(), 'content_data', 'lessons');
+  const files = fs.readdirSync(lessonsDir).filter(file => file.endsWith('.json'));
+  
+  return files.map((file) => ({
+    id: file.replace('.json', ''),
+  }));
+}
+
 export default async function LessonPage({ params }: { params: { id: string } }) {
   const filePath = path.join(process.cwd(), 'content_data', 'lessons', `${params.id}.json`);
   
