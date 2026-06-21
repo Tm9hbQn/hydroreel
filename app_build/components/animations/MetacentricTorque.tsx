@@ -30,7 +30,7 @@ export default function MetacentricTorque() {
   let visualCbX = 0;
   let visualCbY = 0;
 
-  parts.forEach(p => {
+  for (const p of parts) {
     if (p.present) {
       totalMass += p.mass;
       totalBuoy += p.buoy;
@@ -46,7 +46,7 @@ export default function MetacentricTorque() {
       visualCbX += p.buoy * p.x;
       visualCbY += p.buoy * p.buoyY;
     }
-  });
+  }
 
   cgX /= totalMass;
   cgY /= totalMass;
@@ -75,23 +75,23 @@ export default function MetacentricTorque() {
     <div className="w-full h-full relative overflow-hidden bg-gradient-to-b from-gray-100 to-sky-100 flex items-center justify-center font-sans">
       
       {/* Controls */}
-      <div className="absolute top-4 left-4 z-50 bg-white/90 p-3 rounded-xl shadow-lg backdrop-blur-md text-sm rtl" dir="rtl">
-        <h3 className="font-bold text-gray-800 mb-2">סימון קטיעות:</h3>
-        <div className="grid grid-cols-2 gap-x-4 gap-y-2">
-          <label className="flex items-center gap-2 cursor-pointer">
-            <input type="checkbox" checked={amputations.rightArm} onChange={() => handleToggle('rightArm')} className="w-4 h-4 text-blue-600" />
+      <div className="absolute top-2 md:top-4 left-2 right-2 md:right-auto md:left-4 z-50 bg-white/90 p-2 md:p-3 rounded-xl shadow-lg backdrop-blur-md text-[10px] md:text-sm rtl flex flex-col md:block" dir="rtl">
+        <h3 className="font-bold text-gray-800 mb-1 md:mb-2 text-center md:text-right">סימון קטיעות:</h3>
+        <div className="flex flex-row md:grid md:grid-cols-2 gap-2 justify-center">
+          <label className="flex items-center gap-1 cursor-pointer">
+            <input type="checkbox" checked={amputations.rightArm} onChange={() => handleToggle('rightArm')} className="w-3 h-3 md:w-4 md:h-4 text-blue-600" />
             <span>יד ימין</span>
           </label>
-          <label className="flex items-center gap-2 cursor-pointer">
-            <input type="checkbox" checked={amputations.leftArm} onChange={() => handleToggle('leftArm')} className="w-4 h-4 text-blue-600" />
+          <label className="flex items-center gap-1 cursor-pointer">
+            <input type="checkbox" checked={amputations.leftArm} onChange={() => handleToggle('leftArm')} className="w-3 h-3 md:w-4 md:h-4 text-blue-600" />
             <span>יד שמאל</span>
           </label>
-          <label className="flex items-center gap-2 cursor-pointer">
-            <input type="checkbox" checked={amputations.rightLeg} onChange={() => handleToggle('rightLeg')} className="w-4 h-4 text-blue-600" />
+          <label className="flex items-center gap-1 cursor-pointer">
+            <input type="checkbox" checked={amputations.rightLeg} onChange={() => handleToggle('rightLeg')} className="w-3 h-3 md:w-4 md:h-4 text-blue-600" />
             <span>רגל ימין</span>
           </label>
-          <label className="flex items-center gap-2 cursor-pointer">
-            <input type="checkbox" checked={amputations.leftLeg} onChange={() => handleToggle('leftLeg')} className="w-4 h-4 text-blue-600" />
+          <label className="flex items-center gap-1 cursor-pointer">
+            <input type="checkbox" checked={amputations.leftLeg} onChange={() => handleToggle('leftLeg')} className="w-3 h-3 md:w-4 md:h-4 text-blue-600" />
             <span>רגל שמאל</span>
           </label>
         </div>
@@ -198,18 +198,18 @@ export default function MetacentricTorque() {
       </motion.div>
       
       {/* Legend */}
-      <div className="absolute bottom-4 right-4 z-50 bg-white/90 p-3 rounded-xl shadow-lg backdrop-blur-md text-xs rtl" dir="rtl">
-        <div className="flex items-center gap-2 mb-1">
-          <div className="w-4 h-4 bg-white rounded-full shadow-[0_0_8px_rgba(255,255,255,0.8)] border border-gray-300"></div>
-          <span className="font-semibold text-gray-800">CB - מרכז הציפה</span>
+      <div className="absolute bottom-2 md:bottom-4 left-2 right-2 md:left-auto md:right-4 z-50 bg-white/90 p-2 md:p-3 rounded-xl shadow-lg backdrop-blur-md text-[10px] md:text-xs rtl flex justify-around md:block" dir="rtl">
+        <div className="flex items-center gap-1 md:gap-2 md:mb-1">
+          <div className="w-3 h-3 md:w-4 md:h-4 bg-white rounded-full shadow-[0_0_8px_rgba(255,255,255,0.8)] border border-gray-300"></div>
+          <span className="font-semibold text-gray-800">CB</span>
         </div>
-        <div className="flex items-center gap-2 mb-1">
-          <div className="w-4 h-4 bg-black rounded-full shadow-[0_0_8px_rgba(0,0,0,0.5)]"></div>
-          <span className="font-semibold text-gray-800">CG - מרכז הכובד</span>
+        <div className="flex items-center gap-1 md:gap-2 md:mb-1">
+          <div className="w-3 h-3 md:w-4 md:h-4 bg-black rounded-full shadow-[0_0_8px_rgba(0,0,0,0.5)]"></div>
+          <span className="font-semibold text-gray-800">CG</span>
         </div>
-        <div className="flex items-center gap-2 mt-2 pt-2 border-t border-gray-200 text-gray-600">
+        <div className="flex items-center gap-1 md:gap-2 md:mt-2 md:pt-2 md:border-t border-gray-200 text-gray-600">
           <div className="w-4 h-0 border-t-2 border-yellow-500 border-dashed"></div>
-          <span>מומנט סיבוב</span>
+          <span>מומנט</span>
         </div>
       </div>
     </div>

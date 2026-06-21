@@ -66,24 +66,22 @@ export default function FlashcardCarousel({ bite }: Props) {
           className="w-full h-full flex-1 overflow-x-auto flex snap-x snap-mandatory hide-scrollbar pt-2 pb-4 px-6 gap-6 items-stretch"
         >
           {bite.items?.map((item, i) => (
-            <motion.div 
+            <div 
               key={i} 
-              className="shrink-0 w-[92%] max-w-[400px] h-full max-h-[600px] snap-center rounded-[2.5rem] relative overflow-hidden transition-transform duration-300"
+              className="shrink-0 w-[92%] max-w-[400px] h-full max-h-[600px] snap-center rounded-[2.5rem] relative overflow-hidden transition-transform duration-300 shadow-xl"
             >
-              {/* Background Animation (if present) */}
-              <div className="absolute inset-0 z-0">
-                <AnimationFactory triggerId={bite.visual_trigger} />
-              </div>
+              {/* Background Gradient Overlay */}
+              <div className={`absolute inset-0 bg-gradient-to-br ${fallbackColors[i % fallbackColors.length]} z-0`} />
               
               {/* Content */}
-              <div className="relative z-10 w-full h-full px-8 pt-12 pb-6 flex flex-col text-slate-900 overflow-y-auto custom-scrollbar bg-white/70 backdrop-blur-sm border border-white/40 shadow-xl">
-                {item.icon && <div className="text-6xl mb-6 drop-shadow-sm shrink-0">{item.icon}</div>}
-                <h3 className="text-3xl font-black mb-4 shrink-0 text-slate-800 drop-shadow-sm">{item.title}</h3>
-                <p className="text-slate-700 leading-relaxed font-semibold text-[1.15rem] pb-4 shrink-0">
+              <div className="relative z-10 w-full h-full px-6 pt-10 pb-2 flex flex-col text-white overflow-y-auto custom-scrollbar">
+                {item.icon && <div className="text-5xl mb-4 drop-shadow-md shrink-0">{item.icon}</div>}
+                <h3 className="text-2xl font-black mb-3 shrink-0 drop-shadow-md">{item.title}</h3>
+                <p className="text-white/95 leading-relaxed font-medium text-[1.05rem] pb-4 shrink-0 drop-shadow-sm">
                   {item.content}
                 </p>
               </div>
-            </motion.div>
+            </div>
           ))}
           <div className="shrink-0 w-4 h-full" />
         </div>

@@ -26,15 +26,18 @@ export default function ClinicalCaseCard({ bite }: Props) {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="w-full z-10 px-6 pt-20 pb-2 flex flex-col shrink-0"
+        className="w-full z-10 px-6 pt-16 pb-2 flex flex-col shrink-0"
+        dir="rtl"
       >
-        {/* Badge */}
-        <div className="self-end mb-4 bg-emerald-500 text-white text-sm md:text-base font-extrabold px-4 py-2 rounded-full flex items-center gap-2 shadow-lg ring-2 ring-emerald-300 ring-offset-2 ring-offset-[#fafcff]">
+        {/* Badge / Frozen Header */}
+        <div className="self-start mb-4 bg-emerald-500 text-white text-sm md:text-base font-extrabold px-4 py-2 rounded-full flex items-center gap-2 shadow-sm ring-2 ring-emerald-300">
           <span className="w-2.5 h-2.5 bg-white rounded-full animate-ping"></span>
           דוגמה קלינית
         </div>
+        
+        {/* Reel Title */}
         <div className="relative inline-block mb-3 self-start">
-          <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight font-sans relative z-10" dir="rtl">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight font-sans relative z-10">
             {bite.title}
           </h2>
           <motion.div 
@@ -42,16 +45,18 @@ export default function ClinicalCaseCard({ bite }: Props) {
             whileInView={{ width: "100%" }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.3, ease: "circOut" }}
-            className="absolute bottom-1 left-0 h-4 bg-emerald-300/60 -z-0 rounded-full"
+            className="absolute bottom-1 right-0 h-4 bg-emerald-300/60 -z-0 rounded-full"
           />
         </div>
         
-        <p className="text-slate-700 text-[1.15rem] leading-relaxed font-medium" dir="rtl">
+        {/* Clinical Example Content */}
+        <p className="text-slate-700 text-[1.15rem] leading-relaxed font-medium text-right self-start">
           {bite.content}
         </p>
         
+        {/* Treatment Note */}
         {bite.clinical_highlight && (
-          <div className="mt-4 p-4 rounded-xl bg-emerald-50 border border-emerald-100 text-sm text-slate-800 font-medium shadow-sm" dir="rtl">
+          <div className="mt-4 p-4 rounded-xl bg-emerald-50 border border-emerald-100 text-sm text-slate-800 font-medium shadow-sm text-right self-start w-full">
             <span className="block text-xs uppercase tracking-wider text-emerald-600 mb-1">הערת טיפול</span>
             {bite.clinical_highlight}
           </div>
