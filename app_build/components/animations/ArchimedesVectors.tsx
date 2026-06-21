@@ -57,7 +57,7 @@ export default function ArchimedesVectors() {
         {/* The Person */}
         <motion.div 
           className="relative w-24 h-64 flex flex-col items-center z-20"
-          animate={{ y: 20 + (immersion * 1.5) }} // Sink into water
+          animate={{ y: 20 }} // Keep person static
           transition={{ type: "spring", stiffness: 100, damping: 20 }}
         >
           {/* Head */}
@@ -86,9 +86,13 @@ export default function ArchimedesVectors() {
         </motion.div>
 
         {/* Water Surface Container */}
-        <div className="absolute bottom-0 w-full h-[200px] z-30 pointer-events-none flex items-end">
+        <motion.div 
+          className="absolute bottom-0 w-full z-30 pointer-events-none flex items-end"
+          animate={{ height: immersion * 3 }} // Water rises based on immersion
+          transition={{ type: "spring", stiffness: 100, damping: 20 }}
+        >
            <div className="w-full h-full bg-blue-500/40 border-t-2 border-cyan-300 backdrop-blur-[2px]"></div>
-        </div>
+        </motion.div>
 
       </div>
       

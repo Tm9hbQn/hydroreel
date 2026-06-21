@@ -25,15 +25,26 @@ export default function MetacentricTorque() {
   let cgY = 0;
   let cbX = 0;
   let cbY = 0;
+  let visualCgX = 0;
+  let visualCgY = 0;
+  let visualCbX = 0;
+  let visualCbY = 0;
 
   parts.forEach(p => {
     if (p.present) {
       totalMass += p.mass;
       totalBuoy += p.buoy;
+      // Physics calculation for angle (same as before to keep the dramatic rotation)
       cgX += p.mass * p.x;
-      cgY += p.mass * p.massY;
+      cgY += p.mass * p.y;
       cbX += p.buoy * p.x;
-      cbY += p.buoy * p.buoyY;
+      cbY += p.buoy * p.y;
+      
+      // Visual calculation for dots (split points for anatomy)
+      visualCgX += p.mass * p.x;
+      visualCgY += p.mass * p.massY;
+      visualCbX += p.buoy * p.x;
+      visualCbY += p.buoy * p.buoyY;
     }
   });
 
@@ -41,6 +52,11 @@ export default function MetacentricTorque() {
   cgY /= totalMass;
   cbX /= totalBuoy;
   cbY /= totalBuoy;
+
+  visualCgX /= totalMass;
+  visualCgY /= totalMass;
+  visualCbX /= totalBuoy;
+  visualCbY /= totalBuoy;
 
   const dx = cgX - cbX;
   const dy = cgY - cbY;
@@ -149,7 +165,7 @@ export default function MetacentricTorque() {
           {/* Center of Buoyancy (B) */}
           <motion.div 
             className="absolute w-5 h-5 bg-white rounded-full shadow-[0_0_12px_white] flex items-center justify-center z-30"
-            animate={{ x: cbX, y: cbY }}
+            animate={{ x: visualCbX, y: visualCbY }}
             style={{ x: "-50%", y: "-50%" }}
             transition={{ type: "spring", stiffness: 100 }}
           >
@@ -159,7 +175,7 @@ export default function MetacentricTorque() {
           {/* Center of Gravity (G) */}
           <motion.div 
             className="absolute w-5 h-5 bg-black rounded-full shadow-[0_0_12px_black] flex items-center justify-center z-30"
-            animate={{ x: cgX, y: cgY }}
+            animate={{ x: visualCgX, y: visualCgY }}
             style={{ x: "-50%", y: "-50%" }}
             transition={{ type: "spring", stiffness: 100 }}
           >
@@ -171,7 +187,7 @@ export default function MetacentricTorque() {
             className="absolute top-0 left-0 overflow-visible z-20 pointer-events-none opacity-60"
           >
             <motion.line
-              animate={{ x1: cbX, y1: cbY, x2: cgX, y2: cgY }}
+              animate={{ x1: visualCbX, y1: visualCbY, x2: visualCgX, y2: visualCgY }}
               transition={{ type: "spring", stiffness: 100 }}
               stroke="yellow"
               strokeWidth="2"
