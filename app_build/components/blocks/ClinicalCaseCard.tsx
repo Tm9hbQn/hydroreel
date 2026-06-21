@@ -20,20 +20,19 @@ export default function ClinicalCaseCard({ bite }: Props) {
   return (
     <section className="snap-start h-[100dvh] w-full flex flex-col relative overflow-hidden bg-[#fafcff] pb-16">
       
-      {/* Badge */}
-      <div className="absolute top-20 right-6 z-20 bg-emerald-500 text-white text-sm md:text-base font-extrabold px-4 py-2 rounded-full flex items-center gap-2 shadow-lg ring-2 ring-emerald-300 ring-offset-2 ring-offset-[#fafcff]">
-        <span className="w-2.5 h-2.5 bg-white rounded-full animate-ping"></span>
-        דוגמה קלינית
-      </div>
-
       {/* Content Area */}
       <motion.div 
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="w-full z-10 px-6 pt-24 pb-2 flex flex-col shrink-0"
+        className="w-full z-10 px-6 pt-20 pb-2 flex flex-col shrink-0"
       >
+        {/* Badge */}
+        <div className="self-end mb-4 bg-emerald-500 text-white text-sm md:text-base font-extrabold px-4 py-2 rounded-full flex items-center gap-2 shadow-lg ring-2 ring-emerald-300 ring-offset-2 ring-offset-[#fafcff]">
+          <span className="w-2.5 h-2.5 bg-white rounded-full animate-ping"></span>
+          דוגמה קלינית
+        </div>
         <div className="relative inline-block mb-3 self-start">
           <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight font-sans relative z-10" dir="rtl">
             {bite.title}

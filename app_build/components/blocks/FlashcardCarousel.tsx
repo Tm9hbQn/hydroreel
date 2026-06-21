@@ -6,6 +6,7 @@ import AnimationFactory from '../AnimationFactory';
 export interface FlashcardCarouselBite {
   bite_id: string;
   type: string;
+  visual_trigger?: string;
   title: string;
   items: Array<{ title: string; content: string; icon?: string }>;
 }
