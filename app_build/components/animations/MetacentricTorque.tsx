@@ -1,41 +1,201 @@
 "use client";
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
 export default function MetacentricTorque() {
-  return (
-    <div className="w-full h-full relative overflow-hidden bg-gradient-to-b from-sky-400 to-blue-700 flex items-center justify-center">
-      {/* Water Level */}
-      <div className="absolute bottom-0 w-full h-1/2 bg-blue-900/30 backdrop-blur-sm border-t border-white/20"></div>
+  const [amputations, setAmputations] = useState({
+    leftArm: false,
+    rightArm: false,
+    leftLeg: false,
+    rightLeg: false,
+  });
 
-      {/* The Object (Boat-like) */}
-      <motion.div 
-        className="w-48 h-24 bg-orange-400 rounded-b-full border-4 border-orange-600 relative z-10"
-        animate={{ rotate: [-15, 15, -15] }}
-        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-        style={{ transformOrigin: "center top" }}
-      >
-        {/* Center of Gravity (G) */}
-        <div className="absolute top-4 left-1/2 -translate-x-1/2 w-4 h-4 bg-black rounded-full shadow-[0_0_10px_black] flex items-center justify-center">
-          <span className="absolute -top-6 text-xs font-bold text-black bg-white/80 px-1 rounded">G</span>
+  const parts = [
+    { id: 'head', mass: 8, buoy: 8, x: 0, y: -80, present: true },
+    { id: 'torso', mass: 48, buoy: 68, x: 0, y: 0, present: true },
+    { id: 'leftArm', mass: 6, buoy: 4, x: -50, y: -10, present: !amputations.leftArm },
+    { id: 'rightArm', mass: 6, buoy: 4, x: 50, y: -10, present: !amputations.rightArm },
+    { id: 'leftLeg', mass: 16, buoy: 8, x: -22, y: 80, present: !amputations.leftLeg },
+    { id: 'rightLeg', mass: 16, buoy: 8, x: 22, y: 80, present: !amputations.rightLeg },
+  ];
+
+  let totalMass = 0;
+  let totalBuoy = 0;
+  let cgX = 0;
+  let cgY = 0;
+  let cbX = 0;
+  let cbY = 0;
+
+  parts.forEach(p => {
+    if (p.present) {
+      totalMass += p.mass;
+      totalBuoy += p.buoy;
+      cgX += p.mass * p.x;
+      cgY += p.mass * p.y;
+      cbX += p.buoy * p.x;
+      cbY += p.buoy * p.y;
+    }
+  });
+
+  cgX /= totalMass;
+  cgY /= totalMass;
+  cbX /= totalBuoy;
+  cbY /= totalBuoy;
+
+  const dx = cgX - cbX;
+  const dy = cgY - cbY;
+  
+  // Angle to align CG directly below CB
+  const targetAngle = Math.atan2(dx, dy) * (180 / Math.PI);
+  
+  // Adjust vertical position slightly to simulate buoyancy changes
+  const floatY = (totalMass / totalBuoy) * 15 - 15; 
+
+  const handleToggle = (limb: keyof typeof amputations) => {
+    setAmputations(prev => ({ ...prev, [limb]: !prev[limb] }));
+  };
+
+  return (
+    <div className="w-full h-full relative overflow-hidden bg-gradient-to-b from-sky-300 to-blue-600 flex items-center justify-center font-sans">
+      
+      {/* Controls */}
+      <div className="absolute top-4 left-4 z-50 bg-white/90 p-3 rounded-xl shadow-lg backdrop-blur-md text-sm rtl" dir="rtl">
+        <h3 className="font-bold text-gray-800 mb-2">סימון קטיעות:</h3>
+        <div className="grid grid-cols-2 gap-x-4 gap-y-2">
+          <label className="flex items-center gap-2 cursor-pointer">
+            <input type="checkbox" checked={amputations.rightArm} onChange={() => handleToggle('rightArm')} className="w-4 h-4 text-blue-600" />
+            <span>יד ימין</span>
+          </label>
+          <label className="flex items-center gap-2 cursor-pointer">
+            <input type="checkbox" checked={amputations.leftArm} onChange={() => handleToggle('leftArm')} className="w-4 h-4 text-blue-600" />
+            <span>יד שמאל</span>
+          </label>
+          <label className="flex items-center gap-2 cursor-pointer">
+            <input type="checkbox" checked={amputations.rightLeg} onChange={() => handleToggle('rightLeg')} className="w-4 h-4 text-blue-600" />
+            <span>רגל ימין</span>
+          </label>
+          <label className="flex items-center gap-2 cursor-pointer">
+            <input type="checkbox" checked={amputations.leftLeg} onChange={() => handleToggle('leftLeg')} className="w-4 h-4 text-blue-600" />
+            <span>רגל שמאל</span>
+          </label>
         </div>
-        
-        {/* Center of Buoyancy (B) */}
-        <motion.div 
-          className="absolute bottom-4 left-1/2 -translate-x-1/2 w-4 h-4 bg-white rounded-full shadow-[0_0_10px_white] flex items-center justify-center"
-          animate={{ x: [10, -10, 10] }} // Shifts dynamically as it tilts
+      </div>
+
+      {/* Water Level */}
+      <div className="absolute bottom-0 w-full h-[55%] bg-blue-800/40 backdrop-blur-sm border-t border-cyan-200/50 z-20 pointer-events-none"></div>
+
+      {/* The Body Container */}
+      <motion.div 
+        className="relative z-10 w-0 h-0"
+        animate={{ 
+          rotate: targetAngle,
+          y: floatY 
+        }}
+        transition={{ type: "spring", stiffness: 40, damping: 15 }}
+      >
+        {/* Subtle breathing/floating animation wrapper */}
+        <motion.div
+          className="relative w-0 h-0"
+          animate={{ y: [-3, 3, -3], rotate: [-1, 1, -1] }}
           transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
         >
-          <span className="absolute -bottom-6 text-xs font-bold text-white bg-black/80 px-1 rounded">B</span>
-        </motion.div>
+          {/* Head */}
+          <div 
+            className="absolute w-[48px] h-[56px] bg-orange-200 rounded-full border-2 border-orange-300" 
+            style={{ transform: `translate(calc(-50% + ${parts[0].x}px), calc(-50% + ${parts[0].y}px))` }}
+          />
+          
+          {/* Torso */}
+          <div 
+            className="absolute w-[80px] h-[112px] bg-orange-300 rounded-3xl border-2 border-orange-400 overflow-hidden" 
+            style={{ transform: `translate(calc(-50% + ${parts[1].x}px), calc(-50% + ${parts[1].y}px))` }}
+          >
+            {/* Lungs visual indication */}
+            <div className="absolute top-2 left-2 right-2 h-14 bg-blue-100/40 rounded-2xl border border-blue-200/50"></div>
+          </div>
+          
+          {/* Left Arm */}
+          {!amputations.leftArm && (
+            <div 
+              className="absolute w-[32px] h-[90px] bg-orange-200 rounded-full border-2 border-orange-300 origin-top rotate-[15deg]" 
+              style={{ transform: `translate(calc(-50% + ${parts[2].x}px), calc(-50% + ${parts[2].y}px))` }}
+            />
+          )}
+          
+          {/* Right Arm */}
+          {!amputations.rightArm && (
+            <div 
+              className="absolute w-[32px] h-[90px] bg-orange-200 rounded-full border-2 border-orange-300 origin-top -rotate-[15deg]" 
+              style={{ transform: `translate(calc(-50% + ${parts[3].x}px), calc(-50% + ${parts[3].y}px))` }}
+            />
+          )}
+          
+          {/* Left Leg */}
+          {!amputations.leftLeg && (
+            <div 
+              className="absolute w-[40px] h-[110px] bg-orange-200 rounded-full border-2 border-orange-300 origin-top rotate-[5deg]" 
+              style={{ transform: `translate(calc(-50% + ${parts[4].x}px), calc(-50% + ${parts[4].y}px))` }}
+            />
+          )}
+          
+          {/* Right Leg */}
+          {!amputations.rightLeg && (
+            <div 
+              className="absolute w-[40px] h-[110px] bg-orange-200 rounded-full border-2 border-orange-300 origin-top -rotate-[5deg]" 
+              style={{ transform: `translate(calc(-50% + ${parts[5].x}px), calc(-50% + ${parts[5].y}px))` }}
+            />
+          )}
 
-        {/* Metacentric Torque Arrow */}
-        <motion.div 
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 border-t-4 border-l-4 border-yellow-300 rounded-tl-full opacity-70"
-          animate={{ rotate: [10, -10, 10], opacity: [0, 1, 0] }}
-          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-        />
+          {/* Center of Buoyancy (B) */}
+          <motion.div 
+            className="absolute w-5 h-5 bg-white rounded-full shadow-[0_0_12px_white] flex items-center justify-center z-30"
+            animate={{ x: cbX, y: cbY }}
+            style={{ x: "-50%", y: "-50%" }}
+            transition={{ type: "spring", stiffness: 100 }}
+          >
+            <span className="absolute -left-7 text-[11px] font-bold text-blue-900 bg-white/90 px-1 rounded shadow">CB</span>
+          </motion.div>
+
+          {/* Center of Gravity (G) */}
+          <motion.div 
+            className="absolute w-5 h-5 bg-black rounded-full shadow-[0_0_12px_black] flex items-center justify-center z-30"
+            animate={{ x: cgX, y: cgY }}
+            style={{ x: "-50%", y: "-50%" }}
+            transition={{ type: "spring", stiffness: 100 }}
+          >
+            <span className="absolute -right-7 text-[11px] font-bold text-black bg-white/90 px-1 rounded shadow">CG</span>
+          </motion.div>
+
+          {/* Metacentric Torque Line */}
+          <motion.svg 
+            className="absolute top-0 left-0 overflow-visible z-20 pointer-events-none opacity-60"
+          >
+            <motion.line
+              animate={{ x1: cbX, y1: cbY, x2: cgX, y2: cgY }}
+              transition={{ type: "spring", stiffness: 100 }}
+              stroke="yellow"
+              strokeWidth="2"
+              strokeDasharray="4 4"
+            />
+          </motion.svg>
+        </motion.div>
       </motion.div>
+      
+      {/* Legend */}
+      <div className="absolute bottom-4 right-4 z-50 bg-white/90 p-3 rounded-xl shadow-lg backdrop-blur-md text-xs rtl" dir="rtl">
+        <div className="flex items-center gap-2 mb-1">
+          <div className="w-4 h-4 bg-white rounded-full shadow-[0_0_8px_rgba(255,255,255,0.8)] border border-gray-300"></div>
+          <span className="font-semibold text-gray-800">CB - מרכז הציפה</span>
+        </div>
+        <div className="flex items-center gap-2 mb-1">
+          <div className="w-4 h-4 bg-black rounded-full shadow-[0_0_8px_rgba(0,0,0,0.5)]"></div>
+          <span className="font-semibold text-gray-800">CG - מרכז הכובד</span>
+        </div>
+        <div className="flex items-center gap-2 mt-2 pt-2 border-t border-gray-200 text-gray-600">
+          <div className="w-4 h-0 border-t-2 border-yellow-500 border-dashed"></div>
+          <span>מומנט סיבוב</span>
+        </div>
+      </div>
     </div>
   );
 }
