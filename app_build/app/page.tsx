@@ -1,28 +1,16 @@
 import fs from 'fs';
 import path from 'path';
-import ReelRenderer from '@/components/ReelRenderer';
+import HomeClient from '@/components/HomeClient';
 
-// Ordered list of lesson files to display in feed
-const LESSON_ORDER = [
-  'unit1_physics.json',
-  'physiology_01_cardio.json',
-  'physiology_02_renal.json',
-  'physiology_03_respiratory.json',
-  'physiology_04_neuro.json',
-  'physiology_05_diabetes.json',
-  'neuro_01_stroke.json',
-  'neuro_02_sci.json',
-  'neuro_03_pots.json',
-  'neuro_04_epilepsy.json',
-  'orthopedics_01_fractures.json',
-  'orthopedics_02_spine.json',
-  'orthopedics_03_lower_limb.json',
-  'orthopedics_04_upper_limb.json',
-];
+// ==========================================
+// DATA TYPES
+// ==========================================
 
 interface Bite {
   bite_id: string;
   sequence_title?: string;
+  title?: string;
+  content?: string;
   [key: string]: any;
 }
 
@@ -30,6 +18,51 @@ interface LessonData {
   lesson_id: string;
   lesson_title: string;
   bites: Bite[];
+}
+
+interface CatalogCategory {
+  category_id: string;
+  category_title: string;
+  icon: string;
+  color_from: string;
+  color_to: string;
+  description: string;
+  lessons: string[];
+}
+
+interface CourseCatalog {
+  categories: CatalogCategory[];
+  learning_order: string[];
+}
+
+// ==========================================
+// DATA LOADING (Server-side only)
+// ==========================================
+
+function loadCatalog(): CourseCatalog {
+  const catalogPath = path.join(process.cwd(), 'content_data', 'course_catalog.json');
+  return JSON.parse(fs.readFileSync(catalogPath, 'utf8'));
+}
+
+function loadLessons(catalog: CourseCatalog): Map<string, LessonData> {
+  const lessonsDir = path.join(process.cwd(), 'content_data', 'lessons');
+  const lessonMap = new Map<string, LessonData>();
+
+  for (const lessonId of catalog.learning_order) {
+    const filePath = path.join(lessonsDir, `${lessonId}.json`);
+    if (fs.existsSync(filePath)) {
+      try {
+        const data = JSON.parse(fs.readFileSync(filePath, 'utf8')) as LessonData;
+        if (data.bites && data.bites.length > 0) {
+          lessonMap.set(lessonId, data);
+        }
+      } catch (e) {
+        console.error(`Failed to parse ${lessonId}.json:`, e);
+      }
+    }
+  }
+
+  return lessonMap;
 }
 
 function groupBitesBySequence(bites: Bite[]): { title: string; bites: Bite[] }[] {
@@ -48,80 +81,165 @@ function groupBitesBySequence(bites: Bite[]): { title: string; bites: Bite[] }[]
   return sequences;
 }
 
-export default async function Home() {
-  const lessonsDir = path.join(process.cwd(), 'content_data', 'lessons');
+// ==========================================
+// BUILD SEARCH INDEX
+// ==========================================
 
-  // Load lessons in defined order, skip missing files
-  const allLessons: LessonData[] = [];
-  for (const filename of LESSON_ORDER) {
-    const filePath = path.join(lessonsDir, filename);
-    if (fs.existsSync(filePath)) {
-      try {
-        const data = JSON.parse(fs.readFileSync(filePath, 'utf8')) as LessonData;
-        if (data.bites && data.bites.length > 0) {
-          allLessons.push(data);
-        }
-      } catch (e) {
-        console.error(`Failed to parse ${filename}:`, e);
+interface SearchItem {
+  lesson_id: string;
+  lesson_title: string;
+  bite_title: string;
+  bite_id: string;
+  sequence_title: string;
+  category_title: string;
+  category_icon: string;
+}
+
+function buildSearchIndex(
+  catalog: CourseCatalog,
+  lessonMap: Map<string, LessonData>
+): SearchItem[] {
+  const index: SearchItem[] = [];
+
+  for (const category of catalog.categories) {
+    for (const lessonId of category.lessons) {
+      const lesson = lessonMap.get(lessonId);
+      if (!lesson) continue;
+
+      for (const bite of lesson.bites) {
+        index.push({
+          lesson_id: lesson.lesson_id,
+          lesson_title: lesson.lesson_title,
+          bite_title: bite.title || '',
+          bite_id: bite.bite_id,
+          sequence_title: bite.sequence_title || '',
+          category_title: category.category_title,
+          category_icon: category.icon,
+        });
       }
     }
   }
 
-  // Build one big flat list of sequences across all lessons
-  const allSequences: { lessonTitle: string; title: string; bites: Bite[] }[] = [];
-  for (const lesson of allLessons) {
+  return index;
+}
+
+// ==========================================
+// BUILD CATEGORY DATA FOR BOTTOM SHEET
+// ==========================================
+
+interface CategoryWithLessons {
+  category_id: string;
+  category_title: string;
+  icon: string;
+  color_from: string;
+  color_to: string;
+  description: string;
+  lessons: { lesson_id: string; lesson_title: string; bite_count: number }[];
+}
+
+function buildCategoryData(
+  catalog: CourseCatalog,
+  lessonMap: Map<string, LessonData>
+): CategoryWithLessons[] {
+  return catalog.categories.map((cat) => ({
+    category_id: cat.category_id,
+    category_title: cat.category_title,
+    icon: cat.icon,
+    color_from: cat.color_from,
+    color_to: cat.color_to,
+    description: cat.description,
+    lessons: cat.lessons
+      .filter((id) => lessonMap.has(id))
+      .map((id) => {
+        const lesson = lessonMap.get(id)!;
+        return {
+          lesson_id: lesson.lesson_id,
+          lesson_title: lesson.lesson_title,
+          bite_count: lesson.bites.length,
+        };
+      }),
+  }));
+}
+
+// ==========================================
+// BUILD SEQUENCES WITH BRIDGE CARDS
+// ==========================================
+
+interface SequenceGroup {
+  lessonId: string;
+  lessonTitle: string;
+  sequenceTitle: string;
+  bites: Bite[];
+}
+
+function buildSequencesWithBridges(
+  catalog: CourseCatalog,
+  lessonMap: Map<string, LessonData>
+): SequenceGroup[] {
+  const allSequences: SequenceGroup[] = [];
+
+  const orderedLessons = catalog.learning_order
+    .filter((id) => lessonMap.has(id))
+    .map((id) => lessonMap.get(id)!);
+
+  for (let lessonIdx = 0; lessonIdx < orderedLessons.length; lessonIdx++) {
+    const lesson = orderedLessons[lessonIdx];
     const seqs = groupBitesBySequence(lesson.bites);
+
     for (const seq of seqs) {
-      allSequences.push({ lessonTitle: lesson.lesson_title, title: seq.title, bites: seq.bites });
+      allSequences.push({
+        lessonId: lesson.lesson_id,
+        lessonTitle: lesson.lesson_title,
+        sequenceTitle: seq.title,
+        bites: seq.bites,
+      });
     }
+
+    // Add bridge card at the end of each lesson
+    const nextLesson = orderedLessons[lessonIdx + 1];
+    allSequences.push({
+      lessonId: lesson.lesson_id,
+      lessonTitle: lesson.lesson_title,
+      sequenceTitle: '__bridge__',
+      bites: [
+        {
+          bite_id: `bridge_${lesson.lesson_id}`,
+          type: 'sequence_end_card',
+          completed_title: lesson.lesson_title,
+          next_lesson_title: nextLesson?.lesson_title || undefined,
+          next_lesson_id: nextLesson?.lesson_id || undefined,
+          title: `סיום: ${lesson.lesson_title}`,
+        },
+      ],
+    });
   }
 
+  return allSequences;
+}
+
+// ==========================================
+// PAGE COMPONENT (Server Component)
+// ==========================================
+
+export default async function Home() {
+  const catalog = loadCatalog();
+  const lessonMap = loadLessons(catalog);
+  const searchIndex = buildSearchIndex(catalog, lessonMap);
+  const categories = buildCategoryData(catalog, lessonMap);
+  const sequences = buildSequencesWithBridges(catalog, lessonMap);
+
+  const totalBites = sequences
+    .filter((s) => s.sequenceTitle !== '__bridge__')
+    .reduce((acc, s) => acc + s.bites.length, 0);
+  const totalLessons = lessonMap.size;
+
   return (
-    <main className="w-full bg-[#fafcff]">
-      {/* Intro Reel */}
-      <section className="snap-start h-[100dvh] w-full flex flex-col justify-center items-center relative overflow-hidden bg-gradient-to-br from-blue-500 to-cyan-400 text-white shadow-inner">
-        <div className="absolute w-96 h-96 bg-white/10 rounded-full blur-3xl -top-10 -right-20 pointer-events-none" />
-        <div className="absolute w-96 h-96 bg-blue-700/20 rounded-full blur-3xl -bottom-10 -left-20 pointer-events-none" />
-        <div className="z-10 text-center px-8 flex flex-col items-center">
-          <div className="mb-6 p-4 bg-white/20 backdrop-blur-md rounded-2xl shadow-xl inline-block">
-            <span className="text-6xl drop-shadow-lg">🌊</span>
-          </div>
-          <h1 className="text-4xl font-extrabold mb-4 font-sans tracking-tight leading-tight drop-shadow-md text-white text-center" dir="rtl">
-            Hydro-Reels
-          </h1>
-          <p className="text-lg font-semibold mb-4 text-blue-50" dir="rtl">
-            האקדמיה להידרותרפיה בפורמט Bite-Sized
-          </p>
-          <p className="text-sm text-white/70 mb-12 bg-blue-900/20 px-4 py-2 rounded-full" dir="rtl">
-            {allSequences.reduce((acc, s) => acc + s.bites.length, 0)} יחידות לימוד • {allLessons.length} נושאים
-          </p>
-          <div className="animate-bounce flex flex-col items-center">
-            <span className="text-sm font-bold tracking-widest uppercase text-white/90">התחל</span>
-            <div className="mt-3 w-8 h-12 border-2 border-white/50 rounded-full flex justify-center pt-2 backdrop-blur-sm">
-              <div className="w-1.5 h-3 bg-white rounded-full animate-ping" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* All lessons as one continuous reel feed */}
-      {allSequences.map((seq, seqIndex) => (
-        <section key={seqIndex} className="relative w-full">
-          {/* Sticky Sequence Title */}
-          <header className="sticky top-0 pt-4 z-50 w-full flex justify-center pointer-events-none">
-            <div className="bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-400 animate-gradient-flow px-5 py-2 rounded-full shadow-md border border-white/20 flex flex-col items-center">
-              <span className="text-[10px] font-semibold text-white/80 uppercase tracking-widest" dir="rtl">{seq.lessonTitle}</span>
-              <h3 className="text-white font-bold text-sm md:text-base tracking-tight drop-shadow-sm" dir="rtl">
-                {seq.title}
-              </h3>
-            </div>
-          </header>
-
-          {seq.bites.map((bite: Bite) => (
-            <ReelRenderer key={`${seqIndex}-${bite.bite_id}`} bite={bite} />
-          ))}
-        </section>
-      ))}
-    </main>
+    <HomeClient
+      sequences={sequences}
+      searchIndex={searchIndex}
+      categories={categories}
+      totalBites={totalBites}
+      totalLessons={totalLessons}
+    />
   );
 }

@@ -13,6 +13,10 @@ html, body {
   --font-sans: var(--font-rubik);
 }
 
+/* ==========================================
+   ANIMATION KEYFRAMES
+   ========================================== */
+
 @keyframes gradient-flow {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
@@ -22,4 +26,66 @@ html, body {
 .animate-gradient-flow {
   animation: gradient-flow 15s ease infinite;
   background-size: 200% 200%;
+}
+
+@keyframes float-bubble {
+  0%, 100% { transform: translateY(0px) scale(1); }
+  50% { transform: translateY(-20px) scale(1.05); }
+}
+
+.animate-float-bubble {
+  animation: float-bubble 6s ease-in-out infinite;
+}
+
+/* ==========================================
+   SPOTLIGHT SEARCH - Keyboard Avoidance
+   ========================================== */
+
+.spotlight-results {
+  max-height: calc(100vh - 80px - env(keyboard-inset-height, 0px));
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ==========================================
+   SCROLLBAR HIDING
+   ========================================== */
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ==========================================
+   PROGRESS BAR GLOW
+   ========================================== */
+
+.progress-glow {
+  box-shadow: 0 0 8px 2px rgba(56, 189, 248, 0.5);
+}
+
+/* ==========================================
+   BOTTOM SHEET SAFE AREA
+   ========================================== */
+
+.bottom-sheet-content {
+  padding-bottom: env(safe-area-inset-bottom, 16px);
+}
+
+/* ==========================================
+   RTL SUPPORT UTILITIES
+   ========================================== */
+
+[dir="rtl"] .search-icon-position {
+  right: 1rem;
+  left: auto;
+}
+
+[dir="rtl"] .search-input-padding {
+  padding-right: 3rem;
+  padding-left: 1rem;
 }

@@ -1,0 +1,72 @@
+{
+  "categories": [
+    {
+      "category_id": "physics",
+      "category_title": "הידרו-פיזיקה וביומכניקה",
+      "icon": "🌊",
+      "color_from": "#3b82f6",
+      "color_to": "#06b6d4",
+      "description": "עקרונות פיזיקליים של סביבת המים: ציפה, לחץ, גרר, ויציבות.",
+      "lessons": ["unit1_physics"]
+    },
+    {
+      "category_id": "physiology",
+      "category_title": "פיזיולוגיה וסביבת המים",
+      "icon": "❤️",
+      "color_from": "#ef4444",
+      "color_to": "#f97316",
+      "description": "תגובות מערכות הגוף לטבילה: לב, כליות, נשימה, ועצבים.",
+      "lessons": [
+        "physiology_01_cardio",
+        "physiology_02_renal",
+        "physiology_03_respiratory",
+        "physiology_04_neuro",
+        "physiology_05_diabetes"
+      ]
+    },
+    {
+      "category_id": "neuro",
+      "category_title": "נוירולוגיה ושיקום עצבי",
+      "icon": "🧠",
+      "color_from": "#8b5cf6",
+      "color_to": "#a855f7",
+      "description": "שבץ, פגיעות חוט שדרה, אפילפסיה, ופתולוגיות נוירולוגיות במים.",
+      "lessons": [
+        "neuro_01_stroke",
+        "neuro_02_sci",
+        "neuro_03_pots",
+        "neuro_04_epilepsy"
+      ]
+    },
+    {
+      "category_id": "orthopedics",
+      "category_title": "אורתופדיה ושיקום שלד-שריר",
+      "icon": "🦴",
+      "color_from": "#14b8a6",
+      "color_to": "#10b981",
+      "description": "שברים, עמוד שדרה, גף תחתון ועליון: פרוטוקולים במים.",
+      "lessons": [
+        "orthopedics_01_fractures",
+        "orthopedics_02_spine",
+        "orthopedics_03_lower_limb",
+        "orthopedics_04_upper_limb"
+      ]
+    }
+  ],
+  "learning_order": [
+    "unit1_physics",
+    "physiology_01_cardio",
+    "physiology_02_renal",
+    "physiology_03_respiratory",
+    "physiology_04_neuro",
+    "physiology_05_diabetes",
+    "neuro_01_stroke",
+    "neuro_02_sci",
+    "neuro_03_pots",
+    "neuro_04_epilepsy",
+    "orthopedics_01_fractures",
+    "orthopedics_02_spine",
+    "orthopedics_03_lower_limb",
+    "orthopedics_04_upper_limb"
+  ]
+}
