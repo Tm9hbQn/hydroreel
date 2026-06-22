@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useRef, useEffect, useCallback, useMemo } from "react";
+import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Search, X } from "lucide-react";
 
@@ -28,28 +29,20 @@ export interface SpotlightSearchProps {
 /*  Helpers                                                            */
 /* ------------------------------------------------------------------ */
 
-/** Fuzzy match algorithm (subsequence matching) */
+/** Simple word-based substring match */
 function fuzzyMatch(query: string, text: string): boolean {
   if (!query) return true;
   if (!text) return false;
   
-  const q = query.replace(/\s+/g, "").toLowerCase();
-  const t = text.replace(/\s+/g, "").toLowerCase();
+  const qWords = query.trim().toLowerCase().split(/\s+/);
+  const t = text.toLowerCase();
   
-  if (t.includes(q)) return true;
-  
-  // Subsequence match (e.g. 'grr' matches 'G r e a t r o l l')
-  let qIdx = 0;
-  for (let i = 0; i < t.length && qIdx < q.length; i++) {
-    if (t[i] === q[qIdx]) qIdx++;
-  }
-  return qIdx === q.length;
+  // Check that every word in the query is a substring of the text
+  return qWords.every((word) => t.includes(word));
 }
 
 /** 
- * Simplistic highlighter: since fuzzy match can match non-contiguous chars,
- * highlighting exactly is complex. We'll highlight exact word matches if they exist,
- * or just return the text if it was a fuzzy match without exact substring.
+ * Highlights any word from the query that appears in the text.
  */
 function HighlightedText({
   text,
@@ -60,18 +53,17 @@ function HighlightedText({
 }) {
   if (!query.trim()) return <>{text}</>;
 
-  const escaped = query.trim().replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-  const parts = text.split(new RegExp(`(${escaped})`, "gi"));
+  const qWords = query.trim().split(/\s+/).filter(w => w.length > 0);
+  if (qWords.length === 0) return <>{text}</>;
 
-  if (parts.length === 1) {
-    // No exact match, but passed fuzzy filter. Just render text.
-    return <>{text}</>;
-  }
+  const escapedWords = qWords.map(w => w.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
+  const regex = new RegExp(`(${escapedWords.join("|")})`, "gi");
+  const parts = text.split(regex);
 
   return (
     <>
       {parts.map((part, i) =>
-        part.toLowerCase() === query.trim().toLowerCase() ? (
+        qWords.some(w => w.toLowerCase() === part.toLowerCase()) ? (
           <mark
             key={i}
             className="bg-blue-400/30 text-blue-900 rounded-sm px-[2px]"
@@ -105,6 +97,11 @@ export default function SpotlightSearch({
   const [query, setQuery] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   /* ---- Filtered results ---- */
   const results = useMemo(() => {
@@ -205,8 +202,9 @@ export default function SpotlightSearch({
       )}
 
       {/* ======== Spotlight overlay (open state) ======== */}
-      <AnimatePresence>
-        {isOpen && (
+      {mounted && createPortal(
+        <AnimatePresence>
+          {isOpen && (
           <>
             {/* --- Dark glassmorphism backdrop --- */}
             <motion.div
@@ -398,7 +396,9 @@ export default function SpotlightSearch({
             </motion.div>
           </>
         )}
-      </AnimatePresence>
+        </AnimatePresence>,
+        document.body
+      )}
     </>
   );
 }
