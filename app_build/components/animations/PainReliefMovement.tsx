@@ -307,8 +307,12 @@ export default function PainReliefMovement() {
             />
 
             {/* Shoulder bar */}
+            {/* Shoulder bar */}
             <motion.line
-              y1={75} y2={75}
+              x1={inWater ? 60 : 70}
+              x2={inWater ? 140 : 130}
+              y1={75}
+              y2={75}
               stroke={inWater ? '#67e8f9' : '#fca5a5'}
               strokeWidth={3}
               strokeLinecap="round"
@@ -323,6 +327,8 @@ export default function PainReliefMovement() {
             <motion.line
               x1={inWater ? 60 : 70}
               y1={75}
+              x2={inWater ? 35 : 70}
+              y2={inWater ? 130 : 140}
               strokeWidth={3}
               stroke={inWater ? '#67e8f9' : '#fca5a5'}
               strokeLinecap="round"
@@ -341,6 +347,8 @@ export default function PainReliefMovement() {
             <motion.line
               x1={inWater ? 140 : 130}
               y1={75}
+              x2={inWater ? 165 : 130}
+              y2={inWater ? 130 : 140}
               strokeWidth={3}
               stroke={inWater ? '#67e8f9' : '#fca5a5'}
               strokeLinecap="round"
@@ -358,8 +366,10 @@ export default function PainReliefMovement() {
 
             {/* Spine */}
             <motion.line
-              x1={100} x2={100}
+              x1={100}
+              x2={inWater ? 100 : 103}
               y1={75}
+              y2={inWater ? 170 : 165}
               stroke={inWater ? '#67e8f9' : '#fca5a5'}
               strokeWidth={3}
               strokeLinecap="round"
@@ -373,7 +383,10 @@ export default function PainReliefMovement() {
 
             {/* Hip bar */}
             <motion.line
-              y1={180} y2={180}
+              x1={inWater ? 75 : 82}
+              x2={inWater ? 125 : 118}
+              y1={inWater ? 175 : 170}
+              y2={inWater ? 175 : 170}
               stroke={inWater ? '#67e8f9' : '#fca5a5'}
               strokeWidth={3}
               strokeLinecap="round"
@@ -388,6 +401,10 @@ export default function PainReliefMovement() {
 
             {/* Left Leg — upper */}
             <motion.line
+              x1={inWater ? 75 : 82}
+              y1={inWater ? 175 : 170}
+              x2={inWater ? 68 : 78}
+              y2={inWater ? 240 : 240}
               strokeWidth={3}
               stroke={inWater ? '#67e8f9' : '#fca5a5'}
               strokeLinecap="round"
@@ -406,6 +423,10 @@ export default function PainReliefMovement() {
 
             {/* Left Leg — lower */}
             <motion.line
+              x1={inWater ? 68 : 78}
+              y1={inWater ? 240 : 240}
+              x2={inWater ? 62 : 75}
+              y2={inWater ? 310 : 310}
               strokeWidth={3}
               stroke={inWater ? '#67e8f9' : '#fca5a5'}
               strokeLinecap="round"
@@ -424,6 +445,10 @@ export default function PainReliefMovement() {
 
             {/* Right Leg — upper */}
             <motion.line
+              x1={inWater ? 125 : 118}
+              y1={inWater ? 175 : 170}
+              x2={inWater ? 132 : 122}
+              y2={inWater ? 240 : 240}
               strokeWidth={3}
               stroke={inWater ? '#67e8f9' : '#fca5a5'}
               strokeLinecap="round"
@@ -443,6 +468,10 @@ export default function PainReliefMovement() {
 
             {/* Right Leg — lower */}
             <motion.line
+              x1={inWater ? 132 : 122}
+              y1={inWater ? 240 : 240}
+              x2={inWater ? 138 : 125}
+              y2={inWater ? 310 : 310}
               strokeWidth={3}
               stroke={inWater ? '#67e8f9' : '#fca5a5'}
               strokeLinecap="round"

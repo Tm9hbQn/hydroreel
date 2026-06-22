@@ -187,6 +187,10 @@ export default function MetacentricTorque() {
             className="absolute top-0 left-0 overflow-visible z-20 pointer-events-none opacity-60"
           >
             <motion.line
+              x1={visualCbX}
+              y1={visualCbY}
+              x2={visualCgX}
+              y2={visualCgY}
               animate={{ x1: visualCbX, y1: visualCbY, x2: visualCgX, y2: visualCgY }}
               transition={{ type: "spring", stiffness: 100 }}
               stroke="yellow"

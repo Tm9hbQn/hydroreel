@@ -355,6 +355,8 @@ export default function SpasticityGamma() {
             {[0, 1, 2, 3, 4, 5, 6, 7].map(i => (
               <motion.line
                 key={`striation-${i}`}
+                x1={isDamaged ? 145 + i * 16 : 115 + i * 23}
+                x2={isDamaged ? 145 + i * 16 : 115 + i * 23}
                 y1="395" y2="425"
                 stroke="#fca5a5"
                 strokeWidth="1"
