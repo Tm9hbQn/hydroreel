@@ -9,7 +9,7 @@ export default function GammaLoopHeat() {
     <motion.div 
       initial={{ opacity: 0, y: 10 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ once: false, amount: 0.2 }}
       transition={{ duration: 0.6 }}
       className="w-full h-full relative overflow-hidden bg-slate-900 flex flex-col items-center justify-center font-sans"
     >

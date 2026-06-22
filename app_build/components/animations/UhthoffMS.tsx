@@ -61,7 +61,7 @@ export default function UhthoffMS() {
     <motion.div
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ once: false, amount: 0.2 }}
       transition={{ duration: 0.5 }}
       className="w-full h-full relative overflow-hidden bg-slate-900 flex flex-col items-center font-sans"
     >

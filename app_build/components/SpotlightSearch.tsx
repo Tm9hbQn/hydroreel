@@ -28,7 +28,29 @@ export interface SpotlightSearchProps {
 /*  Helpers                                                            */
 /* ------------------------------------------------------------------ */
 
-/** Highlight every occurrence of `query` inside `text` */
+/** Fuzzy match algorithm (subsequence matching) */
+function fuzzyMatch(query: string, text: string): boolean {
+  if (!query) return true;
+  if (!text) return false;
+  
+  const q = query.replace(/\s+/g, "").toLowerCase();
+  const t = text.replace(/\s+/g, "").toLowerCase();
+  
+  if (t.includes(q)) return true;
+  
+  // Subsequence match (e.g. 'grr' matches 'G r e a t r o l l')
+  let qIdx = 0;
+  for (let i = 0; i < t.length && qIdx < q.length; i++) {
+    if (t[i] === q[qIdx]) qIdx++;
+  }
+  return qIdx === q.length;
+}
+
+/** 
+ * Simplistic highlighter: since fuzzy match can match non-contiguous chars,
+ * highlighting exactly is complex. We'll highlight exact word matches if they exist,
+ * or just return the text if it was a fuzzy match without exact substring.
+ */
 function HighlightedText({
   text,
   query,
@@ -38,13 +60,18 @@ function HighlightedText({
 }) {
   if (!query.trim()) return <>{text}</>;
 
-  const escaped = query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const escaped = query.trim().replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
   const parts = text.split(new RegExp(`(${escaped})`, "gi"));
+
+  if (parts.length === 1) {
+    // No exact match, but passed fuzzy filter. Just render text.
+    return <>{text}</>;
+  }
 
   return (
     <>
       {parts.map((part, i) =>
-        part.toLowerCase() === query.toLowerCase() ? (
+        part.toLowerCase() === query.trim().toLowerCase() ? (
           <mark
             key={i}
             className="bg-blue-400/30 text-blue-900 rounded-sm px-[2px]"
@@ -83,15 +110,15 @@ export default function SpotlightSearch({
   const results = useMemo(() => {
     if (!query.trim()) return [];
 
-    const q = query.trim().toLowerCase();
+    const q = query.trim();
 
     return searchIndex
       .filter(
         (item) =>
-          item.lesson_title.toLowerCase().includes(q) ||
-          item.bite_title.toLowerCase().includes(q) ||
-          item.sequence_title.toLowerCase().includes(q) ||
-          item.category_title.toLowerCase().includes(q),
+          fuzzyMatch(q, item.bite_title) ||
+          fuzzyMatch(q, item.lesson_title) ||
+          fuzzyMatch(q, item.sequence_title) ||
+          fuzzyMatch(q, item.category_title)
       )
       .slice(0, MAX_RESULTS);
   }, [query, searchIndex]);
@@ -316,16 +343,18 @@ export default function SpotlightSearch({
 
                           {/* Text content */}
                           <div className="flex flex-col min-w-0">
+                            {/* Bite title is now the primary big text */}
                             <span className="text-sm font-bold text-slate-900 leading-snug truncate">
                               <HighlightedText
-                                text={item.lesson_title}
+                                text={item.bite_title || "ללא כותרת"}
                                 query={query}
                               />
                             </span>
 
+                            {/* Lesson title is the secondary smaller text */}
                             <span className="text-xs text-slate-500 leading-snug truncate mt-0.5">
-                              <HighlightedText
-                                text={item.bite_title}
+                              נושא ראשי: <HighlightedText
+                                text={item.lesson_title}
                                 query={query}
                               />
                             </span>

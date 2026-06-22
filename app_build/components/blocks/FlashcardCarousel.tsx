@@ -34,7 +34,7 @@ export default function FlashcardCarousel({ bite }: Props) {
       <motion.div 
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.2 }}
+        viewport={{ once: false, amount: 0.2 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="w-full z-10 px-6 pt-24 pb-2 flex flex-col shrink-0"
       >
@@ -45,7 +45,7 @@ export default function FlashcardCarousel({ bite }: Props) {
           <motion.div 
             initial={{ width: 0 }}
             whileInView={{ width: "100%" }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             transition={{ duration: 0.7, delay: 0.3, ease: "circOut" }}
             className="absolute bottom-1 left-0 h-4 bg-purple-300/60 -z-0 rounded-full"
           />
@@ -57,7 +57,7 @@ export default function FlashcardCarousel({ bite }: Props) {
       <motion.div 
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ once: true, amount: 0.2 }}
+        viewport={{ once: false, amount: 0.2 }}
         transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
         className="flex-1 w-full flex items-center justify-center relative min-h-0 mt-4" dir="rtl"
       >

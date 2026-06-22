@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useCallback, useMemo } from "react";
+import React, { useState, useCallback, useMemo, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { BookOpen, Compass, Search as SearchIcon } from "lucide-react";
 import ReelRenderer from "./ReelRenderer";
@@ -8,6 +8,7 @@ import SpotlightSearch from "./SpotlightSearch";
 import TopicBottomSheet from "./TopicBottomSheet";
 import SequenceProgressBar from "./SequenceProgressBar";
 import BackToTopButton from "./BackToTopButton";
+import { CheckCircle2 } from "lucide-react";
 
 // ==========================================
 // TYPE DEFINITIONS
@@ -66,32 +67,72 @@ export default function HomeClient({
   totalLessons,
 }: HomeClientProps) {
   const [showBottomSheet, setShowBottomSheet] = useState(false);
-  const [showOnboarding, setShowOnboarding] = useState(true);
+  const [showToast, setShowToast] = useState(false);
+  const [toastMessage, setToastMessage] = useState("");
 
-  // Compute flat bite count for progress bar
-  const contentSequences = useMemo(
-    () => sequences.filter((s) => s.sequenceTitle !== "__bridge__"),
-    [sequences]
-  );
+  const [activeSeqSteps, setActiveSeqSteps] = useState(1);
+  const [activeBiteStep, setActiveBiteStep] = useState(0);
 
-  const totalContentBites = useMemo(
-    () => contentSequences.reduce((acc, s) => acc + s.bites.length, 0),
-    [contentSequences]
-  );
+  // Flat list of all scrollable sections to map scrollY to sequence progress
+  const flatReels = useMemo(() => {
+    const arr: { sIdx: number; bIdx: number; total: number; isBridge: boolean; title?: string }[] = [];
+    // Index 0 is the Hero/Onboarding screen
+    arr.push({ sIdx: -1, bIdx: -1, total: 1, isBridge: true });
+
+    sequences.forEach((seq, sIdx) => {
+      seq.bites.forEach((bite, bIdx) => {
+        arr.push({
+          sIdx,
+          bIdx,
+          total: seq.bites.length,
+          isBridge: seq.sequenceTitle === "__bridge__",
+          title: seq.lessonTitle,
+        });
+      });
+    });
+    return arr;
+  }, [sequences]);
+
+  // Track progress based on scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      const idx = Math.round(window.scrollY / window.innerHeight);
+      const safeIdx = Math.max(0, Math.min(idx, flatReels.length - 1));
+      const activeInfo = flatReels[safeIdx];
+      
+      if (activeInfo) {
+        if (!activeInfo.isBridge) {
+          setActiveSeqSteps(activeInfo.total);
+          setActiveBiteStep(activeInfo.bIdx);
+          setShowToast(false);
+        } else if (activeInfo.sIdx !== -1 && activeInfo.isBridge) {
+          // It's a bridge card - show completion toast
+          setToastMessage(`סיימת את: ${activeInfo.title || 'הנושא'}`);
+          setShowToast(true);
+        } else {
+          setShowToast(false);
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    // Initial check
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [flatReels]);
 
   const handleSelectLesson = useCallback((lessonId: string) => {
     setShowBottomSheet(false);
-    // Find the first reel element of this lesson and scroll to it
     const el = document.getElementById(`lesson-${lessonId}`);
     if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
+      el.scrollIntoView({ behavior: "auto" }); // Avoid smooth scrolling firing all animations in between
     }
   }, []);
 
   const handleSearchSelect = useCallback((lessonId: string) => {
     const el = document.getElementById(`lesson-${lessonId}`);
     if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
+      el.scrollIntoView({ behavior: "auto" }); // Instant jump
     }
   }, []);
 
@@ -102,62 +143,40 @@ export default function HomeClient({
   return (
     <main className="w-full bg-[#fafcff] relative">
       {/* ==========================================
-          PROGRESS BAR (Instagram Stories style)
+          PROGRESS BAR (Tracks Active Sequence)
           ========================================== */}
       <SequenceProgressBar
-        totalSteps={totalContentBites}
-        activeStep={0}
+        totalSteps={activeSeqSteps}
+        activeStep={activeBiteStep}
       />
 
       {/* ==========================================
-          HERO / HOME SCREEN
+          TOAST NOTIFICATION (Sequence Completion)
+          ========================================== */}
+      <AnimatePresence>
+        {showToast && (
+          <motion.div
+            initial={{ opacity: 0, y: 50, scale: 0.9 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 20, scale: 0.9 }}
+            className="fixed bottom-24 left-0 right-0 z-50 flex justify-center pointer-events-none"
+          >
+            <div className="bg-emerald-500 text-white px-6 py-3 rounded-full shadow-2xl flex items-center gap-3 border border-emerald-400">
+              <CheckCircle2 size={20} />
+              <span className="font-bold text-sm" dir="rtl">{toastMessage}</span>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* ==========================================
+          HERO / ONBOARDING SCREEN (First Snap Section)
           ========================================== */}
       <section className="snap-start h-[100dvh] w-full flex flex-col justify-center items-center relative overflow-hidden bg-gradient-to-br from-blue-600 via-blue-500 to-cyan-400 text-white shadow-inner">
         {/* Decorative Blobs */}
         <div className="absolute w-[500px] h-[500px] bg-white/10 rounded-full blur-3xl -top-20 -right-32 pointer-events-none" />
         <div className="absolute w-[400px] h-[400px] bg-blue-800/20 rounded-full blur-3xl -bottom-20 -left-32 pointer-events-none" />
         <div className="absolute w-[200px] h-[200px] bg-cyan-300/15 rounded-full blur-2xl top-1/3 left-1/4 pointer-events-none animate-float-bubble" />
-
-        {/* Onboarding Overlay (first visit) */}
-        <AnimatePresence>
-          {showOnboarding && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.5 }}
-              className="absolute inset-0 z-30 bg-black/30 backdrop-blur-sm flex flex-col justify-center items-center px-8"
-              onClick={() => setShowOnboarding(false)}
-            >
-              <motion.div
-                initial={{ scale: 0.8, y: 30 }}
-                animate={{ scale: 1, y: 0 }}
-                exit={{ scale: 0.8, y: 30 }}
-                transition={{ type: "spring", stiffness: 200, damping: 20 }}
-                className="bg-white/15 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl max-w-sm text-center"
-                onClick={(e) => e.stopPropagation()}
-              >
-                <div className="text-5xl mb-4">👋</div>
-                <h2 className="text-2xl font-bold mb-3" dir="rtl">
-                  ברוכים הבאים!
-                </h2>
-                <p className="text-white/90 text-base mb-6 leading-relaxed" dir="rtl">
-                  כאן תלמדו הידרותרפיה בפורמט חדש ומהפכני. החליקו למעלה כדי להתחיל
-                  ללמוד, או השתמשו בחיפוש ובניווט הנושאים כדי לקפוץ ישירות.
-                </p>
-                <motion.button
-                  whileTap={{ scale: 0.95 }}
-                  onClick={() => setShowOnboarding(false)}
-                  className="bg-white text-blue-600 font-bold py-3 px-8 rounded-2xl shadow-lg text-lg"
-                >
-                  בואו נתחיל! 🚀
-                </motion.button>
-              </motion.div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-
-        {/* Main Hero Content */}
         <div className="z-10 text-center px-8 flex flex-col items-center">
           <motion.div
             initial={{ scale: 0, rotate: -20 }}
@@ -230,7 +249,7 @@ export default function HomeClient({
             className="mt-10 animate-bounce flex flex-col items-center"
           >
             <span className="text-sm font-bold tracking-widest uppercase text-white/90">
-              התחל
+              החלק למעלה להתחלה
             </span>
             <div className="mt-3 w-8 h-12 border-2 border-white/50 rounded-full flex justify-center pt-2 backdrop-blur-sm">
               <div className="w-1.5 h-3 bg-white rounded-full animate-ping" />
@@ -309,6 +328,13 @@ export default function HomeClient({
         onClose={() => setShowBottomSheet(false)}
         categories={categories}
         onSelectLesson={handleSelectLesson}
+        searchSlot={
+          <SpotlightSearch
+            searchIndex={searchIndex}
+            onSelect={handleSearchSelect}
+            placeholder="חפש כאן יחידה או נושא..."
+          />
+        }
       />
 
       {/* Back to Top FAB */}

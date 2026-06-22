@@ -29,6 +29,7 @@ interface TopicBottomSheetProps {
   onClose: () => void;
   categories: CategoryData[];
   onSelectLesson: (lessonId: string) => void;
+  searchSlot?: React.ReactNode;
 }
 
 /* ------------------------------------------------------------------ */
@@ -201,6 +202,7 @@ export default function TopicBottomSheet({
   onClose,
   categories,
   onSelectLesson,
+  searchSlot,
 }: TopicBottomSheetProps) {
   const [expandedId, setExpandedId] = useState<string | null>(null);
 
@@ -257,11 +259,18 @@ export default function TopicBottomSheet({
 
             {/* ---- Scrollable Content ---- */}
             <div
-              className="flex-1 overflow-y-auto overscroll-contain px-4 pb-8 touch-auto"
+              className="flex-1 overflow-y-auto overscroll-contain px-4 pb-8 touch-auto flex flex-col"
               style={{ WebkitOverflowScrolling: "touch" }}
             >
+              {/* Search Slot (injected from HomeClient) */}
+              {searchSlot && (
+                <div className="mb-4 shrink-0" onClick={(e) => e.stopPropagation()}>
+                  {searchSlot}
+                </div>
+              )}
+
               {/* Section title */}
-              <h2 className="text-xl font-bold text-slate-800 mb-4 px-1">
+              <h2 className="text-xl font-bold text-slate-800 mb-4 px-1 shrink-0">
                 נושאי לימוד
               </h2>
 
