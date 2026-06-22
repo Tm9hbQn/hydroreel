@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useCallback } from "react";
 import { motion } from "framer-motion";
 
 interface ReelContainerProps {
@@ -10,33 +10,36 @@ interface ReelContainerProps {
 export const ReelContainer: React.FC<ReelContainerProps> = ({ children }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
+  const activeIndexRef = useRef(0);
 
-  // Intersection Observer is generally better for snap containers than raw scroll events
+  // Stable observer — no dependency on activeIndex, preventing race conditions
   useEffect(() => {
-    const observerOptions = {
-      root: containerRef.current,
-      rootMargin: "0px",
-      threshold: 0.6, // trigger when 60% of the card is visible
-    };
+    const container = containerRef.current;
+    if (!container) return;
 
     const observerCallback = (entries: IntersectionObserverEntry[]) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           const index = Number(entry.target.getAttribute("data-index"));
-          if (!isNaN(index) && index !== activeIndex) {
+          if (!isNaN(index) && index !== activeIndexRef.current) {
+            activeIndexRef.current = index;
             setActiveIndex(index);
           }
         }
       });
     };
 
-    const observer = new IntersectionObserver(observerCallback, observerOptions);
-    const cards = containerRef.current?.querySelectorAll(".reel-card");
-    
-    cards?.forEach((card) => observer.observe(card));
+    const observer = new IntersectionObserver(observerCallback, {
+      root: container,
+      rootMargin: "0px",
+      threshold: 0.5,
+    });
+
+    const cards = container.querySelectorAll(".reel-card");
+    cards.forEach((card) => observer.observe(card));
 
     return () => observer.disconnect();
-  }, [activeIndex]);
+  }, []); // ← Empty deps: observer created once, no re-registration
 
   return (
     <div
@@ -59,14 +62,12 @@ export const ReelContainer: React.FC<ReelContainerProps> = ({ children }) => {
             className="reel-card h-[100dvh] w-full snap-start snap-always flex flex-col items-center justify-center relative overflow-hidden"
             initial={false}
             animate={{
-              opacity: isActive ? 1 : 0.3,
-              scale: isActive ? 1 : 0.9,
-              y: isActive ? 0 : 20,
+              opacity: isActive ? 1 : 0.4,
             }}
             transition={{
-              type: "spring",
-              stiffness: 260,
-              damping: 20,
+              type: "tween",
+              duration: 0.2,
+              ease: "easeOut",
             }}
           >
             {/* The child card content is injected here, strictly adhering to Decoupling Rule */}
@@ -79,3 +80,4 @@ export const ReelContainer: React.FC<ReelContainerProps> = ({ children }) => {
     </div>
   );
 };
+

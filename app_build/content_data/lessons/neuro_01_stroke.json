@@ -1,36 +1,9 @@
 {
   "lesson_id": "neuro_01_stroke",
-  "lesson_title": "שבץ מוחי (CVA) ואסימטריית צפיפות",
+  "lesson_title": "שבץ מוחי (CVA) ושיקום במים",
   "bites": [
     {
       "bite_id": "b001",
-      "type": "principle_card",
-      "sequence_title": "שבץ מוחי (CVA) ואתגר השיווי משקל",
-      "visual_trigger": "animation_density_asymmetry",
-      "title": "אסימטריית צפיפות: האתגר המרכזי במים",
-      "content": "במטופלים לאחר שבץ (המיפלגיה), משתנות התכונות הפיזיקליות של הגוף. נוצרת אסימטריה חריפה בין הצד הבריא לצד הפגוע, המשפיעה דרמטית על התנהגות הגוף במים.",
-      "clinical_highlight": "המים חושפים באופן מיידי את חוסר האיזון שמוסתר לעיתים ביבשה."
-    },
-    {
-      "bite_id": "b002",
-      "type": "principle_card",
-      "sequence_title": "שבץ מוחי (CVA) ואתגר השיווי משקל",
-      "visual_trigger": "animation_lateral_roll",
-      "title": "מדוע אנחנו מתגלגלים? הפתופיזיולוגיה",
-      "content": "בצד הפלגי ישנה אטרופיה שרירית ועלייה ברקמת שומן (צפיפות נמוכה שנוטה לצוף). הצד הבריא נותר שרירי ודחוס (נוטה לשקוע).",
-      "clinical_highlight": "התוצאה היא מומנט גלגול תמידי (Lateral Roll) וקושי דרמטי בשמירת שיווי משקל."
-    },
-    {
-      "bite_id": "b003",
-      "type": "clinical_case_card",
-      "sequence_title": "שבץ מוחי (CVA) ואתגר השיווי משקל",
-      "visual_trigger": "animation_halliwick_rotations",
-      "title": "שליטה ברוטציות (שיטת Halliwick)",
-      "content": "המטפל הופך את חוסר היציבות והאסימטריה לכלי שיקומי עוצמתי. הצבת המטופל בסביבה מערערת, מאלצת גיוס רפלקסיבי וקוגניטיבי של שרירי הליבה והרוטטורים.",
-      "clinical_highlight": "טכניקת Halliwick Rotational Control מלמדת את המוח לייצב מחדש את הגוף."
-    },
-    {
-      "bite_id": "b004",
       "type": "clinical_case_card",
       "sequence_title": "שבץ מוחי (CVA) ואתגר השיווי משקל",
       "visual_trigger": "animation_dual_tasking_cva",

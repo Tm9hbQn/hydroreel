@@ -109,9 +109,9 @@ export default async function Home() {
         <section key={seqIndex} className="relative w-full">
           {/* Sticky Sequence Title */}
           <header className="sticky top-0 pt-4 z-50 w-full flex justify-center pointer-events-none">
-            <div className="bg-white/80 backdrop-blur-md px-5 py-2 rounded-full shadow-sm border border-slate-200/50 flex flex-col items-center">
-              <span className="text-[10px] font-semibold text-slate-400 uppercase tracking-widest" dir="rtl">{seq.lessonTitle}</span>
-              <h3 className="text-slate-800 font-bold text-sm md:text-base tracking-tight" dir="rtl">
+            <div className="bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-400 animate-gradient-flow px-5 py-2 rounded-full shadow-md border border-white/20 flex flex-col items-center">
+              <span className="text-[10px] font-semibold text-white/80 uppercase tracking-widest" dir="rtl">{seq.lessonTitle}</span>
+              <h3 className="text-white font-bold text-sm md:text-base tracking-tight drop-shadow-sm" dir="rtl">
                 {seq.title}
               </h3>
             </div>

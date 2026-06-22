@@ -31,17 +31,17 @@ export default function GateControl() {
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.5 }}
-      className="w-full h-full relative overflow-hidden bg-slate-900 flex flex-col items-center justify-center font-sans"
+      className="w-full h-full relative overflow-hidden bg-slate-900 flex flex-col items-center font-sans"
     >
       
-      {/* Metrics UI */}
-      <div className="absolute top-6 z-30 w-[85%] bg-slate-800/90 p-4 rounded-xl shadow-lg border border-slate-700" dir="rtl">
-        <h3 className="font-bold text-slate-100 text-sm mb-2 text-center">תיאוריית שער הכאב (Gate Control)</h3>
-        <p className="text-xs text-slate-300 text-center mb-4 leading-relaxed">
-          גירויים סנסוריים מהמים (טמפרטורה ולחץ הידרוסטטי) מועברים דרך סיבי A-beta מהירים, "סוגרים את השער" בחוט השדרה, וחוסמים את אותות הכאב האיטיים (סיבי C).
+      {/* ===== Controls Zone (shrink-0, max ~30% height) ===== */}
+      <div className="w-full shrink-0 px-4 pt-5 pb-3 z-10" dir="rtl">
+        <h3 className="font-bold text-slate-100 text-sm mb-1.5 text-center">תיאוריית שער הכאב (Gate Control)</h3>
+        <p className="text-[10px] text-slate-300 text-center mb-3 leading-relaxed max-w-[90%] mx-auto">
+          גירויים סנסוריים מהמים (טמפרטורה ולחץ הידרוסטטי) מועברים דרך סיבי A-beta מהירים, &quot;סוגרים את השער&quot; בחוט השדרה, וחוסמים את אותות הכאב האיטיים (סיבי C).
         </p>
 
-        <div className="flex justify-center gap-4">
+        <div className="flex justify-center gap-3">
           <button 
             onClick={() => setInWater(false)}
             className={`px-4 py-2 rounded-full text-xs font-bold transition-colors ${!inWater ? 'bg-rose-500 text-white shadow-md shadow-rose-500/30' : 'bg-slate-700 text-slate-400'}`}
@@ -57,14 +57,15 @@ export default function GateControl() {
         </div>
       </div>
 
-      <div className="relative w-full h-[60%] flex justify-center items-center mt-20">
+      {/* ===== Visualization Zone (flex-1, takes remaining space) ===== */}
+      <div className="flex-1 w-full relative overflow-hidden flex justify-center items-center min-h-0">
         
         {/* Spinal Cord / Gate representation */}
-        <div className="absolute w-32 h-64 border-x-4 border-slate-700 bg-slate-800 flex flex-col items-center justify-center z-20 overflow-hidden">
+        <div className="absolute w-28 h-56 border-x-4 border-slate-700 bg-slate-800 flex flex-col items-center justify-center z-20 overflow-hidden">
           <div className="text-slate-400 text-[10px] font-bold mb-4">חוט השדרה</div>
           
           {/* The Gate */}
-          <div className="relative w-full h-12 flex items-center justify-center border-y-2 border-slate-700 bg-slate-800/50">
+          <div className="relative w-full h-10 flex items-center justify-center border-y-2 border-slate-700 bg-slate-800/50">
              <motion.div 
                className="absolute w-full h-full bg-slate-600 origin-left"
                animate={{ scaleX: inWater ? 1 : 0.1 }}
@@ -79,14 +80,14 @@ export default function GateControl() {
         </div>
 
         {/* C-Fibers (Pain) */}
-        <div className="absolute left-[-20%] w-[40%] h-32 top-1/2 -translate-y-1/2 flex items-center justify-end z-10">
+        <div className="absolute left-[-15%] w-[35%] h-28 top-1/2 -translate-y-1/2 flex items-center justify-end z-10">
           <div className="h-1 w-full bg-rose-900/50 relative overflow-hidden flex items-center">
-             <div className="absolute left-0 -top-6 text-rose-500 text-[10px] font-bold">סיבי C (כאב)</div>
+             <div className="absolute left-0 -top-5 text-rose-500 text-[9px] font-bold">סיבי C (כאב)</div>
              <AnimatePresence>
                {painSignals.map(id => (
                  <motion.div 
                    key={`pain-${id}`}
-                   className="absolute w-4 h-4 bg-rose-500 rounded-full shadow-[0_0_10px_rgba(244,63,94,0.8)]"
+                   className="absolute w-3.5 h-3.5 bg-rose-500 rounded-full shadow-[0_0_10px_rgba(244,63,94,0.8)]"
                    initial={{ left: 0 }}
                    animate={{ left: inWater ? "60%" : "250%" }}
                    transition={{ duration: 2, ease: "linear" }}
@@ -98,14 +99,14 @@ export default function GateControl() {
         </div>
 
         {/* A-Beta Fibers (Water/Relief) */}
-        <div className="absolute left-[-20%] w-[40%] h-32 top-1/2 translate-y-12 flex items-center justify-end z-10">
-          <div className="h-2 w-full bg-cyan-900/50 relative overflow-hidden flex items-center">
-             <div className="absolute left-0 top-4 text-cyan-400 text-[10px] font-bold">סיבי A-beta (מגע/מים)</div>
+        <div className="absolute left-[-15%] w-[35%] h-28 top-1/2 translate-y-10 flex items-center justify-end z-10">
+          <div className="h-1.5 w-full bg-cyan-900/50 relative overflow-hidden flex items-center">
+             <div className="absolute left-0 top-4 text-cyan-400 text-[9px] font-bold">סיבי A-beta (מגע/מים)</div>
              <AnimatePresence>
                {reliefSignals.map(id => (
                  <motion.div 
                    key={`relief-${id}`}
-                   className="absolute w-8 h-2 bg-cyan-400 rounded-full shadow-[0_0_10px_rgba(34,211,238,0.8)]"
+                   className="absolute w-7 h-1.5 bg-cyan-400 rounded-full shadow-[0_0_10px_rgba(34,211,238,0.8)]"
                    initial={{ left: 0 }}
                    animate={{ left: "100%" }}
                    transition={{ duration: 0.8, ease: "linear" }}

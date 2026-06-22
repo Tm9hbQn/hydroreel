@@ -19,8 +19,11 @@ import QuizTime from './animations/QuizTime';
 // Clinical New Animations
 import ShoulderBuoyancySupport from './animations/ShoulderBuoyancySupport';
 import GateControl from './animations/GateControl';
-import ImmersionDiuresis from './animations/ImmersionDiuresis';
+
 import GammaLoopHeat from './animations/GammaLoopHeat';
+import SpasticityGamma from './animations/SpasticityGamma';
+import PainReliefMovement from './animations/PainReliefMovement';
+import UhthoffMS from './animations/UhthoffMS';
 
 interface Props {
   triggerId?: string;
@@ -44,8 +47,11 @@ const animationRegistry: Record<string, React.ComponentType<any>> = {
   // Clinical additions
   'animation_shoulder_buoyancy_support': ShoulderBuoyancySupport,
   'animation_gate_control': GateControl,
-  'animation_immersion_diuresis': ImmersionDiuresis,
+
   'animation_gamma_loop_heat': GammaLoopHeat,
+  'animation_spasticity_gamma': SpasticityGamma,
+  'animation_pain_relief_movement': PainReliefMovement,
+  'animation_uhthoff_ms': UhthoffMS,
 };
 
 export default function AnimationFactory({ triggerId }: Props) {
