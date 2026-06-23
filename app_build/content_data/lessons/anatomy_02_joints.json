@@ -1,0 +1,46 @@
+{
+  "lesson_id": "unit3_anatomy_joints",
+  "lesson_title": "אנטומיה וקינמטיקה: מפרקים ותנועות",
+  "bites": [
+    {
+      "bite_id": "b001",
+      "type": "principle_card",
+      "sequence_title": "אנטומיה וקינמטיקה: מפרקים ותנועות",
+      "title": "הבסיס האנטומי: סוגי מפרקים",
+      "text": "מפרקים בגוף האדם מאפשרים תנועה ומקשרים בין עצמות. מפרק כדורי (Ball and Socket), כמו בכתף ובירך, מאפשר תנועה חופשית במרחב התלת-ממדי ומעניק את טווח התנועה הגדול ביותר בגוף.",
+      "visual_trigger": "animation_ball_and_socket"
+    },
+    {
+      "bite_id": "b002",
+      "type": "principle_card",
+      "sequence_title": "אנטומיה וקינמטיקה: מפרקים ותנועות",
+      "title": "ביומכניקה ותנועה במרחב",
+      "text": "התנועה במפרקים מוגדרת במישורים. כפיפה (Flexion) מקטינה זווית, פשיטה (Extension) מגדילה אותה. הרחקה (Abduction) מרחיקה גפה מקו האמצע, וקירוב (Adduction) מחזירה אותה, תנועות הקריטיות לשיווי משקל והליכה.",
+      "visual_trigger": "animation_joint_movements"
+    },
+    {
+      "bite_id": "b003",
+      "type": "clinical_case_card",
+      "sequence_title": "אנטומיה וקינמטיקה: מפרקים ותנועות",
+      "title": "סטיות פתולוגיות והגבלות",
+      "text": "במצבים פתולוגיים כמו שיתוק או לאחר טראומה, אנו עדים להגבלה בטווח התנועה (ROM) וקיצורי שרירים (Contractures), שמונעים מהמטופל לבצע פשיטה מלאה או הרחקה של הגפה כנדרש.",
+      "visual_trigger": "animation_contractures"
+    },
+    {
+      "bite_id": "b004",
+      "type": "clinical_case_card",
+      "sequence_title": "אנטומיה וקינמטיקה: מפרקים ותנועות",
+      "title": "תיקון מימי ושיפור טווחי תנועה",
+      "text": "כוח הציפה של המים מבטל את משקל הגפה, מפחית עומס מהמפרק הכואב, ומאפשר תנועה חופשית. שימוש בציפה מאפשר לבצע פשיטה והרחקה בטווחים שלא ניתן להשיג ביבשה.",
+      "visual_trigger": "animation_buoyancy_rom"
+    },
+    {
+      "bite_id": "b005",
+      "type": "sequence_end_card",
+      "sequence_title": "אנטומיה וקינמטיקה: מפרקים ותנועות",
+      "title": "סיום המקטע",
+      "text": "סיימת את רצף הלמידה בנושא אנטומיה וקינמטיקה. החלק ימינה כדי להמשיך לשיעור הבא.",
+      "visual_trigger": "animation_swipe_next"
+    }
+  ]
+}
