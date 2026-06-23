@@ -91,8 +91,15 @@ export default function SpineSagittal({ mode, className = "" }: SpineSagittalPro
 
       {/* Disc L3-L4 */}
       <motion.g
-        animate={mode === "herniated" ? { y: [40, 35], scaleY: [1, 2] } : { y: 40 }}
+        animate={
+          mode === "herniated" ? { y: [40, 35], scaleY: [1, 2] } : 
+          mode === "lordosis" ? { rotate: [22.5, 7.5], x: [12.5, 2.5], y: 40 } : 
+          mode === "kyphosis" ? { rotate: [-22.5, -7.5], x: [-12.5, -2.5], y: 40 } : 
+          mode === "spondy" ? { x: [-7.5, -2.5], y: 40 } :
+          { y: 40 }
+        }
         transition={{ duration: 3, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
+        style={{ originX: "30px", originY: "45px" }}
       >
         <rect x="12" y="0" width="36" height="10" rx="2" fill="#3b82f6" opacity="0.5" />
       </motion.g>
@@ -109,8 +116,15 @@ export default function SpineSagittal({ mode, className = "" }: SpineSagittalPro
 
       {/* Disc L4-L5 */}
       <motion.g
-        animate={mode === "herniated" ? { y: [80, 85], scaleY: [1, 2] } : mode === "spondy" ? { x: [-10, -2], y: 80 } : { y: 80 }}
+        animate={
+          mode === "herniated" ? { y: [80, 85], scaleY: [1, 2] } : 
+          mode === "lordosis" ? { rotate: [17.5, 5], x: [7.5, 2.5], y: 80 } : 
+          mode === "kyphosis" ? { rotate: [-17.5, -5], x: [-7.5, -2.5], y: 80 } : 
+          mode === "spondy" ? { x: [-7.5, -2.5], y: 80 } : 
+          { y: 80 }
+        }
         transition={{ duration: 3, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
+        style={{ originX: "30px", originY: "85px" }}
       >
         <rect x="12" y="0" width="36" height="10" rx="2" fill="#3b82f6" opacity="0.5" />
         {/* Red Bulge for herniated */}
