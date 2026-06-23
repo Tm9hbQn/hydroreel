@@ -52,6 +52,34 @@
       "visual_trigger": "animation_hydrostatic_calming"
     },
     {
+      "bite_id": "q_1782256445828_967_0",
+      "type": "quiz_card",
+      "sequence_title": "הפרעת קשב וויסות חושי",
+      "question": "אילו יתרונות מספקת סביבת המים עבור ילדים עם ADHD?",
+      "options": [
+        {
+          "text": "סביבה עמוסת גירויים המגבירה עוררות",
+          "isCorrect": false,
+          "feedback": "המטרה היא פעמים רבות ויסות והרגעה."
+        },
+        {
+          "text": "ויסות תחושתי עמוק והפחתת מוסחות",
+          "isCorrect": true,
+          "feedback": "הלחץ ההידרוסטטי והמים החמים מספקים מעטפת מרגיעה."
+        },
+        {
+          "text": "אין למים כל יתרון על פני היבשה",
+          "isCorrect": false,
+          "feedback": "המים מספקים יתרונות תחושתיים ייחודיים."
+        },
+        {
+          "text": "תחרותיות מוגברת",
+          "isCorrect": false,
+          "feedback": "טיפול פרטני או בקבוצה קטנה לרוב אינו תחרותי."
+        }
+      ]
+    },
+    {
       "bite_id": "b005",
       "type": "sequence_end_card",
       "sequence_title": "הפרעת קשב וויסות חושי",

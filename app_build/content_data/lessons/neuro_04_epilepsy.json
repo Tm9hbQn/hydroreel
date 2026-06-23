@@ -1,24 +1,52 @@
-{  
-  "lesson_id": "neuro_04_epilepsy",  
-  "lesson_title": "אפילפסיה ובטיחות במים",  
-  "bites": [  
-    {  
-      "bite_id": "b001",  
-      "type": "principle_card",  
+{
+  "lesson_id": "neuro_04_epilepsy",
+  "lesson_title": "אפילפסיה ובטיחות במים",
+  "bites": [
+    {
+      "bite_id": "b001",
+      "type": "principle_card",
       "sequence_title": "אפילפסיה בסביבת מים",
-      "visual_trigger": "animation_epilepsy_risk_management",  
-      "title": "מגישת התווית נגד לניהול סיכונים",  
-      "content": "בעבר, אפילפסיה נחשבה להתווית נגד מוחלטת. כיום, גישת ה-ILAE מאפשרת השתתפות עם השגחה צמודה (1:1), אמצעי ציפה והימנעות מעייפות קיצונית.",  
-      "clinical_highlight": "יש להקפיד על זהירות יתרה בתקופות של שינוי והחלפת טיפול תרופתי."  
-    },  
-    {  
-      "bite_id": "b002",  
-      "type": "clinical_case_card",  
+      "visual_trigger": "animation_epilepsy_risk_management",
+      "title": "מגישת התווית נגד לניהול סיכונים",
+      "content": "בעבר, אפילפסיה נחשבה להתווית נגד מוחלטת. כיום, גישת ה-ILAE מאפשרת השתתפות עם השגחה צמודה (1:1), אמצעי ציפה והימנעות מעייפות קיצונית.",
+      "clinical_highlight": "יש להקפיד על זהירות יתרה בתקופות של שינוי והחלפת טיפול תרופתי."
+    },
+    {
+      "bite_id": "b002",
+      "type": "clinical_case_card",
       "sequence_title": "אפילפסיה בסביבת מים",
-      "visual_trigger": "animation_flicker_vertigo",  
-      "title": "סיכון ייחודי: ורטיגו הבהוב",  
-      "content": "השתקפות אור על אדוות המים (בתדר סביב 15 הרץ) עלולה לעורר התקף במטופלים עם אפילפסיה פוטוסנסיטיבית (Photosensitive).",  
-      "clinical_highlight": "הפתרון המומלץ למניעת ההבהוב המסוכן הוא שימוש במשקפי שמש מקטבים (Polarized)."  
-    }  
-  ]  
+      "visual_trigger": "animation_flicker_vertigo",
+      "title": "סיכון ייחודי: ורטיגו הבהוב",
+      "content": "השתקפות אור על אדוות המים (בתדר סביב 15 הרץ) עלולה לעורר התקף במטופלים עם אפילפסיה פוטוסנסיטיבית (Photosensitive).",
+      "clinical_highlight": "הפתרון המומלץ למניעת ההבהוב המסוכן הוא שימוש במשקפי שמש מקטבים (Polarized)."
+    },
+    {
+      "bite_id": "q_neuro_04_epilepsy_1_3b475f",
+      "type": "quiz_card",
+      "sequence_title": "אפילפסיה בסביבת מים",
+      "question": "מהו דגש בטיחותי קריטי בטיפול בבריכה לאדם עם אפילפסיה?",
+      "options": [
+        {
+          "text": "השגחה צמודה ורצופה למקרה של פרכוס במים",
+          "isCorrect": true,
+          "feedback": "פרכוס במים מהווה סכנת טביעה מיידית ולכן דורש השגחה מתמדת במרחק נגיעה."
+        },
+        {
+          "text": "טיפול רק במים עמוקים",
+          "isCorrect": false,
+          "feedback": "העומק לא מונע פרכוסים."
+        },
+        {
+          "text": "שחייה ללא ליווי לשיפור הביטחון",
+          "isCorrect": false,
+          "feedback": "מסוכן מאוד ויכול להוביל לטביעה."
+        },
+        {
+          "text": "שימוש בטמפרטורות קיצוניות",
+          "isCorrect": false,
+          "feedback": "עלול אפילו לעורר התקף."
+        }
+      ]
+    }
+  ]
 }

@@ -3,16 +3,32 @@
     {
       "category_id": "physics",
       "category_title": "הידרו-פיזיקה וביומכניקה",
-      "icon": "🌊",
+      "icon": "wave",
       "color_from": "#3b82f6",
       "color_to": "#06b6d4",
       "description": "עקרונות פיזיקליים של סביבת המים: ציפה, לחץ, גרר, ויציבות.",
       "lessons": ["unit1_physics"]
     },
     {
+      "category_id": "anatomy",
+      "category_title": "אנטומיה ותנועה במים",
+      "icon": "muscle",
+      "color_from": "#eab308",
+      "color_to": "#e11d48",
+      "description": "הכרת מערכת השלד-שריר, קינזיולוגיה, מרכיבי כושר ויסודות השחייה.",
+      "lessons": [
+        "anatomy_01_muscles",
+        "anatomy_02_joints",
+        "anatomy_03_proprioception",
+        "movement_01_fitness",
+        "movement_02_swimming",
+        "movement_03_gait"
+      ]
+    },
+    {
       "category_id": "physiology",
       "category_title": "פיזיולוגיה וסביבת המים",
-      "icon": "❤️",
+      "icon": "heart",
       "color_from": "#ef4444",
       "color_to": "#f97316",
       "description": "תגובות מערכות הגוף לטבילה: לב, כליות, נשימה, ועצבים.",
@@ -27,34 +43,70 @@
     {
       "category_id": "neuro",
       "category_title": "נוירולוגיה ושיקום עצבי",
-      "icon": "🧠",
+      "icon": "brain",
       "color_from": "#8b5cf6",
       "color_to": "#a855f7",
-      "description": "שבץ, פגיעות חוט שדרה, אפילפסיה, ופתולוגיות נוירולוגיות במים.",
+      "description": "שבץ, פגיעות חוט שדרה, שיתוק מוחין, טרשת נפוצה, פרקינסון ועוד.",
       "lessons": [
         "neuro_01_stroke",
         "neuro_02_sci",
         "neuro_03_pots",
-        "neuro_04_epilepsy"
+        "neuro_04_epilepsy",
+        "neuro_05_cp",
+        "neuro_06_ms",
+        "neuro_07_parkinson"
       ]
     },
     {
       "category_id": "orthopedics",
       "category_title": "אורתופדיה ושיקום שלד-שריר",
-      "icon": "🦴",
+      "icon": "bone",
       "color_from": "#14b8a6",
       "color_to": "#10b981",
-      "description": "שברים, עמוד שדרה, גף תחתון ועליון: פרוטוקולים במים.",
+      "description": "שברים, עמוד שדרה, גף תחתון ועליון, פיברומיאלגיה.",
       "lessons": [
         "orthopedics_01_fractures",
         "orthopedics_02_spine",
         "orthopedics_03_lower_limb",
-        "orthopedics_04_upper_limb"
+        "orthopedics_04_upper_limb",
+        "orthopedics_05_fibromyalgia"
+      ]
+    },
+    {
+      "category_id": "pediatrics",
+      "category_title": "ילדים ואוכלוסיות מיוחדות",
+      "icon": "baby",
+      "color_from": "#f43f5e",
+      "color_to": "#8b5cf6",
+      "description": "התפתחות מוטורית, עיכוב התפתחותי, סרבול, הפרעות קשב ואוטיזם.",
+      "lessons": [
+        "pediatrics_01_development",
+        "pediatrics_02_dcd",
+        "pediatrics_03_adhd",
+        "pediatrics_04_asd",
+        "pediatrics_05_syndromes"
+      ]
+    },
+    {
+      "category_id": "methodology",
+      "category_title": "מתודולוגיה ודידקטיקה",
+      "icon": "star",
+      "color_from": "#84cc16",
+      "color_to": "#10b981",
+      "description": "מבנה שיעור, הצבת מטרות טיפול SMART, ובניית רצף פדגוגי נכון.",
+      "lessons": [
+        "methodology_01_lesson"
       ]
     }
   ],
   "learning_order": [
     "unit1_physics",
+    "anatomy_01_muscles",
+    "anatomy_02_joints",
+    "anatomy_03_proprioception",
+    "movement_01_fitness",
+    "movement_02_swimming",
+    "movement_03_gait",
     "physiology_01_cardio",
     "physiology_02_renal",
     "physiology_03_respiratory",
@@ -64,9 +116,19 @@
     "neuro_02_sci",
     "neuro_03_pots",
     "neuro_04_epilepsy",
+    "neuro_05_cp",
+    "neuro_06_ms",
+    "neuro_07_parkinson",
     "orthopedics_01_fractures",
     "orthopedics_02_spine",
     "orthopedics_03_lower_limb",
-    "orthopedics_04_upper_limb"
+    "orthopedics_04_upper_limb",
+    "orthopedics_05_fibromyalgia",
+    "pediatrics_01_development",
+    "pediatrics_02_dcd",
+    "pediatrics_03_adhd",
+    "pediatrics_04_asd",
+    "pediatrics_05_syndromes",
+    "methodology_01_lesson"
   ]
 }

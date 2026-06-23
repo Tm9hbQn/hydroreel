@@ -53,6 +53,66 @@
       "visual_trigger": "animation_buoyancy_rom"
     },
     {
+      "bite_id": "q_anatomy_02_joints_1",
+      "type": "quiz_card",
+      "visual_trigger": "animation_quiz_time",
+      "title": "בחן את עצמך!",
+      "sequence_title": "אנטומיה וקינמטיקה: מפרקים ותנועות",
+      "question": "איזה סוג מפרק מאפשר את טווח התנועה הגדול ביותר (כדוגמת מפרק הירך)?",
+      "options": [
+        {
+          "text": "מפרק כדורי (Ball and Socket)",
+          "isCorrect": true,
+          "feedback": "תשובה נכונה! מפרק כדורי מאפשר תנועה במרחב התלת-ממדי, כולל סיבוב."
+        },
+        {
+          "text": "מפרק ציר (Hinge)",
+          "isCorrect": false,
+          "feedback": "מפרק ציר מאפשר תנועה בעיקר במישור אחד (כפיפה ופשיטה)."
+        },
+        {
+          "text": "מפרק החלקה (Gliding)",
+          "isCorrect": false,
+          "feedback": "מפרק החלקה מאפשר תנועה מוגבלת מאוד של החלקה בין עצמות מישוריות."
+        },
+        {
+          "text": "מפרק אוכף (Saddle)",
+          "isCorrect": false,
+          "feedback": "מפרק אוכף מאפשר תנועה בשני מישורים, אך פחותה ממפרק כדורי."
+        }
+      ]
+    },
+    {
+      "bite_id": "q_anatomy_02_joints_2",
+      "type": "quiz_card",
+      "visual_trigger": "animation_quiz_time",
+      "title": "בחן את עצמך!",
+      "sequence_title": "אנטומיה וקינמטיקה: מפרקים ותנועות",
+      "question": "מהי הפעולה של 'הרחקה' (Abduction)?",
+      "options": [
+        {
+          "text": "הרחקת הגפה מקו האמצע של הגוף",
+          "isCorrect": true,
+          "feedback": "נכון. כדוגמת הנפת הרגל הצידה כמו ב'כוכב מים'."
+        },
+        {
+          "text": "הקטנת הזווית בין עצמות המפרק",
+          "isCorrect": false,
+          "feedback": "זוהי הגדרה של כפיפה (Flexion)."
+        },
+        {
+          "text": "החזרת הגפה לקו האמצע של הגוף",
+          "isCorrect": false,
+          "feedback": "זוהי הגדרה של קירוב (Adduction)."
+        },
+        {
+          "text": "הגדלת הזווית בין העצמות",
+          "isCorrect": false,
+          "feedback": "זוהי הגדרה של פשיטה (Extension)."
+        }
+      ]
+    },
+    {
       "bite_id": "b005",
       "type": "sequence_end_card",
       "sequence_title": "אנטומיה וקינמטיקה: מפרקים ותנועות",

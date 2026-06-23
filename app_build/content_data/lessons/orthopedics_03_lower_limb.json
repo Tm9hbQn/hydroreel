@@ -1,78 +1,106 @@
-{  
-  "lesson_id": "orthopedics_03_lower_limb",  
-  "lesson_title": "שיקום גף תחתון: פרוטוקולים ממוקדים",  
-  "bites": [  
-    {  
-      "bite_id": "b001",  
-      "type": "clinical_case_card",  
+{
+  "lesson_id": "orthopedics_03_lower_limb",
+  "lesson_title": "שיקום גף תחתון: פרוטוקולים ממוקדים",
+  "bites": [
+    {
+      "bite_id": "b001",
+      "type": "clinical_case_card",
       "sequence_title": "שיקום החלפות מפרקים",
-      "visual_trigger": "animation_thr_abduction",  
-      "title": "החלפת מפרק ירך (THR)",  
-      "content": "המים מאפשרים תרגול הרחקה לחיזוק שרירי הירך ללא עומס מלא, החיוני למניעת צליעת טרנדלנבורג. יש להתחיל טיפול לאחר סגירת הצלקת.",  
-      "clinical_highlight": "הגבלות קריטיות: איסור כיפוף מעל 90 מעלות, אדוקציה ורוטציה פנימית."  
+      "visual_trigger": "animation_thr_abduction",
+      "title": "החלפת מפרק ירך (THR)",
+      "content": "המים מאפשרים תרגול הרחקה לחיזוק שרירי הירך ללא עומס מלא, החיוני למניעת צליעת טרנדלנבורג. יש להתחיל טיפול לאחר סגירת הצלקת.",
+      "clinical_highlight": "הגבלות קריטיות: איסור כיפוף מעל 90 מעלות, אדוקציה ורוטציה פנימית."
     },
-    {  
-      "bite_id": "b002",  
-      "type": "clinical_case_card",  
+    {
+      "bite_id": "b002",
+      "type": "clinical_case_card",
       "sequence_title": "שיקום החלפות מפרקים",
-      "visual_trigger": "animation_tkr_hydrostatic_pressure",  
-      "title": "החלפת מפרק ברך (TKR)",  
-      "content": "ניצול הלחץ ההידרוסטטי בסביבה המימית מאפשר הפחתת נפיחות (Effusion) יעילה, ושיפור טווחי התנועה בסביבה תומכת המפחיתה כאב לאחר הניתוח.",  
-      "clinical_highlight": "התמיכה ההידרוסטטית יעילה במיוחד בהורדת עומס והרגעת כאב במפרק."  
+      "visual_trigger": "animation_tkr_hydrostatic_pressure",
+      "title": "החלפת מפרק ברך (TKR)",
+      "content": "ניצול הלחץ ההידרוסטטי בסביבה המימית מאפשר הפחתת נפיחות (Effusion) יעילה, ושיפור טווחי התנועה בסביבה תומכת המפחיתה כאב לאחר הניתוח.",
+      "clinical_highlight": "התמיכה ההידרוסטטית יעילה במיוחד בהורדת עומס והרגעת כאב במפרק."
     },
-    {  
-      "bite_id": "b003",  
-      "type": "principle_card",  
+    {
+      "bite_id": "b003",
+      "type": "principle_card",
       "sequence_title": "מחלת פרטס",
-      "visual_trigger": "animation_perthes_containment",  
-      "title": "מחלת Legg-Calvé-Perthes",  
-      "content": "נמק של ראש הירך בילדים. המים הם סביבה אידיאלית לשמירה על טווחי תנועה וחיזוק שרירים, ללא עומס דחיסתי הפוגע במפרק.",  
-      "clinical_highlight": "איסור מוחלט על קפיצות. המטרה: לשמור על 'הכלת' ראש הירך באצטבולום."  
+      "visual_trigger": "animation_perthes_containment",
+      "title": "מחלת Legg-Calvé-Perthes",
+      "content": "נמק של ראש הירך בילדים. המים הם סביבה אידיאלית לשמירה על טווחי תנועה וחיזוק שרירים, ללא עומס דחיסתי הפוגע במפרק.",
+      "clinical_highlight": "איסור מוחלט על קפיצות. המטרה: לשמור על 'הכלת' ראש הירך באצטבולום."
     },
-    {  
-      "bite_id": "b004",  
-      "type": "clinical_case_card",  
+    {
+      "bite_id": "b004",
+      "type": "clinical_case_card",
       "sequence_title": "דפורמציות ברכיים",
-      "visual_trigger": "animation_genu_valgum",  
-      "title": "רגלי X (Genu Valgum)",  
-      "content": "קריסה פנימה של הברכיים. הטיפול במים מתמקד בהליכה צידית ותרגילי הרחקה, התורמים לחיזוק מייצבי האגן והפחתת עומס על המדור הלטרלי.",  
-      "clinical_highlight": "חיזוק גלוטאלי ושרירי ירך חיצוניים בסביבה נטולת משקל מלא."  
+      "visual_trigger": "animation_genu_valgum",
+      "title": "רגלי X (Genu Valgum)",
+      "content": "קריסה פנימה של הברכיים. הטיפול במים מתמקד בהליכה צידית ותרגילי הרחקה, התורמים לחיזוק מייצבי האגן והפחתת עומס על המדור הלטרלי.",
+      "clinical_highlight": "חיזוק גלוטאלי ושרירי ירך חיצוניים בסביבה נטולת משקל מלא."
     },
-    {  
-      "bite_id": "b005",  
-      "type": "principle_card",  
+    {
+      "bite_id": "b005",
+      "type": "principle_card",
       "sequence_title": "פתולוגיות כף רגל",
-      "visual_trigger": "animation_pes_planus",  
-      "title": "פלטפוס (Pes Planus)",  
-      "content": "השטחת קשת כף הרגל. הטיפול כולל חיזוק שרירים אינטרינסיים, הליכה על קצות האצבעות ואיסוף חפצים מקרקעית הבריכה לעידוד הקשתה.",  
-      "clinical_highlight": "חיזוק ממוקד של ה-Tibialis Posterior חיוני לשמירת המבנה."  
+      "visual_trigger": "animation_pes_planus",
+      "title": "פלטפוס (Pes Planus)",
+      "content": "השטחת קשת כף הרגל. הטיפול כולל חיזוק שרירים אינטרינסיים, הליכה על קצות האצבעות ואיסוף חפצים מקרקעית הבריכה לעידוד הקשתה.",
+      "clinical_highlight": "חיזוק ממוקד של ה-Tibialis Posterior חיוני לשמירת המבנה."
     },
-    {  
-      "bite_id": "b006",  
-      "type": "principle_card",  
+    {
+      "bite_id": "b006",
+      "type": "principle_card",
       "sequence_title": "פתולוגיות כף רגל",
-      "visual_trigger": "animation_pes_cavus",  
-      "title": "קשת גבוהה (Pes Cavus)",  
-      "content": "דרישה לשיפור בלימת זעזועים בעקבות נוקשות כף הרגל. טיפול במים כולל מתיחות לגיד אכילס ופציה פלנטרית ותרגילי נחיתה מבוקרת במים עמוקים.",  
-      "clinical_highlight": "המים העמוקים מספקים בטיחות ובלימת זעזועים בזמן הנחיתה."  
+      "visual_trigger": "animation_pes_cavus",
+      "title": "קשת גבוהה (Pes Cavus)",
+      "content": "דרישה לשיפור בלימת זעזועים בעקבות נוקשות כף הרגל. טיפול במים כולל מתיחות לגיד אכילס ופציה פלנטרית ותרגילי נחיתה מבוקרת במים עמוקים.",
+      "clinical_highlight": "המים העמוקים מספקים בטיחות ובלימת זעזועים בזמן הנחיתה."
     },
-    {  
-      "bite_id": "b007",  
-      "type": "clinical_case_card",  
+    {
+      "bite_id": "b007",
+      "type": "clinical_case_card",
       "sequence_title": "נקעים בקרסול",
-      "visual_trigger": "animation_ankle_sprain_early",  
-      "title": "נקע בקרסול: דרגה 1-2",  
-      "content": "הגישה העדכנית דוגלת במוביליזציה מוקדמת. הליכה במים בעומק חזה כבר ביומיים הראשונים מסייעת בהפחתת הבצקת תוך שימור תבנית הליכה תקינה.",  
-      "clinical_highlight": "הלחץ ההידרוסטטי חיוני להורדת הנפיחות המקומית בקרסול."  
+      "visual_trigger": "animation_ankle_sprain_early",
+      "title": "נקע בקרסול: דרגה 1-2",
+      "content": "הגישה העדכנית דוגלת במוביליזציה מוקדמת. הליכה במים בעומק חזה כבר ביומיים הראשונים מסייעת בהפחתת הבצקת תוך שימור תבנית הליכה תקינה.",
+      "clinical_highlight": "הלחץ ההידרוסטטי חיוני להורדת הנפיחות המקומית בקרסול."
     },
-    {  
-      "bite_id": "b008",  
-      "type": "clinical_case_card",  
+    {
+      "bite_id": "b008",
+      "type": "clinical_case_card",
       "sequence_title": "נקעים בקרסול",
-      "visual_trigger": "animation_ankle_sprain_advanced",  
-      "title": "נקע בקרסול: דרגה 3",  
-      "content": "בשלבים הראשונים מבצעים ריצה במים עמוקים ללא נשיאת משקל. בהמשך עוברים בהדרגה לתרגול פרופריוספטיבי ושיווי משקל על רגל אחת במים רדודים.",  
-      "clinical_highlight": "חזרה נכונה לעומס ומניעת נקעים חוזרים בעזרת שיווי משקל."  
+      "visual_trigger": "animation_ankle_sprain_advanced",
+      "title": "נקע בקרסול: דרגה 3",
+      "content": "בשלבים הראשונים מבצעים ריצה במים עמוקים ללא נשיאת משקל. בהמשך עוברים בהדרגה לתרגול פרופריוספטיבי ושיווי משקל על רגל אחת במים רדודים.",
+      "clinical_highlight": "חזרה נכונה לעומס ומניעת נקעים חוזרים בעזרת שיווי משקל."
+    },
+    {
+      "bite_id": "q_orthopedics_03_lower_limb_1_354bf6",
+      "type": "quiz_card",
+      "sequence_title": "נקעים בקרסול",
+      "question": "איזה יתרון יש לסביבת המים בשיקום פציעות גפיים תחתונות?",
+      "options": [
+        {
+          "text": "התחלת תרגול נשיאת משקל הדרגתית ובטוחה",
+          "isCorrect": true,
+          "feedback": "ניתן לשלוט בכמות המשקל הנישאת על ידי שינוי עומק המים (למשל מים עד המותניים מפחיתים כ-50%)."
+        },
+        {
+          "text": "מניעת עבודת שרירים לחלוטין",
+          "isCorrect": false,
+          "feedback": "השרירים עדיין עובדים מול צמיגות המים."
+        },
+        {
+          "text": "יצירת עומס כפול על המפרק",
+          "isCorrect": false,
+          "feedback": "עומס מופחת."
+        },
+        {
+          "text": "הפחתת סיכויי ההחלמה",
+          "isCorrect": false,
+          "feedback": "הם משפרים ומאיצים שיקום."
+        }
+      ]
     }
   ]
 }

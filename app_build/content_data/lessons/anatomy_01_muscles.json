@@ -49,6 +49,66 @@
       "visual_trigger": "animation_aquatic_correction"
     },
     {
+      "bite_id": "q_anatomy_01_muscles_1",
+      "type": "quiz_card",
+      "visual_trigger": "animation_quiz_time",
+      "title": "בחן את עצמך!",
+      "sequence_title": "אנטומיה וקינמטיקה: שרירים מרכזיים",
+      "question": "איזה שריר אחראי על יישור הברך ונחשב מרכזי במניעת קריסה בנשיאת משקל?",
+      "options": [
+        {
+          "text": "ארבע ראשי (Quadriceps)",
+          "isCorrect": true,
+          "feedback": "תשובה נכונה! הארבע ראשי קריטי ליישור הברך ונשיאת משקל."
+        },
+        {
+          "text": "מיתר הברך (Hamstrings)",
+          "isCorrect": false,
+          "feedback": "ההמסטרינגס אחראים בעיקר על כיפוף הברך ופשיטת הירך."
+        },
+        {
+          "text": "שרירי הליבה (Core)",
+          "isCorrect": false,
+          "feedback": "שרירי הליבה מייצבים את האגן ועמוד השדרה, אך לא מיישרים את הברך."
+        },
+        {
+          "text": "תאומים (Gastrocnemius)",
+          "isCorrect": false,
+          "feedback": "התאומים אחראים על כיפוף כפי (פוינט) בקרסול וסיוע בכיפוף הברך."
+        }
+      ]
+    },
+    {
+      "bite_id": "q_anatomy_01_muscles_2",
+      "type": "quiz_card",
+      "visual_trigger": "animation_quiz_time",
+      "title": "בחן את עצמך!",
+      "sequence_title": "אנטומיה וקינמטיקה: שרירים מרכזיים",
+      "question": "כיצד כוח הציפה מסייע למטופל עם חולשה בארבע ראשי?",
+      "options": [
+        {
+          "text": "מוריד עומס מהמפרק ומקל על נשיאת משקל",
+          "isCorrect": true,
+          "feedback": "נכון! כוח הציפה מאפשר נשיאת משקל פחותה, וכך מקל על השריר החלש לייצב את הברך."
+        },
+        {
+          "text": "מגדיל את המשקל שהמטופל נושא",
+          "isCorrect": false,
+          "feedback": "להיפך, המים מפחיתים את המשקל האפקטיבי."
+        },
+        {
+          "text": "מבטל לחלוטין את פעולת השרירים",
+          "isCorrect": false,
+          "feedback": "השרירים עדיין נדרשים לפעול לשם יציבות ותנועה, אם כי בעומס מופחת."
+        },
+        {
+          "text": "מקשה על התנועה בשל צמיגות המים",
+          "isCorrect": false,
+          "feedback": "אמנם הצמיגות יוצרת התנגדות, אך עיקר הסיוע בנשיאת משקל נובע מכוח הציפה."
+        }
+      ]
+    },
+    {
       "bite_id": "b005",
       "type": "sequence_end_card",
       "sequence_title": "אנטומיה וקינמטיקה: שרירים מרכזיים",
