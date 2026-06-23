@@ -43,13 +43,17 @@ export default function BoneSvg({ mode, className = "" }: BoneSvgProps) {
             d="M 45 70 L 55 90" stroke="#ef4444" strokeWidth="3" fill="none" 
           />
           {/* Huge Red X */}
-          <motion.path 
+          <motion.g
             initial={{ scale: 0, opacity: 0 }}
-            animate={{ scale: [0, 1.2, 1], opacity: [0, 1, 1] }}
-            transition={{ duration: 2, repeat: Infinity, times: [0, 0.8, 1] }}
+            animate={{ scale: [0, 1.5, 1.2], opacity: [0, 1, 1] }}
+            transition={{ duration: 2, repeat: Infinity, times: [0, 0.5, 1], ease: "anticipate" }}
             style={{ originX: "50px", originY: "80px" }}
-            d="M 30 60 L 70 100 M 70 60 L 30 100" stroke="#ef4444" strokeWidth="8" strokeLinecap="round" 
-          />
+          >
+            {/* Glow */}
+            <path d="M 20 50 L 80 110 M 80 50 L 20 110" stroke="#ef4444" strokeWidth="16" strokeLinecap="round" opacity="0.4" filter="blur(4px)" />
+            {/* Core */}
+            <path d="M 20 50 L 80 110 M 80 50 L 20 110" stroke="#ef4444" strokeWidth="8" strokeLinecap="round" />
+          </motion.g>
         </motion.g>
       )}
 

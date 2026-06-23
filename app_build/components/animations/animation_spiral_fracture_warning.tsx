@@ -34,13 +34,13 @@ export default function SpiralFractureWarningAnimation() {
             viewport={{ once: true }}
             transition={{ delay: 1, duration: 0.5 }}
             className="absolute z-30 flex items-center"
-            style={{ top: '60%', right: '0%', transform: 'translate(-10px, -50%)' }}
+            style={{ top: '30%', left: '0%', transform: 'translate(0, -50%)' }}
             dir="ltr"
           >
-            <div className="w-8 sm:w-16 h-[2px] bg-red-500" />
-            <div className="bg-red-500 text-white text-xs font-bold px-2 py-1 rounded shadow-md whitespace-normal text-center max-w-[120px] ml-1" dir="rtl">
+            <div className="bg-red-500 text-white text-xs font-bold px-2 py-1 rounded shadow-md whitespace-normal text-center max-w-[90px] mr-1" dir="rtl">
               סכנה: כוח רוטציוני במים
             </div>
+            <div className="w-12 sm:w-24 h-[2px] bg-red-500" />
           </motion.div>
         </div>
       </div>

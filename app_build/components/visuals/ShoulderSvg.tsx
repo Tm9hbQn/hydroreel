@@ -51,11 +51,14 @@ export default function ShoulderSvg({ mode, className = "" }: ShoulderSvgProps) 
       {/* High Five Warning X */}
       {mode === "high_five" && (
         <motion.g
-          animate={{ opacity: [0, 0, 1, 1], scale: [0.5, 0.5, 1.2, 1] }}
-          transition={{ duration: 3, repeat: Infinity, times: [0, 0.6, 0.8, 1] }}
+          animate={{ opacity: [0, 0, 1, 1], scale: [0.5, 0.5, 1.5, 1.2] }}
+          transition={{ duration: 3, repeat: Infinity, times: [0, 0.5, 0.7, 1], ease: "anticipate" }}
           style={{ originX: "115px", originY: "40px" }}
         >
-          <path d="M 95 20 L 135 60 M 135 20 L 95 60" stroke="#ef4444" strokeWidth="8" strokeLinecap="round" />
+          {/* Glow */}
+          <path d="M 85 10 L 145 70 M 145 10 L 85 70" stroke="#ef4444" strokeWidth="16" strokeLinecap="round" opacity="0.4" filter="blur(4px)" />
+          {/* Core */}
+          <path d="M 85 10 L 145 70 M 145 10 L 85 70" stroke="#ef4444" strokeWidth="8" strokeLinecap="round" />
         </motion.g>
       )}
 
