@@ -54,6 +54,18 @@ import ShoulderHighFiveWarningAnimation from './animations/animation_shoulder_hi
 import RotatorCuffAaromAnimation from './animations/animation_rotator_cuff_aarom';
 import RomIncreaseAnimation from './animations/animation_rom_increase';
 
+// Phase 5 - Neurology
+import DualTaskingCvaAnimation from './animations/animation_dual_tasking_cva';
+import SciRehabAnimation from './animations/animation_sci_rehab';
+import ColdNerveConductionAnimation from './animations/animation_cold_nerve_conduction';
+import AutonomicDysreflexiaAnimation from './animations/animation_autonomic_dysreflexia';
+import AdTriggersAnimation from './animations/animation_ad_triggers';
+import EpilepsyRiskManagementAnimation from './animations/animation_epilepsy_risk_management';
+import FlickerVertigoAnimation from './animations/animation_flicker_vertigo';
+import VenousPoolingAnimation from './animations/animation_venous_pooling';
+import HydrostaticGSuitAnimation from './animations/animation_hydrostatic_g_suit';
+import PotsAerobicVerticalAnimation from './animations/animation_pots_aerobic_vertical';
+
 interface Props {
   triggerId?: string;
 }
@@ -108,6 +120,18 @@ const animationRegistry: Record<string, React.ComponentType<any>> = {
   'animation_shoulder_high_five_warning': ShoulderHighFiveWarningAnimation,
   'animation_rotator_cuff_aarom': RotatorCuffAaromAnimation,
   'animation_rom_increase': RomIncreaseAnimation,
+
+  // Phase 5
+  'animation_dual_tasking_cva': DualTaskingCvaAnimation,
+  'animation_sci_rehab': SciRehabAnimation,
+  'animation_cold_nerve_conduction': ColdNerveConductionAnimation,
+  'animation_autonomic_dysreflexia': AutonomicDysreflexiaAnimation,
+  'animation_ad_triggers': AdTriggersAnimation,
+  'animation_epilepsy_risk_management': EpilepsyRiskManagementAnimation,
+  'animation_flicker_vertigo': FlickerVertigoAnimation,
+  'animation_venous_pooling': VenousPoolingAnimation,
+  'animation_hydrostatic_g_suit': HydrostaticGSuitAnimation,
+  'animation_pots_aerobic_vertical': PotsAerobicVerticalAnimation,
 };
 
 export default function AnimationFactory({ triggerId }: Props) {
