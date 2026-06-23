@@ -27,6 +27,10 @@ import UhthoffMS from './animations/UhthoffMS';
 
 // PWB Animations
 import PwbC7Animation from './animations/animation_pwb_c7';
+import PwbXiphoidAnimation from './animations/animation_pwb_xiphoid';
+import PwbAsisAnimation from './animations/animation_pwb_asis';
+import PwbThighAnimation from './animations/animation_pwb_thigh';
+import DeepWaterRunningAnimation from './animations/animation_deep_water_running';
 
 interface Props {
   triggerId?: string;
@@ -57,6 +61,10 @@ const animationRegistry: Record<string, React.ComponentType<any>> = {
   'animation_uhthoff_ms': UhthoffMS,
 
   'animation_pwb_c7': PwbC7Animation,
+  'animation_pwb_xiphoid': PwbXiphoidAnimation,
+  'animation_pwb_asis': PwbAsisAnimation,
+  'animation_pwb_thigh': PwbThighAnimation,
+  'animation_deep_water_running': DeepWaterRunningAnimation,
 };
 
 export default function AnimationFactory({ triggerId }: Props) {
