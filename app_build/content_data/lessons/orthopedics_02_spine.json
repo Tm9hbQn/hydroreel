@@ -14,6 +14,7 @@
     {
       "bite_id": "b002",
       "type": "clinical_case_card",
+      "sequence_title": "פתולוגיות עמוד שדרה וליקויי יציבה",
       "visual_trigger": "animation_spondylolisthesis_core",
       "title": "ספונדילוליסטזיס (Spondylolisthesis)",
       "content": "גלישת חוליה (L5-S1). פשיטת יתר מחמירה את המצב. איסור מוחלט על שחיית חזה קלאסית וסנפירים. הטיפול מתמקד בייצוב ליבה במנח ניטרלי או כפיפה. תרגילים: Water Lunges והליכה עם סיבוב אגן לאחור.",
@@ -22,6 +23,7 @@
     {
       "bite_id": "b003",
       "type": "clinical_case_card",
+      "sequence_title": "פתולוגיות עמוד שדרה וליקויי יציבה",
       "visual_trigger": "animation_scoliosis_derotation",
       "title": "עקמת (Scoliosis)",
       "content": "עקמת יוצרת רוטציית חוליות והפרש נפחי ריאות, הגורם לאסימטריית ציפה ומומנט גלגול. הטיפול רותם נטייה זו לתרגילי דה-רוטציה ונשימה א-סימטרית.",
@@ -30,6 +32,7 @@
     {
       "bite_id": "b004",
       "type": "clinical_case_card",
+      "sequence_title": "פתולוגיות עמוד שדרה וליקויי יציבה",
       "visual_trigger": "animation_kyphosis_extension",
       "title": "קיפוזיס (Kyphosis)",
       "content": "כיפוף יתר חזי. חיזוק שרירים זוקפים ומקרבי שכמות כנגד התנגדות המים. שחיית גב ושחיית חזה הפוכה מעודדים את פתיחת בית החזה ויישור הגב העליון.",
@@ -38,6 +41,7 @@
     {
       "bite_id": "b005",
       "type": "clinical_case_card",
+      "sequence_title": "פתולוגיות עמוד שדרה וליקויי יציבה",
       "visual_trigger": "animation_lordosis_wall_sit",
       "title": "לורדוזה (Lordosis)",
       "content": "הקשתת יתר מותנית. הטיפול כולל מתיחת מכופפי ירך וחיזוק שרירי בטן במנח המנטרל כבידה, כגון תרגילי ישיבת קיר (Wall Sits) במים.",
