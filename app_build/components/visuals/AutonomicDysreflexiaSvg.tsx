@@ -49,13 +49,20 @@ export default function AutonomicDysreflexiaSvg({ className = "", triggerVisible
         </motion.g>
       )}
 
-      {/* High BP Indicator (Brain) */}
+      {/* High BP Indicator (Brain) - Dramatic Warning */}
       {triggerVisible && (
-        <motion.circle 
-          animate={{ r: [0, 15, 0], opacity: [0, 0.5, 0] }}
-          transition={{ duration: 2, repeat: Infinity, delay: 1 }}
-          cx="50" cy="20" fill="#ef4444" 
-        />
+        <motion.g 
+          animate={{ scale: [0.8, 1.2, 0.8], opacity: [0.3, 1, 0.3] }}
+          transition={{ duration: 0.8, repeat: Infinity, ease: "easeInOut" }}
+          style={{ originX: "50px", originY: "15px" }}
+        >
+          {/* Intense red glow */}
+          <circle cx="50" cy="15" r="12" fill="#ef4444" opacity="0.6" filter="blur(3px)" />
+          {/* Warning Triangle */}
+          <path d="M 50 5 L 60 22 L 40 22 Z" fill="#ef4444" stroke="#fff" strokeWidth="1" />
+          {/* Exclamation Mark */}
+          <path d="M 50 10 L 50 16 M 50 19 L 50 20" stroke="#fff" strokeWidth="2" strokeLinecap="round" />
+        </motion.g>
       )}
     </svg>
   );

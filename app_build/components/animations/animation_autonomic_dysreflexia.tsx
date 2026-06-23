@@ -50,11 +50,11 @@ export default function AutonomicDysreflexiaAnimation() {
             viewport={{ once: true }}
             transition={{ delay: 2, duration: 0.5 }}
             className="absolute z-30 flex items-center"
-            style={{ top: '15%', right: '0%', transform: 'translate(0, -50%)' }}
+            style={{ top: '15%', right: '0%', transform: 'translate(15px, -50%)' }}
             dir="ltr"
           >
-            <div className="w-12 sm:w-16 h-[2px] bg-red-600" />
-            <div className="bg-red-600 text-white text-xs font-bold px-2 py-1 rounded shadow-md whitespace-normal text-center max-w-[90px] ml-1" dir="rtl">
+            <div className="w-8 sm:w-10 h-[2px] bg-red-600" />
+            <div className="bg-red-600 text-white text-xs font-bold px-2 py-1 rounded shadow-md whitespace-normal text-center max-w-[80px] ml-1" dir="rtl">
               זינוק בלחץ הדם (Vasoconstriction)
             </div>
           </motion.div>
