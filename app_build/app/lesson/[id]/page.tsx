@@ -12,11 +12,12 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function LessonPage({ params }: { params: { id: string } }) {
-  const filePath = path.join(process.cwd(), 'content_data', 'lessons', `${params.id}.json`);
+export default async function LessonPage({ params }: { params: Promise<{ id: string }> }) {
+  const resolvedParams = await params;
+  const filePath = path.join(process.cwd(), 'content_data', 'lessons', `${resolvedParams.id}.json`);
   
   if (!fs.existsSync(filePath)) {
-    notFound();
+    throw new Error("File not found at path: " + filePath);
   }
 
   const fileContents = fs.readFileSync(filePath, 'utf8');

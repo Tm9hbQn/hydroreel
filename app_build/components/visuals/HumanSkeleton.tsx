@@ -7,12 +7,14 @@ interface HumanSkeletonProps {
   className?: string;
   fill?: string;
   stroke?: string;
+  waterLevel?: number;
 }
 
 export default function HumanSkeleton({
   className = "",
   fill = "currentColor",
   stroke = "none",
+  waterLevel,
 }: HumanSkeletonProps) {
   return (
     <motion.svg
@@ -24,6 +26,17 @@ export default function HumanSkeleton({
       viewport={{ once: true }}
       transition={{ duration: 0.8 }}
     >
+      <defs>
+        <clipPath id="skeleton-clip">
+          <circle cx="50" cy="20" r="15" />
+          <path d="M 35 45 Q 50 40 65 45 L 60 110 L 40 110 Z" />
+          <path d="M 30 50 Q 20 60 15 90 Q 15 95 20 95 Q 25 90 35 60 Z" />
+          <path d="M 70 50 Q 80 60 85 90 Q 85 95 80 95 Q 75 90 65 60 Z" />
+          <path d="M 40 110 L 35 180 Q 35 185 40 185 Q 45 185 48 180 L 50 110 Z" />
+          <path d="M 60 110 L 65 180 Q 65 185 60 185 Q 55 185 52 180 L 50 110 Z" />
+        </clipPath>
+      </defs>
+
       {/* Head */}
       <circle cx="50" cy="20" r="15" fill={fill} stroke={stroke} />
       
@@ -61,6 +74,22 @@ export default function HumanSkeleton({
         fill={fill}
         stroke={stroke}
       />
+
+      {/* Water Fill */}
+      {waterLevel !== undefined && (
+        <motion.rect
+          x="0"
+          y="0"
+          width="100"
+          height="250"
+          fill="rgba(14, 165, 233, 0.6)"
+          clipPath="url(#skeleton-clip)"
+          initial={{ y: 250 }}
+          whileInView={{ y: 250 - (250 * (waterLevel / 100)) }}
+          viewport={{ once: true }}
+          transition={{ duration: 2, ease: "easeInOut" }}
+        />
+      )}
       
       {/* C7 Marker (approx base of neck) */}
       <circle cx="50" cy="38" r="1.5" fill="red" opacity="0.7" />
