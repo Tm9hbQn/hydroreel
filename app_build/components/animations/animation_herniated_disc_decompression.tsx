@@ -40,7 +40,7 @@ export default function HerniatedDiscDecompressionAnimation() {
             style={{ top: '50%', right: '50%', transform: 'translate(10px, -50%)' }}
             dir="ltr"
           >
-            <div className="bg-blue-600 text-white text-xs font-bold px-2 py-1 rounded shadow-md whitespace-nowrap ml-1" dir="rtl">
+            <div className="bg-blue-600 text-white text-xs font-bold px-2 py-1 rounded shadow-md ml-1 whitespace-normal text-center max-w-[120px]" dir="rtl">
               הורדת עומס צירים (Decompression)
             </div>
             <div className="w-8 sm:w-16 h-[2px] bg-blue-600" />

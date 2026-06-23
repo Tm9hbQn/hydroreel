@@ -33,10 +33,10 @@ export default function ScoliosisDerotationAnimation() {
             viewport={{ once: true }}
             transition={{ delay: 1, duration: 0.5 }}
             className="absolute z-30 flex items-center"
-            style={{ top: '35%', right: '70%', transform: 'translate(10px, -50%)' }}
+            style={{ top: '35%', left: '0%', transform: 'translate(10px, -50%)' }}
             dir="ltr"
           >
-            <div className="bg-emerald-500 text-white text-xs font-bold px-2 py-1 rounded shadow-md whitespace-nowrap ml-1" dir="rtl">
+            <div className="bg-emerald-500 text-white text-xs font-bold px-2 py-1 rounded shadow-md whitespace-normal text-center max-w-[90px] mr-1" dir="rtl">
               כוח מתקן (Derotation)
             </div>
             <div className="w-8 sm:w-16 h-[2px] bg-emerald-500" />

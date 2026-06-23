@@ -37,7 +37,7 @@ export default function LordosisWallSitAnimation() {
             style={{ bottom: '20%', right: '50%', transform: 'translate(10px, 50%)' }}
             dir="ltr"
           >
-            <div className="bg-emerald-500 text-white text-xs font-bold px-2 py-1 rounded shadow-md whitespace-nowrap ml-1" dir="rtl">
+            <div className="bg-emerald-500 text-white text-xs font-bold px-2 py-1 rounded shadow-md ml-1 whitespace-normal text-center max-w-[120px]" dir="rtl">
               סיבוב אגן לאחור (Pelvic Tilt)
             </div>
             <div className="w-8 sm:w-16 h-[2px] bg-emerald-500" />

@@ -34,11 +34,11 @@ export default function KyphosisExtensionAnimation() {
             viewport={{ once: true }}
             transition={{ delay: 1, duration: 0.5 }}
             className="absolute z-30 flex items-center"
-            style={{ top: '20%', left: '40%', transform: 'translate(-10px, -50%)' }}
-            dir="rtl"
+            style={{ top: '30%', right: '0%', transform: 'translate(-10px, -50%)' }}
+            dir="ltr"
           >
             <div className="w-8 sm:w-16 h-[2px] bg-emerald-500" />
-            <div className="bg-emerald-500 text-white text-xs font-bold px-2 py-1 rounded shadow-md whitespace-nowrap mr-1" dir="rtl">
+            <div className="bg-emerald-500 text-white text-xs font-bold px-2 py-1 rounded shadow-md whitespace-nowrap ml-1" dir="rtl">
               יישור החזה (Extension)
             </div>
           </motion.div>
