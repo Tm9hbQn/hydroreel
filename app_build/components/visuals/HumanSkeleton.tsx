@@ -8,6 +8,7 @@ interface HumanSkeletonProps {
   fill?: string;
   stroke?: string;
   waterLevel?: number;
+  isRunning?: boolean;
 }
 
 export default function HumanSkeleton({
@@ -15,6 +16,7 @@ export default function HumanSkeleton({
   fill = "currentColor",
   stroke = "none",
   waterLevel,
+  isRunning = false,
 }: HumanSkeletonProps) {
   return (
     <motion.svg
@@ -62,33 +64,47 @@ export default function HumanSkeleton({
       />
       
       {/* Left Leg */}
-      <path
-        d="M 40 110 L 35 180 Q 35 185 40 185 Q 45 185 48 180 L 50 110 Z"
-        fill={fill}
-        stroke={stroke}
-      />
+      <motion.g
+        animate={isRunning ? { rotate: [-20, 20, -20] } : {}}
+        transition={isRunning ? { repeat: Infinity, duration: 1.5, ease: "easeInOut" } : {}}
+        style={{ transformOrigin: "45px 110px" }}
+      >
+        <path
+          d="M 40 110 L 35 180 Q 35 185 40 185 Q 45 185 48 180 L 50 110 Z"
+          fill={fill}
+          stroke={stroke}
+        />
+      </motion.g>
       
       {/* Right Leg */}
-      <path
-        d="M 60 110 L 65 180 Q 65 185 60 185 Q 55 185 52 180 L 50 110 Z"
-        fill={fill}
-        stroke={stroke}
-      />
+      <motion.g
+        animate={isRunning ? { rotate: [20, -20, 20] } : {}}
+        transition={isRunning ? { repeat: Infinity, duration: 1.5, ease: "easeInOut" } : {}}
+        style={{ transformOrigin: "55px 110px" }}
+      >
+        <path
+          d="M 60 110 L 65 180 Q 65 185 60 185 Q 55 185 52 180 L 50 110 Z"
+          fill={fill}
+          stroke={stroke}
+        />
+      </motion.g>
 
       {/* Water Fill */}
       {waterLevel !== undefined && (
-        <motion.rect
-          x="0"
-          y="0"
-          width="100"
-          height="250"
-          fill="rgba(14, 165, 233, 0.6)"
-          clipPath="url(#skeleton-clip)"
-          initial={{ y: 250 }}
-          whileInView={{ y: 250 - (250 * (waterLevel / 100)) }}
-          viewport={{ once: true }}
-          transition={{ duration: 2, ease: "easeInOut" }}
-        />
+        <g clipPath="url(#skeleton-clip)">
+          <motion.rect
+            x="0"
+            width="100"
+            fill="#3b82f6"
+            opacity={0.6}
+            initial={{ y: 250, height: 0 }}
+            animate={{ 
+              y: 250 - (250 * (waterLevel / 100)),
+              height: 250 * (waterLevel / 100)
+            }}
+            transition={{ duration: 2, ease: "easeInOut", delay: 0.5 }}
+          />
+        </g>
       )}
       
       {/* C7 Marker (approx base of neck) */}

@@ -5,17 +5,12 @@ import { motion } from "framer-motion";
 import HumanSkeleton from "../visuals/HumanSkeleton";
 import GenericGauge from "../visuals/GenericGauge";
 
-export default function PwbC7Animation() {
-  // C7 is approximately 85% from the bottom of our HumanSkeleton viewBox
-  const WATER_LEVEL = 85; 
-  const WEIGHT_BEARING = 10;
+export default function PwbThighAnimation() {
+  const WATER_LEVEL = 30; 
+  const WEIGHT_BEARING = 65;
 
   return (
     <div className="relative w-full h-full flex flex-col bg-slate-50 dark:bg-slate-900 overflow-hidden">
-      {/* 
-        Safe Zone Top: Floating Tooltips 
-        flex-none ensures it takes up exactly the height it needs and doesn't overlap the middle
-      */}
       <div className="flex-none pt-8 pb-4 px-4 w-full flex justify-center z-20 pointer-events-none">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -25,26 +20,19 @@ export default function PwbC7Animation() {
           className="bg-white/90 dark:bg-slate-800/90 shadow-lg rounded-full px-4 py-2 border border-blue-200 dark:border-blue-800 text-center backdrop-blur-sm"
         >
           <span className="text-sm font-semibold text-slate-800 dark:text-slate-200">
-            C7 (עורף) - הפחתת משקל מקסימלית
+            Thigh (ירך) - מים רדודים
           </span>
         </motion.div>
       </div>
 
-      {/* 
-        Safe Zone Center: The Animation
-        Uses flex-1 and min-h-0 so it can shrink if necessary without pushing the bottom section out.
-      */}
       <div className="flex-1 relative flex items-center justify-center min-h-0 overflow-hidden w-full">
-        {/* Container for Character */}
         <div className="relative h-full w-full max-h-[320px] max-w-[220px]">
-          {/* Background Character with Water Fill inside SVG */}
           <HumanSkeleton 
             className="w-full h-full text-slate-300 dark:text-slate-600 drop-shadow-md" 
             fill="currentColor"
             waterLevel={WATER_LEVEL}
           />
 
-          {/* Tooltip pointing to C7 */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -55,17 +43,13 @@ export default function PwbC7Animation() {
             dir="ltr"
           >
             <div className="bg-blue-600 text-white text-xs font-bold px-2 py-1 rounded shadow-md whitespace-nowrap ml-1" dir="rtl">
-              קו מים (C7)
+              קו מים (Thigh)
             </div>
             <div className="w-8 sm:w-16 h-[2px] bg-blue-600" />
           </motion.div>
         </div>
       </div>
 
-      {/* 
-        Safe Zone Bottom: Metrics
-        flex-none at the bottom to guarantee no collision
-      */}
       <div className="flex-none pb-6 px-4 w-full flex justify-center z-20">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -79,7 +63,7 @@ export default function PwbC7Animation() {
               משקל מופעל (קרקעית)
             </p>
             <p className="text-xl font-bold text-slate-800 dark:text-slate-100">
-              כ-10% בלבד
+              כ-65%
             </p>
           </div>
           <GenericGauge 
@@ -87,7 +71,7 @@ export default function PwbC7Animation() {
             label="נשיאת משקל" 
             size={80} 
             strokeWidth={8}
-            color="#3b82f6" // blue-500
+            color="#3b82f6" 
           />
         </motion.div>
       </div>
