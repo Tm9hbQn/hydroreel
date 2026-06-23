@@ -32,6 +32,13 @@ import PwbAsisAnimation from './animations/animation_pwb_asis';
 import PwbThighAnimation from './animations/animation_pwb_thigh';
 import DeepWaterRunningAnimation from './animations/animation_deep_water_running';
 
+// Spinal Pathologies Animations
+import HerniatedDiscDecompressionAnimation from './animations/animation_herniated_disc_decompression';
+import SpondylolisthesisCoreAnimation from './animations/animation_spondylolisthesis_core';
+import ScoliosisDerotationAnimation from './animations/animation_scoliosis_derotation';
+import KyphosisExtensionAnimation from './animations/animation_kyphosis_extension';
+import LordosisWallSitAnimation from './animations/animation_lordosis_wall_sit';
+
 interface Props {
   triggerId?: string;
 }
@@ -65,6 +72,12 @@ const animationRegistry: Record<string, React.ComponentType<any>> = {
   'animation_pwb_asis': PwbAsisAnimation,
   'animation_pwb_thigh': PwbThighAnimation,
   'animation_deep_water_running': DeepWaterRunningAnimation,
+
+  'animation_herniated_disc_decompression': HerniatedDiscDecompressionAnimation,
+  'animation_spondylolisthesis_core': SpondylolisthesisCoreAnimation,
+  'animation_scoliosis_derotation': ScoliosisDerotationAnimation,
+  'animation_kyphosis_extension': KyphosisExtensionAnimation,
+  'animation_lordosis_wall_sit': LordosisWallSitAnimation,
 };
 
 export default function AnimationFactory({ triggerId }: Props) {
