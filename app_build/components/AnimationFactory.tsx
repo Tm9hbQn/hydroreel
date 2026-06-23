@@ -25,6 +25,9 @@ import SpasticityGamma from './animations/SpasticityGamma';
 import PainReliefMovement from './animations/PainReliefMovement';
 import UhthoffMS from './animations/UhthoffMS';
 
+// PWB Animations
+import PwbC7Animation from './animations/animation_pwb_c7';
+
 interface Props {
   triggerId?: string;
 }
@@ -52,6 +55,8 @@ const animationRegistry: Record<string, React.ComponentType<any>> = {
   'animation_spasticity_gamma': SpasticityGamma,
   'animation_pain_relief_movement': PainReliefMovement,
   'animation_uhthoff_ms': UhthoffMS,
+
+  'animation_pwb_c7': PwbC7Animation,
 };
 
 export default function AnimationFactory({ triggerId }: Props) {
