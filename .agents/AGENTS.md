@@ -46,7 +46,7 @@ Before initiating any file write or command execution, you must open a <thought_
 
 At the end of every session or meaningful step, you MUST include the following two links in your final message:
 1. Walkthrough Link: Link to the `walkthrough.md` artifact detailing what was done, why, and what needs to be checked.
-2. Active Server Port Link: If any UI changes were made and a dev server is running, provide the local server link (e.g., http://localhost:3000/hydroreel).
+2. Active Server Port Link: If any UI changes were made and a dev server is running, provide the exact local server link: http://localhost:3000/hydroreel.
 
 
 ## **7. GitHub Actions & CI/CD Robustness**
