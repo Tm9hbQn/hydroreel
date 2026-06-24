@@ -1,12 +1,25 @@
-# סיכום העשרת התוכן ליחידת movement_02_swimming
+# Walkthrough: Anatomy Muscles Content Enrichment
 
-## מה בוצע?
-* **פירוק הקרוסלה הדחוסה:** בוצע יישום מלא של "חוק איסור דחיסה". הקרוסלה המקורית שכללה שלושה נושאים שונים לחלוטין (שחיית חזה, שחיית חתירה/גב, והליוויק) פורקה לרצפים (Sequences) נפרדים.
-* **הוספת הקשר תיאורטי (Contextual Foundation):** כל רצף מתחיל כעת ב-`principle_card` שמסביר את המכניקה, הפזיולוגיה או התיאוריה של השיטה לפני שמגיעים למקרה הקליני ולדוגמאות, כנדרש ב-`systemPatterns.md`.
-* **שמירה על תוכן קיים:** כל הטקסטים שהיו בקובץ המקורי (דוגמאות קליניות ושאלות הבוחן) נשמרו במלואם והושמו כ-`clinical_case_card` בתוך הרצפים המתאימים.
-* **העשרת התוכן (Micro-aesthetics):** הוספו משפטי "הידעת?" בשדות ה-`clinical_highlight` כדי לעודד סקרנות ולהעמיק את הלמידה. כל התכנים עומדים במגבלה של מקסימום 40 מילים למסך.
-* **שימוש בטריגרים קיימים:** נעשה שימוש רק באנימציות קיימות ומאושרות מ-`systemPatterns.md` והקובץ המקורי (כגון `animation_metacentric_torque` ו-`animation_swim_styles`), ללא המצאת טריגרים חדשים.
+## What was done
+1.  **Content Expansion**: Deeply enriched the `app_build/content_data/lessons/anatomy_01_muscles.json` file.
+2.  **Resolved Conceptual Compression**: The previous version squashed Quadriceps, Hamstrings, and Core muscles into a single generic `flashcard_carousel`. This violated the "No Conceptual Compression" rule.
+3.  **Contextual Foundation Created**: Split the main muscle groups into their own distinct logical sequences:
+    *   **Sequence 1: ארבע ראשי (Quadriceps)**
+    *   **Sequence 2: מיתר הברך (Hamstrings)**
+    *   **Sequence 3: שרירי הליבה (Core)**
+    *   **Sequence 4: אינטגרציה ביומכנית (Biomechanics Integration)**
+    *   **Sequence 5: סיכום ובקרה (Quizzes & Summary)**
+4.  **Applied System Patterns**: For each muscle group sequence, applied the pattern:
+    *   `principle_card` (Theory & Anatomy) -> 
+    *   `clinical_case_card` (Practical application/pathology in water) -> 
+    *   `flashcard_carousel` (Strictly used for short practical examples/exercises, not core teaching).
+5.  **Data Schema Integrity**: 
+    *   Updated the quiz questions from `quiz_card` to `interactive_check`.
+    *   Fixed data keys from `text` to `content` to perfectly align with the `systemPatterns.md` JSON schema constraints.
+6.  **No New Animations**: Used existing `visual_trigger` strings only (e.g., `animation_muscle_groups`, `animation_aquatic_correction`, `animation_walking_biomechanics`, `animation_spasticity_deviation`, `animation_quiz_time`).
+7.  **Memory Management**: Logged the operation in `.memory/activeContext.md`.
 
-## מה נדרש לבדוק?
-* **רינדור UI:** יש לוודא שהאפליקציה קוראת נכון את ה-JSON המעודכן, מחלקת את הרילסים לפי ה-`sequence_title` (כותרות קפואות) ומרנדרת כראוי את הקרוסלות החדשות לכל רצף.
-* **מעבר אנימציות:** לוודא שהטריגר `animation_metacentric_torque` נטען ומוצג כשורה עבור יחידת הליוויק.
+## What needs to be checked
+*   **Content Load**: Verify that the Next.js app renders the new anatomy sequences gracefully.
+*   **Sticky Headers**: The sequences should transition smoothly and the `sequence_title` sticky header should update when moving between Quadriceps, Hamstrings, and Core sequences.
+*   **Quizzes**: Ensure the `interactive_check` cards render properly at the end of the module.
