@@ -19,7 +19,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="he" dir="rtl" className="snap-y snap-mandatory scroll-smooth" suppressHydrationWarning>
+    <html lang="he" dir="rtl" className="snap-y snap-mandatory overscroll-none" suppressHydrationWarning>
       <body suppressHydrationWarning className={`${rubik.className} antialiased bg-slate-50 text-slate-900 selection:bg-blue-200`}>
         {children}
       </body>

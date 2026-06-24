@@ -79,10 +79,10 @@ export default function HomeClient({
   const [showToast, setShowToast] = useState(false);
   const [toastMessage, setToastMessage] = useState("");
 
-  // Default to the first lesson
   const defaultLessonId = sequences.length > 0 ? sequences[0].lessonId : "";
   const [activeLessonId, setActiveLessonId] = useState<string>(defaultLessonId);
   const [expandedHeroCat, setExpandedHeroCat] = useState<string | null>(null);
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   // Filter sequences for the active lesson
   const activeSequences = useMemo(() => {
@@ -139,30 +139,26 @@ export default function HomeClient({
     return () => window.removeEventListener("scroll", handleScroll);
   }, [flatReels]);
 
-  const scrollToLessonIntro = useCallback(() => {
-    // Wait for DOM to update with new lesson reels
-    setTimeout(() => {
-      const el = document.getElementById("active-lesson-start");
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth" });
-      } else {
-        // Fallback: scroll past the hero reel (100vh)
-        window.scrollTo({ top: window.innerHeight, behavior: "smooth" });
-      }
-    }, 100);
-  }, []);
-
   const handleSelectLesson = useCallback((lessonId: string) => {
     setShowBottomSheet(false);
-    setActiveLessonId(lessonId);
-    scrollToLessonIntro();
-  }, [scrollToLessonIntro]);
+    setIsTransitioning(true);
+    
+    // Wait for the overlay to fully fade in
+    setTimeout(() => {
+      setActiveLessonId(lessonId);
+      // Instantly scroll to top of the new lesson (which starts after the hero reel)
+      window.scrollTo({ top: window.innerHeight, behavior: "instant" as any });
+      
+      // Fade out the overlay
+      setTimeout(() => {
+        setIsTransitioning(false);
+      }, 100);
+    }, 400);
+  }, []);
 
   const handleSearchSelect = useCallback((lessonId: string) => {
-    setShowBottomSheet(false);
-    setActiveLessonId(lessonId);
-    scrollToLessonIntro();
-  }, [scrollToLessonIntro]);
+    handleSelectLesson(lessonId);
+  }, [handleSelectLesson]);
 
   const handleGoHome = useCallback(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -193,6 +189,30 @@ export default function HomeClient({
               <CheckCircle2 size={20} />
               <span className="font-bold text-sm" dir="rtl">{toastMessage}</span>
             </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* ==========================================
+          TOPIC TRANSITION OVERLAY
+          ========================================== */}
+      <AnimatePresence>
+        {isTransitioning && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 z-[9999] bg-gradient-to-br from-cyan-400 to-blue-600 flex flex-col items-center justify-center"
+          >
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ delay: 0.1, duration: 0.3 }}
+              className="text-white text-3xl font-bold flex flex-col items-center gap-4"
+            >
+              <div className="w-16 h-16 border-4 border-white border-t-transparent rounded-full animate-spin" />
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>

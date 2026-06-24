@@ -69,6 +69,8 @@ function groupBitesBySequence(bites: Bite[]): { title: string; bites: Bite[] }[]
   const sequences: { title: string; bites: Bite[] }[] = [];
   let currentSequence: { title: string; bites: Bite[] } | null = null;
   for (const bite of bites) {
+    if (bite.type === 'sequence_end_card') continue;
+    
     const title = bite.sequence_title || 'כללי';
     if (!currentSequence || currentSequence.title !== title) {
       if (currentSequence) sequences.push(currentSequence);

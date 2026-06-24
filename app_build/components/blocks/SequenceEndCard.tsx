@@ -87,7 +87,7 @@ export default function SequenceEndCard({
         <motion.div
           initial={{ scale: 0, rotate: -30 }}
           whileInView={{ scale: 1, rotate: 0 }}
-          viewport={{ once: false }}
+          viewport={{ once: true }}
           transition={{ type: "spring", stiffness: 200, damping: 14 }}
           className="flex items-center justify-center w-28 h-28 rounded-full bg-white/20 backdrop-blur-lg border border-white/30 shadow-2xl"
         >
@@ -100,7 +100,7 @@ export default function SequenceEndCard({
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false }}
+          viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-center"
         >
@@ -114,7 +114,7 @@ export default function SequenceEndCard({
         <motion.div
           initial={{ width: 0 }}
           whileInView={{ width: "50%" }}
-          viewport={{ once: false }}
+          viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.5 }}
           className="h-[2px] rounded-full bg-white/30"
         />
@@ -126,7 +126,7 @@ export default function SequenceEndCard({
             <motion.button
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false }}
+              viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.6 }}
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
@@ -142,7 +142,7 @@ export default function SequenceEndCard({
           <motion.button
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.7 }}
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.97 }}
@@ -156,7 +156,7 @@ export default function SequenceEndCard({
           <motion.button
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.8 }}
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.97 }}
