@@ -5,47 +5,18 @@
     {
       "bite_id": "b001",
       "type": "principle_card",
-      "sequence_title": "אימון כושר פיזיולוגי",
+      "sequence_title": "מבוא לכושר גופני",
       "visual_trigger": "animation_drag_equation",
       "title": "סביבת המים כחדר כושר שיקומי",
       "content": "פיתוח כושר גופני בבריכה מנצל את תכונות המים ליצירת עומס מדורג. הצפיפות והצמיגות של המים מאפשרות אימון התנגדות אקטיבי וללא אימפקט שלילי על המפרקים נושאי המשקל.",
       "clinical_highlight": "המים משמשים גם כמשקולת (התנגדות) וגם ככרית תומכת (ציפה) באותו התרגיל בדיוק."
     },
     {
-      "bite_id": "b002",
-      "type": "flashcard_carousel",
-      "sequence_title": "אימון כושר פיזיולוגי",
-      "visual_trigger": "animation_fitness_components",
-      "items": [
-        {
-          "title": "סבולת לב-ריאה (Cardio)",
-          "content": "יכולת המערכת לספק חמצן במאמץ מתמשך. דוגמה קלינית: הליכה רציפה נגד זרם מים מבוקר משפרת תפוקת לב בסביבה המגינה על מפרקי הרגליים."
-        },
-        {
-          "title": "כוח שריר (Muscle Strength)",
-          "content": "התגברות על התנגדות מקסימלית. דוגמה קלינית: שימוש בלוחות גריפה (Drag) במים מגדיל את ההתנגדות ומסייע לבניית כוח אקטיבי בשיקום אורתופדי."
-        },
-        {
-          "title": "סבולת שריר (Endurance)",
-          "content": "יכולת השריר לפעול לאורך זמן מבלי להתעייף. דוגמה קלינית: ביצוע תנועות מחזוריות כמו בעיטות רגליים ממושכות נגד התנגדות המים לחיזוק הגפיים התחתונות."
-        }
-      ]
-    },
-    {
-      "bite_id": "b003",
-      "type": "clinical_case_card",
-      "sequence_title": "אימון כושר פיזיולוגי",
-      "visual_trigger": "animation_fibromyalgia_training",
-      "title": "התאמת עומסים לסינדרום כאב (Fibromyalgia)",
-      "content": "עבור מטופלי פיברומיאלגיה הסובלים מכאב כרוני, בניית כושר חייבת להיות מבוקרת. אנו משתמשים במים כדי לשלוט בעומס באמצעות שינוי מהירות התנועה (חוק הגרר) במקום הוספת משקל חיצוני.",
-      "clinical_highlight": "חובה להימנע מאימון יתר העלול לגרום לעייפות מוגזמת וכאבי שרירים ביום שלמחרת (DOMS)."
-    },
-    {
       "bite_id": "q_movement_01_fitness_1",
       "type": "quiz_card",
       "visual_trigger": "animation_quiz_time",
       "title": "בחן את עצמך!",
-      "sequence_title": "אימון כושר פיזיולוגי",
+      "sequence_title": "מבוא לכושר גופני",
       "question": "מהו היתרון המרכזי של אימון במים עבור מטופלים עם פגיעות מפרקיות?",
       "options": [
         {
@@ -71,11 +42,143 @@
       ]
     },
     {
+      "bite_id": "b002",
+      "type": "sequence_end_card",
+      "sequence_title": "מבוא לכושר גופני",
+      "visual_trigger": "animation_finish_sequence"
+    },
+    {
+      "bite_id": "b003",
+      "type": "principle_card",
+      "sequence_title": "סבולת לב-ריאה (Cardio)",
+      "visual_trigger": "animation_fitness_components",
+      "title": "עבודה נגד הזרם",
+      "content": "יכולת המערכת לספק חמצן במאמץ מתמשך. סביבת המים מספקת התנגדות טבעית המעלה את הדופק, בעוד הלחץ ההידרוסטטי מסייע בהחזר הוורידי ומקל על הלב.",
+      "clinical_highlight": "הידעת? הלחץ ההידרוסטטי מגדיל את נפח הפעימה, ולכן דופק המטרה במים לרוב נמוך יותר."
+    },
+    {
+      "bite_id": "b004",
+      "type": "clinical_case_card",
+      "sequence_title": "סבולת לב-ריאה (Cardio)",
+      "visual_trigger": "animation_fitness_components",
+      "title": "יישום קליני: החזרת תפוקת לב",
+      "content": "הליכה רציפה נגד זרם מים מבוקר משפרת תפוקת לב בסביבה המגינה על מפרקי הרגליים. פתרון מעולה למטופלים לאחר ניתוח שאינם יכולים ללכת ביבשה.",
+      "clinical_highlight": "המים מבטיחים תרגול לב-ריאה מוקדם ללא העמסת משקל מלאה."
+    },
+    {
+      "bite_id": "b005",
+      "type": "flashcard_carousel",
+      "sequence_title": "סבולת לב-ריאה (Cardio)",
+      "visual_trigger": "animation_fitness_components",
+      "items": [
+        {
+          "title": "הליכה מהירה במים",
+          "content": "צעידה אינטנסיבית תוך הפעלת כל הגוף."
+        },
+        {
+          "title": "ריצה במים עמוקים",
+          "content": "Aqua Jogging עם חגורת ציפה ללא אימפקט."
+        },
+        {
+          "title": "תנועות ידיים דינמיות",
+          "content": "שילוב גריפות מהירות להעלאת דופק במקום."
+        }
+      ]
+    },
+    {
+      "bite_id": "b006",
+      "type": "sequence_end_card",
+      "sequence_title": "סבולת לב-ריאה (Cardio)",
+      "visual_trigger": "animation_finish_sequence"
+    },
+    {
+      "bite_id": "b007",
+      "type": "principle_card",
+      "sequence_title": "כוח שריר (Muscle Strength)",
+      "visual_trigger": "animation_drag_equation",
+      "title": "התנגדות לכל כיוון",
+      "content": "התגברות על התנגדות מקסימלית. בניגוד ליבשה, המים מתנגדים לכל תנועה (אגוניסט ואנטגוניסט). הכוח מופק מהתגברות על צמיגות המים וחוק הגרר.",
+      "clinical_highlight": "ככל שמהירות התנועה גדלה, התנגדות המים גדלה בריבוע - שליטה מושלמת בעומס."
+    },
+    {
+      "bite_id": "b008",
+      "type": "clinical_case_card",
+      "sequence_title": "כוח שריר (Muscle Strength)",
+      "visual_trigger": "animation_drag_equation",
+      "title": "בניית כוח אקטיבי מבוקר",
+      "content": "שימוש בלוחות גריפה (Drag) במים מגדיל את ההתנגדות ומסייע לבניית כוח אקטיבי בשיקום אורתופדי, למשל בשיקום כתף לאחר פריקה.",
+      "clinical_highlight": "אם המטופל חש כאב וייטה להאט, ההתנגדות תרד אוטומטית, מה שמונע פציעות."
+    },
+    {
+      "bite_id": "b009",
+      "type": "flashcard_carousel",
+      "sequence_title": "כוח שריר (Muscle Strength)",
+      "visual_trigger": "animation_drag_equation",
+      "items": [
+        {
+          "title": "דחיפת מצוף כלפי מטה",
+          "content": "עבודה אקסצנטרית מבוקרת נגד כוח הציפה."
+        },
+        {
+          "title": "הרחקת ירך עם סנפיר",
+          "content": "הגדלת שטח הפנים ליצירת התנגדות אקטיבית."
+        },
+        {
+          "title": "משיכת מים בכפות פתוחות",
+          "content": "ניצול שטחי גרר לחיזוק פלג גוף עליון."
+        }
+      ]
+    },
+    {
+      "bite_id": "b010",
+      "type": "sequence_end_card",
+      "sequence_title": "כוח שריר (Muscle Strength)",
+      "visual_trigger": "animation_finish_sequence"
+    },
+    {
+      "bite_id": "b011",
+      "type": "principle_card",
+      "sequence_title": "סבולת שריר והתאמת עומסים",
+      "visual_trigger": "animation_fibromyalgia_training",
+      "title": "פעילות מחזורית לאורך זמן",
+      "content": "יכולת השריר לפעול לאורך זמן מבלי להתעייף. המים מספקים סביבה אידיאלית לחזרות מרובות תחת ציפה מפחיתת כבידה המאפשרת תרגול רציף ובטוח.",
+      "clinical_highlight": "הידעת? חום המים (34 מעלות) מסייע בהרפיית השריר ומונע התכווצויות במהלך מאמץ ממושך."
+    },
+    {
+      "bite_id": "b012",
+      "type": "clinical_case_card",
+      "sequence_title": "סבולת שריר והתאמת עומסים",
+      "visual_trigger": "animation_fibromyalgia_training",
+      "title": "התאמת עומסים לסינדרום כאב",
+      "content": "עבור מטופלי פיברומיאלגיה הסובלים מכאב כרוני, בניית כושר חייבת להיות מבוקרת. אנו משתמשים במים לשליטה בעומס באמצעות שינוי מהירות (חוק הגרר) במקום הוספת משקל חיצוני.",
+      "clinical_highlight": "חובה להימנע מאימון יתר העלול לגרום לעייפות מוגזמת וכאבי שרירים ביום שלמחרת (DOMS)."
+    },
+    {
+      "bite_id": "b013",
+      "type": "flashcard_carousel",
+      "sequence_title": "סבולת שריר והתאמת עומסים",
+      "visual_trigger": "animation_fibromyalgia_training",
+      "items": [
+        {
+          "title": "בעיטות רגליים ממושכות",
+          "content": "תרגול נגד התנגדות המים לחיזוק הגפיים התחתונות."
+        },
+        {
+          "title": "תנועות חתירה רציפות",
+          "content": "שמירה על קצב קבוע לאורך זמן ללא עומס מפרקי."
+        },
+        {
+          "title": "הליכה מחזורית במים",
+          "content": "חלוקת עומסים נכונה לשיפור סיבולת כללית."
+        }
+      ]
+    },
+    {
       "bite_id": "q_movement_01_fitness_2",
       "type": "quiz_card",
       "visual_trigger": "animation_quiz_time",
       "title": "בחן את עצמך!",
-      "sequence_title": "אימון כושר פיזיולוגי",
+      "sequence_title": "סבולת שריר והתאמת עומסים",
       "question": "כיצד מומלץ לשלוט בעומס האימון למטופלי פיברומיאלגיה במים?",
       "options": [
         {
@@ -101,9 +204,9 @@
       ]
     },
     {
-      "bite_id": "b004",
+      "bite_id": "b014",
       "type": "sequence_end_card",
-      "sequence_title": "אימון כושר פיזיולוגי",
+      "sequence_title": "סבולת שריר והתאמת עומסים",
       "visual_trigger": "animation_finish_sequence"
     }
   ]
