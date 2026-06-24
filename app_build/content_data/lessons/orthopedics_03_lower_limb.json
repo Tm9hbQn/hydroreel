@@ -3,6 +3,15 @@
   "lesson_title": "שיקום גף תחתון: פרוטוקולים ממוקדים",
   "bites": [
     {
+      "bite_id": "b000_1",
+      "type": "principle_card",
+      "sequence_title": "שיקום החלפות מפרקים",
+      "visual_trigger": "animation_archimedes_vectors",
+      "title": "היתרון הביומכני במים",
+      "content": "לאחר החלפת מפרק הירך או הברך, חלות הגבלות נשיאת משקל. תכונת הציפה (Buoyancy) מאפשרת עמידה והליכה כמעט ללא עומס על המפרק המלאכותי, תוך שימור טווחי התנועה.",
+      "clinical_highlight": "הידרוסטטיקה יעילה גם בהפחתת הבצקת (Effusion) סביב המפרק המנותח."
+    },
+    {
       "bite_id": "b001",
       "type": "clinical_case_card",
       "sequence_title": "שיקום החלפות מפרקים",
@@ -21,13 +30,53 @@
       "clinical_highlight": "התמיכה ההידרוסטטית יעילה במיוחד בהורדת עומס והרגעת כאב במפרק."
     },
     {
-      "bite_id": "b003",
+      "bite_id": "b002_examples",
+      "type": "flashcard_carousel",
+      "sequence_title": "שיקום החלפות מפרקים",
+      "visual_trigger": "animation_tkr_hydrostatic_pressure",
+      "title": "שלבי התרגול בהחלפת מפרקים",
+      "content": "התאמת תרגילים נכונה לפי שלבי ההחלמה:",
+      "items": [
+        {
+          "title": "שלב אקיוטי",
+          "content": "מוביליזציות פסיביות והליכה מבוקרת במים עמוקים ללא נשיאת משקל כלל."
+        },
+        {
+          "title": "שלב סאב-אקיוטי",
+          "content": "תרגילי חיזוק דינמיים מול התנגדות המים, כגון כפיפה והרחקה, תוך נשיאת משקל חלקית."
+        },
+        {
+          "title": "לקראת שחרור",
+          "content": "הליכה במים רדודים לתרגול פרופריוצפטיבי ונשיאת משקל כמעט מלאה עם תרגול שיווי משקל."
+        }
+      ]
+    },
+    {
+      "bite_id": "b002_5",
       "type": "principle_card",
       "sequence_title": "מחלת פרטס",
       "visual_trigger": "animation_perthes_containment",
-      "title": "מחלת Legg-Calvé-Perthes",
+      "title": "מנגנון מחלת Legg-Calvé-Perthes",
+      "content": "במחלה זו קיימת הפרעה באספקת הדם לראש עצם הירך אצל ילדים, מה שמוביל לנמק אווסקולרי וסכנה לעיוות ראש הירך עקב עומסי דחיסה.",
+      "clinical_highlight": "מטרת העל היא לשמור על ראש הירך כלוא היטב בתוך האצטבולום במהלך ההחלמה."
+    },
+    {
+      "bite_id": "b003",
+      "type": "clinical_case_card",
+      "sequence_title": "מחלת פרטס",
+      "visual_trigger": "animation_perthes_containment",
+      "title": "הטיפול המימי לפרטס",
       "content": "נמק של ראש הירך בילדים. המים הם סביבה אידיאלית לשמירה על טווחי תנועה וחיזוק שרירים, ללא עומס דחיסתי הפוגע במפרק.",
       "clinical_highlight": "איסור מוחלט על קפיצות. המטרה: לשמור על 'הכלת' ראש הירך באצטבולום."
+    },
+    {
+      "bite_id": "b003_prin",
+      "type": "principle_card",
+      "sequence_title": "דפורמציות ברכיים",
+      "visual_trigger": "animation_genu_valgum",
+      "title": "ביומכניקה של מפרק הברך",
+      "content": "ציר הרגל התקין מתוכנן לפזר עומסים בצורה שווה בין המדור הפנימי והחיצוני של הברך. סטייה מציר זה יוצרת שחיקה מוגברת וא-סימטריה.",
+      "clinical_highlight": "כל סטייה דורשת חיזוק קבוצות השרירים המנוגדות כדי לתמוך ביישור המפרק."
     },
     {
       "bite_id": "b004",
@@ -39,8 +88,17 @@
       "clinical_highlight": "חיזוק גלוטאלי ושרירי ירך חיצוניים בסביבה נטולת משקל מלא."
     },
     {
-      "bite_id": "b005",
+      "bite_id": "b004_prin",
       "type": "principle_card",
+      "sequence_title": "פתולוגיות כף רגל",
+      "visual_trigger": "animation_pes_planus",
+      "title": "אנטומיה של קשתות כף הרגל",
+      "content": "כף הרגל בנויה ממערכת של קשתות התומכות במשקל הגוף ובולמות זעזועים. שרירים אינטרינסיים ומחתלות מסייעים בשמירת המבנה הקשתי.",
+      "clinical_highlight": "כאשר המבנה קורס או נוקשה מדי, נפגעת היכולת האקטיבית לבלימת זעזועים."
+    },
+    {
+      "bite_id": "b005",
+      "type": "clinical_case_card",
       "sequence_title": "פתולוגיות כף רגל",
       "visual_trigger": "animation_pes_planus",
       "title": "פלטפוס (Pes Planus)",
@@ -49,12 +107,21 @@
     },
     {
       "bite_id": "b006",
-      "type": "principle_card",
+      "type": "clinical_case_card",
       "sequence_title": "פתולוגיות כף רגל",
       "visual_trigger": "animation_pes_cavus",
       "title": "קשת גבוהה (Pes Cavus)",
       "content": "דרישה לשיפור בלימת זעזועים בעקבות נוקשות כף הרגל. טיפול במים כולל מתיחות לגיד אכילס ופציה פלנטרית ותרגילי נחיתה מבוקרת במים עמוקים.",
       "clinical_highlight": "המים העמוקים מספקים בטיחות ובלימת זעזועים בזמן הנחיתה."
+    },
+    {
+      "bite_id": "b006_prin",
+      "type": "principle_card",
+      "sequence_title": "נקעים בקרסול",
+      "visual_trigger": "animation_ankle_sprain_early",
+      "title": "מנגנון הפגיעה בנקע קרסול",
+      "content": "רוב הנקעים בקרסול מתרחשים בתנועת אינוורסיה (Inversion), הגורמת למתיחה או קריעה של הרצועות הלטרליות.",
+      "clinical_highlight": "פגיעה זו גוררת לרוב פגיעה פרופריוצפטיבית משמעותית המחייבת שיקום."
     },
     {
       "bite_id": "b007",
@@ -101,6 +168,13 @@
           "feedback": "הם משפרים ומאיצים שיקום."
         }
       ]
+    },
+    {
+      "bite_id": "b999",
+      "type": "sequence_end_card",
+      "sequence_title": "נקעים בקרסול",
+      "title": "סיום הרצף: גפיים תחתונות",
+      "content": "המים משמשים כסביבה טיפולית התומכת בשיקום המוקדם של גפיים תחתונות על ידי הפחתת עומסים הדרגתית."
     }
   ]
 }
