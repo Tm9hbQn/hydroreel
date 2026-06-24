@@ -7,7 +7,8 @@ export interface FlashcardCarouselBite {
   bite_id: string;
   type: string;
   visual_trigger?: string;
-  title: string;
+  title?: string;
+  sequence_title?: string;
   items: Array<{ title: string; content: string; icon?: string }>;
 }
 
@@ -40,7 +41,7 @@ export default function FlashcardCarousel({ bite }: Props) {
       >
         <div className="relative inline-block mb-3 self-start">
           <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight font-sans relative z-10" dir="rtl">
-            {bite.title}
+            {bite.title || bite.sequence_title || "מושגי יסוד"}
           </h2>
           <motion.div 
             initial={{ width: 0 }}

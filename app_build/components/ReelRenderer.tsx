@@ -31,9 +31,9 @@ export default function ReelRenderer({ bite }: Props) {
     case 'interactive_check':
       const checkBite = {
         ...bite,
-        question: bite.content,
-        correct_index: bite.correct_answer_index,
-        explanation: bite.clinical_highlight
+        question: bite.question || bite.content,
+        correct_index: bite.correct_index ?? bite.correct_answer_index,
+        explanation: bite.explanation || bite.clinical_highlight
       };
       return <InteractiveCheck bite={checkBite} />;
     case 'sequence_end_card':
