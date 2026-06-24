@@ -61,7 +61,7 @@
     },
     {
       "bite_id": "b_ad_action",
-      "type": "quiz_card",
+      "type": "interactive_check",
       "sequence_title": "דיסרפלקסיה אוטונומית",
       "question": "המטופל החל להתלונן על כאב ראש פועם והזעה מרובה. מהי הפעולה הראשונה שעליך לבצע?",
       "options": [
@@ -116,7 +116,7 @@
     },
     {
       "bite_id": "q_neuro_02_sci_1_20cfe0",
-      "type": "quiz_card",
+      "type": "interactive_check",
       "sequence_title": "שיקום אקוואטי ב-SCI",
       "question": "כיצד המים מסייעים למטופל עם פגיעת חוט שדרה (SCI)?",
       "options": [
@@ -144,7 +144,7 @@
     },
     {
       "bite_id": "q_neuro_02_sci_2_e322ac",
-      "type": "quiz_card",
+      "type": "interactive_check",
       "sequence_title": "שיקום אקוואטי ב-SCI",
       "question": "מדוע שיווי משקל בישיבה חשוב לתרגול במים עבור נפגעי חוט שדרה?",
       "options": [

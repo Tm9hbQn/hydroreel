@@ -93,7 +93,7 @@
     },
     {
       "bite_id": "q_orthopedics_04_upper_limb_1_bc2a5f",
-      "type": "quiz_card",
+      "type": "interactive_check",
       "sequence_title": "פציעות שרוול מסובב",
       "visual_trigger": "animation_quiz_time",
       "question": "מהי תרומת ההתנגדות של המים בשיקום גפיים עליונות?",

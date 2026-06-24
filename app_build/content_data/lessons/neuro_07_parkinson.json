@@ -109,7 +109,7 @@
     },
     {
       "bite_id": "q_neuro_07_parkinson_1_86b0b7",
-      "type": "quiz_card",
+      "type": "interactive_check",
       "sequence_title": "סיכום תרגול",
       "question": "איזו תרומה מרכזית יש לטיפול במים עבור חולי פרקינסון בהקשר של הליכה?",
       "options": [

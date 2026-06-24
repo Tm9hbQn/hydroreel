@@ -120,7 +120,7 @@
     },
     {
       "bite_id": "q_1782256445829_113_0",
-      "type": "quiz_card",
+      "type": "interactive_check",
       "sequence_title": "מבחן ידע: ASD במים",
       "question": "כיצד טיפול במים יכול לסייע בוויסות חושי לילדים על הרצף האוטיסטי?",
       "options": [
@@ -148,7 +148,7 @@
     },
     {
       "bite_id": "q_1782256445829_806_1",
-      "type": "quiz_card",
+      "type": "interactive_check",
       "sequence_title": "מבחן ידע: ASD במים",
       "question": "באיזו טכניקה נהוג להשתמש לשם הרגעה ראשונית של ילד עם אוטיזם במים?",
       "options": [

@@ -68,7 +68,7 @@
     },
     {
       "bite_id": "q_neuro_04_epilepsy_1_3b475f",
-      "type": "quiz_card",
+      "type": "interactive_check",
       "sequence_title": "סיכום ובחינה",
       "question": "מהו דגש בטיחותי קריטי בטיפול בבריכה לאדם עם אפילפסיה?",
       "options": [

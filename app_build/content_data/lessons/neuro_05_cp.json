@@ -114,7 +114,7 @@
     },
     {
       "bite_id": "q_neuro_05_cp_1_603f63",
-      "type": "quiz_card",
+      "type": "interactive_check",
       "sequence_title": "מבחן ידע: שיתוק מוחין",
       "question": "אילו יתרונות מספקת ההידרותרפיה לילדים עם שיתוק מוחין (CP)?",
       "options": [
@@ -142,7 +142,7 @@
     },
     {
       "bite_id": "q_neuro_05_cp_2_3656bd",
-      "type": "quiz_card",
+      "type": "interactive_check",
       "sequence_title": "מבחן ידע: שיתוק מוחין",
       "question": "כיצד מים חמים (34 מעלות) משפיעים על שרירים ספסטיים בילדים עם CP?",
       "options": [

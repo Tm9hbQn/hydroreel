@@ -40,7 +40,7 @@
     },
     {
       "bite_id": "q_neuro_06_ms_1_b5cfba",
-      "type": "quiz_card",
+      "type": "interactive_check",
       "sequence_title": "טרשת נפוצה (MS)",
       "question": "מדוע טמפרטורת הבריכה היא פקטור משמעותי עבור מטופלי טרשת נפוצה (MS)?",
       "options": [

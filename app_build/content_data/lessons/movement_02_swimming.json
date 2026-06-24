@@ -137,7 +137,7 @@
     },
     {
       "bite_id": "q_movement_02_swimming_1",
-      "type": "quiz_card",
+      "type": "interactive_check",
       "visual_trigger": "animation_quiz_time",
       "title": "בחן את עצמך!",
       "sequence_title": "בחינת ידע המסכם",
@@ -167,7 +167,7 @@
     },
     {
       "bite_id": "q_movement_02_swimming_2",
-      "type": "quiz_card",
+      "type": "interactive_check",
       "visual_trigger": "animation_quiz_time",
       "title": "בחן את עצמך!",
       "sequence_title": "בחינת ידע המסכם",

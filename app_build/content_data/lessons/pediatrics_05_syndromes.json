@@ -62,7 +62,7 @@
     },
     {
       "bite_id": "q_1782256445830_8_0",
-      "type": "quiz_card",
+      "type": "interactive_check",
       "sequence_title": "תסמונת דאון: מאפיינים וטיפול מימי",
       "question": "מהו סיכון שכיח אצל ילדים עם תסמונת דאון (Trisomy 21) המצריך תשומת לב מיוחדת בהידרותרפיה?",
       "options": [

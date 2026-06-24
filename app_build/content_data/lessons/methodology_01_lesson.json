@@ -125,7 +125,7 @@
     },
     {
       "bite_id": "q_methodology_01_lesson_1",
-      "type": "quiz_card",
+      "type": "interactive_check",
       "visual_trigger": "animation_quiz_time",
       "title": "בחן את עצמך!",
       "sequence_title": "סיכום הלימוד",
@@ -155,7 +155,7 @@
     },
     {
       "bite_id": "q_methodology_01_lesson_2",
-      "type": "quiz_card",
+      "type": "interactive_check",
       "visual_trigger": "animation_quiz_time",
       "title": "בחן את עצמך!",
       "sequence_title": "סיכום הלימוד",

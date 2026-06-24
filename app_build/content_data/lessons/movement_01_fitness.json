@@ -13,7 +13,7 @@
     },
     {
       "bite_id": "q_movement_01_fitness_1",
-      "type": "quiz_card",
+      "type": "interactive_check",
       "visual_trigger": "animation_quiz_time",
       "title": "בחן את עצמך!",
       "sequence_title": "מבוא לכושר גופני",
@@ -175,7 +175,7 @@
     },
     {
       "bite_id": "q_movement_01_fitness_2",
-      "type": "quiz_card",
+      "type": "interactive_check",
       "visual_trigger": "animation_quiz_time",
       "title": "בחן את עצמך!",
       "sequence_title": "סבולת שריר והתאמת עומסים",

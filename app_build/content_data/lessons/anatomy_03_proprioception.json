@@ -38,7 +38,7 @@
     },
     {
       "bite_id": "q_anatomy_03_proprioception_1",
-      "type": "quiz_card",
+      "type": "interactive_check",
       "sequence_title": "מערכת הפרופריוצפציה",
       "visual_trigger": "animation_quiz_time",
       "title": "בחן את עצמך!",
@@ -141,7 +141,7 @@
     },
     {
       "bite_id": "q_anatomy_03_proprioception_2",
-      "type": "quiz_card",
+      "type": "interactive_check",
       "sequence_title": "המערכת הוסטיבולרית",
       "visual_trigger": "animation_quiz_time",
       "title": "בחן את עצמך!",

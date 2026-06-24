@@ -112,7 +112,7 @@
     },
     {
       "bite_id": "q_orthopedics_01_fractures_1_678097",
-      "type": "quiz_card",
+      "type": "interactive_check",
       "sequence_title": "בחן את עצמך: שיקום שברים",
       "question": "מתי לרוב ישולב טיפול הידרותרפי לאחר שבר?",
       "options": [

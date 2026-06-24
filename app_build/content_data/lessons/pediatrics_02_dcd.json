@@ -89,7 +89,7 @@
     },
     {
       "bite_id": "q_1782256445827_324_0",
-      "type": "quiz_card",
+      "type": "interactive_check",
       "sequence_title": "הפרעה בהתפתחות הקואורדינציה (DCD)",
       "question": "מהו המאפיין הבולט ביותר של הפרעה בקואורדינציה התפתחותית (DCD)?",
       "options": [
@@ -117,7 +117,7 @@
     },
     {
       "bite_id": "q_1782256445827_408_1",
-      "type": "quiz_card",
+      "type": "interactive_check",
       "sequence_title": "הפרעה בהתפתחות הקואורדינציה (DCD)",
       "question": "מדוע הידרותרפיה יעילה עבור ילדים עם DCD?",
       "options": [

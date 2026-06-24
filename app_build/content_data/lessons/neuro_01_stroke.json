@@ -88,7 +88,7 @@
     },
     {
       "bite_id": "q_neuro_01_stroke_1_d089d1",
-      "type": "quiz_card",
+      "type": "interactive_check",
       "sequence_title": "אתגר השיווי משקל (Dual Tasking)",
       "question": "מהי אחת המטרות העיקריות בטיפול הידרותרפי לאחר שבץ מוחי (CVA)?",
       "options": [
@@ -116,7 +116,7 @@
     },
     {
       "bite_id": "q_neuro_01_stroke_2_195ee5",
-      "type": "quiz_card",
+      "type": "interactive_check",
       "sequence_title": "אתגר השיווי משקל (Dual Tasking)",
       "question": "באיזה אופן כוח הצמיגות של המים תורם לשיקום לאחר CVA?",
       "options": [

@@ -110,7 +110,7 @@
     },
     {
       "bite_id": "q_orthopedics_05_fibromyalgia_1_d1e72a",
-      "type": "quiz_card",
+      "type": "interactive_check",
       "sequence_title": "סיכום ובחינה",
       "question": "מה מטרת העל בטיפול הידרותרפי לחולי פיברומיאלגיה?",
       "options": [

@@ -195,7 +195,7 @@
     },
     {
       "bite_id": "q_unit1_physics_1",
-      "type": "quiz_card",
+      "type": "interactive_check",
       "visual_trigger": "animation_quiz_time",
       "title": "מבחן מסכם!",
       "sequence_title": "מבחן סיום יחידה",
@@ -225,7 +225,7 @@
     },
     {
       "bite_id": "q_unit1_physics_2",
-      "type": "quiz_card",
+      "type": "interactive_check",
       "visual_trigger": "animation_quiz_time",
       "title": "מבחן מסכם!",
       "sequence_title": "מבחן סיום יחידה",

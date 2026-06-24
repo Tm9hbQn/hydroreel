@@ -117,7 +117,7 @@
     },
     {
       "bite_id": "q_anatomy_02_joints_1",
-      "type": "quiz_card",
+      "type": "interactive_check",
       "sequence_title": "בחן את עצמך: מפרקים ותנועות",
       "title": "בחן את עצמך!",
       "question": "איזה סוג מפרק מאפשר את טווח התנועה הגדול ביותר (כדוגמת מפרק הירך)?",
@@ -147,7 +147,7 @@
     },
     {
       "bite_id": "q_anatomy_02_joints_2",
-      "type": "quiz_card",
+      "type": "interactive_check",
       "sequence_title": "בחן את עצמך: מפרקים ותנועות",
       "title": "בחן את עצמך!",
       "question": "מהי הפעולה של 'הרחקה' (Abduction)?",

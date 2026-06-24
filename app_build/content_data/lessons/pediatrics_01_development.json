@@ -94,7 +94,7 @@
     },
     {
       "bite_id": "q_1782256445819_94_0",
-      "type": "quiz_card",
+      "type": "interactive_check",
       "sequence_title": "בוחן אינטראקטיבי: התפתחות",
       "question": "מאיזה גיל התינוק צפוי לפתח יכולת ישיבה עצמאית (ללא תמיכה) על פי רוב?",
       "options": [
@@ -122,7 +122,7 @@
     },
     {
       "bite_id": "q_1782256445819_310_1",
-      "type": "quiz_card",
+      "type": "interactive_check",
       "sequence_title": "בוחן אינטראקטיבי: התפתחות",
       "question": "כיצד הטיפול במים תורם במיוחד לתינוק המראה עיכוב ברכישת אבני דרך?",
       "options": [
