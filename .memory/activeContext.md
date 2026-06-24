@@ -6,6 +6,8 @@
 
 ## **חלון עשרת האירועים האחרונים (Sliding Window)**
 
+- **[21:12] Fallback Animation Update (Creative UI/UX Engineer):** Updated the `FallbackAnimation.tsx` component to remove the "Animation Pending" text and badge. Retained the colorful background gradient and added a slow, continuous `backgroundPosition` animation using Framer Motion (`backgroundSize: '400% 400%'`) to bring the placeholder to life without adding visual clutter. This adheres to the Decoupling Hard Invariant by ensuring UI components only focus on presentation and don't leak logic or text.
+
 1. **העשרת תוכן ואדפטציה קלינית (Pediatrics ASD):** נערך קובץ ה-JSON של שיעור האוטיזם (`pediatrics_04_asd.json`) בהתאם לחוק איסור דחיסה (No Conceptual Compression) וחוק ההקשר. ה`flashcard_carousel` המקורי שדחס את כל עקרונות הטיפול פורק ל-3 רצפים נפרדים ("רקע תיאורטי", "שגרה ומעברים", "עיבוד חושי ותקשורת"). נוספו כרטיסיות `principle_card` המספקות רקע תיאורטי לפני פרקטיקה, ורכיבי המיקרו עובו בטיפים קליניים. המבנה כעת מותאם לשלבי למידה הדרגתיים: עיקרון -> מקרה קליני -> דוגמאות בקרוסלה, תוך שמירה מוחלטת על ה`visual_trigger` הקיימים.
 2. **העשרת תוכן קליני פיזיולוגי (physiology_02_renal.json):** פירוק שרשור הלימוד לרצפים קטנים ("מבוא", "תגובה אנדוקרינית", "ניהול סיכונים"), הוספת כרטיס מבוא העוסק במפל הלחצים ההידרוסטטי (Contextual Foundation), העשרת הטקסט במיקרו-אלמנטים כגון פינות "הידעת?", ותיקון סוג כרטיס השאלון מ-`quiz_card` ל-`interactive_check` בהתאם להגדרות המערכת, ללא שינוי ברכיבי ה-UI וללא המצאת טריגרים חדשים.
 3. **העשרת תוכן קליני נוירולוגי (neuro_07_parkinson.json):** הופעלו חוקי ה"הקשר" ו"איסור דחיסה מושגית" על שיעור מחלת פרקינסון. בוטלה הדחיסה של הקרוסלה המקורית שאיגדה את התסמינים. יצרנו 4 רצפי לימוד ממוקדים ("מבוא", "רעד", "נוקשות ואיטיות", "קפיאה בהליכה"). הוספנו כרטיסיות `principle_card` תיאורטיות המסבירות את המנגנון (כגון מנגנון הקפיאה ואובדן דופמין), מקרים קליניים וקרוסלות לתרגולים מעשיים כדוגמאות בלבד. בוצע שימוש חוזר אינטליגנטי ב-`visual_trigger` קיימים ושולבו מיקרו-אלמנטים להעשרה.
@@ -17,3 +19,5 @@
 
 - **[19:49] No Conceptual Compression Execution**: Orchestrated 32 parallel subagents to rewrite the entire JSON content repository. Eliminated dense \lashcard_carousel\s and enforced the inclusion of \principle_card\s for contextual foundation before practical examples. Migrated all old \quiz_card\ schemas to the robust \interactive_check\ schema using an automated script. Verified build passing (
 pm run build). Pushed changes to GitHub.
+
+- **[19:08] UI Hotfix - FlashcardCarousel**: Fixed a bug where \lashcard_carousel\ components would render without a title if the JSON object didn't explicitly include a \	itle\ field. Implemented a fallback to \ite.sequence_title\ or a generic string, ensuring no empty header space is left in the UI.
