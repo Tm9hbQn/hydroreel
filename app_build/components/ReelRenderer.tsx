@@ -7,6 +7,7 @@ import FlashcardCarousel from './blocks/FlashcardCarousel';
 import InteractiveCheck from './blocks/InteractiveCheck';
 import SequenceEndCard from './blocks/SequenceEndCard';
 import QuizCard from './blocks/QuizCard';
+import TopicIntroCard from './blocks/TopicIntroCard';
 
 interface Props {
   bite: any;
@@ -43,10 +44,13 @@ export default function ReelRenderer({ bite }: Props) {
           nextLessonId={bite.next_lesson_id}
           onContinue={bite.onContinue}
           onGoHome={bite.onGoHome}
+          onOpenTopics={bite.onOpenTopics}
         />
       );
     case 'quiz_card':
       return <QuizCard bite={bite} />;
+    case 'topic_intro_card':
+      return <TopicIntroCard title={bite.title || ''} />;
     default:
       return (
         <div className="flex items-center justify-center h-full text-white">

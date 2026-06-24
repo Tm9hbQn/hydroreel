@@ -12,6 +12,7 @@ export interface SequenceEndCardProps {
   nextLessonId?: string;
   onContinue?: () => void;
   onGoHome?: () => void;
+  onOpenTopics?: () => void;
 }
 
 /* ------------------------------------------------------------------ */
@@ -47,6 +48,7 @@ export default function SequenceEndCard({
   nextLessonTitle,
   onContinue,
   onGoHome,
+  onOpenTopics,
 }: SequenceEndCardProps) {
   const bubbles = useMemo(() => generateBubbles(8), []);
 
@@ -136,16 +138,30 @@ export default function SequenceEndCard({
             </motion.button>
           )}
 
-          {/* Secondary CTA – always visible */}
+          {/* Secondary CTA - Open topics drawer */}
           <motion.button
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false }}
-            transition={{ duration: 0.5, delay: 0.75 }}
+            transition={{ duration: 0.5, delay: 0.7 }}
+            whileHover={{ scale: 1.04 }}
+            whileTap={{ scale: 0.97 }}
+            onClick={onOpenTopics}
+            className="w-full max-w-xs py-3 rounded-2xl border-2 border-white/50 text-white font-semibold text-base flex items-center justify-center gap-2 backdrop-blur-sm transition-colors hover:bg-white/10 cursor-pointer"
+          >
+            <span>בחר נושא אחר</span>
+          </motion.button>
+
+          {/* Tertiary CTA – always visible */}
+          <motion.button
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.5, delay: 0.8 }}
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.97 }}
             onClick={onGoHome}
-            className="w-full max-w-xs py-3 rounded-2xl border-2 border-white/50 text-white font-semibold text-base flex items-center justify-center gap-2 backdrop-blur-sm transition-colors hover:bg-white/10 cursor-pointer"
+            className="w-full max-w-xs py-3 text-white/80 font-medium text-sm flex items-center justify-center gap-2 transition-colors hover:text-white cursor-pointer"
           >
             <Home className="w-4 h-4" />
             <span>חזור להתחלה</span>

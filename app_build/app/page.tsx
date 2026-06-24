@@ -184,6 +184,20 @@ function buildSequencesWithBridges(
 
   for (let lessonIdx = 0; lessonIdx < orderedLessons.length; lessonIdx++) {
     const lesson = orderedLessons[lessonIdx];
+    // Add topic intro card at the beginning of the lesson
+    allSequences.push({
+      lessonId: lesson.lesson_id,
+      lessonTitle: lesson.lesson_title,
+      sequenceTitle: '__intro__',
+      bites: [
+        {
+          bite_id: `intro_${lesson.lesson_id}`,
+          type: 'topic_intro_card',
+          title: lesson.lesson_title,
+        },
+      ],
+    });
+
     const seqs = groupBitesBySequence(lesson.bites);
 
     for (const seq of seqs) {
@@ -229,7 +243,7 @@ export default async function Home() {
   const sequences = buildSequencesWithBridges(catalog, lessonMap);
 
   const totalBites = sequences
-    .filter((s) => s.sequenceTitle !== '__bridge__')
+    .filter((s) => s.sequenceTitle !== '__bridge__' && s.sequenceTitle !== '__intro__')
     .reduce((acc, s) => acc + s.bites.length, 0);
   const totalLessons = lessonMap.size;
 
