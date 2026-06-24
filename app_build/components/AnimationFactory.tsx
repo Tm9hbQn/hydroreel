@@ -66,6 +66,29 @@ import VenousPoolingAnimation from './animations/animation_venous_pooling';
 import HydrostaticGSuitAnimation from './animations/animation_hydrostatic_g_suit';
 import PotsAerobicVerticalAnimation from './animations/animation_pots_aerobic_vertical';
 
+// Phase 6 - Physiology
+// Cardio
+import BloodShiftAnimation from './animations/animation_blood_shift';
+import FrankStarlingAnimation from './animations/animation_frank_starling';
+import HemodynamicChangesAnimation from './animations/animation_hemodynamic_changes';
+import ChfRiskAnimation from './animations/animation_chf_risk';
+import ChfStableAnimation from './animations/animation_chf_stable';
+// Respiratory
+import HydrostaticCorsetAnimation from './animations/animation_hydrostatic_corset';
+import LungComplianceAnimation from './animations/animation_lung_compliance';
+import VitalCapacityAnimation from './animations/animation_vital_capacity';
+import PulmonaryEdemaAnimation from './animations/animation_pulmonary_edema';
+// Renal & Metabolic
+import ImmersionDiuresisAnimation from './animations/animation_immersion_diuresis';
+import AnpReleaseAnimation from './animations/animation_anp_release';
+import AdhSuppressionAnimation from './animations/animation_adh_suppression';
+import RaasSuppressionAnimation from './animations/animation_raas_suppression';
+import DehydrationRiskAnimation from './animations/animation_dehydration_risk';
+import OrthostaticHypotensionAnimation from './animations/animation_orthostatic_hypotension';
+import DiabetesProtocolAnimation from './animations/animation_diabetes_protocol';
+import VasodilationInsulinAnimation from './animations/animation_vasodilation_insulin';
+import HypoglycemiaRiskAnimation from './animations/animation_hypoglycemia_risk';
+
 interface Props {
   triggerId?: string;
 }
@@ -132,6 +155,28 @@ const animationRegistry: Record<string, React.ComponentType<any>> = {
   'animation_venous_pooling': VenousPoolingAnimation,
   'animation_hydrostatic_g_suit': HydrostaticGSuitAnimation,
   'animation_pots_aerobic_vertical': PotsAerobicVerticalAnimation,
+
+  // Phase 6 - Cardio
+  'animation_blood_shift': BloodShiftAnimation,
+  'animation_frank_starling': FrankStarlingAnimation,
+  'animation_hemodynamic_changes': HemodynamicChangesAnimation,
+  'animation_chf_risk': ChfRiskAnimation,
+  'animation_chf_stable': ChfStableAnimation,
+  // Phase 6 - Respiratory
+  'animation_hydrostatic_corset': HydrostaticCorsetAnimation,
+  'animation_lung_compliance': LungComplianceAnimation,
+  'animation_vital_capacity': VitalCapacityAnimation,
+  'animation_pulmonary_edema': PulmonaryEdemaAnimation,
+  // Phase 6 - Renal & Metabolic
+  'animation_immersion_diuresis': ImmersionDiuresisAnimation,
+  'animation_anp_release': AnpReleaseAnimation,
+  'animation_adh_suppression': AdhSuppressionAnimation,
+  'animation_raas_suppression': RaasSuppressionAnimation,
+  'animation_dehydration_risk': DehydrationRiskAnimation,
+  'animation_orthostatic_hypotension': OrthostaticHypotensionAnimation,
+  'animation_diabetes_protocol': DiabetesProtocolAnimation,
+  'animation_vasodilation_insulin': VasodilationInsulinAnimation,
+  'animation_hypoglycemia_risk': HypoglycemiaRiskAnimation,
 };
 
 export default function AnimationFactory({ triggerId }: Props) {
