@@ -53,15 +53,15 @@ export default function InteractiveCheck({ bite }: Props) {
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-        className="flex-1 w-full flex flex-col items-center justify-center relative min-h-0 px-6" dir="rtl"
+        className="flex-1 w-full flex flex-col items-center justify-center relative min-h-0 px-6 py-4" dir="rtl"
       >
-        <div className="w-full max-w-sm rounded-[2.5rem] bg-white shadow-xl border border-slate-200 p-6 flex flex-col h-auto">
+        <div className="w-full max-w-sm rounded-[2.5rem] bg-white shadow-xl border border-slate-200 p-6 flex flex-col h-auto max-h-full overflow-y-auto custom-scrollbar">
           
-          <div className="mb-6">
+          <div className="mb-6 shrink-0">
             <h3 className="text-[1.15rem] font-bold text-slate-800 leading-snug">{bite.question}</h3>
           </div>
           
-          <div className="flex flex-col gap-3 flex-1 justify-center">
+          <div className="flex flex-col gap-3 flex-1 justify-center shrink-0">
             {bite.options?.map((option, index) => {
               const isSelected = selectedIndex === index;
               const isThisCorrect = index === bite.correct_index;

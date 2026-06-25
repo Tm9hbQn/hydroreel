@@ -142,7 +142,7 @@ export default function QuizClient({ allQuestions }: { allQuestions: any[] }) {
   const totalQuestions = Object.values(chunks).reduce((a, b) => a + b.length, 0);
 
   return (
-    <div className="min-h-[100dvh] bg-rose-50 flex flex-col items-center justify-center p-4 relative overflow-hidden">
+    <div className="min-h-[100dvh] bg-rose-50 flex flex-col items-center justify-start p-4 relative overflow-x-hidden overflow-y-auto">
       {/* Background blobs for glassmorphism - now with lively animations */}
       <motion.div 
         animate={{ 
@@ -151,7 +151,7 @@ export default function QuizClient({ allQuestions }: { allQuestions: any[] }) {
           x: [0, 20, -20, 0]
         }}
         transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-[-10%] right-[-10%] w-[50vw] h-[50vw] max-w-[500px] max-h-[500px] bg-pink-400/40 rounded-full blur-[80px] pointer-events-none" 
+        className="absolute top-[-10%] right-[-10%] w-[50vw] h-[50vw] max-w-[500px] max-h-[500px] bg-pink-400/40 rounded-full blur-[80px] pointer-events-none fixed" 
       />
       <motion.div 
         animate={{ 
@@ -160,17 +160,17 @@ export default function QuizClient({ allQuestions }: { allQuestions: any[] }) {
           y: [0, -30, 30, 0]
         }}
         transition={{ duration: 18, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-        className="absolute bottom-[-10%] left-[-10%] w-[60vw] h-[60vw] max-w-[600px] max-h-[600px] bg-rose-400/30 rounded-full blur-[100px] pointer-events-none" 
+        className="absolute bottom-[-10%] left-[-10%] w-[60vw] h-[60vw] max-w-[600px] max-h-[600px] bg-rose-400/30 rounded-full blur-[100px] pointer-events-none fixed" 
       />
 
       {/* Top bar with back button */}
-      <div className="absolute top-4 right-4 z-50">
+      <div className="fixed top-4 right-4 z-50">
         <Link href="/" className="bg-white/60 backdrop-blur-md border border-white/40 text-rose-700 p-2 rounded-full flex items-center justify-center hover:bg-white transition-all shadow-sm">
           <ChevronRight size={24} />
         </Link>
       </div>
 
-      <div className="w-full z-10 pt-12 pb-8">
+      <div className="w-full z-10 pt-16 pb-8 flex-1 flex flex-col justify-center items-center">
         <AnimatePresence mode="wait">
           {step === "config" && (
             <QuizConfigurator key="config" onStart={handleStart} />
