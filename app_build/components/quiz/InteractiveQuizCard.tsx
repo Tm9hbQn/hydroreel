@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { CheckCircle, XCircle } from "lucide-react";
+import { CheckCircle, XCircle, ArrowRight, ArrowLeft } from "lucide-react";
 
 interface Question {
   bite_id: string;
@@ -14,42 +14,41 @@ interface Question {
 
 interface InteractiveQuizCardProps {
   question: Question;
-  onNext: (isCorrect: boolean) => void;
   currentIndex: number;
   totalQuestions: number;
+  selectedOptionIndex: number | null;
+  isChecked: boolean;
+  onSelect: (idx: number) => void;
+  onCheck: () => void;
+  onNextQuestion: () => void;
+  onPrevQuestion: () => void;
+  isFirstQuestion: boolean;
+  isLastQuestion: boolean;
 }
 
 export default function InteractiveQuizCard({
   question,
-  onNext,
   currentIndex,
   totalQuestions,
+  selectedOptionIndex,
+  isChecked,
+  onSelect,
+  onCheck,
+  onNextQuestion,
+  onPrevQuestion,
+  isFirstQuestion,
+  isLastQuestion,
 }: InteractiveQuizCardProps) {
-  const [selectedIdx, setSelectedIdx] = useState<number | null>(null);
-  const [showResult, setShowResult] = useState(false);
 
-  const isCorrect = selectedIdx === question.correct_index;
+  const isCorrect = selectedOptionIndex === question.correct_index;
 
   const handleSelect = (idx: number) => {
-    if (showResult) return;
-    setSelectedIdx(idx);
+    if (isChecked) return;
+    onSelect(idx);
   };
 
-  const handleSubmit = () => {
-    if (selectedIdx === null) return;
-    setShowResult(true);
-  };
-
-  const handleNext = () => {
-    onNext(isCorrect);
-    setSelectedIdx(null);
-    setShowResult(false);
-  };
-
-  // Clean up explanation text if the answer is wrong
   const processExplanation = (text: string, isCorrect: boolean) => {
     if (isCorrect) return text;
-    // Strip prefixes that imply correctness
     let cleanText = text.replace(/^(תשובה נכונה!|נכון!|תשובה נכונה|נכון)\s*/i, "");
     return `תשובה שגויה. התשובה הנכונה: ${cleanText}`;
   };
@@ -67,20 +66,6 @@ export default function InteractiveQuizCard({
         <span>
           שאלה {currentIndex + 1} מתוך {totalQuestions}
         </span>
-        <div className="flex gap-1">
-          {Array.from({ length: totalQuestions }).map((_, i) => (
-            <div
-              key={i}
-              className={`w-2 h-2 rounded-full ${
-                i === currentIndex
-                  ? "bg-pink-500 scale-125"
-                  : i < currentIndex
-                  ? "bg-pink-300"
-                  : "bg-gray-200"
-              } transition-all`}
-            />
-          ))}
-        </div>
       </div>
 
       <h2 className="text-xl font-bold mb-6 leading-snug">
@@ -89,17 +74,16 @@ export default function InteractiveQuizCard({
 
       <div className="flex flex-col gap-3 flex-1 mb-4">
         {question.options.map((opt, idx) => {
-          let btnClass =
-            "bg-white border-2 border-pink-100 hover:border-pink-300 text-slate-700";
+          let btnClass = "bg-white border-2 border-pink-100 hover:border-pink-300 text-slate-700";
           
-          if (!showResult && selectedIdx === idx) {
+          if (!isChecked && selectedOptionIndex === idx) {
             btnClass = "bg-pink-50 border-pink-500 shadow-[0_0_15px_rgba(236,72,153,0.3)] text-pink-800 scale-[1.02] transform transition-all duration-300";
           }
 
-          if (showResult) {
+          if (isChecked) {
             if (idx === question.correct_index) {
               btnClass = "bg-green-100 border-green-500 text-green-800";
-            } else if (idx === selectedIdx) {
+            } else if (idx === selectedOptionIndex) {
               btnClass = "bg-red-100 border-red-500 text-red-800";
             } else {
               btnClass = "bg-gray-50 border-gray-200 text-gray-400 opacity-50";
@@ -110,14 +94,14 @@ export default function InteractiveQuizCard({
             <button
               key={idx}
               onClick={() => handleSelect(idx)}
-              disabled={showResult}
+              disabled={isChecked}
               className={`p-4 rounded-2xl text-right font-medium transition-all duration-300 ${btnClass} flex justify-between items-center`}
             >
               <span>{opt}</span>
-              {showResult && idx === question.correct_index && (
+              {isChecked && idx === question.correct_index && (
                 <CheckCircle className="text-green-600 shrink-0" size={20} />
               )}
-              {showResult && idx === selectedIdx && idx !== question.correct_index && (
+              {isChecked && idx === selectedOptionIndex && idx !== question.correct_index && (
                 <XCircle className="text-red-600 shrink-0" size={20} />
               )}
             </button>
@@ -126,7 +110,7 @@ export default function InteractiveQuizCard({
       </div>
 
       <AnimatePresence mode="wait">
-        {!showResult ? (
+        {!isChecked ? (
           <motion.div
             key="submit-btn"
             initial={{ opacity: 0, height: 0 }}
@@ -134,10 +118,10 @@ export default function InteractiveQuizCard({
             exit={{ opacity: 0, height: 0 }}
           >
             <button
-              onClick={handleSubmit}
-              disabled={selectedIdx === null}
+              onClick={onCheck}
+              disabled={selectedOptionIndex === null}
               className={`w-full rounded-xl p-4 font-bold transition-all ${
-                selectedIdx !== null
+                selectedOptionIndex !== null
                   ? "bg-gradient-to-r from-pink-500 to-rose-500 text-white shadow-lg active:scale-95"
                   : "bg-slate-200 text-slate-400 cursor-not-allowed"
               }`}
@@ -161,16 +145,30 @@ export default function InteractiveQuizCard({
             >
               {processExplanation(question.explanation, isCorrect)}
             </div>
-
-            <button
-              onClick={handleNext}
-              className="mt-4 w-full bg-slate-800 text-white rounded-xl p-4 font-bold hover:bg-slate-700 transition-all shadow-lg active:scale-95"
-            >
-              המשך
-            </button>
           </motion.div>
         )}
       </AnimatePresence>
+
+      <div className="flex justify-between items-center mt-6">
+        <button
+          onClick={onNextQuestion}
+          disabled={isLastQuestion}
+          className={`p-3 rounded-full transition-all ${
+            isLastQuestion ? "opacity-30 cursor-not-allowed text-slate-400" : "bg-slate-800 text-white hover:bg-slate-700 shadow-md active:scale-95"
+          }`}
+        >
+          <ArrowRight size={24} />
+        </button>
+        <button
+          onClick={onPrevQuestion}
+          disabled={isFirstQuestion}
+          className={`p-3 rounded-full transition-all ${
+            isFirstQuestion ? "opacity-30 cursor-not-allowed text-slate-400" : "bg-white border-2 border-slate-200 text-slate-800 hover:bg-slate-50 shadow-sm active:scale-95"
+          }`}
+        >
+          <ArrowLeft size={24} />
+        </button>
+      </div>
     </motion.div>
   );
 }

@@ -7,7 +7,7 @@ import TopicSummary from "./TopicSummary";
 import QuizResults from "./QuizResults";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, Flag } from "lucide-react";
 
 export default function QuizClient({ allQuestions }: { allQuestions: any[] }) {
   const [step, setStep] = useState<"config" | "quiz" | "topic_summary" | "results">("config");
@@ -19,8 +19,9 @@ export default function QuizClient({ allQuestions }: { allQuestions: any[] }) {
   const [activeQuestions, setActiveQuestions] = useState<any[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   
-  const [topicScores, setTopicScores] = useState<Record<string, number>>({});
-  const [topicBreakdown, setTopicBreakdown] = useState<Record<string, { question: string, isCorrect: boolean }[]>>({});
+  // New free-navigation state
+  const [answers, setAnswers] = useState<Record<string, number>>({});
+  const [checked, setChecked] = useState<Record<string, boolean>>({});
 
   const getTopicLabel = (topicId: string) => {
     const map: Record<string, string> = {
@@ -37,26 +38,21 @@ export default function QuizClient({ allQuestions }: { allQuestions: any[] }) {
   };
 
   const handleStart = (selectedTopics: string[], difficulty: string, questionCount: number) => {
-    // Filter base interactive check questions
     let baseFiltered = allQuestions.filter(q => q.type === "interactive_check" && q.options && q.options.length > 0);
     
-    // Normalize correct_index
     baseFiltered = baseFiltered.map(q => ({
       ...q,
       correct_index: q.correct_index !== undefined ? q.correct_index : q.correct_answer_index
     }));
 
-    // Filter by difficulty (fallback to basic if undefined)
     baseFiltered = baseFiltered.filter(q => (q.difficulty || "basic") === difficulty);
 
-    // Distribute question count across topics
     const countPerTopic = Math.ceil(questionCount / selectedTopics.length);
     
     const newChunks: Record<string, any[]> = {};
     const validTopics: string[] = [];
 
     selectedTopics.forEach(topic => {
-      // Find questions that match the topic
       const topicQuestions = baseFiltered.filter(q => {
         const sourceStr = (q.bite_id + " " + (q.source_lesson_id || "")).toLowerCase();
         if (topic === "orthopedics") return sourceStr.includes("ortho");
@@ -66,7 +62,6 @@ export default function QuizClient({ allQuestions }: { allQuestions: any[] }) {
       });
 
       if (topicQuestions.length > 0) {
-        // Shuffle and slice
         const shuffled = [...topicQuestions].sort(() => 0.5 - Math.random());
         newChunks[topic] = shuffled.slice(0, countPerTopic);
         validTopics.push(topic);
@@ -84,40 +79,37 @@ export default function QuizClient({ allQuestions }: { allQuestions: any[] }) {
     setActiveQuestions(newChunks[validTopics[0]]);
     setCurrentIndex(0);
     
-    // Reset scores
-    const initialScores: Record<string, number> = {};
-    const initialBreakdown: Record<string, any[]> = {};
-    validTopics.forEach(t => {
-      initialScores[t] = 0;
-      initialBreakdown[t] = [];
-    });
-    setTopicScores(initialScores);
-    setTopicBreakdown(initialBreakdown);
-
+    setAnswers({});
+    setChecked({});
     setStep("quiz");
   };
 
-  const handleNext = (isCorrect: boolean) => {
-    const currentTopic = activeTopics[currentTopicIndex];
+  const handleSelectOption = (idx: number) => {
     const currentQ = activeQuestions[currentIndex];
+    setAnswers(prev => ({ ...prev, [currentQ.bite_id]: idx }));
+  };
 
-    setTopicScores(prev => ({
-      ...prev,
-      [currentTopic]: prev[currentTopic] + (isCorrect ? 1 : 0)
-    }));
+  const handleCheckAnswer = () => {
+    const currentQ = activeQuestions[currentIndex];
+    const selectedIdx = answers[currentQ.bite_id];
+    if (selectedIdx === undefined) return;
+    
+    const isCorrect = selectedIdx === currentQ.correct_index;
+    setChecked(prev => ({ ...prev, [currentQ.bite_id]: isCorrect }));
+  };
 
-    setTopicBreakdown(prev => ({
-      ...prev,
-      [currentTopic]: [
-        ...prev[currentTopic],
-        { question: currentQ.question, isCorrect }
-      ]
-    }));
-
+  const handleNextQuestion = () => {
     if (currentIndex < activeQuestions.length - 1) {
       setCurrentIndex(prev => prev + 1);
     } else {
+      // If at the end of a topic, prompt topic summary
       setStep("topic_summary");
+    }
+  };
+
+  const handlePrevQuestion = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex(prev => prev - 1);
     }
   };
 
@@ -137,64 +129,155 @@ export default function QuizClient({ allQuestions }: { allQuestions: any[] }) {
     setStep("config");
   };
 
-  // Calculate total score for final results
-  const totalScore = Object.values(topicScores).reduce((a, b) => a + b, 0);
+  const handleFinishQuiz = () => {
+    const totalQ = Object.values(chunks).reduce((acc, curr) => acc + curr.length, 0);
+    const checkedCount = Object.keys(checked).length;
+    
+    if (checkedCount < totalQ) {
+      if (!window.confirm(`ישנן ${totalQ - checkedCount} שאלות שעוד לא בדקת. האם אתה בטוח שברצונך לסיים את המבחן?`)) {
+        return;
+      }
+    }
+    setStep("results");
+  };
+
+  // Calculate scores derived dynamically from `checked` state
+  const totalScore = Object.values(checked).filter(v => v).length;
   const totalQuestions = Object.values(chunks).reduce((a, b) => a + b.length, 0);
+
+  // Topic specific scores for TopicSummary
+  const currentTopicId = activeTopics[currentTopicIndex];
+  const currentTopicQuestions = chunks[currentTopicId] || [];
+  const currentTopicScore = currentTopicQuestions.reduce((acc, q) => acc + (checked[q.bite_id] ? 1 : 0), 0);
+  const currentTopicBreakdown = currentTopicQuestions.map(q => ({
+    question: q.question,
+    isCorrect: !!checked[q.bite_id]
+  }));
 
   return (
     <div className="min-h-[100dvh] bg-rose-50 flex flex-col items-center justify-start p-4 relative overflow-x-hidden overflow-y-auto">
-      {/* Background blobs for glassmorphism - now with lively animations */}
+      {/* 
+        PERFORMANCE FIX: 
+        Replaced expensive blur-[100px] + rotate/scale animations with fast radial-gradients and opacity/y pulsing.
+        Added transform-gpu to offload to hardware. 
+      */}
       <motion.div 
-        animate={{ 
-          scale: [1, 1.2, 1], 
-          rotate: [0, 15, -15, 0],
-          x: [0, 20, -20, 0]
-        }}
-        transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-[-10%] right-[-10%] w-[50vw] h-[50vw] max-w-[500px] max-h-[500px] bg-pink-400/40 rounded-full blur-[80px] pointer-events-none fixed" 
+        animate={{ opacity: [0.4, 0.7, 0.4], y: [0, -10, 0] }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        style={{ background: 'radial-gradient(circle, rgba(244,114,182,0.4) 0%, rgba(244,114,182,0) 70%)' }}
+        className="absolute top-[-20%] right-[-20%] w-[80vw] h-[80vw] max-w-[600px] max-h-[600px] rounded-full pointer-events-none fixed transform-gpu will-change-transform" 
       />
       <motion.div 
-        animate={{ 
-          scale: [1, 1.15, 1], 
-          rotate: [0, -10, 10, 0],
-          y: [0, -30, 30, 0]
-        }}
-        transition={{ duration: 18, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-        className="absolute bottom-[-10%] left-[-10%] w-[60vw] h-[60vw] max-w-[600px] max-h-[600px] bg-rose-400/30 rounded-full blur-[100px] pointer-events-none fixed" 
+        animate={{ opacity: [0.3, 0.6, 0.3], y: [0, 15, 0] }}
+        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+        style={{ background: 'radial-gradient(circle, rgba(251,113,133,0.4) 0%, rgba(251,113,133,0) 70%)' }}
+        className="absolute bottom-[-10%] left-[-20%] w-[90vw] h-[90vw] max-w-[700px] max-h-[700px] rounded-full pointer-events-none fixed transform-gpu will-change-transform" 
       />
 
       {/* Top bar with back button */}
-      <div className="fixed top-4 right-4 z-50">
-        <Link href="/" className="bg-white/60 backdrop-blur-md border border-white/40 text-rose-700 p-2 rounded-full flex items-center justify-center hover:bg-white transition-all shadow-sm">
+      <div className="fixed top-4 right-4 z-50 flex gap-2">
+        <Link href="/" className="bg-white/80 backdrop-blur-md border border-white/40 text-rose-700 p-2 rounded-full flex items-center justify-center hover:bg-white transition-all shadow-sm">
           <ChevronRight size={24} />
         </Link>
       </div>
 
-      <div className="w-full z-10 pt-16 pb-8 flex-1 flex flex-col justify-center items-center">
+      <div className="w-full z-10 pt-16 pb-8 flex-1 flex flex-col justify-start items-center">
         <AnimatePresence mode="wait">
           {step === "config" && (
             <QuizConfigurator key="config" onStart={handleStart} />
           )}
+
           {step === "quiz" && activeQuestions.length > 0 && (
-            <InteractiveQuizCard
-              key={`quiz-${activeQuestions[currentIndex].bite_id}`}
-              question={activeQuestions[currentIndex]}
-              onNext={handleNext}
-              currentIndex={currentIndex}
-              totalQuestions={activeQuestions.length}
-            />
+            <motion.div 
+              key="quiz-container"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              className="w-full flex flex-col items-center"
+            >
+              {/* NAVIGATION MENU */}
+              <div className="w-full max-w-md mx-auto mb-6 bg-white/70 backdrop-blur-xl rounded-3xl p-4 shadow-lg border border-white/40 z-20" dir="rtl">
+                {/* Topic Tabs */}
+                <div className="flex gap-2 overflow-x-auto pb-3 scrollbar-hide" style={{ scrollbarWidth: 'none' }}>
+                  {activeTopics.map((t, idx) => (
+                    <button 
+                      key={t}
+                      onClick={() => { setCurrentTopicIndex(idx); setCurrentIndex(0); setActiveQuestions(chunks[t]); }}
+                      className={`whitespace-nowrap px-4 py-2 rounded-xl text-sm font-bold transition-all ${currentTopicIndex === idx ? 'bg-gradient-to-r from-pink-500 to-rose-500 text-white shadow-md' : 'bg-white/50 text-slate-600 hover:bg-white'}`}
+                    >
+                      {getTopicLabel(t)}
+                    </button>
+                  ))}
+                </div>
+                
+                {/* Question Circles */}
+                <div className="flex gap-2 overflow-x-auto pb-1 mt-1" style={{ scrollbarWidth: 'none' }}>
+                  {activeQuestions.map((q, qIdx) => {
+                     const bId = q.bite_id;
+                     const isCurrent = qIdx === currentIndex;
+                     const isAnswered = answers[bId] !== undefined;
+                     const isQChecked = checked[bId] !== undefined;
+                     const isQCorrect = checked[bId];
+                     
+                     let bgClass = "bg-slate-200 text-slate-500";
+                     if (isQChecked) {
+                       bgClass = isQCorrect ? "bg-green-500 text-white shadow-sm shadow-green-500/30" : "bg-red-500 text-white shadow-sm shadow-red-500/30";
+                     } else if (isAnswered) {
+                       bgClass = "bg-pink-300 text-white shadow-sm shadow-pink-500/30";
+                     }
+
+                     return (
+                       <button
+                         key={bId}
+                         onClick={() => setCurrentIndex(qIdx)}
+                         className={`w-10 h-10 shrink-0 rounded-full flex items-center justify-center font-bold text-sm transition-all ${bgClass} ${isCurrent ? 'ring-4 ring-pink-200 ring-offset-1 scale-110' : 'hover:scale-105'}`}
+                       >
+                         {qIdx + 1}
+                       </button>
+                     )
+                  })}
+                </div>
+              </div>
+
+              {/* ACTIVE QUESTION CARD */}
+              <InteractiveQuizCard
+                key={`quiz-${activeQuestions[currentIndex].bite_id}`}
+                question={activeQuestions[currentIndex]}
+                currentIndex={currentIndex}
+                totalQuestions={activeQuestions.length}
+                selectedOptionIndex={answers[activeQuestions[currentIndex].bite_id] ?? null}
+                isChecked={checked[activeQuestions[currentIndex].bite_id] ?? false}
+                onSelect={handleSelectOption}
+                onCheck={handleCheckAnswer}
+                onNextQuestion={handleNextQuestion}
+                onPrevQuestion={handlePrevQuestion}
+                isFirstQuestion={currentIndex === 0}
+                isLastQuestion={currentIndex === activeQuestions.length - 1 && currentTopicIndex === activeTopics.length - 1}
+              />
+
+              {/* FINISH TEST BUTTON */}
+              <button 
+                onClick={handleFinishQuiz}
+                className="mt-8 bg-white/80 backdrop-blur-md text-pink-600 font-bold px-6 py-3 rounded-2xl shadow-sm border border-pink-100 hover:bg-white hover:shadow-md transition-all flex items-center gap-2"
+              >
+                <Flag size={20} />
+                סיים מבחן
+              </button>
+            </motion.div>
           )}
+
           {step === "topic_summary" && (
             <TopicSummary 
-              key={`summary-${activeTopics[currentTopicIndex]}`}
-              topicName={getTopicLabel(activeTopics[currentTopicIndex])}
-              score={topicScores[activeTopics[currentTopicIndex]]}
-              total={chunks[activeTopics[currentTopicIndex]].length}
-              questionsBreakdown={topicBreakdown[activeTopics[currentTopicIndex]]}
+              key={`summary-${currentTopicId}`}
+              topicName={getTopicLabel(currentTopicId)}
+              score={currentTopicScore}
+              total={currentTopicQuestions.length}
+              questionsBreakdown={currentTopicBreakdown}
               onNextTopic={handleNextTopic}
               isLastTopic={currentTopicIndex === activeTopics.length - 1}
             />
           )}
+
           {step === "results" && (
             <QuizResults 
               key="results" 
