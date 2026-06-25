@@ -223,14 +223,14 @@ export default function QuizClient({ allQuestions }: { allQuestions: any[] }) {
                      if (isQChecked) {
                        bgClass = isQCorrect ? "bg-green-500 text-white shadow-sm shadow-green-500/30" : "bg-red-500 text-white shadow-sm shadow-red-500/30";
                      } else if (isAnswered) {
-                       bgClass = "bg-pink-300 text-white shadow-sm shadow-pink-500/30";
+                       bgClass = "bg-violet-400 text-white shadow-sm shadow-violet-400/30";
                      }
 
                      return (
                        <button
                          key={bId}
                          onClick={() => setCurrentIndex(qIdx)}
-                         className={`w-10 h-10 shrink-0 rounded-full flex items-center justify-center font-bold text-sm transition-all ${bgClass} ${isCurrent ? 'ring-4 ring-pink-200 ring-offset-1 scale-110' : 'hover:scale-105'}`}
+                         className={`w-10 h-10 shrink-0 rounded-full flex items-center justify-center font-bold text-sm transition-all ${bgClass} ${isCurrent ? 'ring-4 ring-violet-200 ring-offset-1 scale-110' : 'hover:scale-105'}`}
                        >
                          {qIdx + 1}
                        </button>

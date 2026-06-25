@@ -77,7 +77,7 @@ export default function InteractiveQuizCard({
           let btnClass = "bg-white border-2 border-pink-100 hover:border-pink-300 text-slate-700";
           
           if (!isChecked && selectedOptionIndex === idx) {
-            btnClass = "bg-pink-50 border-pink-500 shadow-[0_0_15px_rgba(236,72,153,0.3)] text-pink-800 scale-[1.02] transform transition-all duration-300";
+            btnClass = "bg-violet-50 border-violet-500 shadow-[0_0_15px_rgba(139,92,246,0.3)] text-violet-800 scale-[1.02] transform transition-all duration-300";
           }
 
           if (isChecked) {
