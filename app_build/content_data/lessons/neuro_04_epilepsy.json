@@ -81,6 +81,114 @@
       "explanation": "פרכוס במים מהווה סכנת טביעה מיידית ולכן דורש השגחה מתמדת במרחק נגיעה."
     },
     {
+      "bite_id": "q_basic_gen_011",
+      "type": "interactive_check",
+      "sequence_title": "פיזיולוגיה של הלב",
+      "title": "בחן את עצמך!",
+      "question": "מה מתרחש במערכת הקרדיו-וסקולרית מיד עם כניסה למים עד גובה החזה?",
+      "options": [
+        "ירידה בנפח הפעימה (Stroke Volume)",
+        "עלייה בנפח הדם החוזר ללב (Venous Return) ועלייה בנפח הפעימה",
+        "דופק המנוחה מכפיל את עצמו",
+        "ירידה בלחץ הדם הכללי ללא שינוי בנפח"
+      ],
+      "correct_index": 1,
+      "explanation": "הלחץ ההידרוסטטי דוחף דם מהגפיים לבית החזה, מה שמגדיל את ההחזר הורידי (Preload).",
+      "source_lesson_id": "physiology_01_cardio",
+      "source_type": "generated_basic",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "q_basic_gen_012",
+      "type": "interactive_check",
+      "sequence_title": "מערכת כליות",
+      "title": "בחן את עצמך!",
+      "question": "מדוע מטופלים מרבים לדווח על צורך בהטלת שתן במהלך או אחרי טיפול במים?",
+      "options": [
+        "בגלל שתיית מים מהבריכה בטעות",
+        "שחרור הורמון ADH גדל במים",
+        "העלאת הנפח המרכזי מעודדת דיורזה (השתנה) דרך שחרור ANP ועיכוב ADH",
+        "קור המים מכווץ את השלפוחית"
+      ],
+      "correct_index": 2,
+      "explanation": "העלייה בנפח הדם החוזר מפורשת כעודף נוזלים, מה שגורם להפרשת שתן מוגברת (Immersion Diuresis).",
+      "source_lesson_id": "physiology_02_renal",
+      "source_type": "generated_basic",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "q_basic_gen_013",
+      "type": "interactive_check",
+      "sequence_title": "מערכת נשימה",
+      "title": "בחן את עצמך!",
+      "question": "מה קורה לנפח הריאות הפעיל (Vital Capacity) בזמן טבילה עד לצוואר?",
+      "options": [
+        "הוא עולה משמעותית",
+        "הוא יורד בעקבות עליית הסרעפת ודחיסת בית החזה",
+        "הוא לא מושפע כלל",
+        "רק נפח השארית משתנה"
+      ],
+      "correct_index": 1,
+      "explanation": "הלחץ ההידרוסטטי דוחק את הבטן והסרעפת למעלה ודוחס את החזה, מה שמקטין את הנפח.",
+      "source_lesson_id": "physiology_03_respiratory",
+      "source_type": "generated_basic",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "q_basic_gen_014",
+      "type": "interactive_check",
+      "sequence_title": "מערכת העצבים האוטונומית",
+      "title": "בחן את עצמך!",
+      "question": "טבילה במים חמימים (33-34) גורמת לרוב ל:",
+      "options": [
+        "הפעלת מערכת סימפטטית ועליית דופק",
+        "הפעלת מערכת פארא-סימפטטית והרפיה כללית",
+        "כיווץ כלי דם קיצוני בגפיים",
+        "הזעה מוגברת משמעותית"
+      ],
+      "correct_index": 1,
+      "explanation": "מים חמימים וסביבה חסרת כבידה מעודדים דומיננטיות פארא-סימפטטית, הרפיה והורדת סטרס.",
+      "source_lesson_id": "physiology_04_neuro",
+      "source_type": "generated_basic",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "q_basic_gen_015",
+      "type": "interactive_check",
+      "sequence_title": "סוכרת",
+      "title": "בחן את עצמך!",
+      "question": "מהי סכנה מרכזית שיש לקחת בחשבון בטיפול בחולה סוכרת המטופל באינסולין?",
+      "options": [
+        "היפרגליקמיה פתאומית",
+        "היפוגליקמיה בעקבות פעילות גופנית וספיגה מוגברת של אינסולין בחום המים",
+        "התכווצות שרירים עקב עודף סוכר",
+        "עלייה חדה בלחץ הדם התוך עיני"
+      ],
+      "correct_index": 1,
+      "explanation": "פעילות במים חמימים יכולה להאיץ ניצול גלוקוז וספיגת אינסולין מההזרקה, מה שמעלה סיכון להיפוגליקמיה.",
+      "source_lesson_id": "physiology_05_diabetes",
+      "source_type": "generated_basic",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "q_basic_gen_016",
+      "type": "interactive_check",
+      "sequence_title": "דופק במים",
+      "title": "בחן את עצמך!",
+      "question": "כיצד מחושב דופק המטרה בפעילות אירובית במים ביחס ליבשה?",
+      "options": [
+        "מוסיפים 15-20 פעימות לדופק היבשתי",
+        "הדופק זהה לחלוטין ליבשה",
+        "מפחיתים 10-15 פעימות מדופק המטרה היבשתי",
+        "מתעלמים מדופק ומודדים רק לחץ דם"
+      ],
+      "correct_index": 2,
+      "explanation": "הדופק במים נמוך יותר עקב אפקט הקירור של המים וההחזר הורידי המוגבר (אפקט הרפלקס של צלילה).",
+      "source_lesson_id": "physiology_01_cardio",
+      "source_type": "generated_basic",
+      "difficulty": "basic"
+    },
+    {
       "bite_id": "epilepsy_sequence_end",
       "type": "sequence_end_card",
       "sequence_title": "סיכום ובחינה",

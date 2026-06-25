@@ -43,6 +43,114 @@
       ]
     },
     {
+      "bite_id": "q_basic_gen_041",
+      "type": "interactive_check",
+      "sequence_title": "רפואת ילדים - התפתחות",
+      "title": "בחן את עצמך!",
+      "question": "כיצד סביבת המים מסייעת לילדים עם איחור מוטורי משמעותי?",
+      "options": [
+        "היא מכריחה אותם ללכת מיד",
+        "מספקת סביבה תלת ממדית המאטה את מהירות הנפילה, מה שמאפשר זמן תגובה ארוך יותר לארגון מוטורי",
+        "היא מבטלת את הצורך בשרירים",
+        "היא גורמת להם לצוף ללא תנועה"
+      ],
+      "correct_index": 1,
+      "explanation": "צמיגות המים מאטה את התנועה (נפילה בהילוך איטי) ונותנת לילד חלון זמן לשלוח ידיים לתגובת הגנה.",
+      "source_lesson_id": "pediatrics_01_development",
+      "source_type": "generated_basic",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "q_basic_gen_042",
+      "type": "interactive_check",
+      "sequence_title": "רפואת ילדים - DCD",
+      "title": "בחן את עצמך!",
+      "question": "לילד עם סרבול מוטורי (DCD), למידת שחייה מהווה:",
+      "options": [
+        "משימה קלה מאוד כי אין צורך לחשוב",
+        "אתגר מורכב עקב הצורך בתכנון מוטורי (Motor planning), קואורדינציה דו-צדדית ותזמון נשימה",
+        "משימה מסוכנת האסורה לחלוטין",
+        "פעולה פסיבית"
+      ],
+      "correct_index": 1,
+      "explanation": "שחייה מצריכה קואורדינציה ורצף תנועתי ברמה גבוהה ולכן מהווה אתגר טיפולי מעולה לילדי DCD.",
+      "source_lesson_id": "pediatrics_02_dcd",
+      "source_type": "generated_basic",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "q_basic_gen_043",
+      "type": "interactive_check",
+      "sequence_title": "רפואת ילדים - אוטיזם",
+      "title": "בחן את עצמך!",
+      "question": "עבור ילד עם ASD (על הרצף האוטיסטי) עם רגישות יתר סנסורית מגעית (Tactile Defensiveness), הטבילה במים יכולה להוות:",
+      "options": [
+        "גירוי מכאיב שתמיד יוביל לרתיעה",
+        "סביבה עוטפת המספקת לחץ הידרוסטטי אחיד ומתמיד, שלרוב מרגיע ונסבל יותר ממגע נקודתי ומשתנה",
+        "גירוי ויזואלי בלבד שאינו קשור למגע",
+        "חוסר גירוי לחלוטין"
+      ],
+      "correct_index": 1,
+      "explanation": "הלחץ ההידרוסטטי השווה בכל נקודה יוצר תחושת מעטפת מרגיעה ומפחית חרדה הקשורה למגע פתאומי.",
+      "source_lesson_id": "pediatrics_04_asd",
+      "source_type": "generated_basic",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "q_basic_gen_044",
+      "type": "interactive_check",
+      "sequence_title": "רפואת ילדים - ADHD",
+      "title": "בחן את עצמך!",
+      "question": "בטיפול בילד עם הפרעת קשב וריכוז (ADHD) היפראקטיבי, היתרון המכני של המים הוא:",
+      "options": [
+        "הם מאפשרים ריצה מהירה יותר ללא התעייפות",
+        "צמיגות המים בולמת את התנועות התזזיתיות ומספקת משוב התנגדותי עמוק שעוזר בוויסות רמת העוררות",
+        "המים מחממים את המוח",
+        "הילד צף ונרדם"
+      ],
+      "correct_index": 1,
+      "explanation": "ההתנגדות לתנועה דורשת מאמץ שעוזר בוויסות ובפריקת האנרגיה באופן מבוקר.",
+      "source_lesson_id": "pediatrics_03_adhd",
+      "source_type": "generated_basic",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "q_basic_gen_045",
+      "type": "interactive_check",
+      "sequence_title": "רפואת ילדים - תסמונות",
+      "title": "בחן את עצמך!",
+      "question": "בילדים עם תסמונת דאון יש לנקוט משנה זהירות בהידרותרפיה בגלל:",
+      "options": [
+        "רגישות קיצונית לכלור שגורמת לכוויות",
+        "חוסר יציבות אטלנטו-אקסיאלית (צווארית) וגמישות יתר מפרקית הדורשת הימנעות מתנועות צוואר קיצוניות",
+        "קושי מולד בנשימה דרך האף",
+        "שמיעה מוחלטת מתחת למים"
+      ],
+      "correct_index": 1,
+      "explanation": "גמישות היתר והסכנה לחוסר יציבות בחוליות C1-C2 אופיינית ולכן יש להיזהר בתרגילי צוואר/צלילה חדים.",
+      "source_lesson_id": "pediatrics_05_syndromes",
+      "source_type": "generated_basic",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "q_basic_gen_046",
+      "type": "interactive_check",
+      "sequence_title": "רפואת ילדים - מיומנויות מוטוריות",
+      "title": "בחן את עצמך!",
+      "question": "מטרת השימוש במשחקי נשיפה (כגון הפרחת בועות במים) עבור ילדים היא:",
+      "options": [
+        "רק שעשוע ללא ערך קליני",
+        "חיזוק שרירי הפה והלוע, שיפור נשימה נכונה והכנה רגשית לקראת הכנסת פנים למים",
+        "הורדת הדופק למצב מנוחה מוחלטת",
+        "לימוד צלילה חופשית לעומק"
+      ],
+      "correct_index": 1,
+      "explanation": "שליטה נשימתית ופלט אוויר דרך הפה הם הבסיס האורו-מוטורי לשחייה ולהתמצאות בטוחה במים.",
+      "source_lesson_id": "methodology_01_lesson",
+      "source_type": "generated_basic",
+      "difficulty": "basic"
+    },
+    {
       "bite_id": "b004",
       "type": "sequence_end_card",
       "sequence_title": "פריצת דיסק (Herniated Disc)",

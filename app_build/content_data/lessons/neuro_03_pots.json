@@ -22,6 +22,114 @@
       "clinical_highlight": "הניסיון לבצע פעילות גופנית שגרתית ביבשה מוביל מיד לתשישות חמורה."
     },
     {
+      "bite_id": "q_basic_gen_005",
+      "type": "interactive_check",
+      "sequence_title": "לחץ הידרוסטטי",
+      "title": "בחן את עצמך!",
+      "question": "מהי ההשפעה של חוק פסקל על מערכת הנשימה בזמן טבילה עד לצוואר?",
+      "options": [
+        "מקל על שרירי השאיפה ומקשה על שרירי הנשיפה",
+        "מקשה על שרירי השאיפה ומקל על שרירי הנשיפה",
+        "אין השפעה משמעותית",
+        "מפחית את קצב הנשימה פי שניים"
+      ],
+      "correct_index": 1,
+      "explanation": "הלחץ על בית החזה מקשה על התרחבותו (שאיפה) אך מקל על הוצאת האוויר (נשיפה), מה שמאמן את שרירי השאיפה.",
+      "source_lesson_id": "pascal_lesson",
+      "source_type": "generated_basic",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "q_basic_gen_006",
+      "type": "interactive_check",
+      "sequence_title": "טמפרטורת המים",
+      "title": "בחן את עצמך!",
+      "question": "מדוע טמפרטורה של 33-34 מעלות נחשבת לאידיאלית להידרותרפיה ברוב המקרים?",
+      "options": [
+        "כי זו הטמפרטורה בה המים הכי צמיגים",
+        "כי היא תרמו-ניטרלית ומאפשרת הרפיית שרירים ללא מאמץ של מערכת ויסות החום",
+        "כי היא גורמת לכיווץ כלי דם שמפחית כאב",
+        "כי בטמפרטורה זו כוח העילוי חזק יותר"
+      ],
+      "correct_index": 1,
+      "explanation": "טמפרטורה תרמו-ניטרלית מאפשרת שהייה ממושכת ללא הוצאת אנרגיה רבה על חימום או קירור הגוף.",
+      "source_lesson_id": "unit1_physics",
+      "source_type": "generated_basic",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "q_basic_gen_007",
+      "type": "interactive_check",
+      "sequence_title": "פיזיקה של המים",
+      "title": "בחן את עצמך!",
+      "question": "כיצד שטח הפנים משפיע על התנגדות התנועה במים?",
+      "options": [
+        "ככל ששטח הפנים קטן, ההתנגדות גדלה",
+        "התנגדות התנועה תלויה רק במהירות ולא בשטח הפנים",
+        "ככל ששטח הפנים גדול (כיוון התנועה), ההתנגדות גדלה",
+        "שטח פנים משפיע רק על העילוי"
+      ],
+      "correct_index": 2,
+      "explanation": "ההתנגדות (Drag) פרופורציונלית לשטח הפנים הניצב לכיוון התנועה.",
+      "source_lesson_id": "unit1_physics",
+      "source_type": "generated_basic",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "q_basic_gen_008",
+      "type": "interactive_check",
+      "sequence_title": "לחץ הידרוסטטי",
+      "title": "בחן את עצמך!",
+      "question": "כיצד תסייע שהייה בבריכה למטופל עם קשיי נשימה עקב חולשת שרירי עזר (ללא פתולוגיה לבבית)?",
+      "options": [
+        "הטבילה תחליש עוד יותר את השרירים לצמיתות",
+        "הטבילה תשמש כאימון התנגדות לשרירי השאיפה",
+        "הטבילה תפחית את צריכת החמצן הכללית של המוח",
+        "הלחץ יימנע מהריאות להתרוקן"
+      ],
+      "correct_index": 1,
+      "explanation": "הלחץ ההידרוסטטי מתנגד לשאיפה ולכן מהווה אימון חיזוק לשרירי הנשימה.",
+      "source_lesson_id": "pascal_lesson",
+      "source_type": "generated_basic",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "q_basic_gen_009",
+      "type": "interactive_check",
+      "sequence_title": "צמיגות המים",
+      "title": "בחן את עצמך!",
+      "question": "אילו כוחות המטופל מפעיל כדי להתקדם קדימה בתוך הבריכה?",
+      "options": [
+        "כוחות עילוי בלבד",
+        "רק מומנט כבידה",
+        "כוח משיכה והתנגדות לצמיגות המים (Drag)",
+        "רק חוק פסקל"
+      ],
+      "correct_index": 2,
+      "explanation": "תנועה קדימה דורשת התגברות על התנגדות המים (Drag) הנובעת מצמיגות ומערבולות.",
+      "source_lesson_id": "unit1_physics",
+      "source_type": "generated_basic",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "q_basic_gen_010",
+      "type": "interactive_check",
+      "sequence_title": "מערבולות",
+      "title": "בחן את עצמך!",
+      "question": "כיצד ניתן להגדיל את האתגר של שיווי המשקל במים ללא שימוש באביזרים?",
+      "options": [
+        "לעמוד ללא תנועה",
+        "להגדיל את מהירות התנועות של המטופל או ליצור מערבולות סביבו",
+        "לרדת למים רדודים מאוד",
+        "להוריד את טמפרטורת המים"
+      ],
+      "correct_index": 1,
+      "explanation": "תנועה מהירה יוצרת מערבולות (Wake) שמערערות את יציבות המטופל ודורשות תגובות שיווי משקל.",
+      "source_lesson_id": "unit1_physics",
+      "source_type": "generated_basic",
+      "difficulty": "basic"
+    },
+    {
       "bite_id": "b_seq_end_1",
       "type": "sequence_end_card",
       "sequence_title": "פיזיולוגיה של POTS",

@@ -116,6 +116,114 @@
       "explanation": "ההתנגדות במים מספקת פרופריוצפציה וזמן תגובה ארוך יותר."
     },
     {
+      "bite_id": "q_basic_gen_077",
+      "type": "interactive_check",
+      "sequence_title": "כוחות המים",
+      "title": "בחן את עצמך!",
+      "question": "כאשר המטופל מבצע תנועה של סיבוב גו בבריכה, איזה כוח מרכזי של המים פועל עליו?",
+      "options": [
+        "רק אפקט הברנולי (Bernoulli).",
+        "התנגדות הנובעת מצמיגות המים (Drag) כנגד הכיוון של ה-סיבוב גו.",
+        "משיכה בלבד עקב כבידה.",
+        "החזר ורידי (Venous Return)."
+      ],
+      "correct_index": 1,
+      "explanation": "תנועה אקטיבית של סיבוב גו נתקלת בצמיגות המים היוצרת התנגדות שתלויה במהירות ובשטח הפנים.",
+      "source_lesson_id": "unit1_physics",
+      "source_type": "generated_basic",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "q_basic_gen_078",
+      "type": "interactive_check",
+      "sequence_title": "כוחות המים",
+      "title": "בחן את עצמך!",
+      "question": "כאשר המטופל מבצע תנועה של בעיטה חדה למטה בבריכה, איזה כוח מרכזי של המים פועל עליו?",
+      "options": [
+        "רק אפקט הברנולי (Bernoulli).",
+        "התנגדות הנובעת מצמיגות המים (Drag) כנגד הכיוון של ה-בעיטה חדה למטה.",
+        "משיכה בלבד עקב כבידה.",
+        "החזר ורידי (Venous Return)."
+      ],
+      "correct_index": 1,
+      "explanation": "תנועה אקטיבית של בעיטה חדה למטה נתקלת בצמיגות המים היוצרת התנגדות שתלויה במהירות ובשטח הפנים.",
+      "source_lesson_id": "unit1_physics",
+      "source_type": "generated_basic",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "q_basic_gen_079",
+      "type": "interactive_check",
+      "sequence_title": "כוחות המים",
+      "title": "בחן את עצמך!",
+      "question": "כאשר המטופל מבצע תנועה של עלייה על קצות אצבעות בבריכה, איזה כוח מרכזי של המים פועל עליו?",
+      "options": [
+        "רק אפקט הברנולי (Bernoulli).",
+        "התנגדות הנובעת מצמיגות המים (Drag) כנגד הכיוון של ה-עלייה על קצות אצבעות.",
+        "משיכה בלבד עקב כבידה.",
+        "החזר ורידי (Venous Return)."
+      ],
+      "correct_index": 1,
+      "explanation": "תנועה אקטיבית של עלייה על קצות אצבעות נתקלת בצמיגות המים היוצרת התנגדות שתלויה במהירות ובשטח הפנים.",
+      "source_lesson_id": "unit1_physics",
+      "source_type": "generated_basic",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "q_basic_gen_080",
+      "type": "interactive_check",
+      "sequence_title": "כוחות המים",
+      "title": "בחן את עצמך!",
+      "question": "כאשר המטופל מבצע תנועה של סגירת זרועות לחזה בבריכה, איזה כוח מרכזי של המים פועל עליו?",
+      "options": [
+        "רק אפקט הברנולי (Bernoulli).",
+        "התנגדות הנובעת מצמיגות המים (Drag) כנגד הכיוון של ה-סגירת זרועות לחזה.",
+        "משיכה בלבד עקב כבידה.",
+        "החזר ורידי (Venous Return)."
+      ],
+      "correct_index": 1,
+      "explanation": "תנועה אקטיבית של סגירת זרועות לחזה נתקלת בצמיגות המים היוצרת התנגדות שתלויה במהירות ובשטח הפנים.",
+      "source_lesson_id": "unit1_physics",
+      "source_type": "generated_basic",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "q_basic_gen_081",
+      "type": "interactive_check",
+      "sequence_title": "כוחות המים",
+      "title": "בחן את עצמך!",
+      "question": "כאשר המטופל מבצע תנועה של פשיטת ירך עמוקה בבריכה, איזה כוח מרכזי של המים פועל עליו?",
+      "options": [
+        "רק אפקט הברנולי (Bernoulli).",
+        "התנגדות הנובעת מצמיגות המים (Drag) כנגד הכיוון של ה-פשיטת ירך עמוקה.",
+        "משיכה בלבד עקב כבידה.",
+        "החזר ורידי (Venous Return)."
+      ],
+      "correct_index": 1,
+      "explanation": "תנועה אקטיבית של פשיטת ירך עמוקה נתקלת בצמיגות המים היוצרת התנגדות שתלויה במהירות ובשטח הפנים.",
+      "source_lesson_id": "unit1_physics",
+      "source_type": "generated_basic",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "q_basic_gen_082",
+      "type": "interactive_check",
+      "sequence_title": "כוחות המים",
+      "title": "בחן את עצמך!",
+      "question": "כאשר המטופל מבצע תנועה של הטיית אגן הצידה בבריכה, איזה כוח מרכזי של המים פועל עליו?",
+      "options": [
+        "רק אפקט הברנולי (Bernoulli).",
+        "התנגדות הנובעת מצמיגות המים (Drag) כנגד הכיוון של ה-הטיית אגן הצידה.",
+        "משיכה בלבד עקב כבידה.",
+        "החזר ורידי (Venous Return)."
+      ],
+      "correct_index": 1,
+      "explanation": "תנועה אקטיבית של הטיית אגן הצידה נתקלת בצמיגות המים היוצרת התנגדות שתלויה במהירות ובשטח הפנים.",
+      "source_lesson_id": "unit1_physics",
+      "source_type": "generated_basic",
+      "difficulty": "basic"
+    },
+    {
       "bite_id": "b005",
       "type": "sequence_end_card",
       "sequence_title": "הפרעה בהתפתחות הקואורדינציה (DCD)",

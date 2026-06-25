@@ -21,6 +21,114 @@
       "visual_trigger": "animation_sensory_profile_adhd"
     },
     {
+      "bite_id": "q_basic_gen_083",
+      "type": "interactive_check",
+      "sequence_title": "כוחות המים",
+      "title": "בחן את עצמך!",
+      "question": "כאשר המטופל מבצע תנועה של משיכת הברכיים לבטן בבריכה, איזה כוח מרכזי של המים פועל עליו?",
+      "options": [
+        "רק אפקט הברנולי (Bernoulli).",
+        "התנגדות הנובעת מצמיגות המים (Drag) כנגד הכיוון של ה-משיכת הברכיים לבטן.",
+        "משיכה בלבד עקב כבידה.",
+        "החזר ורידי (Venous Return)."
+      ],
+      "correct_index": 1,
+      "explanation": "תנועה אקטיבית של משיכת הברכיים לבטן נתקלת בצמיגות המים היוצרת התנגדות שתלויה במהירות ובשטח הפנים.",
+      "source_lesson_id": "unit1_physics",
+      "source_type": "generated_basic",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "q_basic_gen_084",
+      "type": "interactive_check",
+      "sequence_title": "כוחות המים",
+      "title": "בחן את עצמך!",
+      "question": "כאשר המטופל מבצע תנועה של ביצוע תנועות שחיית פרפר בבריכה, איזה כוח מרכזי של המים פועל עליו?",
+      "options": [
+        "רק אפקט הברנולי (Bernoulli).",
+        "התנגדות הנובעת מצמיגות המים (Drag) כנגד הכיוון של ה-ביצוע תנועות שחיית פרפר.",
+        "משיכה בלבד עקב כבידה.",
+        "החזר ורידי (Venous Return)."
+      ],
+      "correct_index": 1,
+      "explanation": "תנועה אקטיבית של ביצוע תנועות שחיית פרפר נתקלת בצמיגות המים היוצרת התנגדות שתלויה במהירות ובשטח הפנים.",
+      "source_lesson_id": "unit1_physics",
+      "source_type": "generated_basic",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "q_basic_gen_085",
+      "type": "interactive_check",
+      "sequence_title": "אורתופדיה ושיקום",
+      "title": "בחן את עצמך!",
+      "question": "בשיקום ברך ימין, מדוע נעדיף תרגול בעומק מי-חזה לעומת מי-אגן?",
+      "options": [
+        "כי מי האגן קרים יותר.",
+        "בעומק החזה כוח העילוי מוריד יותר עומס ממשקל הגוף מעל ה-ברך ימין, מה שמאפשר נשיאת משקל בטוחה יותר.",
+        "כי הלחץ ההידרוסטטי בעומק החזה חזק מדי.",
+        "אין הבדל מבחינה אורתופדית."
+      ],
+      "correct_index": 1,
+      "explanation": "טבילה עד גובה החזה מפחיתה כ-70% ממשקל הגוף, משמעותי מאוד לשיקום של מפרקי ברך ימין נושאי משקל.",
+      "source_lesson_id": "orthopedics_03_lower_limb",
+      "source_type": "generated_basic",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "q_basic_gen_086",
+      "type": "interactive_check",
+      "sequence_title": "אורתופדיה ושיקום",
+      "title": "בחן את עצמך!",
+      "question": "בשיקום קרסול, מדוע נעדיף תרגול בעומק מי-חזה לעומת מי-אגן?",
+      "options": [
+        "כי מי האגן קרים יותר.",
+        "בעומק החזה כוח העילוי מוריד יותר עומס ממשקל הגוף מעל ה-קרסול, מה שמאפשר נשיאת משקל בטוחה יותר.",
+        "כי הלחץ ההידרוסטטי בעומק החזה חזק מדי.",
+        "אין הבדל מבחינה אורתופדית."
+      ],
+      "correct_index": 1,
+      "explanation": "טבילה עד גובה החזה מפחיתה כ-70% ממשקל הגוף, משמעותי מאוד לשיקום של מפרקי קרסול נושאי משקל.",
+      "source_lesson_id": "orthopedics_03_lower_limb",
+      "source_type": "generated_basic",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "q_basic_gen_087",
+      "type": "interactive_check",
+      "sequence_title": "אורתופדיה ושיקום",
+      "title": "בחן את עצמך!",
+      "question": "בשיקום ירך שמאל, מדוע נעדיף תרגול בעומק מי-חזה לעומת מי-אגן?",
+      "options": [
+        "כי מי האגן קרים יותר.",
+        "בעומק החזה כוח העילוי מוריד יותר עומס ממשקל הגוף מעל ה-ירך שמאל, מה שמאפשר נשיאת משקל בטוחה יותר.",
+        "כי הלחץ ההידרוסטטי בעומק החזה חזק מדי.",
+        "אין הבדל מבחינה אורתופדית."
+      ],
+      "correct_index": 1,
+      "explanation": "טבילה עד גובה החזה מפחיתה כ-70% ממשקל הגוף, משמעותי מאוד לשיקום של מפרקי ירך שמאל נושאי משקל.",
+      "source_lesson_id": "orthopedics_03_lower_limb",
+      "source_type": "generated_basic",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "q_basic_gen_088",
+      "type": "interactive_check",
+      "sequence_title": "אורתופדיה ושיקום",
+      "title": "בחן את עצמך!",
+      "question": "בשיקום עמוד שדרה מותני, מדוע נעדיף תרגול בעומק מי-חזה לעומת מי-אגן?",
+      "options": [
+        "כי מי האגן קרים יותר.",
+        "בעומק החזה כוח העילוי מוריד יותר עומס ממשקל הגוף מעל ה-עמוד שדרה מותני, מה שמאפשר נשיאת משקל בטוחה יותר.",
+        "כי הלחץ ההידרוסטטי בעומק החזה חזק מדי.",
+        "אין הבדל מבחינה אורתופדית."
+      ],
+      "correct_index": 1,
+      "explanation": "טבילה עד גובה החזה מפחיתה כ-70% ממשקל הגוף, משמעותי מאוד לשיקום של מפרקי עמוד שדרה מותני נושאי משקל.",
+      "source_lesson_id": "orthopedics_03_lower_limb",
+      "source_type": "generated_basic",
+      "difficulty": "basic"
+    },
+    {
       "bite_id": "b001_end",
       "type": "sequence_end_card",
       "sequence_title": "ADHD: עוררות ומערכת העצבים",

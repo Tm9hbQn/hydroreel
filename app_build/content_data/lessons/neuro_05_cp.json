@@ -141,6 +141,114 @@
       "explanation": "החום מרפה את הרקמות, מרחיב כלי דם ומאפשר עבודה אפקטיבית יותר על טווחי תנועה ללא התנגדות הרפלקס."
     },
     {
+      "bite_id": "q_basic_gen_017",
+      "type": "interactive_check",
+      "sequence_title": "שריר ושלד",
+      "title": "בחן את עצמך!",
+      "question": "כיצד תורמת ההידרותרפיה להרפיית שרירים?",
+      "options": [
+        "קירור השריר למניעת דלקת",
+        "חימום, הפחתת משקל (עילוי) והורדת טונוס שרירים אקטיבי",
+        "יצירת חומצת חלב במים",
+        "הגברת המאמץ האקסצנטרי בלבד"
+      ],
+      "correct_index": 1,
+      "explanation": "החום יחד עם תחושת חוסר המשקל מפחיתים את הצורך בייצוב יציבתי ומאפשרים הרפיה עמוקה.",
+      "source_lesson_id": "physiology_04_neuro",
+      "source_type": "generated_basic",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "q_basic_gen_018",
+      "type": "interactive_check",
+      "sequence_title": "מערכת קרדיו-וסקולרית",
+      "title": "בחן את עצמך!",
+      "question": "מדוע חולים באי ספיקת לב קשה (Severe Heart Failure) נמצאים בסיכון בהידרותרפיה עמוקה?",
+      "options": [
+        "המים פוגעים בקצב החשמלי של הלב",
+        "הלב לא עומד בעומס העלייה הפתאומית בהחזר הורידי (Preload)",
+        "הם לא מסוגלים לנשום כלל",
+        "כיווץ כלי הדם יגרום לאוטם"
+      ],
+      "correct_index": 1,
+      "explanation": "עלייה דרסטית בהחזר הורידי מעמיסה נפח רב על לב כושל שאינו מסוגל לדחוף את הדם, ועלול לגרום לבצקת ריאות.",
+      "source_lesson_id": "physiology_01_cardio",
+      "source_type": "generated_basic",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "q_basic_gen_019",
+      "type": "interactive_check",
+      "sequence_title": "מערכת נשימה",
+      "title": "בחן את עצמך!",
+      "question": "מי מהמטופלים הבאים דורש השגחה מיוחדת או אף התוויית נגד לשחייה טיפולית?",
+      "options": [
+        "מטופל עם אסתמה קלה",
+        "מטופל לאחר נקע בקרסול",
+        "מטופל עם COPD חמור וקיבולת ריאתית ירודה מאוד",
+        "מטופל עם כאב גב תחתון"
+      ],
+      "correct_index": 2,
+      "explanation": "הלחץ ההידרוסטטי על בית החזה מקשה על השאיפה, מה שעלול להכביד משמעותית על חולי COPD חמור.",
+      "source_lesson_id": "physiology_03_respiratory",
+      "source_type": "generated_basic",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "q_basic_gen_020",
+      "type": "interactive_check",
+      "sequence_title": "ויסות חום",
+      "title": "בחן את עצמך!",
+      "question": "כיצד גוף האדם מאבד חום בעיקר כשהוא שקוע במים תרמו-ניטרליים?",
+      "options": [
+        "הזעה מוגברת",
+        "קרינה בלבד",
+        "הולכה והסעה (הולכת החום למים)",
+        "נשיפה מוגברת"
+      ],
+      "correct_index": 2,
+      "explanation": "המים מוליכים חום פי 25 יותר טוב מאוויר, כך שהגוף מאבד חום במהירות למים סביבו בהולכה והסעה.",
+      "source_lesson_id": "physiology_04_neuro",
+      "source_type": "generated_basic",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "q_basic_gen_021",
+      "type": "interactive_check",
+      "sequence_title": "נוירולוגיה - שבץ",
+      "title": "בחן את עצמך!",
+      "question": "לאיזו מטרה נשתמש במים חמימים בטיפול בנפגעי שבץ מוחי עם טונוס ספסטי (Spasticity)?",
+      "options": [
+        "כדי להגביר את טונוס השרירים",
+        "להפחתת הטונוס ושיפור טווחי תנועה לפני עבודה אקטיבית",
+        "להגברת המהירות של הליכה בלבד",
+        "לעידוד התכווצויות רפלקסיביות"
+      ],
+      "correct_index": 1,
+      "explanation": "החום והלחץ השווה במים עוזרים להרפות שרירים ספסטיים ומאפשרים עבודה בטווחי תנועה גדולים יותר.",
+      "source_lesson_id": "neuro_01_stroke",
+      "source_type": "generated_basic",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "q_basic_gen_022",
+      "type": "interactive_check",
+      "sequence_title": "נוירולוגיה - שבץ",
+      "title": "בחן את עצמך!",
+      "question": "כיצד תסייע תכונת המערבולות למטופל לאחר שבץ הלוקה בחוסר שיווי משקל?",
+      "options": [
+        "היא תעשה את התרגיל קל יותר",
+        "היא תשמש גירוי פרופריוצפטיבי וויסטיבולרי לבניית תגובות שיווי משקל",
+        "היא תחליף את הצורך במקל הליכה",
+        "מערבולות מזיקות למטופלים אלו"
+      ],
+      "correct_index": 1,
+      "explanation": "התמודדות עם חוסר היציבות של המערבולות מעודדת תגובות נגד ואסטרטגיות שיווי משקל.",
+      "source_lesson_id": "neuro_01_stroke",
+      "source_type": "generated_basic",
+      "difficulty": "basic"
+    },
+    {
       "bite_id": "b004_end",
       "type": "sequence_end_card",
       "sequence_title": "סיום היחידה",
