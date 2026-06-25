@@ -2,9 +2,13 @@
 
 ## **מוקד הפעילות הנוכחי (Current Focus)**
 
-המשימה הנוכחית: יישום ארכיטקטורת תוכן קליני ללא דחיסה והעשרת רצף הלמידה הפיזיולוגי והנוירולוגי.
+המשימה הנוכחית: יישום ארכיטקטורת תוכן קליני ללא דחיסה והעשרת רצף הלמידה הפיזיולוגי והנוירולוגי (התמקדות במתודולוגיית טיפול ומטרות SMART).
 
 ## **חלון עשרת האירועים האחרונים (Sliding Window)**
+
+- **[08:45] עדכון מסך הפתיחה (Creative UI/UX Engineer):** בוצע עדכון לרכיב `HomeClient.tsx` במטרה לשפר את נראות מסך הפתיחה. גובה "ספריית המגירות" (רשימת הנושאים) הוגבל ל-`max-h-[35vh]` כדי לפנות מקום לאלמנטים נוספים ולא להשתלט על כל המסך (בהתאם ל-Mobile-First). בנוסף, נוסף כפתור "בואו ניבחן" חדש ואינטראקטיבי (באמצעות Framer Motion) מתחת לרשימת הנושאים, הכולל תת-כותרת המסבירה שהמערכת תבדוק ותנתח אזורים חזקים וחלשים להמלצת למידה. הכפתור כרגע מציג התראה שהמערכת תפותח בשלב הבא, בהתאם להנחיית המשתמש לדחות את פיתוח מערכת המבחנים לשלב נפרד. הפרויקט עבר בילד (npm run build) בהצלחה.
+
+- **[21:22] העשרת תוכן קליני ודיוק פדגוגי (methodology_01_lesson.json):** בוצעה עריכה מקיפה לפרק 'מטרות טיפול SMART' כדי ליישר קו עם מודל ה-'Contextual Foundation'. הפירוק נעשה ל-3 רצפים פדגוגיים מובהקים: 1) מטרות תפקודיות SMART והגדרתן (מהי מטרה תפקודית, מודל ה-SMART), 2) גזירת מטרות טיפוליות (המרכיבים הפיזיולוגיים) מתוך המטרות התפקודיות, ו-3) אופן בחירת התרגילים במים תוך שימוש בתכונות הפיזיקליות של המים כך שישרתו את המטרות הטיפוליות הנגזרות. הוספו דוגמאות קליניות ספציפיות רבות במתכונת של מקרים קליניים וקרוסלות (החלפת ברך, שבץ מוחי, שיתוק מוחין, ופרקינסון) להמחשת המעברים הלוגיים, תוך שימוש במבנה ה-Dumb Components ושמירה על ההפרדה (Decoupling) והימנעות מדחיסה מושגית. עודכנו גם שאלות המבחן (interactive_check) כדי לבחון את ההבנה החדשה.
 
 - **[21:12] Fallback Animation Update (Creative UI/UX Engineer):** Updated the `FallbackAnimation.tsx` component to remove the "Animation Pending" text and badge. Retained the colorful background gradient and added a slow, continuous `backgroundPosition` animation using Framer Motion (`backgroundSize: '400% 400%'`) to bring the placeholder to life without adding visual clutter. This adheres to the Decoupling Hard Invariant by ensuring UI components only focus on presentation and don't leak logic or text.
 
@@ -17,7 +21,6 @@
 
 *הנחיית מערכת:* חובה לתעד כל פעולה בחלון זה באופן מפורט, אינפורמטיבי וממצה (כולל מה נעשה, סיבות להחלטות ושינויים טכניים מקיפים), ולא בשורה קצרה וכללית. תקצור ודחיסה של מידע יבוצעו **אך ורק** כאשר חלון זה מתמלא (אירוע 11 ואילך), ואז על הסוכן להעביר את האירועים הישנים לתוך `.memory/changelog.md` תוך כדי דחיסה. ה-activeContext עצמו חייב להישאר מפורט במלואו.
 
-- **[19:49] No Conceptual Compression Execution**: Orchestrated 32 parallel subagents to rewrite the entire JSON content repository. Eliminated dense \lashcard_carousel\s and enforced the inclusion of \principle_card\s for contextual foundation before practical examples. Migrated all old \quiz_card\ schemas to the robust \interactive_check\ schema using an automated script. Verified build passing (
-pm run build). Pushed changes to GitHub.
+- **[19:49] No Conceptual Compression Execution**: Orchestrated 32 parallel subagents to rewrite the entire JSON content repository. Eliminated dense flashcard_carousels and enforced the inclusion of principle_cards for contextual foundation before practical examples. Migrated all old quiz_card schemas to the robust interactive_check schema using an automated script. Verified build passing (npm run build). Pushed changes to GitHub.
 
-- **[19:08] UI Hotfix - FlashcardCarousel**: Fixed a bug where \lashcard_carousel\ components would render without a title if the JSON object didn't explicitly include a \	itle\ field. Implemented a fallback to \ite.sequence_title\ or a generic string, ensuring no empty header space is left in the UI.
+- **[19:08] UI Hotfix - FlashcardCarousel**: Fixed a bug where flashcard_carousel components would render without a title if the JSON object didn't explicitly include a title field. Implemented a fallback to bite.sequence_title or a generic string, ensuring no empty header space is left in the UI.

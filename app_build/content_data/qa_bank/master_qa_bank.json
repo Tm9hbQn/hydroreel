@@ -1,0 +1,927 @@
+{
+  "metadata": {
+    "total_questions": 52,
+    "created_at": "2026-06-24T18:23:11.786Z"
+  },
+  "questions": [
+    {
+      "bite_id": "q_anatomy_01_muscles_1",
+      "type": "interactive_check",
+      "visual_trigger": "animation_quiz_time",
+      "title": "בחן את עצמך!",
+      "sequence_title": "סיכום ובקרה",
+      "question": "איזה שריר נחשב מרכזי במניעת קריסה בנשיאת משקל ויישור הברך?",
+      "options": [
+        "ארבע ראשי (Quadriceps)",
+        "מיתר הברך (Hamstrings)",
+        "שרירי הליבה (Core)"
+      ],
+      "correct_index": 0,
+      "explanation": "תשובה נכונה! הארבע ראשי קריטי ליישור הברך ונשיאת משקל דינמית.",
+      "source_lesson_id": "unit3_anatomy_muscles",
+      "source_type": "existing",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "q_anatomy_01_muscles_2",
+      "type": "interactive_check",
+      "visual_trigger": "animation_quiz_time",
+      "title": "בחן את עצמך!",
+      "sequence_title": "סיכום ובקרה",
+      "question": "כיצד כוח הציפה מסייע למטופל עם חולשה בארבע ראשי?",
+      "options": [
+        "מוריד עומס מהמפרק ומקל על ייצוב הברך",
+        "מגדיל את המשקל שהמטופל נושא",
+        "מקשה על התנועה באמצעות העלאת כוח הכבידה"
+      ],
+      "correct_index": 0,
+      "explanation": "נכון! נשיאת המשקל הפחותה מקלה על השריר החלש לייצב את המפרק.",
+      "source_lesson_id": "unit3_anatomy_muscles",
+      "source_type": "existing",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "q_anatomy_02_joints_1",
+      "type": "interactive_check",
+      "sequence_title": "בחן את עצמך: מפרקים ותנועות",
+      "title": "בחן את עצמך!",
+      "question": "איזה סוג מפרק מאפשר את טווח התנועה הגדול ביותר (כדוגמת מפרק הירך)?",
+      "visual_trigger": "animation_quiz_time",
+      "options": [
+        "מפרק כדורי (Ball and Socket)",
+        "מפרק ציר (Hinge)",
+        "מפרק החלקה (Gliding)",
+        "מפרק אוכף (Saddle)"
+      ],
+      "correct_index": 0,
+      "explanation": "תשובה נכונה! מפרק כדורי מאפשר תנועה במרחב התלת-ממדי, כולל סיבוב.",
+      "source_lesson_id": "unit3_anatomy_joints",
+      "source_type": "existing",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "q_anatomy_02_joints_2",
+      "type": "interactive_check",
+      "sequence_title": "בחן את עצמך: מפרקים ותנועות",
+      "title": "בחן את עצמך!",
+      "question": "מהי הפעולה של 'הרחקה' (Abduction)?",
+      "visual_trigger": "animation_quiz_time",
+      "options": [
+        "הרחקת הגפה מקו האמצע של הגוף",
+        "הקטנת הזווית בין עצמות המפרק",
+        "החזרת הגפה לקו האמצע של הגוף",
+        "הגדלת הזווית בין העצמות"
+      ],
+      "correct_index": 0,
+      "explanation": "נכון. כדוגמת הנפת הרגל הצידה כמו ב'כוכב מים'.",
+      "source_lesson_id": "unit3_anatomy_joints",
+      "source_type": "existing",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "q_anatomy_03_proprioception_1",
+      "type": "interactive_check",
+      "sequence_title": "מערכת הפרופריוצפציה",
+      "visual_trigger": "animation_quiz_time",
+      "title": "בחן את עצמך!",
+      "question": "איזה כוח או תכונה של המים תורמת במיוחד לחיזוק תחושת הפרופריוצפציה?",
+      "options": [
+        "הלחץ ההידרוסטטי השווה מכל הכיוונים",
+        "כוח הציפה של המים",
+        "הזרמים ומערבולות המים",
+        "טמפרטורת המים של 34 מעלות"
+      ],
+      "correct_index": 0,
+      "explanation": "נכון. הלחץ מספק משוב תחושתי תמידי העוטף את הגוף כ'מחוך מגע'.",
+      "source_lesson_id": "anatomy_03_proprioception",
+      "source_type": "existing",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "q_anatomy_03_proprioception_2",
+      "type": "interactive_check",
+      "sequence_title": "המערכת הוסטיבולרית",
+      "visual_trigger": "animation_quiz_time",
+      "title": "בחן את עצמך!",
+      "question": "כיצד סביבת המים תורמת למטופלי פרקינסון בכל הנוגע למערכת הוסטיבולרית?",
+      "options": [
+        "יוצרת חוסר יציבות בטוח המאלץ תיקוני שיווי משקל",
+        "מונעת מהם לזוז וכך מגינה מנפילות",
+        "מבטלת לחלוטין את הלחץ על עמוד השדרה",
+        "גורמת לקפיאה תנועתית פחותה עקב החום בלבד"
+      ],
+      "correct_index": 0,
+      "explanation": "נכון מאוד! חוסר היציבות דורש תגובות שיווי משקל תכופות בסביבה המגינה מנפילה כואבת.",
+      "source_lesson_id": "anatomy_03_proprioception",
+      "source_type": "existing",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "q_methodology_01_lesson_1",
+      "type": "interactive_check",
+      "visual_trigger": "animation_quiz_time",
+      "title": "בחן את עצמך!",
+      "sequence_title": "סיכום הלימוד",
+      "question": "מהו סדר גזירת המטרות הנכון בבניית תוכנית טיפול?",
+      "options": [
+        "מטרה תפקודית -> מטרות טיפוליות -> בחירת תרגילים",
+        "בחירת תרגילים -> מטרה טיפולית -> מטרה תפקודית",
+        "מטרה טיפולית -> בחירת תרגילים -> מטרה תפקודית",
+        "אין חשיבות לסדר, העיקר שיש מטרות SMART"
+      ],
+      "correct_index": 0,
+      "explanation": "תשובה מדויקת! מתחילים מהפונקציה והיומיום של המטופל, גוזרים מכך אילו מרכיבים פיזיים חסרים לו, ולבסוף בוחרים את התרגיל שישפר מרכיבים אלו.",
+      "source_lesson_id": "methodology_01_lesson",
+      "source_type": "existing",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "q_methodology_01_lesson_2",
+      "type": "interactive_check",
+      "visual_trigger": "animation_quiz_time",
+      "title": "בחן את עצמך!",
+      "sequence_title": "סיכום הלימוד",
+      "question": "מדוע חשוב לנסח מטרות תפקודיות בשיטת SMART?",
+      "options": [
+        "כדי שהן יהיו ספציפיות, מדידות וניתנות למעקב לאורך הטיפול",
+        "כי זהו דרישת חוק של קופות החולים",
+        "כדי להראות למטופל שהמטפל מקצועי",
+        "כדי שיהיה אפשר לסיים את הטיפול מוקדם יותר"
+      ],
+      "correct_index": 0,
+      "explanation": "נכון מאוד! ללא מדדים ברורים ותיחום זמנים, קשה להעריך התקדמות ולהתאים את הטיפול.",
+      "source_lesson_id": "methodology_01_lesson",
+      "source_type": "existing",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "q_movement_01_fitness_1",
+      "type": "interactive_check",
+      "visual_trigger": "animation_quiz_time",
+      "title": "בחן את עצמך!",
+      "sequence_title": "מבוא לכושר גופני",
+      "question": "מהו היתרון המרכזי של אימון במים עבור מטופלים עם פגיעות מפרקיות?",
+      "options": [
+        "אימון התנגדות אקטיבי ללא אימפקט שלילי על המפרקים",
+        "המים חמים ומקטינים כאבים",
+        "המים גורמים להרפיית השרירים ללא צורך בהתנגדות",
+        "המטופל יכול להרים משקולות כבדות יותר במים"
+      ],
+      "correct_index": 0,
+      "explanation": "נכון! המים מאפשרים לבנות כוח תוך הגנה על המפרקים נושאי המשקל.",
+      "source_lesson_id": "movement_01_fitness",
+      "source_type": "existing",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "q_movement_01_fitness_2",
+      "type": "interactive_check",
+      "visual_trigger": "animation_quiz_time",
+      "title": "בחן את עצמך!",
+      "sequence_title": "סבולת שריר והתאמת עומסים",
+      "question": "כיצד מומלץ לשלוט בעומס האימון למטופלי פיברומיאלגיה במים?",
+      "options": [
+        "שינוי מהירות התנועה תוך ניצול חוק הגרר",
+        "הוספת משקולות חיצוניות כבדות",
+        "הארכת משך הטיפול לשעתיים ומעלה",
+        "שימוש במים קרים לשיכוך כאב"
+      ],
+      "correct_index": 0,
+      "explanation": "מדויק. שליטה במהירות מאפשרת ויסות מושלם של ההתנגדות למניעת כאבים.",
+      "source_lesson_id": "movement_01_fitness",
+      "source_type": "existing",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "q_movement_02_swimming_1",
+      "type": "interactive_check",
+      "visual_trigger": "animation_quiz_time",
+      "title": "בחן את עצמך!",
+      "sequence_title": "בחינת ידע המסכם",
+      "question": "איזו בעיה נפוצה יכולה להחמיר בעת שחיית חזה לא מותאמת (עם הוצאת הראש)?",
+      "options": [
+        "עומס על העורף אצל הסובלים מבלט דיסק צווארי",
+        "קושי בנשימה בשל הלחץ ההידרוסטטי",
+        "הגברת אסימטריה במפרקי הירך",
+        "פגיעה בשיווי המשקל במים"
+      ],
+      "correct_index": 0,
+      "explanation": "נכון. הוצאת הראש החוצה מאלצת פשיטת-יתר של הצוואר, מה שעלול להחמיר בעיות דיסק.",
+      "source_lesson_id": "movement_02_swimming",
+      "source_type": "existing",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "q_movement_02_swimming_2",
+      "type": "interactive_check",
+      "visual_trigger": "animation_quiz_time",
+      "title": "בחן את עצמך!",
+      "sequence_title": "בחינת ידע המסכם",
+      "question": "מהי המטרה העיקרית של לימוד 'רוטציה סגיטלית' לפי שיטת הליוויק?",
+      "options": [
+        "בקרת שיווי משקל ועצמאות בטיחותית במים",
+        "שיפור מהירות השחייה בתחרויות",
+        "חיזוק של שרירי הליבה בלבד",
+        "הימנעות מכניסת מים לאוזניים"
+      ],
+      "correct_index": 0,
+      "explanation": "נכון. שליטה ברוטציה חיונית כדי שהמטופל ידע כיצד לחזור לעמידה בטוחה או למנח נשימה במים.",
+      "source_lesson_id": "movement_02_swimming",
+      "source_type": "existing",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "q_movement_03_gait_1",
+      "type": "interactive_check",
+      "sequence_title": "ביומכניקה של הליכה",
+      "visual_trigger": "animation_quiz_time",
+      "title": "בחן את עצמך!",
+      "question": "מדוע סיכון הנפילה בסביבה מימית הופך למזערי במהלך הליכה?",
+      "options": [
+        "המים מאריכים את שלב ההליכה ומאטים את התנועה",
+        "הלחץ ההידרוסטטי מחזיק את הקרסוליים במקומם כקיבוע",
+        "רפלקס המתיחה מנוטרל במים החמים",
+        "המטופל מרגיש קל יותר בשל כוח הציפה"
+      ],
+      "correct_index": 0,
+      "explanation": "נכון. זמן התגובה המוארך (Slow Motion) מאפשר קליטה ותיקון של שגיאות תנועה.",
+      "source_lesson_id": "movement_03_gait",
+      "source_type": "existing",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "q_movement_03_gait_2",
+      "type": "interactive_check",
+      "sequence_title": "פתולוגיות הליכה",
+      "visual_trigger": "animation_quiz_time",
+      "title": "בחן את עצמך!",
+      "question": "כיצד ניתן לסייע למטופל עם 'דרופ פוט' (Drop Foot) בעזרת תכונות המים?",
+      "options": [
+        "שימוש בסנפיר קל היוצר גרר ומתקן את זווית הקרסול",
+        "הליכה לאחור בלבד",
+        "חיבור משקולות לשוקיים כדי למשוך את הרגל למטה",
+        "שימוש במצופים על האגן להקלת משקל"
+      ],
+      "correct_index": 0,
+      "explanation": "נכון! הסנפיר משתמש בהתנגדות המים כדי להעלות את כף הרגל במהלך שלב ההנפה.",
+      "source_lesson_id": "movement_03_gait",
+      "source_type": "existing",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "q_neuro_01_stroke_1_d089d1",
+      "type": "interactive_check",
+      "sequence_title": "אתגר השיווי משקל (Dual Tasking)",
+      "question": "מהי אחת המטרות העיקריות בטיפול הידרותרפי לאחר שבץ מוחי (CVA)?",
+      "options": [
+        "שיפור שיווי משקל והפחתת טונוס ספסטי",
+        "הגברת עומס על מפרקים",
+        "עידוד אי מוביליות",
+        "העלאת לחץ דם"
+      ],
+      "correct_index": 0,
+      "explanation": "המים תומכים במשקל הגוף ומאפשרים תרגול שיווי משקל, בעוד החום מסייע בהפחתת ספסטיות.",
+      "source_lesson_id": "neuro_01_stroke",
+      "source_type": "existing",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "q_neuro_01_stroke_2_195ee5",
+      "type": "interactive_check",
+      "sequence_title": "אתגר השיווי משקל (Dual Tasking)",
+      "question": "באיזה אופן כוח הצמיגות של המים תורם לשיקום לאחר CVA?",
+      "options": [
+        "מאפשר תרגול בקצב תנועה נשלט ומתן זמן תגובה לאיזון",
+        "גורם לנפילות תכופות",
+        "מבטל לחלוטין את התנגדות המים",
+        "מגביר תנועות בלתי רצוניות"
+      ],
+      "correct_index": 0,
+      "explanation": "הצמיגות מאטה תנועות פתאומיות ומאפשרת למטופל להגיב ולתקן יציבה.",
+      "source_lesson_id": "neuro_01_stroke",
+      "source_type": "existing",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "b_ad_action",
+      "type": "interactive_check",
+      "sequence_title": "דיסרפלקסיה אוטונומית",
+      "question": "המטופל החל להתלונן על כאב ראש פועם והזעה מרובה. מהי הפעולה הראשונה שעליך לבצע?",
+      "options": [
+        "הוצאה מיידית, הושבה זקופה וחיפוש הגורם המגרה",
+        "השכבת המטופל על פני המים להרגעה",
+        "המתנה בתוך המים לראות אם יחלוף",
+        "הגברת קצב הפעילות הגופנית"
+      ],
+      "correct_index": 0,
+      "explanation": "ישיבה זקופה מנצלת את כוח הכבידה להורדת לחץ הדם, ויש לטפל מיד בגורם.",
+      "source_lesson_id": "neuro_02_sci",
+      "source_type": "existing",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "q_neuro_02_sci_1_20cfe0",
+      "type": "interactive_check",
+      "sequence_title": "שיקום אקוואטי ב-SCI",
+      "question": "כיצד המים מסייעים למטופל עם פגיעת חוט שדרה (SCI)?",
+      "options": [
+        "הפחתת משקל גוף המאפשרת תנועתיות קלה יותר",
+        "קירור קיצוני של הגוף",
+        "החמרת כאבים עצביים",
+        "הגדלת כוח הכבידה"
+      ],
+      "correct_index": 0,
+      "explanation": "כוח הציפה מפחית את משקל הגוף, ומאפשר תנועה שלא מתאפשרת ביבשה.",
+      "source_lesson_id": "neuro_02_sci",
+      "source_type": "existing",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "q_neuro_02_sci_2_e322ac",
+      "type": "interactive_check",
+      "sequence_title": "שיקום אקוואטי ב-SCI",
+      "question": "מדוע שיווי משקל בישיבה חשוב לתרגול במים עבור נפגעי חוט שדרה?",
+      "options": [
+        "לשיפור עצמאות תפקודית וחיזוק שרירי גו שנותרו פעילים",
+        "משום שאין לכך השפעה מחוץ למים",
+        "כדי להעלות את קצב הלב למקסימום",
+        "כי זו התנוחה היחידה האפשרית במים"
+      ],
+      "correct_index": 0,
+      "explanation": "יציבות גו קריטית לתפקוד יומיומי כמו מעברים וישיבה בכיסא גלגלים.",
+      "source_lesson_id": "neuro_02_sci",
+      "source_type": "existing",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "q_neuro_03_pots_1_1d9800",
+      "type": "interactive_check",
+      "sequence_title": "סיכום ומבדק",
+      "question": "מדוע חשוב לשים לב לטמפרטורת המים בטיפול ב-POTS?",
+      "options": [
+        "מים חמים מדי עלולים להרחיב כלי דם ולהחמיר סחרחורות",
+        "מים קרים משפרים מיד את קצב הלב",
+        "טמפרטורה לא משפיעה על סימפטומים",
+        "מים חמים מעלים את לחץ הדם בפתאומיות"
+      ],
+      "correct_index": 0,
+      "explanation": "מעולה! הרחבת כלי דם (Vasodilation) פוגעת בהחזר הוורידי, מורידה לחץ דם, ועשויה להוביל לעילפון.",
+      "source_lesson_id": "neuro_03_pots",
+      "source_type": "existing",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "q_neuro_04_epilepsy_1_3b475f",
+      "type": "interactive_check",
+      "sequence_title": "סיכום ובחינה",
+      "question": "מהו דגש בטיחותי קריטי בטיפול בבריכה לאדם עם אפילפסיה?",
+      "options": [
+        "השגחה צמודה ורצופה למקרה של פרכוס במים",
+        "טיפול רק במים עמוקים",
+        "שחייה ללא ליווי לשיפור הביטחון",
+        "שימוש בטמפרטורות קיצוניות"
+      ],
+      "correct_index": 0,
+      "explanation": "פרכוס במים מהווה סכנת טביעה מיידית ולכן דורש השגחה מתמדת במרחק נגיעה.",
+      "source_lesson_id": "neuro_04_epilepsy",
+      "source_type": "existing",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "q_neuro_05_cp_1_603f63",
+      "type": "interactive_check",
+      "sequence_title": "מבחן ידע: שיתוק מוחין",
+      "question": "אילו יתרונות מספקת ההידרותרפיה לילדים עם שיתוק מוחין (CP)?",
+      "options": [
+        "הרפיית שרירים ספסטיים ושיפור טווחי תנועה",
+        "עלייה בטונוס השרירים",
+        "מניעת התפתחות מוטורית",
+        "החמרת כיווצים"
+      ],
+      "correct_index": 0,
+      "explanation": "המים החמים והרפיית הגוף מסייעים בהורדת ספסטיות.",
+      "source_lesson_id": "neuro_05_cp",
+      "source_type": "existing",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "q_neuro_05_cp_2_3656bd",
+      "type": "interactive_check",
+      "sequence_title": "מבחן ידע: שיתוק מוחין",
+      "question": "כיצד מים חמים (34 מעלות) משפיעים על שרירים ספסטיים בילדים עם CP?",
+      "options": [
+        "מסייעים בהרפיית השריר ומאפשרים מתיחה פסיבית טובה יותר",
+        "מעלים את הטונוס השרירי",
+        "גורמים להתקפים אפילפטיים",
+        "מונעים התפתחות קוגניטיבית"
+      ],
+      "correct_index": 0,
+      "explanation": "החום מרפה את הרקמות, מרחיב כלי דם ומאפשר עבודה אפקטיבית יותר על טווחי תנועה ללא התנגדות הרפלקס.",
+      "source_lesson_id": "neuro_05_cp",
+      "source_type": "existing",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "q_neuro_06_ms_1_b5cfba",
+      "type": "interactive_check",
+      "sequence_title": "טרשת נפוצה (MS)",
+      "question": "מדוע טמפרטורת הבריכה היא פקטור משמעותי עבור מטופלי טרשת נפוצה (MS)?",
+      "options": [
+        "חום עלול להחמיר זמנית את התסמינים הנוירולוגיים (תופעת אוהטוף)",
+        "הם סובלים מיתר לחץ דם תמידי",
+        "מים קרים גורמים להתקפים",
+        "טמפרטורה חמה מרפאת את המחלה"
+      ],
+      "correct_index": 0,
+      "explanation": "עליה בטמפרטורת הגוף מחמירה בעיות הולכה עצבית ולכן דורשת מים קרירים יותר או בקרה קפדנית.",
+      "source_lesson_id": "neuro_06_ms",
+      "source_type": "existing",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "q_neuro_07_parkinson_1_86b0b7",
+      "type": "interactive_check",
+      "sequence_title": "סיכום תרגול",
+      "question": "איזו תרומה מרכזית יש לטיפול במים עבור חולי פרקינסון בהקשר של הליכה?",
+      "options": [
+        "שיפור סימטריה, שיווי משקל והליכה תוך הפחתת פחד מנפילות",
+        "הגדלת הקיפאון התנועתי (Freezing)",
+        "החלשת שרירי הליבה בגלל הציפה",
+        "מניעת תנועה אקטיבית ועידוד הרפיה בלבד"
+      ],
+      "correct_index": 0,
+      "explanation": "מעולה! תמיכת המים מעניקה ביטחון שמאפשר תרגול צעדים רחבים ורוטציות ללא פחד, וזמן תגובה ארוך לייצוב.",
+      "source_lesson_id": "neuro_07_parkinson",
+      "source_type": "existing",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "q_orthopedics_01_fractures_1_678097",
+      "type": "interactive_check",
+      "sequence_title": "בחן את עצמך: שיקום שברים",
+      "question": "מתי לרוב ישולב טיפול הידרותרפי לאחר שבר?",
+      "options": [
+        "לאחר אישור רופא, כדי לשקם טווחי תנועה ללא נשיאת משקל מלאה",
+        "מיד ביום שלאחר השבר",
+        "רק לאחר החלמה מלאה של העצם",
+        "כתחליף לקיבוע גבס"
+      ],
+      "correct_index": 0,
+      "explanation": "כוח הציפה מאפשר הפעלה ראשונית של המפרק לפני שאפשר לשאת משקל מלא ביבשה.",
+      "source_lesson_id": "orthopedics_01_fractures",
+      "source_type": "existing",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "q_orthopedics_02_spine_1_a25260",
+      "type": "interactive_check",
+      "sequence_title": "בוחן סיום: פתולוגיות עמוד שדרה",
+      "question": "מדוע מטופל עם ספונדילוליסטזיס חייב להימנע משחיית חזה קלאסית?",
+      "options": [
+        "כי הרמת הראש בנשימה גורמת לפשיטת יתר של הגו המותני שמחמירה את המצב.",
+        "מפני שהתנגדות המים פוגעת בשרירי הליבה.",
+        "כי הציפה גורמת למתיחה שמרווחת מדי את החוליות.",
+        "משום שהמים הקרים מעלים את הטונוס השרירי באזור הנגוע."
+      ],
+      "correct_index": 0,
+      "explanation": "בדיוק. שחיית חזה גורמת להקשתת יתר המגבירה את גלישת החוליה וללחץ עצבי.",
+      "source_lesson_id": "orthopedics_02_spine",
+      "source_type": "existing",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "q_orthopedics_03_lower_limb_1_354bf6",
+      "type": "interactive_check",
+      "sequence_title": "נקעים בקרסול",
+      "question": "איזה יתרון יש לסביבת המים בשיקום פציעות גפיים תחתונות?",
+      "options": [
+        "התחלת תרגול נשיאת משקל הדרגתית ובטוחה",
+        "מניעת עבודת שרירים לחלוטין",
+        "יצירת עומס כפול על המפרק",
+        "הפחתת סיכויי ההחלמה"
+      ],
+      "correct_index": 0,
+      "explanation": "ניתן לשלוט בכמות המשקל הנישאת על ידי שינוי עומק המים (למשל מים עד המותניים מפחיתים כ-50%).",
+      "source_lesson_id": "orthopedics_03_lower_limb",
+      "source_type": "existing",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "q_orthopedics_04_upper_limb_1_bc2a5f",
+      "type": "interactive_check",
+      "sequence_title": "פציעות שרוול מסובב",
+      "visual_trigger": "animation_quiz_time",
+      "question": "מהי תרומת ההתנגדות של המים בשיקום גפיים עליונות?",
+      "options": [
+        "חיזוק שרירים הדרגתי בכל כיווני התנועה",
+        "הקטנת זרימת הדם לאזור",
+        "יצירת חוסר יציבות מפרקית",
+        "מניעת הפעלת שרירים מייצבים"
+      ],
+      "correct_index": 0,
+      "explanation": "בניגוד למשקולות שעובדות עם כוח הכבידה לכיוון אחד, המים מתנגדים לכל כיוון שבו ננוע.",
+      "source_lesson_id": "orthopedics_04_upper_limb",
+      "source_type": "existing",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "q_orthopedics_05_fibromyalgia_1_d1e72a",
+      "type": "interactive_check",
+      "sequence_title": "סיכום ובחינה",
+      "question": "מה מטרת העל בטיפול הידרותרפי לחולי פיברומיאלגיה?",
+      "options": [
+        "הפחתת כאב כללית ושיפור איכות חיים באמצעות תנועה במים חמימים",
+        "אימוני כוח עצימים לחיזוק מהיר",
+        "דחיפת המטופל לקצה גבול היכולת כדי לשפר סיבולת",
+        "קירור הגוף לכיווץ שרירים ממוקד"
+      ],
+      "correct_index": 0,
+      "explanation": "המים החמים מסייעים בהרפיה כללית, והתנועה משחררת אנדורפינים המשפרים תחושה.",
+      "source_lesson_id": "orthopedics_05_fibromyalgia",
+      "source_type": "existing",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "hydro_grad_interactive",
+      "type": "interactive_check",
+      "sequence_title": "סיכום ובדיקת ידע",
+      "visual_trigger": "InteractivePressureSimulator",
+      "title": "בחן את עצמך",
+      "question": "איזו תופעה נגרמת ישירות כתוצאה ממפל הלחצים ההידרוסטטי בעמידה במים?",
+      "options": [
+        "הפחתת משקל (ציפה)",
+        "הסטת דם מרכזית",
+        "ירידה בטמפרטורת הגוף"
+      ],
+      "correct_answer_index": 1,
+      "success_message": "מצוין! הלחץ הגבוה יותר בעומק דוחף נוזלים ודם כלפי מעלה וגורם להסטת דם מרכזית.",
+      "source_lesson_id": "hydrodynamics_pascal",
+      "source_type": "existing",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "q_1782256445819_94_0",
+      "type": "interactive_check",
+      "sequence_title": "בוחן אינטראקטיבי: התפתחות",
+      "question": "מאיזה גיל התינוק צפוי לפתח יכולת ישיבה עצמאית (ללא תמיכה) על פי רוב?",
+      "options": [
+        "3-4 חודשים",
+        "6-8 חודשים",
+        "10-12 חודשים",
+        "חודש-חודשיים"
+      ],
+      "correct_index": 1,
+      "explanation": "נכון! בשלב זה שרירי הליבה ויציבות הגו מפותחים דיים לישיבה עצמאית.",
+      "source_lesson_id": "unit5_pediatrics_development",
+      "source_type": "existing",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "q_1782256445819_310_1",
+      "type": "interactive_check",
+      "sequence_title": "בוחן אינטראקטיבי: התפתחות",
+      "question": "כיצד הטיפול במים תורם במיוחד לתינוק המראה עיכוב ברכישת אבני דרך?",
+      "options": [
+        "מבטל את הצורך בשרירי הליבה בשל חוסר כבידה מלא",
+        "מאפשר תנועה מוגנת, מפחית פחד מנפילות ומספק תמיכה הידרוסטטית",
+        "מעלה משמעותית את העומס על המפרקים כדי 'לאמץ' אותם",
+        "תורם רק לילדים עם טונוס שרירים גבוה (ספסטיות)"
+      ],
+      "correct_index": 1,
+      "explanation": "מעולה. כוח הציפה מאפשר התנסות בתנועות שמחוץ למים היו מלוות בכאב או פחד.",
+      "source_lesson_id": "unit5_pediatrics_development",
+      "source_type": "existing",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "q_1782256445827_324_0",
+      "type": "interactive_check",
+      "sequence_title": "הפרעה בהתפתחות הקואורדינציה (DCD)",
+      "question": "מהו המאפיין הבולט ביותר של הפרעה בקואורדינציה התפתחותית (DCD)?",
+      "options": [
+        "פגיעה קוגניטיבית חמורה",
+        "סרבול מוטורי וקושי ברכישת מיומנויות תנועה",
+        "חולשת שרירים מולדת",
+        "קשיים נשימתיים"
+      ],
+      "correct_index": 1,
+      "explanation": "הקושי העיקרי הוא בתכנון וביצוע תנועות מתואמות.",
+      "source_lesson_id": "unit5_pediatrics_dcd",
+      "source_type": "existing",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "q_1782256445827_408_1",
+      "type": "interactive_check",
+      "sequence_title": "הפרעה בהתפתחות הקואורדינציה (DCD)",
+      "question": "מדוע הידרותרפיה יעילה עבור ילדים עם DCD?",
+      "options": [
+        "היא מחזקת את העצמות",
+        "המים מאטים תנועה ומאפשרים זמן לתכנון מוטורי",
+        "זהו טיפול פסיכולוגי בלבד",
+        "היא מחליפה את הצורך בריפוי בעיסוק"
+      ],
+      "correct_index": 1,
+      "explanation": "ההתנגדות במים מספקת פרופריוצפציה וזמן תגובה ארוך יותר.",
+      "source_lesson_id": "unit5_pediatrics_dcd",
+      "source_type": "existing",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "q_1782256445828_967_0",
+      "type": "interactive_check",
+      "sequence_title": "אינהיביציה והלחץ ההידרוסטטי",
+      "question": "אילו יתרונות מספקת סביבת המים עבור ילדים עם ADHD?",
+      "options": [
+        "סביבה עמוסת גירויים המגבירה עוררות",
+        "ויסות תחושתי עמוק והפחתת מוסחות",
+        "אין למים כל יתרון על פני היבשה",
+        "תחרותיות מוגברת"
+      ],
+      "correct_index": 1,
+      "explanation": "הלחץ ההידרוסטטי והמים החמים מספקים מעטפת מרגיעה.",
+      "source_lesson_id": "unit5_pediatrics_adhd",
+      "source_type": "existing",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "q_1782256445829_113_0",
+      "type": "interactive_check",
+      "sequence_title": "מבחן ידע: ASD במים",
+      "question": "כיצד טיפול במים יכול לסייע בוויסות חושי לילדים על הרצף האוטיסטי?",
+      "options": [
+        "על ידי יצירת תחושת ניתוק מוחלט מהסביבה",
+        "על ידי הגברת הגירויים האודיטוריים (שמיעתיים)",
+        "באמצעות לחץ הידרוסטטי המספק תחושת גבולות ומגע עמוק",
+        "טיפול במים אינו מתאים לילדים עם קשיי ויסות"
+      ],
+      "correct_index": 2,
+      "explanation": "הלחץ האחיד מסייע בוויסות הפרופריוצפטיבי.",
+      "source_lesson_id": "unit5_pediatrics_asd",
+      "source_type": "existing",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "q_1782256445829_806_1",
+      "type": "interactive_check",
+      "sequence_title": "מבחן ידע: ASD במים",
+      "question": "באיזו טכניקה נהוג להשתמש לשם הרגעה ראשונית של ילד עם אוטיזם במים?",
+      "options": [
+        "משחקי תחרות ושחייה מהירה",
+        "תרגול צלילות למעמקים",
+        "הליכה עצמאית במים רדודים ללא מגע המטפל",
+        "החזקה מעורסלת ותנועה איטית וזורמת (Halliwick / Jahara)"
+      ],
+      "correct_index": 3,
+      "explanation": "ערסול ותמיכה קרובה ורציפה מעניקים ביטחון ומורידים טונוס במערכת העצבים.",
+      "source_lesson_id": "unit5_pediatrics_asd",
+      "source_type": "existing",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "q_1782256445830_8_0",
+      "type": "interactive_check",
+      "sequence_title": "תסמונת דאון: מאפיינים וטיפול מימי",
+      "question": "מהו סיכון שכיח אצל ילדים עם תסמונת דאון (Trisomy 21) המצריך תשומת לב מיוחדת בהידרותרפיה?",
+      "options": [
+        "לחץ דם גבוה מאוד",
+        "גמישות יתר מסוכנת בעמוד השדרה הצווארי (C1-C2)",
+        "עצמות שבירות במיוחד (Osteogenesis Imperfecta)",
+        "שנאת מים קיצונית"
+      ],
+      "correct_index": 1,
+      "explanation": "חוסר יציבות אטלנטו-אקסיאלית הוא סיכון ידוע המצריך זהירות.",
+      "source_lesson_id": "unit5_pediatrics_syndromes",
+      "source_type": "existing",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "q_1782256445831_825_0",
+      "type": "interactive_check",
+      "sequence_title": "מבדק ידע: המערכת הקרדיו-ווסקולרית",
+      "question": "כיצד הלחץ ההידרוסטטי משפיע על מערכת הלב וכלי הדם בזמן טבילה עד החזה?",
+      "options": [
+        "מוריד את נפח הדם החוזר ללב (Venous return)",
+        "מגדיל את החזר הדם הוורידי (Venous return) ואת נפח הפעימה (Stroke volume)",
+        "אין לו שום השפעה",
+        "מוריד את תפוקת הלב לרמות מסוכנות"
+      ],
+      "correct_index": 1,
+      "explanation": "המים דוחפים דם פריפריאלי חזרה למרכז, מה שמגדיל את עבודת הלב.",
+      "source_lesson_id": "physiology_01_cardio",
+      "source_type": "existing",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "q_1782256445831_965_1",
+      "type": "interactive_check",
+      "sequence_title": "מבדק ידע: המערכת הקרדיו-ווסקולרית",
+      "question": "עבור אילו מטופלים יש להיזהר במיוחד עם טבילה עמוקה בשל עלייה בעבודת הלב?",
+      "options": [
+        "ספורטאים צעירים",
+        "מטופלים עם אי ספיקת לב קשה (Heart Failure)",
+        "ילדים עם אוטיזם",
+        "מטופלים עם פריצת דיסק"
+      ],
+      "correct_index": 1,
+      "explanation": "הלב שלהם עלול שלא לעמוד בעלייה הפתאומית בנפח הדם החוזר.",
+      "source_lesson_id": "physiology_01_cardio",
+      "source_type": "existing",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "q_1782256445832_113_0",
+      "type": "interactive_check",
+      "sequence_title": "ניהול סיכונים: השלכות קליניות",
+      "question": "מדוע מטופלים חווים צורך מוגבר לתת שתן במהלך ואחרי טיפול הידרותרפיה (Immersion Diuresis)?",
+      "options": [
+        "המים קרים מדי, מה שמכווץ כלי דם",
+        "שתיית מים בטעות במהלך הפעילות",
+        "החזר הדם המוגבר ללב מדכא הפרשת הורמון ADH",
+        "לחץ המים על שלפוחית השתן באופן ישיר"
+      ],
+      "correct_index": 2,
+      "explanation": "מעולה! הלחץ ההידרוסטטי דוחף דם ללב, הלב מפרש זאת כעודף נפח, ומדכא את ה-ADH כדי לפנות נוזלים.",
+      "source_lesson_id": "physiology_02_renal",
+      "source_type": "existing",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "q_1782256445834_319_0",
+      "type": "interactive_check",
+      "sequence_title": "תרגול וידע",
+      "question": "מהו האתגר הנשימתי המרכזי שנוצר כתוצאה מטבילה עמוקה במים (עד הצוואר)?",
+      "options": [
+        "קושי לנשוף את האוויר החוצה",
+        "סכנת טביעה מיידית",
+        "עבודת השאיפה (Inspiration) הופכת קשה יותר בגלל הלחץ ההידרוסטטי על בית החזה",
+        "שרירי הצוואר נתפסים"
+      ],
+      "correct_index": 2,
+      "explanation": "שרירי השאיפה צריכים לגבור על התנגדות המים כדי להרחיב את בית החזה.",
+      "source_lesson_id": "physiology_03_respiratory",
+      "source_type": "existing",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "q_1782256445834_137_1",
+      "type": "interactive_check",
+      "sequence_title": "תרגול וידע",
+      "question": "הידרותרפיה בטבילה עמוקה נחשבת למעולה עבור חולי אסתמה (במצב יציב), מדוע?",
+      "options": [
+        "היא מרפאת לחלוטין את המחלה",
+        "האוויר הלח מעל המים מונע התכווצות דרכי נשימה, והלחץ ההידרוסטטי מחזק את שרירי השאיפה",
+        "סכנת אלרגיה בבריכה נמוכה יותר",
+        "היא מאפשרת עצירת נשימה לזמן רב"
+      ],
+      "correct_index": 1,
+      "explanation": "הלחות טובה לאסתמטיים, והקושי לשאוף מתפקד כאימון התנגדות לשרירי הנשימה.",
+      "source_lesson_id": "physiology_03_respiratory",
+      "source_type": "existing",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "q_1782256445835_177_0",
+      "type": "interactive_check",
+      "sequence_title": "השפעת טמפרטורה והולכה עצבית",
+      "question": "כיצד מים חמים (סביב 34 מעלות) משפיעים על מערכת העצבים המרכזית בטיפול בהידרותרפיה?",
+      "options": [
+        "מעוררים וממריצים אותה ליצירת טונוס שריר גבוה יותר",
+        "מגבירים פעילות דלקתית בסיבי כאב דקים",
+        "מפחיתים את רגישות קצות העצבים ומרפים שרירים (הורדת טונוס)",
+        "מכווצים את כלי הדם כדי למנוע ירידת לחץ דם במטופל"
+      ],
+      "correct_index": 2,
+      "explanation": "בדיוק. חום המים מוריד את קצב הירי העצבי בכישור השריר, מה שמוביל להרפיה, הפחתת ספסטיות והקלה בכאב.",
+      "source_lesson_id": "physiology_04_neuro",
+      "source_type": "existing",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "q_1782256445835_338_1",
+      "type": "interactive_check",
+      "sequence_title": "ויסות טונוס וספסטיות",
+      "question": "בטיפול במטופל עם שבץ מוחי וספסטיות, מהו היתרון הנירולוגי בעבודה כנגד התנגדות המים (Drag)?",
+      "options": [
+        "גורם לתנועה להיות קופצנית יותר ומפעיל רפלקסים מהירים",
+        "התנגדות הצמיגות מעכבת ומחליקה את התנועה, ומעניקה למערכת העצבים זמן לעיבוד וללמידה מוטורית",
+        "מסירה את הצורך להשתמש בשרירי ליבה מייצבים במהלך הטיפול",
+        "יוצרת מתח בשרירים הפגועים ולכן כלל לא מומלצת בשבץ"
+      ],
+      "correct_index": 1,
+      "explanation": "מעולה! ההתנגדות עוצרת תנועה בלתי מבוקרת (Ataxia) ומקלה על המוח ללמוד מחדש את המסלול התנועתי הנכון.",
+      "source_lesson_id": "physiology_04_neuro",
+      "source_type": "existing",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "q_1782256445836_409_0",
+      "type": "interactive_check",
+      "sequence_title": "סוכרת במים: אתגר פרמקוקינטי",
+      "question": "מדוע מטופלים עם סוכרת מועדים לסיכון של היפוגליקמיה (נפילת סוכר) בבריכה הטיפולית?",
+      "options": [
+        "הכלור סופג את הסוכר",
+        "הפעילות הגופנית והמים החמים מגבירים משמעותית את המטבוליזם וניצול הגלוקוז",
+        "כי הם שוכחים לאכול",
+        "הלחץ ההידרוסטטי מונע ייצור גלוקגון"
+      ],
+      "correct_index": 1,
+      "explanation": "שילוב של מאמץ שרירי יחד עם הרחבת כלי דם גורם לצריכה מהירה של סוכר בדם.",
+      "source_lesson_id": "physiology_05_diabetes",
+      "source_type": "existing",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "q_1782256445836_853_1",
+      "type": "interactive_check",
+      "sequence_title": "סוכרת במים: ניהול ופרוטוקול עבודה",
+      "question": "מהו אמצעי הזהירות החשוב ביותר לפני הכנסת מטופל סוכרתי למים?",
+      "options": [
+        "מדידת חום",
+        "בדיקת רמות סוכר בדם, תשאול על ארוחה אחרונה, ווידוא נוכחות פחמימה זמינה בשפת הבריכה",
+        "חבישת כובע ים",
+        "שקילת המטופל"
+      ],
+      "correct_index": 1,
+      "explanation": "מניעת היפוגליקמיה והיערכות מראש היא חובה קלינית.",
+      "source_lesson_id": "physiology_05_diabetes",
+      "source_type": "existing",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "b4_interactive",
+      "type": "interactive_check",
+      "sequence_title": "חוק פסקל והלחץ ההידרוסטטי",
+      "title": "בחן את עצמך: חוק פסקל בקליניקה",
+      "content": "לאור מה שלמדנו, היכן נמליץ למטופל עם בצקת חריפה בקרסול לעמוד כדי למקסם את השפעת הטיפול?",
+      "options": [
+        "במים רדודים (עד גובה הברך)",
+        "במים עמוקים (עד גובה החזה)",
+        "בשכיבה אופקית על פני המים"
+      ],
+      "correct_answer": "במים עמוקים (עד גובה החזה)",
+      "feedback": "בדיוק! ככל שהקרסול יימצא עמוק יותר במים, הלחץ ההידרוסטטי המופעל עליו יהיה גבוה יותר ויאיץ את ספיגת הבצקת.",
+      "visual_trigger": "animation_pascal_law",
+      "source_lesson_id": "hydrodynamics_pascal",
+      "source_type": "existing",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "b011",
+      "type": "interactive_check",
+      "sequence_title": "צמיגות והתנגדות תנועתית",
+      "visual_trigger": "animation_quiz_time",
+      "title": "עצור לחשוב!",
+      "content": "המטופל שלך מניע את ידו מהר פי 2 מאשר קודם. פי כמה תגדל התנגדות המים שעליו להפעיל?",
+      "options": [
+        "תגדל פי 2 (הכפלה)",
+        "תגדל פי 4 (קשר ריבועי)",
+        "תישאר זהה בגלל הציפה",
+        "תקטן בגלל המערבולות"
+      ],
+      "correct_answer_index": 1,
+      "clinical_highlight": "זכרו! המהירות פועלת במכפלה ריבועית. כך מגבירים קושי הידרותרפי ללא משקולות ברזל.",
+      "source_lesson_id": "unit1_physics",
+      "source_type": "existing",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "q_unit1_physics_1",
+      "type": "interactive_check",
+      "visual_trigger": "animation_quiz_time",
+      "title": "מבחן מסכם!",
+      "sequence_title": "מבחן סיום יחידה",
+      "question": "לפי חוק ארכימדס, מה קורה לאדם העומד במים עד גובה בית החזה?",
+      "options": [
+        "משקל גופו המופעל על מפרקיו פוחת לכ-30% ממשקלו",
+        "הלחץ ההידרוסטטי על רגליו מתאפס לחלוטין",
+        "המומנט המטא-סנטרי מונע ממנו ללכת",
+        "המשקל הסגולי שלו יורד ל-0.8 באופן רגעי"
+      ],
+      "correct_index": 0,
+      "explanation": "מעולה! כוח העילוי מפצה על חלק ניכר ממשקל הגוף.",
+      "source_lesson_id": "unit1_physics",
+      "source_type": "existing",
+      "difficulty": "basic"
+    },
+    {
+      "bite_id": "q_unit1_physics_2",
+      "type": "interactive_check",
+      "visual_trigger": "animation_quiz_time",
+      "title": "מבחן מסכם!",
+      "sequence_title": "מבחן סיום יחידה",
+      "question": "מדוע מטופלי ניוון שרירים דושן (DMD) מצויים בסכנת התהפכות פתאומית במים עמוקים?",
+      "options": [
+        "כי רקמת השריר שהפכה לשומן יוצרת ציפה חיובית א-סימטרית",
+        "כי שטח הפנים החזיתי שלהם מצומצם מדי",
+        "כי עבודת הנשימה שלהם מתגברת במים",
+        "כי עצמותיהם הופכות כבדות יותר"
+      ],
+      "correct_index": 0,
+      "explanation": "נכון! עודף שומן ברגליים מעיף אותן כלפי מעלה ומשבש את המומנט המטא-סנטרי.",
+      "source_lesson_id": "unit1_physics",
+      "source_type": "existing",
+      "difficulty": "basic"
+    }
+  ]
+}

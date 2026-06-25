@@ -1,19 +1,15 @@
-# Walkthrough: Hydrostatic Pressure Content Deepening (Pascal's Law)
+# Walkthrough: Animation Placeholder UI Update
 
 ## Objective
-Enrich the hydrostatic pressure lesson (`pascal_lesson.json`) without deleting existing text, introducing contextual foundation, and strictly following the "No Conceptual Compression" architecture as per the `02_clinical_content_director` persona and system patterns.
+Update the `FallbackAnimation` placeholder component so that it displays an active, dynamic gradient without any textual clutter or icons, in accordance with the user's request and the Decoupling Hard Invariant.
 
 ## Actions Taken
-1. **Contextual Foundation**: Added theoretical background sequences explaining Pascal's Law and the Hydrostatic Gradient before diving into practical clinical applications (`principle_card`).
-2. **Decompression**: Broke down a dense carousel about clinical applications into a multi-sequence flow:
-   - A `clinical_case_card` specific to Edema reduction.
-   - An introductory `principle_card` leading into the remaining examples.
-   - A `flashcard_carousel` containing the detailed examples.
-3. **Content Enrichment**: Injected "Did you know?" (הידעת?) micro-elements to enrich the content while strictly keeping textual blocks under the 40-word limit. Kept existing valid text blocks verbatim.
-4. **Decoupling Compliance**: Validated that all types used (`principle_card`, `clinical_case_card`, `flashcard_carousel`, `interactive_check`, `sequence_end_card`) match the strict UI JSON schema.
-5. **Memory Maintenance**: Updated `activeContext.md` with the latest task and archived the oldest UI tasks into `changelog.md`.
+1. **Component Update**: Replaced the contents of `FallbackAnimation.tsx`.
+2. **Text Removal**: Removed the "Animation Pending" badge, emojis, and fallback text entirely.
+3. **Animated Gradient**: Kept the colorful gradient based on `triggerId` but added an animated `backgroundPosition` via Framer Motion with `backgroundSize: '400% 400%'`. This creates a slow, lively transition effect.
+4. **Build Verification**: Ran `npm run build` which compiled successfully (in 7.6s) to ensure the changes did not break the app.
+5. **Memory & Git**: Documented the change in `.memory/activeContext.md` and pushed the code to the GitHub repository.
 
 ## Review Requested
-- Please run the application and select the "Hydrostatic Pressure" (מפל הלחצים ההידרוסטטי) lesson.
-- Verify the new multi-sequence structure and ensure the animations trigger properly.
-- Verify that the interactive knowledge check functions properly at the end.
+- Please run the development server (`npm run dev`) and navigate to any reel that currently uses a fallback animation.
+- Verify that the square placeholder now shows a smoothly moving gradient with no internal text.

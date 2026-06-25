@@ -266,7 +266,7 @@ export default function HomeClient({
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
-            className="flex-1 w-full max-w-sm overflow-y-auto no-scrollbar rounded-3xl bg-white/10 backdrop-blur-md border border-white/20 p-4"
+            className="w-full max-w-sm overflow-y-auto no-scrollbar rounded-3xl bg-white/10 backdrop-blur-md border border-white/20 p-4 max-h-[35vh] mb-4 shrink-0"
             dir="rtl"
           >
             <h2 className="text-xl font-bold mb-4 text-right">התחל ללמוד מהנושאים:</h2>
@@ -311,6 +311,27 @@ export default function HomeClient({
                 );
               })}
             </div>
+          </motion.div>
+
+          {/* Let's be tested Button */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.6 }}
+            className="w-full max-w-sm shrink-0 z-10"
+          >
+            <button
+              onClick={() => alert("מערכת המבחנים תפותח בשלב הבא!")}
+              className="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-3xl p-3 shadow-lg border border-white/20 transition-all active:scale-95 flex flex-col items-center gap-1"
+            >
+              <span className="font-black text-xl flex items-center gap-2">
+                <CheckCircle2 className="w-6 h-6" />
+                בואו ניבחן
+              </span>
+              <span className="text-xs font-medium text-center opacity-90 px-2" dir="rtl">
+                המערכת תבדוק ותנתח את האזורים בהם אני חזק יותר ופחות ותמליץ אילו נושאים ללמוד.
+              </span>
+            </button>
           </motion.div>
 
           {/* Scroll Down Indicator */}
