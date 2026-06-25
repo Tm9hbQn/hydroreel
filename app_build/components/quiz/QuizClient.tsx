@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import QuizConfigurator from "./QuizConfigurator";
 import InteractiveQuizCard from "./InteractiveQuizCard";
 import TopicSummary from "./TopicSummary";
@@ -22,6 +22,53 @@ export default function QuizClient({ allQuestions }: { allQuestions: any[] }) {
   // New free-navigation state
   const [answers, setAnswers] = useState<Record<string, number>>({});
   const [checked, setChecked] = useState<Record<string, boolean>>({});
+
+  const [savedStateExists, setSavedStateExists] = useState(false);
+
+  useEffect(() => {
+    const saved = localStorage.getItem("hydroreel_quiz_state");
+    if (saved) {
+      setSavedStateExists(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (step !== "config" && step !== "results") {
+      const stateToSave = {
+        chunks,
+        activeTopics,
+        currentTopicIndex,
+        activeQuestions,
+        currentIndex,
+        answers,
+        checked,
+        step
+      };
+      localStorage.setItem("hydroreel_quiz_state", JSON.stringify(stateToSave));
+    }
+    if (step === "results") {
+      localStorage.removeItem("hydroreel_quiz_state");
+    }
+  }, [chunks, activeTopics, currentTopicIndex, activeQuestions, currentIndex, answers, checked, step]);
+
+  const handleResume = () => {
+    const saved = localStorage.getItem("hydroreel_quiz_state");
+    if (saved) {
+      try {
+        const parsed = JSON.parse(saved);
+        setChunks(parsed.chunks || {});
+        setActiveTopics(parsed.activeTopics || []);
+        setCurrentTopicIndex(parsed.currentTopicIndex || 0);
+        setActiveQuestions(parsed.activeQuestions || []);
+        setCurrentIndex(parsed.currentIndex || 0);
+        setAnswers(parsed.answers || {});
+        setChecked(parsed.checked || {});
+        setStep(parsed.step && parsed.step !== "results" ? parsed.step : "quiz");
+      } catch (e) {
+        console.error("Failed to parse saved state", e);
+      }
+    }
+  };
 
   const getTopicLabel = (topicId: string) => {
     const map: Record<string, string> = {
@@ -184,7 +231,34 @@ export default function QuizClient({ allQuestions }: { allQuestions: any[] }) {
       <div className="w-full z-10 pt-16 pb-8 flex-1 flex flex-col justify-start items-center">
         <AnimatePresence mode="wait">
           {step === "config" && (
-            <QuizConfigurator key="config" onStart={handleStart} />
+            <div className="w-full flex flex-col items-center z-20">
+              {savedStateExists && (
+                <motion.div 
+                  initial={{ opacity: 0, y: -20 }} 
+                  animate={{ opacity: 1, y: 0 }}
+                  className="w-full max-w-md bg-white/80 backdrop-blur-md border border-pink-200 rounded-3xl p-6 mb-6 shadow-sm text-center relative"
+                  dir="rtl"
+                >
+                  <h3 className="text-xl font-bold text-slate-800 mb-2">נראה שמבחן פעיל מחכה לך!</h3>
+                  <p className="text-slate-600 mb-4 text-sm">יצאת מהמבחן הקודם באמצע. רוצה להמשיך מאותה נקודה?</p>
+                  <div className="flex gap-2 justify-center">
+                    <button 
+                      onClick={handleResume}
+                      className="bg-gradient-to-r from-pink-500 to-rose-500 text-white font-bold py-2 px-4 rounded-xl shadow-md hover:shadow-lg transition-all text-sm"
+                    >
+                      המשך מבחן קודם
+                    </button>
+                    <button 
+                      onClick={() => { localStorage.removeItem("hydroreel_quiz_state"); setSavedStateExists(false); }}
+                      className="bg-slate-100 text-slate-600 font-bold py-2 px-4 rounded-xl hover:bg-slate-200 transition-all text-sm"
+                    >
+                      התחל מחדש
+                    </button>
+                  </div>
+                </motion.div>
+              )}
+              <QuizConfigurator key="config" onStart={handleStart} />
+            </div>
           )}
 
           {step === "quiz" && activeQuestions.length > 0 && (
