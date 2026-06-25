@@ -5,15 +5,18 @@ import { motion } from "framer-motion";
 import { Play } from "lucide-react";
 
 interface QuizConfiguratorProps {
-  onStart: (topics: string[], difficulty: string) => void;
+  onStart: (topics: string[], difficulty: string, questionCount: number) => void;
 }
 
 const TOPICS = [
+  { id: "physics", label: "פיזיקה של המים" },
   { id: "anatomy", label: "אנטומיה" },
   { id: "physiology", label: "פיזיולוגיה" },
+  { id: "movement", label: "תנועה וכושר" },
+  { id: "methodology", label: "מתודולוגיה" },
   { id: "neuro", label: "נוירולוגיה" },
-  { id: "ortho", label: "אורתופדיה" },
-  { id: "peds", label: "רפואת ילדים" },
+  { id: "orthopedics", label: "אורתופדיה" },
+  { id: "pediatrics", label: "רפואת ילדים" },
 ];
 
 const DIFFICULTIES = [
@@ -24,6 +27,7 @@ const DIFFICULTIES = [
 export default function QuizConfigurator({ onStart }: QuizConfiguratorProps) {
   const [selectedTopics, setSelectedTopics] = useState<string[]>([]);
   const [difficulty, setDifficulty] = useState<string>("basic");
+  const [questionCount, setQuestionCount] = useState<number>(30);
 
   const toggleTopic = (id: string) => {
     setSelectedTopics((prev) =>
@@ -31,12 +35,20 @@ export default function QuizConfigurator({ onStart }: QuizConfiguratorProps) {
     );
   };
 
+  const selectAllTopics = () => {
+    if (selectedTopics.length === TOPICS.length) {
+      setSelectedTopics([]);
+    } else {
+      setSelectedTopics(TOPICS.map((t) => t.id));
+    }
+  };
+
   const handleStart = () => {
     if (selectedTopics.length === 0) {
       alert("אנא בחר לפחות נושא אחד");
       return;
     }
-    onStart(selectedTopics, difficulty);
+    onStart(selectedTopics, difficulty, questionCount);
   };
 
   return (
@@ -44,18 +56,26 @@ export default function QuizConfigurator({ onStart }: QuizConfiguratorProps) {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
-      className="w-full max-w-md mx-auto bg-white/70 backdrop-blur-xl border border-white/40 rounded-3xl p-6 shadow-2xl flex flex-col gap-6 text-slate-800"
+      className="w-full max-w-md mx-auto bg-white/70 backdrop-blur-xl border border-white/40 rounded-3xl p-6 shadow-2xl flex flex-col gap-6 text-slate-800 relative z-10"
       dir="rtl"
     >
       <div className="text-center">
         <h2 className="text-2xl font-black mb-2 bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-rose-500">
           הגדרות מבחן
         </h2>
-        <p className="text-sm opacity-80">בחר נושאים ורמת קושי להתחלה</p>
+        <p className="text-sm opacity-80">בחר נושאים, רמת קושי וכמות שאלות</p>
       </div>
 
       <div className="flex flex-col gap-3">
-        <h3 className="font-bold text-sm">נושאים:</h3>
+        <div className="flex justify-between items-center">
+          <h3 className="font-bold text-sm">נושאים:</h3>
+          <button 
+            onClick={selectAllTopics}
+            className="text-xs text-pink-600 font-bold hover:underline"
+          >
+            {selectedTopics.length === TOPICS.length ? "הסר הכל" : "בחר הכל"}
+          </button>
+        </div>
         <div className="flex flex-wrap gap-2">
           {TOPICS.map((topic) => {
             const isSelected = selectedTopics.includes(topic.id);
@@ -73,6 +93,26 @@ export default function QuizConfigurator({ onStart }: QuizConfiguratorProps) {
               </button>
             );
           })}
+        </div>
+      </div>
+
+      <div className="flex flex-col gap-3">
+        <div className="flex justify-between items-center">
+          <h3 className="font-bold text-sm">כמות שאלות:</h3>
+          <span className="font-bold text-pink-600">{questionCount}</span>
+        </div>
+        <input 
+          type="range" 
+          min="10" 
+          max="50" 
+          step="5"
+          value={questionCount}
+          onChange={(e) => setQuestionCount(Number(e.target.value))}
+          className="w-full h-2 bg-pink-200 rounded-lg appearance-none cursor-pointer accent-pink-500"
+        />
+        <div className="flex justify-between text-xs text-slate-400 font-medium">
+          <span>10</span>
+          <span>50</span>
         </div>
       </div>
 
